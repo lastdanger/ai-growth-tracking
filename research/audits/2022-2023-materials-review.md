@@ -1,24 +1,29 @@
 # 2022—2023 时代材料与主次校正 · 2026-09-15
 
-本轮没有继续堆模型或产品名称。2022保持4个事件，时代材料由1则增至3则；2023新增美国第14110号行政命令，现32事件、9主节点、23分支，时代材料由2则增至8则。全图现106事件、169来源、49材料、89关系。
+这一轮继续控制节点密度，没有追加一串同质产品发布。2022现为6事件、4主节点、2分支；2023现为34事件、9主节点、25分支。全图现110事件、176来源、56则时代材料、95条关系。
 
-## 为什么补行政命令
+## 本轮补充
 
-原2023治理主线已有中国生成式AI服务管理办法和欧盟临时协议，却缺少美国联邦层面的重要行动。第14110号行政命令于2023-10-30签署、11-01刊登，向多个联邦部门安排前沿模型报告、安全测试、政府使用、民权与劳动等任务。[联邦公报原文](https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence)
+### 2022：热潮怎样进入公共生活
 
-2025-01-23，第14179号行政命令撤销第14110号命令，并要求审视据此采取的政策和行动。[撤销命令](https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/)
+- **AI生成作品获奖，争论冲出技术圈**进入年度主线。同期报道不只记录结果，也留下约80小时工作、900多张候选、人工挑选、Photoshop调整与打印的制作过程。它让“是否算创作”有了具体对象。[Smithsonian同期报道](https://www.smithsonianmag.com/smart-news/artificial-intelligence-art-wins-colorado-state-fair-180980703/)
+- **Stack Overflow紧急限制ChatGPT内容**作为ChatGPT发布后的分支。政策在公开预览五天后出现，理由不是抽象恐惧，而是大量生成内容看似可信、生成很快、验证很慢，志愿审核难以承受。[社区政策帖](https://meta.stackoverflow.com/questions/421831/policy-generative-ai-e-g-chatgpt-is-banned)
+- ChatGPT档案增加两则真实用法：一位开发者把它用于学习Rust、解释错误并记录幻觉；一位插画师让ChatGPT把自然语言转换成Stable Diffusion提示词。[Simon Willison的同期实践](https://simonwillison.net/2022/Dec/5/rust-chatgpt-copilot/)；[第一财经报道](https://www.yicai.com/news/101616572.html)
 
-地图把签署、刊登、后续任务与撤销分开。该节点替代OpenAI管理层危机进入年度主线；公司治理事件仍保留为分支，不因降级而删除历史。
+《太空歌剧院》同时保留“后来再看”：美国版权局2023年行政决定把当年的文化争议延伸到人类作者身份与AI生成内容披露，但结论只适用于该申请和美国登记程序。[版权局决定](https://www.copyright.gov/rulings-filings/review-board/docs/Theatre-Dopera-Spatial.pdf)
 
-## 补了哪些时代材料
+### 2023：教育的两种选择与真实工作效果
 
-- 2022：Copilot每月10美元的个人订阅与学生/维护者免费范围；Stable Diffusion从网页体验转向权重、许可和本地运行准备。
-- 2023：新Bing发布页里的旅行、购物和财报连续任务；GPT-4惊艳能力与实际开放边界；AI孙燕姿翻唱背后的制作链；NVIDIA收入预期与实际结果；WGA把争论写入合同；行政命令展开成部门任务表。
+- 纽约学校节点改写为更准确的范围：限制的是教育部门设备和网络，学校为研究仍可申请访问。5月的署名文章又显示机构转向鼓励受控探索，留下同一组织几个月内的态度变化。[1月报道](https://www.chalkbeat.org/newyork/2023/1/3/23537987/nyc-schools-ban-chatgpt-writing-artificial-intelligence/)；[5月署名文章](https://www.chalkbeat.org/newyork/2023/5/18/23727942/chatgpt-nyc-schools-david-banks/)
+- **Khan Academy小范围试验AI导师**作为GPT-4分支。Khanmigo被设计成会追问的导师和教师助理，发布页同时承认模型会算错和编造，因此保留“小规模试点”边界。[Khan Academy公告](https://blog.khanacademy.org/harnessing-ai-so-that-all-students-benefit-a-nonprofit-approach-for-equal-access/)
+- **客服现场出现首批生成式AI效果数据**作为办公主线的现实对照。一项5,179名客服人员研究报告每小时解决问题数平均提高14%，新手和低技能人员提高34%，熟练人员变化很小。这是特定公司、岗位和工具的结果，不代表所有知识工作。[NBER工作论文](https://www.nber.org/papers/w31161)
 
-这些材料仍以公开报道或官方演示为依据，不冒充亲历。它们的作用是让“发布了什么”变成“当时人们能怎样接触、制作、付费、工作和争论”。
+客服研究另与2025年METR开发者研究建立“背景关联”。连线的含义是提醒读者比较任务、人群与工具条件，不是把两个不同研究写成互相否定。
 
-## 主次变化
+## 选择逻辑
 
-2023主节点仍为9个。美国行政命令进入主线，OpenAI离任/回归成为治理分支。2026由10主10分调整为8主12分：DeepSeek-V4和GPT-6 Astra仍保留完整档案，但在长期采用与影响尚不明确时，不与已经产生公共或制度后果的节点等权。
+这四个新增事件分别承担不同作用：文化冲突、社区治理、教育试验、工作效果。它们让“当时很火”不只靠标题或用户数字，而能沿主脉络看到四种后果：人开始创作，平台开始设限，机构开始试验，研究开始测量。
 
-结构、关系和来源日期随后由项目脚本与浏览器重新验证。
+只有《太空歌剧院》进入2022主线，因为它补上此前缺失的公众文化转折。Stack Overflow、Khanmigo和客服研究都放在分支中，以免局部政策、试点或单一研究和年度转折等权。
+
+本轮7个新增来源均通过网页检索读到正文或PDF；NBER落地页偶有抓取失败，但检索结果和官方PDF均可读取。可访问不代表未来永久稳定，页面仍保留来源范围说明。

@@ -6,23 +6,24 @@
       "year": 2022,
       "keyword": "开门",
       "tagline": "生成式 AI 来到公众面前。",
-      "summary": "图像生成、代码助手与对话服务，给公众和开发者带来几种可直接接触的新入口。",
+      "summary": "图像生成、代码助手与对话服务陆续打开入口；人们一边动手试用，一边争论什么算创作、什么可以进入公共知识社区。",
       "status": "seed",
-      "coverage_note": "代表节点骨架，尚非完整年表；不表示生成式 AI 始于这一年。",
+      "coverage_note": "已收录产品入口、创作争议、个人用法与社区治理的代表节点；仍是年度骨架，未覆盖所有地区、产品和社会反应。",
       "anchor_ids": [
         "github-copilot-general-availability",
         "stable-diffusion-public-release",
-        "chatgpt-public-preview"
+        "chatgpt-public-preview",
+        "midjourney-state-fair-win"
       ],
-      "as_of": "2026-09-14"
+      "as_of": "2026-09-15"
     },
     {
       "year": 2023,
       "keyword": "破圈",
       "tagline": "从一个聊天窗口到一场行业竞逐。",
-      "summary": "公众试用、软件入口、开放模型和公共规则同时展开。",
+      "summary": "聊天窗口迅速破圈，模型进入办公、教育与创作；开放生态、算力投入、劳动影响和公共规则也在同一年展开。",
       "status": "reviewed",
-      "coverage_note": "原24条经过层级复核，补8条生态、算力、劳动与制度节点，并加强同期材料；尚缺完整的社会使用、科学应用与其他地区材料，非全年穷尽。",
+      "coverage_note": "已收录 9 个主节点及其产品、教育、工作、生态、算力、劳动与制度分支，并加强同期材料；科学应用、更多地区和长期使用体验仍待补充，不代表全年穷尽。",
       "anchor_ids": [
         "chatgpt-public-growth",
         "gpt4-release",
@@ -311,15 +312,19 @@
       "then": {
         "text": "OpenAI 以免费研究预览形式开放 ChatGPT，公众可以直接与它对话。",
         "source_ids": [
-          "S-20e2d681bdc9"
+          "S-20e2d681bdc9",
+          "S-3b53fd07bd15"
         ]
       },
       "later": null,
       "source_ids": [
-        "S-20e2d681bdc9"
+        "S-20e2d681bdc9",
+        "S-3b53fd07bd15"
       ],
       "material_ids": [
-        "M-early-chinese-headline"
+        "M-early-chinese-headline",
+        "M-chatgpt-rust-learning-1",
+        "M-chatgpt-prompt-bridge-1"
       ],
       "fact_ids": [
         "EV-20221130-001",
@@ -367,24 +372,33 @@
       "date_precision": "day",
       "date_basis": "report",
       "title": "纽约学校限制访问 ChatGPT",
-      "summary": "纽约市教育部门确认限制学校网络和设备访问 ChatGPT，教育使用问题进入公共讨论。",
+      "summary": "纽约市教育部门限制学校网络和设备访问 ChatGPT；限制源于对学习、内容安全与准确性的担忧，并非全市所有场景完全禁用。",
       "lane": "people",
       "tier": "branch",
       "roles": [
         "public-impact"
       ],
-      "why_selected": "作为公众体验的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "它记录了大型教育系统面对新工具时的第一反应，也为同年由谨慎转向试验留下清晰的制度轨迹。",
       "then": {
-        "text": "纽约市教育部门确认限制学校网络和设备访问 ChatGPT，教育使用问题进入公共讨论。",
+        "text": "学校设备和网络上的访问被限制，个别学校若要研究这项技术仍可申请。政策瞄准的是学习影响、内容安全与准确性，而不是一句笼统的“教育界封杀 AI”。",
         "source_ids": [
           "S-eef81b843729"
         ]
       },
-      "later": null,
+      "later": {
+        "text": "到 5 月，纽约市公校总监公开表示要鼓励并支持师生探索 AI，同时提供案例、资源和伦理讨论工具。短短数月，机构态度从先限制转向边用边学。",
+        "as_of": "2023-05-18",
+        "source_ids": [
+          "S-31594d5d2748"
+        ]
+      },
       "source_ids": [
-        "S-eef81b843729"
+        "S-eef81b843729",
+        "S-31594d5d2748"
       ],
-      "material_ids": [],
+      "material_ids": [
+        "M-nyc-school-chatgpt-restriction-1"
+      ],
       "fact_ids": [
         "EV-20230103-001"
       ]
@@ -3503,6 +3517,133 @@
         "M-frontier-pacing-proposal-1"
       ],
       "fact_ids": []
+    },
+    {
+      "id": "midjourney-state-fair-win",
+      "year": 2022,
+      "date": "2022-09-06",
+      "date_label": "09-06（报道）",
+      "date_precision": "day",
+      "date_basis": "report",
+      "title": "AI 生成作品获奖，争论冲出技术圈",
+      "summary": "《太空歌剧院》在科罗拉多州博览会数字艺术类别获一等奖；提示词、筛选和后期是否算创作，迅速变成一场公开争论。",
+      "lane": "people",
+      "tier": "main",
+      "roles": [
+        "public-impact"
+      ],
+      "why_selected": "它让图像生成从软件演示进入文化现场：作品已经挂上展墙，人们必须开始回答谁在创作、劳动在哪里、规则是否跟得上。",
+      "then": {
+        "text": "同期报道说，Jason Allen 花约 80 小时，从 Midjourney 生成的 900 多张图中挑选，再用 Photoshop 调整并放大打印。争论没有停在“机器一键作画”，而是直接撞上艺术、职业与评奖规则。",
+        "source_ids": [
+          "S-c3869844de6c"
+        ]
+      },
+      "later": {
+        "text": "一年后，美国版权局复审委员会确认作品包含超过最低限度的 AI 生成内容；申请人不愿排除这部分内容，因此整件作品不能按原申请登记。一次展会争议继续进入正式版权判断。",
+        "as_of": "2023-09-05",
+        "source_ids": [
+          "S-e9ce129d8e9f"
+        ]
+      },
+      "source_ids": [
+        "S-c3869844de6c",
+        "S-e9ce129d8e9f"
+      ],
+      "material_ids": [
+        "M-midjourney-state-fair-win-1"
+      ],
+      "fact_ids": []
+    },
+    {
+      "id": "stackoverflow-chatgpt-temporary-ban",
+      "year": 2022,
+      "date": "2022-12-05",
+      "date_label": "12-05",
+      "date_precision": "day",
+      "date_basis": "event",
+      "title": "Stack Overflow 紧急限制 ChatGPT 内容",
+      "summary": "ChatGPT 开放五天后，Stack Overflow 版主发布临时政策，禁止把生成内容贴到站内。",
+      "lane": "governance",
+      "tier": "branch",
+      "roles": [
+        "public-impact"
+      ],
+      "why_selected": "它记录了热潮的另一面：生成速度突然超过社区核验能力，平台规则在产品发布后几天内就被迫响应。",
+      "then": {
+        "text": "版主面对的是大量“看起来像正确答案”的内容。生成只需几秒，但逐条判断往往需要专业人员细读和验证，志愿审核机制因此承压。",
+        "source_ids": [
+          "S-63bb41b325b7"
+        ]
+      },
+      "later": null,
+      "source_ids": [
+        "S-63bb41b325b7"
+      ],
+      "material_ids": [
+        "M-stackoverflow-chatgpt-temporary-ban-1"
+      ],
+      "fact_ids": []
+    },
+    {
+      "id": "khanmigo-limited-pilot",
+      "year": 2023,
+      "date": "2023-03-14",
+      "date_label": "03-14",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Khan Academy 小范围试验 AI 导师",
+      "summary": "Khan Academy 发布由 GPT-4 支持的 Khanmigo 小规模试点，让少量师生把它用作学习导师和教师助理。",
+      "lane": "people",
+      "tier": "branch",
+      "roles": [
+        "public-impact"
+      ],
+      "why_selected": "它与年初的学校限制形成同年对照：教育系统并非只有接受或封禁，也开始尝试把模型改造成会追问、不给现成答案的学习工具。",
+      "then": {
+        "text": "试点把 AI 放进已有课堂作业：学生可以讨论数学、编程和写作思路，教师则尝试处理备课等任务。发布页同时明确承认模型仍会算错和编造。",
+        "source_ids": [
+          "S-5a53c0b3a6ba"
+        ]
+      },
+      "later": null,
+      "source_ids": [
+        "S-5a53c0b3a6ba"
+      ],
+      "material_ids": [
+        "M-khanmigo-limited-pilot-1"
+      ],
+      "fact_ids": []
+    },
+    {
+      "id": "generative-ai-at-work-paper",
+      "year": 2023,
+      "date": "2023-04-20",
+      "date_label": "04-20（工作论文首版）",
+      "date_precision": "day",
+      "date_basis": "paper-release",
+      "title": "客服现场出现首批生成式 AI 效果数据",
+      "summary": "一项覆盖 5,179 名客服人员的研究报告称，接入生成式 AI 助手后，每小时解决问题数平均提高 14%，不同经验人群差异明显。",
+      "lane": "people",
+      "tier": "branch",
+      "roles": [
+        "public-impact"
+      ],
+      "why_selected": "它把“AI 能提高效率”的宏大说法落到具体工作、样本与指标，也提醒读者平均值会掩盖经验差异。",
+      "then": {
+        "text": "研究中的提升并不平均：新手和低技能人员提高 34%，熟练和高技能人员变化很小。作者提出的解释是，助手可能在传播优秀员工的做法；这仍是一个具体公司的客服场景。",
+        "source_ids": [
+          "S-48f9118e3a25"
+        ]
+      },
+      "later": null,
+      "source_ids": [
+        "S-48f9118e3a25"
+      ],
+      "material_ids": [
+        "M-generative-ai-at-work-paper-1"
+      ],
+      "fact_ids": []
     }
   ],
   "sources": [
@@ -5026,6 +5167,69 @@
       "kind": "official",
       "scope": "已读2025-01-23第14179号行政命令；采用其撤销第14110号命令及要求审视、修订相关政策的事实。撤销不抹去2023年的历史作用，也不表示此前所有衍生行动自动在同一日消失。",
       "accessed_at": "2026-09-15"
+    },
+    {
+      "id": "S-c3869844de6c",
+      "title": "Art Made With Artificial Intelligence Wins at State Fair",
+      "url": "https://www.smithsonianmag.com/smart-news/artificial-intelligence-art-wins-colorado-state-fair-180980703/",
+      "kind": "media",
+      "published_at": "2022-09-06",
+      "accessed_at": "2026-09-15",
+      "scope": "核对获奖类别、报道日期、Midjourney 使用、约 80 小时制作、900 余张候选与当时关于艺术和职业的争论；制作过程为报道转述。"
+    },
+    {
+      "id": "S-3b53fd07bd15",
+      "title": "AI assisted learning: Learning Rust with ChatGPT, Copilot and Advent of Code",
+      "url": "https://simonwillison.net/2022/Dec/5/rust-chatgpt-copilot/",
+      "kind": "media",
+      "published_at": "2022-12-05",
+      "accessed_at": "2026-09-15",
+      "scope": "作者同期使用记录；核对用 ChatGPT 解释 Rust、错误信息和代码概念，也记录幻觉及失败案例。仅代表个人实践。"
+    },
+    {
+      "id": "S-63bb41b325b7",
+      "title": "Policy: Generative AI (e.g., ChatGPT) is banned",
+      "url": "https://meta.stackoverflow.com/questions/421831/policy-generative-ai-e-g-chatgpt-is-banned",
+      "kind": "official",
+      "published_at": "2022-12-05",
+      "accessed_at": "2026-09-15",
+      "scope": "Stack Overflow 社区政策帖；核对原临时政策发布日期、错误但貌似可信的答案及大量生成内容对志愿审核的压力。页面后续多次更新，首发背景按历史说明读取。"
+    },
+    {
+      "id": "S-5a53c0b3a6ba",
+      "title": "Harnessing GPT-4 so that all students benefit",
+      "url": "https://blog.khanacademy.org/harnessing-ai-so-that-all-students-benefit-a-nonprofit-approach-for-equal-access/",
+      "kind": "official",
+      "published_at": "2023-03-14",
+      "accessed_at": "2026-09-15",
+      "scope": "核对 Khanmigo 小规模试点、GPT-4 支持、学生导师与教师助理两类场景，以及官方同时承认数学错误和幻觉；页面含 2023-11-17 更新，首发状态按正文标注读取。"
+    },
+    {
+      "id": "S-48f9118e3a25",
+      "title": "Generative AI at Work",
+      "url": "https://www.nber.org/papers/w31161",
+      "kind": "paper",
+      "published_at": "2023-04-20",
+      "accessed_at": "2026-09-15",
+      "scope": "核对 NBER 工作论文首版、5,179 名客服人员样本、每小时解决问题数平均提高 14%，以及新手和低技能人员提升 34%；这是特定公司和工具的研究，不代表所有职业。"
+    },
+    {
+      "id": "S-31594d5d2748",
+      "title": "ChatGPT caught NYC schools off guard. Now, we’re determined to embrace its potential.",
+      "url": "https://www.chalkbeat.org/newyork/2023/5/18/23727942/chatgpt-nyc-schools-david-banks/",
+      "kind": "media",
+      "published_at": "2023-05-18",
+      "accessed_at": "2026-09-15",
+      "scope": "纽约市公校总监署名文章；核对限制并非完全禁用，以及 5 月转向鼓励受控探索、提供案例与资源。属于机构负责人自述。"
+    },
+    {
+      "id": "S-e9ce129d8e9f",
+      "title": "Théâtre D’opéra Spatial Review Board Decision Letter",
+      "url": "https://www.copyright.gov/rulings-filings/review-board/docs/Theatre-Dopera-Spatial.pdf",
+      "kind": "official",
+      "published_at": "2023-09-05",
+      "accessed_at": "2026-09-15",
+      "scope": "核对作品使用 Midjourney、Photoshop 与 Gigapixel AI 的行政记录，以及 2023 年对整件作品登记申请的最终行政决定；不外推其他司法辖区。"
     }
   ],
   "materials": [
@@ -5371,6 +5575,55 @@
       "kind": "report",
       "text": "命令同时触及前沿模型报告、安全测试标准、关键基础设施、政府使用、民权与劳动影响。读者看到的不只是原则宣言，而是一系列分派给联邦部门的任务和期限。",
       "source_id": "S-4a3b3fec13a8"
+    },
+    {
+      "id": "M-chatgpt-prompt-bridge-1",
+      "title": "让一个 AI 帮另一个 AI 写提示词",
+      "kind": "report",
+      "text": "第一财经采访的一位插画师，把 ChatGPT 当成人类语言与 Stable Diffusion 提示词之间的翻译器。新工具刚出现，人们已经开始把多个 AI 串在同一条创作流程里。",
+      "source_id": "S-2733765202cd"
+    },
+    {
+      "id": "M-chatgpt-rust-learning-1",
+      "title": "把聊天窗口当成学习搭档",
+      "kind": "report",
+      "text": "ChatGPT 上线第五天，Simon Willison 已用它学习 Rust：追问代码、解释编译错误、比较写法。他也记录了模型把不存在的命令说得十分肯定，兴奋和警惕同时出现。",
+      "source_id": "S-3b53fd07bd15"
+    },
+    {
+      "id": "M-generative-ai-at-work-paper-1",
+      "title": "平均提高 14%，新手提高 34%",
+      "kind": "report",
+      "text": "同一项研究里，新手和低技能客服的提升明显高于熟练员工。AI 并非给每个人同样的增益，它可能首先缩短了“还不知道该怎么做”的距离。",
+      "source_id": "S-48f9118e3a25"
+    },
+    {
+      "id": "M-khanmigo-limited-pilot-1",
+      "title": "它被要求提问，而不是直接交答案",
+      "kind": "demo",
+      "text": "Khanmigo 的设计目标是通过来回追问引导学生：可以讨论数学、共同构思故事、学编程或准备考试，但不替学生直接完成答案。这是小范围试点的产品设想，不是效果结论。",
+      "source_id": "S-5a53c0b3a6ba"
+    },
+    {
+      "id": "M-midjourney-state-fair-win-1",
+      "title": "一张获奖图背后有 900 多次候选",
+      "kind": "report",
+      "text": "报道记录的流程包括约 80 小时工作、900 多张 Midjourney 生成图、人工挑选、Photoshop 调整、放大与打印。现场争论的焦点，恰恰是这些步骤该怎样被称作“创作”。",
+      "source_id": "S-c3869844de6c"
+    },
+    {
+      "id": "M-nyc-school-chatgpt-restriction-1",
+      "title": "先封住入口，再学习怎么使用",
+      "kind": "report",
+      "text": "1 月的限制仍允许学校为研究申请访问；5 月，教育系统开始提供教学案例与资源。同一个机构在一个学期内完成了从应急反应到受控探索的转向。",
+      "source_id": "S-31594d5d2748"
+    },
+    {
+      "id": "M-stackoverflow-chatgpt-temporary-ban-1",
+      "title": "生成很快，验证很慢",
+      "kind": "report",
+      "text": "政策帖说，错误答案往往写得很像正确答案，而且可以大量生成；要识别问题，却需要有专业知识的人逐条细读。五天之内，惊艳体验已经变成社区治理压力。",
+      "source_id": "S-63bb41b325b7"
     }
   ],
   "relations": [
@@ -6255,6 +6508,62 @@
         "S-41173eb729ab",
         "S-c59c597501ce",
         "S-10d135c89300"
+      ]
+    },
+    {
+      "from": "chatgpt-public-preview",
+      "to": "stackoverflow-chatgpt-temporary-ban",
+      "type": "follow-up",
+      "note": "公开发布五天后，开发者社区因大量难以快速核验的生成内容采取临时限制。",
+      "evidence_source_ids": [
+        "S-63bb41b325b7"
+      ]
+    },
+    {
+      "from": "chatgpt-public-growth",
+      "to": "nyc-school-chatgpt-restriction",
+      "type": "context",
+      "note": "用户激增与教育系统的早期应对并读；不声称规模估算直接导致该政策。",
+      "evidence_source_ids": [
+        "S-eef81b843729"
+      ]
+    },
+    {
+      "from": "khanmigo-limited-pilot",
+      "to": "gpt4-release",
+      "type": "uses",
+      "note": "Khan Academy 公告明确说明 Khanmigo 由 GPT-4 支持，当时仅为小规模试点。",
+      "evidence_source_ids": [
+        "S-5a53c0b3a6ba"
+      ]
+    },
+    {
+      "from": "nyc-school-chatgpt-restriction",
+      "to": "khanmigo-limited-pilot",
+      "type": "context",
+      "note": "同年教育系统的两种早期选择：先限制公共入口，与把模型改造成受控导师试点。",
+      "evidence_source_ids": [
+        "S-eef81b843729",
+        "S-5a53c0b3a6ba"
+      ]
+    },
+    {
+      "from": "m365-copilot-announcement",
+      "to": "generative-ai-at-work-paper",
+      "type": "context",
+      "note": "办公产品愿景与真实客服研究并读；研究使用的是另一套生成式 AI 助手，不能拿来证明 Microsoft 365 Copilot 的效果。",
+      "evidence_source_ids": [
+        "S-469efea3b606",
+        "S-48f9118e3a25"
+      ]
+    },
+    {
+      "from": "generative-ai-at-work-paper",
+      "to": "metr-experienced-developers-rct",
+      "type": "context",
+      "note": "两项研究的任务、人群、工具和年份均不同；连线用于比较效果为何会随工作情境变化，不把结果写成互相推翻。",
+      "evidence_source_ids": [
+        "S-48f9118e3a25"
       ]
     }
   ]

@@ -16,7 +16,7 @@
   const laneNames = { models: '模型与能力', products: '产品与入口', people: '人群与文化', ecosystem: '开发与产业', governance: '制度与规则' };
   const roleNames = { milestone: '重要转折', 'public-impact': '社会回响', 'early-signal': '后续影响线索' };
   const statusNames = { reviewed: '本轮选材已复核', seed: '待扩展的起点', partial: '阶段整理中' };
-  const dateBasisNames = { announcement: '发布/公告', event: '事件', paper: '论文提交', commit: '代码提交', report: '报道', period: '时期观察', 'announcement-and-effective': '公布与施行', agreement: '协议文本' };
+  const dateBasisNames = { announcement: '发布/公告', event: '事件', paper: '论文提交', 'paper-release': '论文公开', commit: '代码提交', report: '报道', period: '时期观察', 'announcement-and-effective': '公布与施行', agreement: '协议文本' };
   const sourceKindNames = { official: '官方记录', paper: '研究论文', media: '公开报道' };
   const relationNames = { uses: '采用关系', extends: '扩展关系', context: '背景关联', 'follow-up': '后续关联' };
   const materialNames = { quote: '同期原话', report: '报道片段', demo: '演示记录' };
