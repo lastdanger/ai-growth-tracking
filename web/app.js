@@ -15,7 +15,7 @@
   const relations = content.relations || [];
   const laneNames = { models: '模型与能力', products: '产品与入口', people: '人群与文化', ecosystem: '开发与产业', governance: '制度与规则' };
   const roleNames = { milestone: '重要转折', 'public-impact': '社会回响', 'early-signal': '后续影响线索' };
-  const statusNames = { reviewed: '本轮选材已复核', seed: '待扩展的起点', partial: '阶段整理中' };
+  const statusNames = { reviewed: '代表事件已整理', seed: '起步事件选读', partial: '阶段整理中' };
   const dateBasisNames = { announcement: '发布/公告', event: '事件', paper: '论文提交', 'paper-release': '论文公开', commit: '代码提交', report: '报道', period: '时期观察', 'announcement-and-effective': '公布与施行', agreement: '协议文本' };
   const sourceKindNames = { official: '官方记录', paper: '研究论文', media: '公开报道' };
   const relationNames = { uses: '采用关系', extends: '扩展关系', context: '背景关联', 'follow-up': '后续关联' };
@@ -92,11 +92,15 @@
   }
 
   function renderOverview() {
-    return `<section class="overview-heading"><div class="eyebrow">A living atlas / 年度总览</div><h1>每一年的变化，<br>都有继续展开的地方。</h1><p>先看年度关键词，再沿重要事件进入分支。产品、能力与人的经历共同组成这张地图；后来的影响，在各自的时间里补充。</p></section>
-      ${rootEntry()}<div class="year-overview">${years.map(year => {
-        const count = yearEvents(year.year).length;
-        return `<button type="button" class="year-card" data-action="year" data-year="${escapeHTML(year.year)}"><span class="year-number">${escapeHTML(year.year)}</span><h2>${escapeHTML(year.keyword)}</h2><p>${escapeHTML(year.tagline || year.summary)}</p><span class="year-card-bottom"><span><span class="status ${escapeHTML(year.status)}">${escapeHTML(statusNames[year.status] || year.status)}</span><span class="source-meta">${count} 个已收录事件</span></span><span class="arrow" aria-hidden="true">↗</span></span></button>`;
-      }).join('')}</div>`;
+    return `<section class="overview-heading atlas-intro"><div class="eyebrow">A living atlas / AI 时代探索地图</div><h1>从第一次惊讶，<br>到生活开始改变。</h1><p>沿时间看 AI 怎样进入创作、工作与公共生活。选一个年份，再从重要事件走向当时的声音与后来的影响。</p><button type="button" class="start-reading" data-action="year" data-year="${escapeHTML(fallbackYear.year)}">第一次来？从 ${escapeHTML(fallbackYear.year)} · ${escapeHTML(fallbackYear.keyword)} 开始 <span aria-hidden="true">↗</span></button></section>
+      <div class="atlas-caption"><span>沿时间展开</span><small>年份 → 主线 → 事件与来源 · 各年持续补充</small></div>
+      <ol class="year-journey" aria-label="年度时间主线">${years.map(year => {
+        const all = yearEvents(year.year);
+        const anchors = (year.anchor_ids || []).map(id => eventsById.get(id)).filter(Boolean);
+        // 优先展示有现场材料的主节点，标题与摘要始终来自地图数据。
+        const featured = anchors.find(event => event.roles.includes('public-impact') && event.material_ids.length) || anchors.find(event => event.material_ids.length) || anchors[0];
+        return `<li class="journey-year"><div class="journey-date">${escapeHTML(year.year)}<span class="status ${escapeHTML(year.status)}">${escapeHTML(statusNames[year.status] || year.status)}</span></div><article class="journey-card"><div class="journey-theme"><h2>${escapeHTML(year.keyword)}</h2><p>${escapeHTML(year.tagline || year.summary)}</p><button type="button" class="year-enter" data-action="year" data-year="${escapeHTML(year.year)}" aria-label="展开 ${escapeHTML(year.year)} 年主线">展开这一年 <span aria-hidden="true">↗</span></button><small>${anchors.length} 条主线 · ${all.length} 个已收录事件${year.status === 'partial' ? ` · 截至 ${escapeHTML(year.as_of)}` : ''}</small></div>${featured ? `<button type="button" class="journey-preview" data-action="event" data-event="${escapeHTML(featured.id)}"><span class="eyebrow">从这件事走进去</span><h3>${escapeHTML(featured.title)}</h3><p>${escapeHTML(featured.summary)}</p><span class="preview-link">查看事件与现场 <span aria-hidden="true">↗</span></span></button>` : ''}</article></li>`;
+      }).join('')}</ol><div class="atlas-roots">${rootEntry()}</div>`;
   }
 
   function renderYearStrip() {
@@ -187,7 +191,7 @@
     const params = new URLSearchParams(location.hash.slice(1));
     const year = Number(params.get('year'));
     const event = eventsById.get(params.get('event'));
-    state.overview = params.get('view') === 'years';
+    state.overview = params.get('view') === 'years' || (!params.has('year') && !params.has('event') && !params.has('view'));
     state.prehistory = !state.overview && (params.get('view') === 'roots' || event?.tier === 'root');
     state.eventId = event?.id || null;
     state.year = event ? Number(event.year) : years.some(item => Number(item.year) === year) ? year : Number(fallbackYear?.year);
