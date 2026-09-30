@@ -107,10 +107,10 @@
 | 位置 | 新字段 | 约束 |
 |---|---|---|
 | years | featured_event_id、featured_reason | 指向本年度事件，可为 main 或 branch；写清推荐理由，不自动改变事件主次 |
-| years | lead、reading_route_id | 可选；lead 取代该页重复的长概括展示；2023 六站与 2024 五站已实现 |
+| years | lead、reading_route_id | 可选；lead 取代该页重复的长概括展示；2023、2024、2025 路线已实现 |
 | years | display_groups | 显式列 anchor_id 和 children（event_id、label）；仅登记需要挂接的分支 |
 | 顶层 | reading_routes | id、title、intro、steps、outro、exit_event_ids；steps 保存 event_id 与 transition_to_next，最后一站无转场；出口引用已有事件 |
-| events | change | 可选短说明，回答“相较此前改变了什么”；已用于两条路线，其他节点不空填模板 |
+| events | change | 可选短说明，回答“相较此前改变了什么”；已用于三条路线，其他节点不空填模板 |
 | materials | temporal_context | 区分 contemporary、retrospective、undated；结合来源发表日判断，不把抓取日当原作日期 |
 
 路线不复制事件正文，来源继续由事件和材料登记。转场若包含新的事实判断，增加对应 source_ids；纯阅读提问无需虚构证据。display_groups 不创建新事实关系；children 只允许本年度 branch，每个分支最多有一个展示父节点，禁止自指和循环。跨年联系在路线或相关探索中呈现。
@@ -148,3 +148,11 @@
 2024 路线题为“AI 走出聊天框之后，人还需要做什么？”，五站依次为 Sora 研究展示、Air Head 创作、GPT-4o 发布、AI Overviews 错误回应、Claude computer use 公测。每站分别解释生成、制作、交互、使用与行动中的变化及人的判断。Sora 到作品是同一工具的延伸，其余转场明确是并行场景，不暗示产品间的因果。
 
 优先使用既有事件与来源，补入四则同期文字材料，保留发布演示与实际开放、厂商回应与独立证据的边界。主创采访日期仍未确认，按未定日期材料展示。科研和制度作为终点后的两个探索出口；开放模型、算力及其他年度事件仍在时间轴中，不为覆盖数量挤进路线。该五站版尚待用户试读。
+
+### 2025 路线扩展
+
+用户授权发布 2024 版并继续下一步，按年度顺序扩展 2025。题为“说出想法以后，AI 能替人做到哪一步？”，沿 DeepSeek 公众试用、vibe coding、GitHub coding agent、METR 效率实验、ChatGPT agent 五站阅读。起点用应用榜单定位公众热潮，中段以具体使用和任务交接说明变化，独立实验检验效率期待，再走向资料与文件的综合任务。
+
+这条路线偏重软件和资料工作，不替代年度全貌。DeepSeek 热潮不被写成其他工具诞生的原因；METR 研究不是对上一站 GitHub 产品的测评；ChatGPT agent 的发布也不被写成解决实验问题的结果。四月 MenuGen 自述仍是二月命名事件的后来材料。终点给图像创作与 MCP 共同治理两个出口，机器人、算力等继续在年度地图中探索。
+
+本轮重用既有事件与材料，不增加节点数量。GitHub 原新闻稿跳转新闻首页，公开引用转向仍可读的同期官方文章；原登记保留历史核验说明。2025 路线技术验证通过，理解效果仍待真实试读。

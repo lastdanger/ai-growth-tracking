@@ -178,7 +178,9 @@
             }
           ]
         }
-      ]
+      ],
+      "reading_route_id": "from-trying-to-delegating",
+      "lead": "年初，DeepSeek 的名字出现在手机应用榜首；随后，“把想法说出来，让 AI 去做”的尝试变得具体：有人边说边搭网页，有人把问题单交出去等代码，也有人开始计时，发现感觉省事未必真的省时。这五站从试用的热潮读到任务的交接，看人怎样提出要求、判断结果。图像创作、机器人、科学和制度变化，仍可沿时间轴另行探索。"
     },
     {
       "year": 2026,
@@ -2298,10 +2300,10 @@
       "roles": [
         "public-impact"
       ],
-      "why_selected": "承接1月20日R1发布，单独记录公众涌入这一变化；应用榜名次提供可核的热度切片，不等于模型能力或累计用户规模排名。",
+      "why_selected": "从公众愿意下载和试用进入年度主题，随后追问工具怎样进入实际任务；榜单位置不作为能力或长期影响排名。",
       "later": null,
       "then": {
-        "text": "同日，美联社报道新用户注册受到影响；DeepSeek将原因解释为大规模恶意攻击，并称已注册用户仍能登录。这是公司的当时说法，不据此断定故障原因，也不把它改写成单纯用户太多导致。",
+        "text": "1 月 27 日，美联社报道 DeepSeek 的公众热潮，也记录了新用户注册受限。公司当时解释为大规模恶意攻击，称已有用户仍可登录。想试用新工具的人遇到的，既有新的选择，也有入口能否顺利使用的问题。",
         "source_ids": [
           "S-416a59820a02",
           "S-04cad19f2c7b"
@@ -2314,7 +2316,8 @@
       "material_ids": [
         "M-deepseek-app-public-surge-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "模型竞争来到普通人能直接下载的应用里。一家中国团队获得的关注，变成了跨国公众试用的具体切片；榜单能说明那一刻的热度，却不能替用户回答它是否适合自己的任务。"
     },
     {
       "id": "unitree-yangbot-spring-gala",
@@ -2362,7 +2365,7 @@
       "roles": [
         "public-impact"
       ],
-      "why_selected": "一个名称把新的参与方式说得很具体：注意力从逐行敲代码转向描述与试用。其原意中的不读改动、用于随手项目，也提示它和认真审查代码的 AI 辅助开发并不完全相同。",
+      "why_selected": "以有主体的个人自述呈现新的参与方式；把二月的命名原帖与四月完成 MenuGen 的经历分别放在当时和后来。",
       "later": {
         "text": "4 月 27 日，他公开了 MenuGen 的制作经历：拍菜单后为菜品生成图片。原型很快出现，但认证、部署、支付和过时接口让上线变得费力；这份自述同时留下了新鲜感与完成一件产品的实际距离。",
         "as_of": "2025-04-27",
@@ -2371,7 +2374,7 @@
         ]
       },
       "then": {
-        "text": "他谈的是 Cursor Composer 与 Sonnet 等工具带来的体验，甚至懒得自己找侧栏间距的位置。原帖把这种方法用于可以丢弃的周末项目；兴奋来自想法迅速可见，而非保证软件已可靠。",
+        "text": "Karpathy 给自己的新玩法起名 vibe coding：对着工具说想要什么，接受生成的代码，跑起来，有错误就再贴回去。连调整侧栏间距也可以直接开口。他描述的是可以丢弃的周末项目，那种兴奋来自想法迅速变成眼前可试的东西。",
         "source_ids": [
           "S-ca53c7af7e7b"
         ]
@@ -2384,7 +2387,8 @@
       "material_ids": [
         "M-vibe-coding-karpathy-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "动手的起点从“这段代码怎么写”，移到了“我想做一个什么东西”。原型可以先出现，再边用边改；但接受全部改动的随意玩法，与要长期维护的软件仍有距离。"
     },
     {
       "id": "claude-code-research-preview",
@@ -2584,23 +2588,22 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "任务委托进入既有开发协作流程：AI 的产物不只是一段建议，而是一份可以看差异、运行检查、留言修改的工作提交。",
+      "why_selected": "以问题单到草稿 PR 的具体交接解释任务委托；官方流程说明支持产品如何工作，不单独证明实际节省时间。",
       "later": null,
       "then": {
-        "text": "代理借助 GitHub Actions 启动环境，边工作边把提交推入草稿 PR。人可以看日志，在评审中提修改要求；仓库已有的分支保护和人工审批仍留在流程中。",
+        "text": "5 月 19 日，GitHub 公布面向 Copilot Enterprise 和 Pro+ 的 coding agent 预览。开发者把 issue（问题单）分给它，后台环境接着读项目、改代码，再把工作送进草稿 PR（代码变更提案）。人可以看日志、审阅差异，留下意见让它继续修改。",
         "source_ids": [
-          "S-6d3ae6538702",
           "S-ece2d1386004"
         ]
       },
       "source_ids": [
-        "S-6d3ae6538702",
         "S-ece2d1386004"
       ],
       "material_ids": [
         "M-github-copilot-coding-agent-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "交接的单位变了：从在编辑器里要一段建议，到交出一项任务、收回一份可审阅的修改。代理进入已有协作流程，人的工作也包括说清要求、检查结果和决定是否接纳。"
     },
     {
       "id": "bartz-anthropic-fair-use",
@@ -2644,10 +2647,10 @@
       "roles": [
         "public-impact"
       ],
-      "why_selected": "为编程工具热潮提供一项可审视的真实任务实验：主观便利感和实际完成时间可能不同，工具效果需要在具体工作中衡量。",
+      "why_selected": "用独立真实任务实验检验效率期待；这不是上一站 GitHub coding agent 的专门测评，也不能推广为所有人或后来工具都会变慢。",
       "later": null,
       "then": {
-        "text": "研究针对 2025 年 2—6 月的工具，主要为 Cursor Pro 与 Claude 3.5/3.7 Sonnet；参与者对项目平均有五年经验。任务随机分配为允许或不允许 AI。结论限定于这组人员、成熟代码库与任务，不能推广为所有开发者或后来模型都会变慢。",
+        "text": "7 月 10 日，METR 公布一项随机实验：16 名资深开源开发者在熟悉的项目里完成 246 项任务，任务被分为允许或不允许使用 AI。允许 AI 的任务耗时反而增加约 19%。使用的主要是当年早期的 Cursor 与 Claude 工具，结果限定于这批人员、代码库和任务。",
         "source_ids": [
           "S-3e46675e99fa",
           "S-445b5dc889db"
@@ -2660,7 +2663,8 @@
       "material_ids": [
         "M-metr-experienced-developers-rct-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "“感觉更快”与“实际少花时间”可以是两回事。工具让人愿意继续用，并不等于已经省下工时；要判断委托值不值得，还得在自己的工作里核对完成时间和结果质量。"
     },
     {
       "id": "chatgpt-agent-release",
@@ -2676,10 +2680,10 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "通用聊天入口接上了多步交付：用户开始委托一个结果，再在过程中补充要求、接管操作和审阅产物。",
+      "why_selected": "把编程场景中的任务交接延伸到综合资料工作，以首发任务示例说明变化；不把官方示例当成独立成功率测试。",
       "later": null,
       "then": {
-        "text": "首发向 Pro、Plus、Team 分批开放，欧洲经济区与瑞士当时尚待开通。用户可以中途打断或接管浏览器；购买等有现实后果的操作需确认，演示稿生成仍处于 beta。",
+        "text": "7 月 17 日，ChatGPT agent 开始向 Pro、Plus、Team 分批开放。它把网页浏览、分析和文件制作放进同一任务，用户可以中途补充要求、打断或接管。首发时欧洲经济区与瑞士尚待开放，演示稿制作仍是 beta，购买等有现实后果的动作需要确认。",
         "source_ids": [
           "S-2a4acadcb81f"
         ]
@@ -2690,7 +2694,8 @@
       "material_ids": [
         "M-chatgpt-agent-release-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "任务委托继续从代码扩展到资料和文件：人可以提出想要的交付物，让工具尝试把几个步骤接起来。交回来的表格或演示稿更接近工作成果，也更需要人检查内容是否完整、结果是否可用。"
     },
     {
       "id": "eu-gpai-obligations-apply",
@@ -4633,8 +4638,8 @@
       "url": "https://simonwillison.net/2025/Feb/6/andrej-karpathy/",
       "published_at": "2025-02-06",
       "kind": "media",
-      "scope": "本轮网页检索读到完整原帖摘录及其原帖链接；页面日期是摘录发表日，不是原帖日。Karpathy 的 X 原帖和 Twitter 页面本轮内部错误，未声称直接读到原站；用同期摘录核对原意及短引。",
-      "accessed_at": "2026-09-15"
+      "scope": "本轮网页检索读到完整原帖摘录及其原帖链接；页面日期是摘录发表日，不是原帖日。Karpathy 的 X 原帖和 Twitter 页面本轮内部错误，未声称直接读到原站；用同期摘录核对原意及短引。；09-30重读同期保存的原帖摘录；未声称此次直接打开X原帖。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-9a6ee8285cd5",
@@ -4651,8 +4656,8 @@
       "url": "https://karpathy.bearblog.dev/vibe-coding-menugen/",
       "published_at": "2025-04-27",
       "kind": "official",
-      "scope": "作者个人博客一手体验，本轮读取正文及日期；支持菜单可视化应用、Cursor/Claude 生成代码、原型快与服务接入困难的具体自述，不外推为普通用户成功率。",
-      "accessed_at": "2026-09-15"
+      "scope": "作者个人博客一手体验，本轮读取正文及日期；支持菜单可视化应用、Cursor/Claude 生成代码、原型快与服务接入困难的具体自述，不外推为普通用户成功率。；09-30重读作者原文，仅用于事件later，不混入二月的同期认识。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-79d29430fa25",
@@ -4678,8 +4683,8 @@
       "url": "https://github.com/newsroom/press-releases/coding-agent-for-github-copilot",
       "published_at": "2025-05-19",
       "kind": "official",
-      "scope": "本轮读取原始新闻稿：05-19 首发、Enterprise/Pro+ 预览、分配 issue、GitHub Actions 环境、草稿 PR 和人工 review、MCP 接入。明确它是异步 coding agent，不能与编辑器同步 agent mode 混为一谈；不采用私有预览客户的效率宣传作独立统计。",
-      "accessed_at": "2026-09-15"
+      "scope": "本轮读取原始新闻稿：05-19 首发、Enterprise/Pro+ 预览、分配 issue、GitHub Actions 环境、草稿 PR 和人工 review、MCP 接入。明确它是异步 coding agent，不能与编辑器同步 agent mode 混为一谈；不采用私有预览客户的效率宣传作独立统计。；09-30原URL跳到GitHub新闻首页，无法再读到旧稿；此条仅保留历史登记，现有公开引用改用S-ece2d1386004。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-ece2d1386004",
@@ -4687,8 +4692,8 @@
       "url": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
       "published_at": "2025-05-19",
       "kind": "official",
-      "scope": "本轮读取官方产品文章；页标 05-23 更新。采用与 05-19 新闻稿相符的 issue 到草稿 PR、看日志、评论后迭代流程；不把后续计费变化视为首发事实，不声称看过视频。",
-      "accessed_at": "2026-09-15"
+      "scope": "本轮读取官方产品文章；页标 05-23 更新。采用与 05-19 新闻稿相符的 issue 到草稿 PR、看日志、评论后迭代流程；不把后续计费变化视为首发事实，不声称看过视频。；09-30重读05-19发布、05-23更新的同期官方文章，核对issue、后台Actions、草稿PR、眼睛表情、审阅及MCP配置；未观看视频。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-2a4acadcb81f",
@@ -4696,8 +4701,8 @@
       "url": "https://openai.com/index/introducing-chatgpt-agent/",
       "published_at": "2025-07-17",
       "kind": "official",
-      "scope": "本轮读取历史发布正文与 Availability：Pro 当天、Plus/Team 随后数日开始开放，EEA/瑞士当时仍未开通；采用虚拟电脑、浏览器/终端/连接器和具体任务例子。顶部推荐最新产品是后加导航，未采用。未观看演示或把能力宣传当实测。",
-      "accessed_at": "2026-09-15"
+      "scope": "本轮读取历史发布正文与 Availability：Pro 当天、Plus/Team 随后数日开始开放，EEA/瑞士当时仍未开通；采用虚拟电脑、浏览器/终端/连接器和具体任务例子。顶部推荐最新产品是后加导航，未采用。未观看演示或把能力宣传当实测。；09-30重读2025历史正文与Availability，顶部过时提示和新产品链接不作为2025事实。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-82858f594f9e",
@@ -4732,8 +4737,8 @@
       "url": "https://techcrunch.com/2025/01/27/deepseek-displaces-chatgpt-as-the-app-stores-top-app/",
       "published_at": "2025-01-27",
       "kind": "media",
-      "scope": "仅采用1月27日报道中的美国iOS免费榜排名事实；不采用训练费用、下载量及性能延伸断言。",
-      "accessed_at": "2026-09-15"
+      "scope": "仅采用1月27日报道中的美国iOS免费榜排名事实；不采用训练费用、下载量及性能延伸断言。；09-30复核仍可读，仅采用美国免费应用榜位置。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-04cad19f2c7b",
@@ -4741,8 +4746,8 @@
       "url": "https://apnews.com/article/be414acadbf35070d7645fe9fbd8f464",
       "published_at": "2025-01-27",
       "kind": "media",
-      "scope": "同期原文的榜首记录、公司对注册故障的解释；检索渠道读到正文，直接网页open未成功。",
-      "accessed_at": "2026-09-15"
+      "scope": "同期原文的榜首记录、公司对注册故障的解释；检索渠道读到正文，直接网页open未成功。；09-30直达仍失败，网页检索再次返回AP正文；采用应用入口、公众关注及公司对故障的说法，不独立确认攻击原因。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-75e9b3f8f3e9",
@@ -4858,8 +4863,8 @@
       "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
       "published_at": "2025-07-10",
       "kind": "official",
-      "scope": "已读实验方法、核心结果和不支持的推广结论；7 月 10 日是研究公开日。页面含 2026 年新研究提示，未把新资料混入早期结果。",
-      "accessed_at": "2026-09-15"
+      "scope": "已读实验方法、核心结果和不支持的推广结论；7 月 10 日是研究公开日。页面含 2026 年新研究提示，未把新资料混入早期结果。；09-30重读2025原研究方法和结果，页面2026更新提示不进入同期正文；不能用作GitHub coding agent的专门测评。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-445b5dc889db",
@@ -5492,8 +5497,8 @@
       "id": "M-github-copilot-coding-agent-1",
       "title": "一次交接怎样发生",
       "kind": "demo",
-      "text": "把一个需要修复的问题单分配给 Copilot，稍后在草稿 PR 里检查它改了什么，再留下评审意见让它继续修改。这是发布时说明的工作流程。",
-      "source_id": "S-6d3ae6538702",
+      "text": "官方文章描述：把问题单分配给 Copilot，它先回应一个“眼睛”表情，再在后台开始工作。稍后，开发者到草稿 PR 里检查修改，留下评审意见，让它接着做。",
+      "source_id": "S-ece2d1386004",
       "temporal_context": "contemporary"
     },
     {
@@ -6305,7 +6310,6 @@
       "note": "终端就地工作与后台提交草稿PR，是同年不同的工程任务委托入口。",
       "evidence_source_ids": [
         "S-80d76661dadf",
-        "S-6d3ae6538702",
         "S-ece2d1386004"
       ]
     },
@@ -6480,9 +6484,9 @@
       "from": "github-copilot-coding-agent",
       "to": "model-context-protocol-introduction",
       "type": "uses",
-      "note": "GitHub首发稿明确可配置MCP服务器接入外部数据和能力；这是具体跨厂商支持，不是全行业采用率。",
+      "note": "GitHub同期官方文章明确可配置MCP服务器接入外部数据和能力；这是具体跨厂商支持，不是全行业采用率。",
       "evidence_source_ids": [
-        "S-6d3ae6538702"
+        "S-ece2d1386004"
       ]
     },
     {
@@ -6491,7 +6495,6 @@
       "type": "context",
       "note": "年中的具体协议接入与年末共同治理并读；接入早于基金会成立，不能说它采用了后来的基金会。",
       "evidence_source_ids": [
-        "S-6d3ae6538702",
         "S-ece2d1386004",
         "S-e3d71d6c2b3a"
       ]
@@ -6871,6 +6874,37 @@
       "exit_event_ids": [
         "alphafold-3",
         "eu-ai-act-enters-force"
+      ]
+    },
+    {
+      "id": "from-trying-to-delegating",
+      "title": "说出想法以后，AI 能替人做到哪一步？",
+      "intro": "从 DeepSeek 试用热潮，走到写程序、交接代码、核对效率与制作文件；沿五站看“试试看”怎样变成“交给它”。",
+      "steps": [
+        {
+          "event_id": "deepseek-app-public-surge",
+          "transition_to_next": "下载之后，可以拿 AI 做点什么？下一站换到一位开发者的个人玩法：把想法说出来，让网页先跑起来。这不是 DeepSeek 引发的后续事件，而是同年另一种使用尝试。"
+        },
+        {
+          "event_id": "vibe-coding-karpathy",
+          "transition_to_next": "随手做原型之后，如果要把一项正式修改交出去，怎样收回结果？下一站看 GitHub 如何把任务放进问题单和代码审阅流程。"
+        },
+        {
+          "event_id": "github-copilot-coding-agent",
+          "transition_to_next": "能交回修改，就意味着更快完成工作吗？下一站看一项独立实验；它研究的是另一组工具与开发者，不是对上一站产品的测评。"
+        },
+        {
+          "event_id": "metr-experienced-developers-rct",
+          "transition_to_next": "带着“实际效果要怎样判断”这个问题，再看同月另一个入口：当任务从代码变成资料和文件，工具打算接手哪些步骤，人在哪里接回来？"
+        },
+        {
+          "event_id": "chatgpt-agent-release"
+        }
+      ],
+      "outro": "这五站里，人从尝试一个新入口，走到提出要求、收回修改和检查交付。把步骤交给 AI 的可能性在增加，效果仍要放回具体任务里判断；创作热潮和共同工具规则，还有另外的故事。",
+      "exit_event_ids": [
+        "chatgpt-image-ghibli-wave",
+        "mcp-agentic-ai-foundation"
       ]
     }
   ]
