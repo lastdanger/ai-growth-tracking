@@ -368,6 +368,11 @@
 
   app.addEventListener('click', handleAction);
   breadcrumbs.addEventListener('click', handleAction);
+  document.querySelector('.skip-link')?.addEventListener('click', event => {
+    // 地图用 hash 保存路线；跳过导航只移动焦点，不能覆盖阅读地址。
+    event.preventDefault();
+    document.getElementById('main-content').focus({ preventScroll: false });
+  });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && state.eventId) {
       rememberView();

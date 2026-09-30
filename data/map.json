@@ -133,7 +133,9 @@
             }
           ]
         }
-      ]
+      ],
+      "reading_route_id": "beyond-the-chat-window",
+      "lead": "到了 2024 年，生成的东西不再只有文字：视频片段可以成为作品素材，语音与画面被放进交互，AI 摘要也来到搜索结果前面。能力走近具体场景，人要做的判断却没有消失：镜头怎样剪，答案能不能信，软件操作出了错怎么办？这五站沿着“生成—制作—交互—使用—行动”来看扩展与限制。科研、开放模型、算力和制度仍有各自的变化，可以在时间轴上继续探索。"
     },
     {
       "year": 2025,
@@ -1565,9 +1567,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "视频生成的重要展示节点。",
+      "why_selected": "以视频生成解释能力如何走出文字，同时把研究展示、可用入口和物理一致性的限制放在一起。",
       "then": {
-        "text": "展示和技术报告不等于当天已向公众普遍开放。",
+        "text": "2024 年 2 月 15 日，OpenAI 发布 Sora 技术报告，介绍由文字生成视频，以及用图像、视频继续生成和编辑的能力。模型被放到“世界模拟”的研究方向中讨论，报告也承认玻璃破碎、吃东西后的状态变化等仍可能出错。这是研究展示，不是公众当天就能进入的制作工具。",
         "source_ids": [
           "S-3608f1db07a6"
         ]
@@ -1576,8 +1578,11 @@
       "source_ids": [
         "S-3608f1db07a6"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-sora-2024-physics-limit"
+      ],
+      "fact_ids": [],
+      "change": "相比只得到一段文字或一张图，生成结果开始需要在时间里保持连贯。对创作者而言，这带来了新的素材可能；但画面看起来可信，并不等于模型已经正确理解物理过程。"
     },
     {
       "id": "nvidia-blackwell",
@@ -1651,9 +1656,9 @@
       "roles": [
         "public-impact"
       ],
-      "why_selected": "把 Sora 的技术展示接到具体创作劳动；保留创作者的兴奋，也让读者看到成片是怎样做出来的。",
+      "why_selected": "让视频能力的展示接上创作者实际劳动；官方作品介绍与日期未完全确认的主创采访分别说明。",
       "then": {
-        "text": "这批作品来自受邀创作者。当时 Sora 尚未向公众开放；OpenAI 说明创作者可编辑和修改生成素材，不能把成片说成一次提示直接产出的结果。",
+        "text": "3 月 25 日，OpenAI 收录 shy kids 的 Air Head，介绍团队用 Sora 制作关于气球人的短片。页面明确说明，创作者能够剪辑和修改生成素材。一段生成视频成了制作的起点：哪些镜头留下，怎样连成故事，仍由创作者决定。",
         "source_ids": [
           "S-182b38aca482",
           "S-72cf8f0d46e0"
@@ -1665,10 +1670,12 @@
         "S-72cf8f0d46e0"
       ],
       "material_ids": [
+        "M-air-head-edited-work",
         "M-sora-air-head-creators-1",
         "M-sora-air-head-creators-2"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "从“生成一段视频”到“做成一个故事”，中间仍有人写剧本、选镜头、修细节并安排声音。这个案例让新能力落到了制作过程，也提醒我们别把成片等同于一次提示的直接产物。"
     },
     {
       "id": "deepseek-v2-efficiency",
@@ -1749,9 +1756,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "多模态交互的代表性产品节点。",
+      "why_selected": "用具体开放节奏解释多模态交互的变化，避免把发布演示直接写成全部用户的日常体验。",
       "then": {
-        "text": "公布能力与具体开放节奏需要分别阅读。",
+        "text": "5 月 13 日，OpenAI 公布 GPT-4o，介绍结合文字、图像和声音的交互方向。首发时，文字与图像能力开始向 ChatGPT 用户推出，也进入 API；新的语音模式计划随后向 Plus 用户推出 alpha。音视频 API 则计划先提供给少量受信任合作方。",
         "source_ids": [
           "S-13c06a9201dd"
         ]
@@ -1760,8 +1767,11 @@
       "source_ids": [
         "S-13c06a9201dd"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-gpt4o-release-access"
+      ],
+      "fact_ids": [],
+      "change": "与 AI 交流的设想从键入问题，扩展到把看到和听到的东西交给它。对话可以更贴近当下的情境；但首发页面展示的能力与每个用户实际拿到的功能，并不是同一张清单。"
     },
     {
       "id": "sky-voice-dispute",
@@ -1809,9 +1819,9 @@
       "roles": [
         "public-impact"
       ],
-      "why_selected": "生成式回答进入日常搜索这一大众入口，真实用户发现的错误又迫使产品调整；使用与反馈形成了同一个转折。",
+      "why_selected": "把能力展示转向日常入口的实际问题，区分已承认的错误、伪造截图和厂商的改进说明。",
       "then": {
-        "text": "Google 承认部分错误存在，也指出有些流传截图是伪造的。公司将问题与讽刺内容、论坛恶作剧及信息稀少的查询联系起来，公布了限制这类内容和减少不适当触发等改进。",
+        "text": "AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话题。5 月 30 日，Google 承认系统在部分查询中误用了讽刺和论坛恶作剧内容，同时指出流传截图中也有伪造。公司宣布调整触发条件和内容使用方式；这些说明来自产品方的回应。",
         "source_ids": [
           "S-f940620a6b01",
           "S-90297c417c3d"
@@ -1825,7 +1835,8 @@
       "material_ids": [
         "M-ai-overviews-public-errors-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "当生成式回答来到日常搜索入口，错误就不再只发生在主动试用聊天工具的人面前。用户需要判断答案及其来源，产品也要决定什么时候不该给出摘要；公开反馈成为使用过程的一部分。"
     },
     {
       "id": "claude-35-artifacts",
@@ -2115,9 +2126,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "从生成回答到尝试操作界面，是执行任务的一条新入口；此时的公测不能等同于可靠完成整项工作的成熟代理。",
+      "why_selected": "作为本路线的行动出口，说明界面操作为什么带来新的可能，也带来逐步检查执行结果的需要。",
       "then": {
-        "text": "开发者可通过 API 接入；官方举例是检查表格、打开浏览器、查网页再填表。公告同时承认滚动、拖拽、缩放等动作仍有困难，整个能力处于实验阶段。",
+        "text": "10 月 22 日，Anthropic 向开发者提供 computer use 公测：模型通过屏幕信息定位，再移动光标、点击和输入。官方用查网页后填表等任务说明这条路线，同时承认它仍然笨拙、容易出错。这是 API 上的实验能力，不能等同于成熟、普遍可用的自主办公助手。",
         "source_ids": [
           "S-03af66389e97"
         ]
@@ -2126,8 +2137,11 @@
       "source_ids": [
         "S-03af66389e97"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-computer-use-screen-actions"
+      ],
+      "fact_ids": [],
+      "change": "AI 开始从给出建议，走向尝试在软件里执行步骤。读者需要关心的也从“这句话对不对”，延伸到“这个动作做对了没有”；看懂屏幕和稳定完成整项工作之间，仍然有距离。"
     },
     {
       "id": "model-context-protocol-introduction",
@@ -4169,8 +4183,8 @@
       "url": "https://openai.com/index/video-generation-models-as-world-simulators/",
       "kind": "official",
       "published_at": "2024-02-15",
-      "accessed_at": "2026-09-14",
-      "scope": "研究公布日期、视频生成方向与局限。"
+      "accessed_at": "2026-09-30",
+      "scope": "研究公布日期、视频生成方向与局限。；09-30为五站阅读路线复核正文，未观看嵌入视频。"
     },
     {
       "id": "S-13c06a9201dd",
@@ -4178,8 +4192,8 @@
       "url": "https://openai.com/index/hello-gpt-4o/",
       "kind": "official",
       "published_at": "2024-05-13",
-      "accessed_at": "2026-09-14",
-      "scope": "多模态交互介绍及分批开放。"
+      "accessed_at": "2026-09-30",
+      "scope": "多模态交互介绍及分批开放。；09-30为五站阅读路线复核正文，未观看嵌入视频。"
     },
     {
       "id": "S-a4f43f2b609d",
@@ -4448,8 +4462,8 @@
       "url": "https://www.anthropic.com/news/3-5-models-and-computer-use",
       "published_at": "2024-10-22",
       "kind": "official",
-      "scope": "网页检索可读正文；核对开发者 API computer use 公测、屏幕/光标/键盘交互、仍实验性易出错。未观看视频；不用随后更新的 Haiku 价格代表发布日。",
-      "accessed_at": "2026-09-14"
+      "scope": "网页检索可读正文；核对开发者 API computer use 公测、屏幕/光标/键盘交互、仍实验性易出错。未观看视频；不用随后更新的 Haiku 价格代表发布日。；09-30为五站阅读路线复核正文，未观看嵌入视频。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-0d156abd0924",
@@ -4547,8 +4561,8 @@
       "url": "https://openai.com/index/sora-first-impressions/",
       "published_at": "2024-03-25",
       "kind": "official",
-      "scope": "作品被公开收录的日期、shy kids 团队及编辑边界；未实际观看视频。",
-      "accessed_at": "2026-09-14"
+      "scope": "作品被公开收录的日期、shy kids 团队及编辑边界；未实际观看视频。；09-30为五站阅读路线复核正文，未观看嵌入视频。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-72cf8f0d46e0",
@@ -4556,8 +4570,8 @@
       "url": "https://nofilmschool.com/sora-ai-filmmaker-interview",
       "published_at": null,
       "kind": "media",
-      "scope": "原始问答：20 秒片段可能只保留两三秒；气球颜色经人工修正；配音、声音、音乐和剪辑。页面未提供可确认的发表日，不据此确定事件日。可确认属于2024年春：4月16日同期播客节目说明已链接此文；4月16日不是采访发表日。",
-      "accessed_at": "2026-09-14"
+      "scope": "原始问答：20 秒片段可能只保留两三秒；气球颜色经人工修正；配音、声音、音乐和剪辑。页面未提供可确认的发表日，不据此确定事件日。可确认属于2024年春：4月16日同期播客节目说明已链接此文；4月16日不是采访发表日。；09-30为五站阅读路线复核正文，未观看嵌入视频。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-401b5fa1106a",
@@ -4583,8 +4597,8 @@
       "url": "https://blog.google/products-and-platforms/products/search/ai-overviews-update-may-2024/",
       "published_at": "2024-05-30",
       "kind": "official",
-      "scope": "承认实际错误、区分伪造截图、解释石头与胶水示例并列出改进。",
-      "accessed_at": "2026-09-14"
+      "scope": "承认实际错误、区分伪造截图、解释石头与胶水示例并列出改进。；09-30为五站阅读路线复核正文，未观看嵌入视频。",
+      "accessed_at": "2026-09-30"
     },
     {
       "id": "S-90297c417c3d",
@@ -5817,6 +5831,38 @@
       "text": "微软发布说明举例：PowerPoint 可以根据提示，加入过去写过的文档内容；同一套 Copilot 也可帮助起草 Word 文档、整理邮件和会议。熟悉的办公动作成了 AI 的演示场景，这仍是发布时的产品说明。",
       "source_id": "S-469efea3b606",
       "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-sora-2024-physics-limit",
+      "title": "能生成一段视频，也会在一块玻璃前露出破绽",
+      "kind": "report",
+      "text": "技术报告把生成长视频的能力与失败情况并列：玻璃怎样破碎、食物被吃掉后该怎样变化，模型仍会处理不准。连贯的画面里，熟悉的物理常识也可能突然失效。",
+      "source_id": "S-3608f1db07a6",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-air-head-edited-work",
+      "title": "气球人的故事，进入了创作者的剪辑台",
+      "kind": "report",
+      "text": "在官方作品介绍中，shy kids 团队把 Sora 生成的片段剪成了气球人的故事 Air Head。页面说明，创作者可以剪辑、修改生成内容。模型给出素材，人物和故事仍需要人的选择。",
+      "source_id": "S-182b38aca482",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-gpt4o-release-access",
+      "title": "同一场发布，不同的开放时间",
+      "kind": "report",
+      "text": "发布页把“今天开始推出”的文字、图像能力，与“随后几周”的新语音模式放在同一份说明中。看见多模态演示的人，仍需要等自己的使用入口开放。",
+      "source_id": "S-13c06a9201dd",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-computer-use-screen-actions",
+      "title": "从屏幕里找按钮，再尝试点下去",
+      "kind": "demo",
+      "text": "官方说明的操作包括看屏幕、移动光标、点击和输入；面向开发者的 API 公测把这些动作接进任务步骤。发布同时提醒能力仍处于实验阶段，不能把介绍中的流程当成每次都成功的结果。",
+      "source_id": "S-03af66389e97",
+      "temporal_context": "contemporary"
     }
   ],
   "relations": [
@@ -6794,6 +6840,37 @@
       "exit_event_ids": [
         "ai-cover-songs",
         "llama2-release"
+      ]
+    },
+    {
+      "id": "beyond-the-chat-window",
+      "title": "AI 走出聊天框之后，人还需要做什么？",
+      "intro": "沿五站看视频怎样成为作品、交互怎样扩展，以及答案和动作为什么仍需要人的判断。",
+      "steps": [
+        {
+          "event_id": "sora-research-preview",
+          "transition_to_next": "能生成片段，离做成作品还有多远？下一站进入同一工具的创作者案例，看看人接着做了什么。"
+        },
+        {
+          "event_id": "sora-air-head-creators",
+          "transition_to_next": "从剪辑生成素材，换到另一种与 AI 相处的方式：如果文字、声音和图像进入同一场对话，使用门槛会怎样变化？这是一条并行发展线。"
+        },
+        {
+          "event_id": "gpt-4o-announcement",
+          "transition_to_next": "交互更自然，并不自动让答案更可靠。接下来转到另一家公司的搜索入口，看生成式回答遇到了什么具体问题。"
+        },
+        {
+          "event_id": "ai-overviews-public-errors",
+          "transition_to_next": "如果 AI 不只回答，还开始点击和输入，判断的对象又会怎样变化？下一站看电脑操作的实验入口；它并不是为解决前面的搜索错误而推出。"
+        },
+        {
+          "event_id": "claude-computer-use"
+        }
+      ],
+      "outro": "这一年，AI 的生成和交互开始进入更多场景，人仍在选择素材、核对信息和检查操作。“扩界”既是能力的扩展，也是具体限制的显现；这五站没有涵盖同年的科学、算力和制度变化。",
+      "exit_event_ids": [
+        "alphafold-3",
+        "eu-ai-act-enters-force"
       ]
     }
   ]
