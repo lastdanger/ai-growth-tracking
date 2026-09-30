@@ -27,8 +27,18 @@ const table = events => '| 日期 | 事件 | 简述 | 入选理由 | 来源 |\n|
   return `| ${safe(e.date_label)} | ${safe(e.title)} | ${safe(e.summary)} | ${e.roles.map(r => labels[r]).join('、')} | ${links} |`;
 }).join('\n') + '\n';
 for (const y of data.years) {
-  const items = data.events.filter(e => e.year === y.year && e.tier !== 'root');
-  let md = `# ${y.year} · ${y.keyword}\n\n**${y.tagline}**\n\n${y.summary}\n\n状态：${statusLabels[y.status]}。${y.coverage_note}\n\n> 本文件由 data/map.json 生成，不直接编辑。整理截止 ${data.updated_at}；关键词和主次是编辑判断，日期按来源性质显示。\n\n## 年度主线\n\n`;
+  const items = data.events.filter(e => e.year === y.year && e.tier !== 'root').sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
+  let md = `# ${y.year} · ${y.keyword}\n\n**${y.tagline}**\n\n${y.lead || y.summary}\n\n状态：${statusLabels[y.status]}。${y.coverage_note}\n\n> 本文件由 data/map.json 生成，不直接编辑。内容包更新 ${data.updated_at}；年度核验截止 ${y.as_of}。关键词和主次是编辑判断，日期按来源性质显示。\n\n`;
+  const route = data.reading_routes.find(route => route.id === y.reading_route_id);
+  if (route) {
+    md += `## 推荐路线：${route.title}\n\n${route.intro}\n\n`;
+    route.steps.forEach((step, i) => {
+      const event = data.events.find(event => event.id === step.event_id);
+      md += `${i + 1}. **${event.title}（${event.year}）**：${event.change}${step.transition_to_next ? ` 接下来：${step.transition_to_next}` : ''}\n`;
+    });
+    md += `\n${route.outro}\n\n`;
+  }
+  md += '## 年度主线\n\n';
   md += table(items.filter(e => e.tier === 'main'));
   const branch = items.filter(e => e.tier === 'branch');
   if (branch.length) md += '\n## 可展开分支\n\n' + table(branch);

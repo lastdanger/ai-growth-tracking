@@ -5,9 +5,9 @@ export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export function checkMap(data) {
   const fail = (condition, message) => { if (!condition) throw new Error(message); };
   const day = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
-  fail(data.schema_version === 1, 'Unsupported schema_version');
+  fail(data.schema_version === 2, 'Unsupported schema_version');
   fail(day(data.updated_at), 'Invalid updated_at');
-  for (const key of ['years', 'events', 'sources', 'materials', 'relations']) fail(Array.isArray(data[key]), `Missing ${key}`);
+  for (const key of ['years', 'events', 'sources', 'materials', 'relations', 'reading_routes']) fail(Array.isArray(data[key]), `Missing ${key}`);
   const index = (items, key, kind) => {
     const ids = new Set();
     for (const item of items) { fail(item[key] !== undefined && !ids.has(item[key]), `Missing/duplicate ${kind}: ${item[key]}`); ids.add(item[key]); }
@@ -17,6 +17,7 @@ export function checkMap(data) {
   const events = index(data.events, 'id', 'event');
   const sources = index(data.sources, 'id', 'source');
   const materials = index(data.materials, 'id', 'material');
+  const routes = index(data.reading_routes, 'id', 'route');
   const refs = (ids, map, label, required = true) => {
     fail(Array.isArray(ids) && (!required || ids.length > 0), `Missing ${label}`);
     fail(new Set(ids).size === ids.length, `Repeated ${label}`);
@@ -42,6 +43,9 @@ export function checkMap(data) {
     refs(e.source_ids, sources, `${e.id} sources`);
     refs(e.material_ids, materials, `${e.id} materials`, false);
     fail(e.then && e.then.text, `Missing contemporary perspective: ${e.id}`);
+    fail(e.summary.trim() !== e.then.text.trim(), `Repeated summary: ${e.id}`);
+    fail(!e.why_selected.includes('的具体分支，补充同年主线'), `Generic selection reason: ${e.id}`);
+    if (e.change !== undefined) fail(typeof e.change === 'string' && e.change.trim(), `Empty change: ${e.id}`);
     refs(e.then.source_ids, sources, `${e.id} contemporary sources`);
     if (e.later) {
       fail(e.later.text && day(e.later.as_of) && e.later.as_of > e.date && e.later.as_of <= data.updated_at, `Retrospective date: ${e.id}`);
@@ -59,6 +63,23 @@ export function checkMap(data) {
     for (const id of y.anchor_ids) fail(events.get(id).year === y.year && events.get(id).tier === 'main', `Wrong annual anchor: ${id}`);
     const actual = data.events.filter(e => e.year === y.year && e.tier === 'main').map(e => e.id);
     fail(actual.length === y.anchor_ids.length, `Unlisted main event: ${y.year}`);
+    fail(events.get(y.featured_event_id)?.year === y.year && y.featured_reason, `Annual featured event: ${y.year}`);
+    if (y.reading_route_id) fail(routes.has(y.reading_route_id), `Unknown annual route: ${y.year}`);
+    if (y.lead !== undefined) fail(typeof y.lead === 'string' && y.lead.trim(), `Empty year lead: ${y.year}`);
+    fail(Array.isArray(y.display_groups), `Missing display groups: ${y.year}`);
+    const assigned = new Set();
+    const anchors = new Set();
+    for (const group of y.display_groups) {
+      fail(y.anchor_ids.includes(group.anchor_id) && !anchors.has(group.anchor_id), `Invalid display anchor: ${group.anchor_id}`);
+      anchors.add(group.anchor_id);
+      fail(Array.isArray(group.children) && group.children.length > 0, `Empty display group: ${group.anchor_id}`);
+      for (const child of group.children) {
+        const event = events.get(child.event_id);
+        fail(event?.tier === 'branch' && event.year === y.year, `Invalid display child: ${child.event_id}`);
+        fail(child.label && !assigned.has(child.event_id), `Repeated/unlabelled display child: ${child.event_id}`);
+        assigned.add(child.event_id);
+      }
+    }
     fail(day(y.as_of) && y.as_of <= data.updated_at, `Year cutoff date: ${y.year}`);
     // 历史年份的补充不应迫使进行中年份伪造新的核验截止日。
     if (y.year === Number(data.updated_at.slice(0, 4))) fail(y.status === 'partial' && y.coverage_note.includes(y.as_of), `Unfinished year not qualified: ${y.year}`);
@@ -66,6 +87,19 @@ export function checkMap(data) {
   for (const m of materials.values()) {
     fail(m.title && m.text && ['quote', 'report', 'demo'].includes(m.kind), `Material content: ${m.id}`);
     fail(sources.has(m.source_id), `Material source: ${m.id}`);
+    fail(['contemporary', 'retrospective', 'undated'].includes(m.temporal_context), `Material temporal context: ${m.id}`);
+    if (m.temporal_context === 'contemporary') fail(sources.get(m.source_id).published_at, `Undated contemporary material: ${m.id}`);
+  }
+  for (const route of routes.values()) {
+    fail(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.id) && route.title && route.intro && route.outro, `Route description: ${route.id}`);
+    fail(Array.isArray(route.steps) && route.steps.length >= 2, `Route steps: ${route.id}`);
+    refs(route.steps.map(step => step.event_id), events, `route ${route.id}`);
+    route.steps.forEach((step, i) => {
+      fail(events.get(step.event_id).change, `Route event lacks change: ${step.event_id}`);
+      fail(i === route.steps.length - 1 ? !step.transition_to_next : !!step.transition_to_next, `Route transition: ${step.event_id}`);
+      if (step.source_ids) refs(step.source_ids, sources, `transition ${step.event_id}`);
+    });
+    refs(route.exit_event_ids, events, `route exits ${route.id}`);
   }
   const edgeIds = new Set();
   for (const r of data.relations) {

@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "updated_at": "2026-09-15",
+  "schema_version": 2,
+  "updated_at": "2026-09-30",
   "years": [
     {
       "year": 2022,
@@ -15,7 +15,20 @@
         "chatgpt-public-preview",
         "midjourney-state-fair-win"
       ],
-      "as_of": "2026-09-15"
+      "as_of": "2026-09-15",
+      "featured_event_id": "chatgpt-public-preview",
+      "featured_reason": "从公众可以直接尝试的对话入口，进入“开门”的这一年。",
+      "display_groups": [
+        {
+          "anchor_id": "chatgpt-public-preview",
+          "children": [
+            {
+              "event_id": "stackoverflow-chatgpt-temporary-ban",
+              "label": "社区回应"
+            }
+          ]
+        }
+      ]
     },
     {
       "year": 2023,
@@ -35,7 +48,40 @@
         "wga-ai-contract-provisions",
         "us-ai-executive-order-14110"
       ],
-      "as_of": "2026-09-15"
+      "as_of": "2026-09-15",
+      "featured_event_id": "chatgpt-public-growth",
+      "featured_reason": "先看聊天窗口怎样进入公共讨论，再展开能力、工作与规则。",
+      "display_groups": [
+        {
+          "anchor_id": "chatgpt-public-growth",
+          "children": [
+            {
+              "event_id": "nyc-school-chatgpt-restriction",
+              "label": "学校回应"
+            }
+          ]
+        },
+        {
+          "anchor_id": "gpt4-release",
+          "children": [
+            {
+              "event_id": "khanmigo-limited-pilot",
+              "label": "教育试点"
+            }
+          ]
+        },
+        {
+          "anchor_id": "llama2-release",
+          "children": [
+            {
+              "event_id": "llama-research-release",
+              "label": "前序模型"
+            }
+          ]
+        }
+      ],
+      "lead": "2022 年末，一个聊天窗口让人开始追问、改写和试着解决自己的问题。到了 2023 年，试用进入新闻和公共讨论，厂商把能力带进办公与教育，真实工作也开始留下可以比较的效果数据。兴奋并没有让分歧消失：哪些答案可信，谁获得帮助，谁能决定怎样使用 AI？下面的六站从这些问题进入这一年；创作热潮、开放模型、算力与不同地区的规则，还可以沿时间轴继续探索。",
+      "reading_route_id": "chat-window-to-public-life"
     },
     {
       "year": 2024,
@@ -56,7 +102,38 @@
         "claude-computer-use",
         "deepseek-v3-release"
       ],
-      "as_of": "2026-09-14"
+      "as_of": "2026-09-14",
+      "featured_event_id": "sora-research-preview",
+      "featured_reason": "从视频生成的展示进入能力扩展，再看作品生产和现实限制。",
+      "display_groups": [
+        {
+          "anchor_id": "sora-research-preview",
+          "children": [
+            {
+              "event_id": "sora-air-head-creators",
+              "label": "创作者试用"
+            }
+          ]
+        },
+        {
+          "anchor_id": "gpt-4o-announcement",
+          "children": [
+            {
+              "event_id": "sky-voice-dispute",
+              "label": "声音争议"
+            }
+          ]
+        },
+        {
+          "anchor_id": "deepseek-v3-release",
+          "children": [
+            {
+              "event_id": "deepseek-v2-efficiency",
+              "label": "前序方法"
+            }
+          ]
+        }
+      ]
     },
     {
       "year": 2025,
@@ -77,7 +154,29 @@
         "gpt5-unified-system",
         "mcp-agentic-ai-foundation"
       ],
-      "as_of": "2026-09-15"
+      "as_of": "2026-09-15",
+      "featured_event_id": "deepseek-app-public-surge",
+      "featured_reason": "从公众试用的热潮进入推理竞争，再看工具怎样开始接手任务。",
+      "display_groups": [
+        {
+          "anchor_id": "deepseek-r1-release",
+          "children": [
+            {
+              "event_id": "deepseek-app-public-surge",
+              "label": "公众试用"
+            }
+          ]
+        },
+        {
+          "anchor_id": "gpt5-unified-system",
+          "children": [
+            {
+              "event_id": "gpt4o-users-ask-choice",
+              "label": "用户回应"
+            }
+          ]
+        }
+      ]
     },
     {
       "year": 2026,
@@ -96,7 +195,20 @@
         "eu-ai-omnibus-in-force",
         "openai-hugging-face-investigation"
       ],
-      "as_of": "2026-09-15"
+      "as_of": "2026-09-15",
+      "featured_event_id": "openclaw-personal-agent-rename",
+      "featured_reason": "从个人代理的期待进入持续委托，再看授权、效果与控制问题。",
+      "display_groups": [
+        {
+          "anchor_id": "chatgpt-work-launch",
+          "children": [
+            {
+              "event_id": "codex-app-macos",
+              "label": "入口前身"
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -308,9 +420,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "把可追问的对话模型作为免费研究预览交给公众，成为观察日常试用和传播的起点。",
       "then": {
-        "text": "OpenAI 以免费研究预览形式开放 ChatGPT，公众可以直接与它对话。",
+        "text": "2022 年 11 月 30 日，OpenAI 开放免费研究预览。用户可以接着上一句话追问、要求解释或重新改写；发布说明同时承认，它会把错误答案说得很像真的。几天后的个人试用已把这两面摆在一起：有帮助，也会让人绕远路。",
         "source_ids": [
           "S-20e2d681bdc9",
           "S-3b53fd07bd15"
@@ -322,15 +434,16 @@
         "S-3b53fd07bd15"
       ],
       "material_ids": [
-        "M-early-chinese-headline",
         "M-chatgpt-rust-learning-1",
-        "M-chatgpt-prompt-bridge-1"
+        "M-chatgpt-prompt-bridge-1",
+        "M-early-chinese-headline"
       ],
       "fact_ids": [
         "EV-20221130-001",
         "EV-20221130-002",
         "EV-20221130-003"
-      ]
+      ],
+      "change": "变化首先在参与方式：人们可以把自己的问题带进对话，再根据回答继续尝试。模型能力因此有了容易接近的公众入口；一位开发者的成功试用仍不能代表所有人的效果。"
     },
     {
       "id": "chatgpt-public-growth",
@@ -348,7 +461,7 @@
       ],
       "why_selected": "用带口径的用户规模估算和传播材料，交代对话式 AI 进入公共话题的速度。",
       "then": {
-        "text": "路透社援引瑞银估算：1 月月活跃用户约一亿。这是机构估算，不是注册人数。",
+        "text": "2023 年 2 月 2 日，路透社援引瑞银估算，ChatGPT 在 1 月约有一亿月活跃用户。报道还提到写文章、笑话和诗歌等用法，学术诚信与错误信息也进入讨论。这个数字是机构对月活的估算，不是 OpenAI 公布的注册人数。",
         "source_ids": [
           "S-28f62b24ea60"
         ]
@@ -362,7 +475,8 @@
       ],
       "fact_ids": [
         "EV-20230202-001"
-      ]
+      ],
+      "change": "关注点从“有人试了一款新工具”，扩展到有规模的公众参与。具体玩法让能力变得可感，增长估算提供了另一种观察尺度；两者都不能证明每个人已经持续使用。"
     },
     {
       "id": "nyc-school-chatgpt-restriction",
@@ -417,9 +531,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "免费试用之外出现订阅选择，记录对话服务如何开始分层提供。",
       "then": {
-        "text": "OpenAI 推出每月 20 美元的订阅试点，同时保留免费访问。",
+        "text": "当时的选择是免费访问加付费订阅试点。每月 20 美元是首发方案，不能据此推定后续定价或所有地区都已开放。",
         "source_ids": [
           "S-dc9b6068d02e"
         ]
@@ -449,9 +563,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "记录 Google 进入对话服务竞争时的测试入口，区别于后来的公众开放。",
       "then": {
-        "text": "介绍实验性对话服务，先向受信任测试者开放。",
+        "text": "这是实验性服务的介绍，先由受信任测试者使用；看到发布消息与自己已经能够进入产品，是两回事。",
         "source_ids": [
           "S-5721b0c12da7"
         ]
@@ -479,9 +593,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "把搜索结果和可追问的对话放进同一入口，展示搜索产品的另一种使用方式。",
       "then": {
-        "text": "搜索与对话结合，开始桌面端有限预览，并提供等候名单。",
+        "text": "用户面对的是有限预览和等候名单。搜索产品开始尝试接住连续问题，但并非所有人当天都能直接使用。",
         "source_ids": [
           "S-c59db50c39d3"
         ]
@@ -512,9 +626,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为能力与模型的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "交代 Llama 2 之前的研究模型与申请条件，帮助理解后来参与门槛的变化。",
       "then": {
-        "text": "向研究群体提供模型申请入口，采用以研究为主的非商业许可。",
+        "text": "要获得模型，需要按研究用途申请；非商业许可限制仍在。权重可申请，不等于可以任意商用。",
         "source_ids": [
           "S-d83f91054d08"
         ]
@@ -579,9 +693,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "提供另一家助手服务的起点，让厂商竞逐不只围绕一个聊天产品展开。",
       "then": {
-        "text": "介绍可进行问答、摘要、写作和编程等任务的 AI 助手，并提供聊天与接口形式。",
+        "text": "问答、摘要、写作和编程被放在同一个助手介绍中。聊天与接口两种形式，分别面向直接使用和开发接入。",
         "source_ids": [
           "S-a75dcd94affd"
         ]
@@ -609,9 +723,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "展示模型能力边界继续扩展；图区分模型能力、首发文本入口与图像后续开放。",
+      "why_selected": "把能力展示与实际开放范围并排看，解释为什么新模型抬高了期待，却并非所有能力立即可用。",
       "then": {
-        "text": "OpenAI 公布支持图文输入、文字输出的模型；当时图像输入尚未普遍开放。",
+        "text": "2023 年 3 月 14 日，OpenAI 把考试表现、复杂任务和图像输入能力放进 GPT-4 的发布介绍。首发开放的是 ChatGPT 与 API 的文字输入，API 需要排队，图像输入仍处在研究预览阶段。模型仍可能产生错误，展示成绩不能替代具体任务的检验。",
         "source_ids": [
           "S-e594f9160e13"
         ]
@@ -627,7 +741,8 @@
         "EV-20230314-001",
         "EV-20230314-002",
         "EV-20230314-003"
-      ]
+      ],
+      "change": "人们开始面对更复杂任务与更多输入形式的可能性。理解这一站，需要把“模型展示了什么”和“当时自己能用什么”分开：更高的期待出现了，入口与可靠性仍有限制。"
     },
     {
       "id": "ernie-invited-preview",
@@ -643,9 +758,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "记录中文助手从发布展示到邀请试用的阶段，与八月的公众开放分开。",
       "then": {
-        "text": "百度展示中文理解与创作等场景，首批用户凭邀请码体验。",
+        "text": "发布展示围绕中文理解和创作等用途展开，首批体验仍需要邀请码；这不是八月面向公众开放的那个节点。",
         "source_ids": [
           "S-cb8ccae0537d"
         ]
@@ -678,7 +793,7 @@
       ],
       "why_selected": "代表 AI 从独立聊天窗口进入既有办公流程的产品提议，不把发布承诺写成实际普及。",
       "then": {
-        "text": "微软介绍 AI 与办公应用结合，包括文档转幻灯片；当时仍为小范围客户测试。",
+        "text": "微软在 3 月 16 日介绍 Copilot 与 Word、Excel、PowerPoint、Outlook、Teams 的结合：可以起草内容、处理邮件和辅助会议。用户要继续检查、修改或放弃结果。当时仍是小范围客户测试，定价和更大范围的开放留待后来。",
         "source_ids": [
           "S-469efea3b606"
         ]
@@ -688,6 +803,7 @@
         "S-469efea3b606"
       ],
       "material_ids": [
+        "M-m365-document-to-slides",
         "M-spring-headline"
       ],
       "fact_ids": [
@@ -695,7 +811,8 @@
         "EV-20230316-002",
         "EV-20230316-003",
         "EV-20230316-008"
-      ]
+      ],
+      "change": "相比单独打开聊天窗口，发布设想把 AI 放到已有文档和工作上下文旁边。它让日常工作成为可以想象的使用场景；能否真正节省时间，还需要发布演示以外的证据。"
     },
     {
       "id": "ai-pause-open-letter",
@@ -711,9 +828,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为治理与组织的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "保留能力竞争中的不同主张：有人要求给风险评估留时间，倡议本身不等于已执行的暂停。",
       "then": {
-        "text": "未来生命研究所公开信呼吁至少暂停六个月训练能力强于 GPT-4 的系统；这是倡议。",
+        "text": "信件提出至少六个月的暂停要求，针对能力强于 GPT-4 的训练。它表达签署者的主张，并不是已经生效的行业规则。",
         "source_ids": [
           "S-d015f83b0501"
         ]
@@ -741,9 +858,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "记录国内模型与既有工作、家庭产品连接的计划，区别于单独的聊天入口。",
       "then": {
-        "text": "介绍新大语言模型，并宣布计划率先接入钉钉、天猫精灵等产品。",
+        "text": "公告把模型与钉钉、天猫精灵相连，展示工作和家庭场景的接入计划。计划公布不等于所有用户已经使用。",
         "source_ids": [
           "S-520789914007"
         ]
@@ -806,9 +923,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为能力与模型的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "保留 Google 对语言、推理与编程能力的另一条产品路线，供比较同年模型竞争。",
       "then": {
-        "text": "Google 在 I/O 期间介绍新语言模型，强调多语言、推理和编程能力。",
+        "text": "多语言、推理和编程是这次发布强调的方向。这里记录厂商给出的能力定位，不据此认定独立性能排名。",
         "source_ids": [
           "S-6510c705ccc0"
         ]
@@ -838,7 +955,7 @@
       ],
       "why_selected": "让年度主线保留公众娱乐与创作，不仅由厂商、模型和政策构成。",
       "then": {
-        "text": "北京商报记录 B站、抖音上的 AI 翻唱传播及创作者尝试；这一节点按报道所述时期记录。",
+        "text": "歌曲与熟悉的音色把 AI 带进娱乐平台。北京商报记录的是 B站、抖音上的传播与创作者尝试，不是对所有平台热度的统计。",
         "source_ids": [
           "S-b35751ba4cfe"
         ]
@@ -1013,7 +1130,7 @@
       ],
       "why_selected": "国内公众服务规则形成明确节点，公布与施行分别说明。",
       "then": {
-        "text": "七部门公布《生成式人工智能服务管理暂行办法》，明确施行日期。",
+        "text": "这里以七部门公布文件为节点，规则另有施行日期。发布文本与实际执行情况需要分别观察。",
         "source_ids": [
           "S-970809f15e8c"
         ]
@@ -1043,7 +1160,7 @@
       ],
       "why_selected": "模型权重与代码的可获得性改变开发参与条件，和在线聊天服务是不同入口。",
       "then": {
-        "text": "Meta 提供模型权重和起始代码，宣布可用于研究和商业用途；具体使用仍受许可约束。",
+        "text": "模型权重和起始代码提供了研究、开发与商用的参与入口，使用者仍须遵守具体许可，不能把可获得理解成没有条件。",
         "source_ids": [
           "S-e237a6659214"
         ]
@@ -1071,9 +1188,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "从凭邀请进入到公众可访问，改变的是参与条件，而不只是又一次模型公告。",
       "then": {
-        "text": "从首批邀请试用进入公众可通过官网和 App 访问的阶段。",
+        "text": "此前的邀请体验转为官网和 App 的公众访问。对想亲自尝试的人来说，变化首先发生在入口上。",
         "source_ids": [
           "S-bb693a0bcf5c"
         ]
@@ -1101,9 +1218,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "把语音和图片带入既有对话产品，连接模型展示与用户实际入口的变化。",
       "then": {
-        "text": "OpenAI 宣布在随后两周向 Plus 和 Enterprise 用户逐步推出语音对话与图像输入。",
+        "text": "公告面向 Plus 与 Enterprise 用户，并说明将在随后两周逐步推出。语音和看图开始进入聊天产品，但不是所有用户同时获得。",
         "source_ids": [
           "S-cf6bb2bd047c"
         ]
@@ -1134,7 +1251,7 @@
       ],
       "why_selected": "补足创作者和劳动关系的实际变化，使人的影响不只停在工具尝鲜与泛化忧虑。",
       "then": {
-        "text": "09-25 是协议文本日期与约定生效起点，当时仍须成员批准。规则覆盖 MBA 下的工作，不是全球法律，也不能把整个罢工归因于 AI。",
+        "text": "2023 年 9 月 25 日署日的 WGA 协议，把生成式 AI 写进劳动条款：AI 不被视为协议中的编剧，企业不能要求编剧使用 AI，向编剧提供符合条款范围的 AI 生成书面材料时须披露。协议当时仍待成员批准，覆盖的是 MBA 下的工作。",
         "source_ids": [
           "S-d813ae6bd713",
           "S-6b4888bb00a9"
@@ -1155,7 +1272,8 @@
       "material_ids": [
         "M-wga-ai-contract-provisions-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "问题从工具会不会写，进入了谁有权决定怎么写、材料身份如何影响人的工作。这是一个行业的协商结果，不是全球法律，也不能把整场罢工都归因于 AI。"
     },
     {
       "id": "dalle3-chatgpt-access",
@@ -1171,9 +1289,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "图像生成进入同一聊天产品，让写提示和改图更紧密地相接。",
       "then": {
-        "text": "OpenAI 宣布 DALL·E 3 已向 ChatGPT Plus 和 Enterprise 用户提供。",
+        "text": "这次节点记录付费 ChatGPT 用户得到 DALL·E 3 入口；它不是模型首次被介绍的日期，也不表示免费用户同时开放。",
         "source_ids": [
           "S-d200655d3460"
         ]
@@ -1239,9 +1357,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为产品及使用入口的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "从消费者聊天转向开发者构建应用的条件，补充工具与接口这一层变化。",
       "then": {
-        "text": "公布 GPT-4 Turbo、Assistants API 等模型与开发者产品更新。",
+        "text": "GPT-4 Turbo 与 Assistants API 等更新面向开发者。关注点从在聊天框里提问，转向怎样把模型放进自己的应用。",
         "source_ids": [
           "S-10626304baab"
         ]
@@ -1271,7 +1389,7 @@
       ],
       "why_selected": "与回归共同构成公司治理事件入口；回归作为后续节点，不重复占主线。",
       "then": {
-        "text": "董事会公告宣布 Sam Altman 离开 CEO 与董事职务，由 Mira Murati 临时接任 CEO。",
+        "text": "董事会宣布离任与临时接任安排时，回归尚不是既定结果。这个节点保留当日公告，后续另列。",
         "source_ids": [
           "S-4b7c21845637"
         ]
@@ -1299,9 +1417,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为治理与组织的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "作为此前离任公告的后续，保留公司治理事件的转折而不重复提升为年度主节点。",
       "then": {
-        "text": "OpenAI 刊出 Altman 回任 CEO 与初始新董事会说明；此日期为正式公告日。",
+        "text": "11 月 29 日是正式说明回任与初始新董事会安排的公告日；它与此前离任公告共同构成这次治理变化。",
         "source_ids": [
           "S-98f5ecc97d63"
         ]
@@ -1329,9 +1447,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为能力与模型的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "展示按不同规模提供模型的产品安排，同时保留各型号开放程度的差异。",
       "then": {
-        "text": "公布 Ultra、Pro、Nano 三种规模；各型号开放安排不同，Ultra 当时尚未普遍提供。",
+        "text": "Ultra、Pro、Nano 同时被介绍，但各型号开放安排不同，Ultra 当时尚未普遍提供。产品家族的公布不能当成全部能力已可使用。",
         "source_ids": [
           "S-a91b519f3db9"
         ]
@@ -1359,9 +1477,9 @@
       "roles": [
         "milestone"
       ],
-      "why_selected": "作为治理与组织的具体分支，补充同年主线的过程和差异。",
+      "why_selected": "记录欧盟立法协商的重要进度，并与正式通过、生效和义务适用分开。",
       "then": {
-        "text": "欧盟理事会主席国与欧洲议会谈判代表达成临时协议，尚需后续正式通过。",
+        "text": "谈判代表达成的是临时协议，仍须后续正式通过。它说明协商取得进展，而不是全部义务立即开始适用。",
         "source_ids": [
           "S-7e96fc67e903"
         ]
@@ -3631,19 +3749,21 @@
       ],
       "why_selected": "它把“AI 能提高效率”的宏大说法落到具体工作、样本与指标，也提醒读者平均值会掩盖经验差异。",
       "then": {
-        "text": "研究中的提升并不平均：新手和低技能人员提高 34%，熟练和高技能人员变化很小。作者提出的解释是，助手可能在传播优秀员工的做法；这仍是一个具体公司的客服场景。",
+        "text": "2023 年 4 月的工作论文研究一家公司向客服人员分批提供 AI 助手的过程，样本为 5,179 人。首版报告，每小时解决问题数平均提高约 14%，新手和较低技能人员受益更明显，经验丰富者变化较小。它研究的是一项具体工具，并不是对 Microsoft 365 Copilot 的验证。",
         "source_ids": [
-          "S-48f9118e3a25"
+          "S-nber-w31161-first-version"
         ]
       },
       "later": null,
       "source_ids": [
-        "S-48f9118e3a25"
+        "S-48f9118e3a25",
+        "S-nber-w31161-first-version"
       ],
       "material_ids": [
         "M-generative-ai-at-work-paper-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "“有没有帮助”开始能够落到具体岗位和指标上。平均增益并不属于每个人，工作经验与原有水平会影响结果；这份证据也不能直接推成所有职业都能获得同样的提升。"
     }
   ],
   "sources": [
@@ -3653,7 +3773,7 @@
       "url": "https://openai.com/index/chatgpt/",
       "kind": "official",
       "published_at": "2022-11-30",
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2026-09-30",
       "scope": "沿用既有核验收据；OpenAI 以免费研究预览形式开放 ChatGPT，公众可以直接与它对话。；本轮复核 sibling model、RLHF 与对话数据调整，支撑 InstructGPT 的后续方法关系；此前收据留内部档案。"
     },
     {
@@ -3671,7 +3791,7 @@
       "url": "https://www.investing.com/news/economy/chatgpt-sets-record-for-fastestgrowing-user-base--analyst-note-2993773",
       "kind": "media",
       "published_at": "2023-02-02",
-      "accessed_at": "2026-09-10",
+      "accessed_at": "2026-09-30",
       "scope": "沿用既有核验收据；路透社援引瑞银估算：1 月月活跃用户约一亿。这是机构估算，不是注册人数。"
     },
     {
@@ -3716,7 +3836,7 @@
       "url": "https://openai.com/index/gpt-4-research/",
       "kind": "official",
       "published_at": "2023-03-14",
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2026-09-30",
       "scope": "沿用既有核验收据；OpenAI 公布支持图文输入、文字输出的模型；当时图像输入尚未普遍开放。"
     },
     {
@@ -3743,7 +3863,7 @@
       "url": "https://blogs.microsoft.com/blog/2023/03/16/introducing-microsoft-365-copilot-your-copilot-for-work/",
       "kind": "official",
       "published_at": "2023-03-16",
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2026-09-30",
       "scope": "沿用既有核验收据；微软介绍 AI 与办公应用结合，包括文档转幻灯片；当时仍为小范围客户测试。"
     },
     {
@@ -3995,7 +4115,7 @@
       "url": "https://www.wga.org/uploadedfiles/contracts/2023_MBA_MOA.pdf",
       "kind": "official",
       "published_at": "2023-09-25",
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2026-09-30",
       "scope": "协议日期、批准条件及 PDF 第 68—70 页 AI 条款"
     },
     {
@@ -4220,8 +4340,8 @@
       "url": "https://www.21jingji.com/article/20230317/herald/35f263dd7fd8d489243a3891bffcb6d4.html",
       "kind": "media",
       "published_at": "2023-03-17",
-      "accessed_at": "2026-09-10",
-      "scope": "仅标题短引或公开试用；既有核验记录保留"
+      "accessed_at": "2026-09-30",
+      "scope": "09-30复核标题、日期与办公场景报道；标题支持同期报道语气，不证明使用规模。"
     },
     {
       "id": "S-95019cd0fde6",
@@ -4229,8 +4349,8 @@
       "url": "https://m.21jingji.com/article/20230207/herald/65fdcbae5a4643810f2ab3ea65af9e32.html",
       "kind": "media",
       "published_at": "2023-02-07",
-      "accessed_at": "2026-09-10",
-      "scope": "仅标题短引或公开试用；既有核验记录保留"
+      "accessed_at": "2026-09-30",
+      "scope": "09-30读取试用报道正文；原有续写片段沿用09-15核验，本轮未重新检查配图。"
     },
     {
       "id": "S-2733765202cd",
@@ -4238,8 +4358,8 @@
       "url": "https://www.yicai.com/news/101616572.html",
       "kind": "media",
       "published_at": "2022-12-07",
-      "accessed_at": "2026-09-10",
-      "scope": "仅标题短引或公开试用；既有核验记录保留"
+      "accessed_at": "2026-09-30",
+      "scope": "09-30复核报道标题及正文；只采用标题语气与具体提示词用法，不采用其中模型参数等技术描述。"
     },
     {
       "id": "S-5874eeeca675",
@@ -5183,7 +5303,7 @@
       "url": "https://simonwillison.net/2022/Dec/5/rust-chatgpt-copilot/",
       "kind": "media",
       "published_at": "2022-12-05",
-      "accessed_at": "2026-09-15",
+      "accessed_at": "2026-09-30",
       "scope": "作者同期使用记录；核对用 ChatGPT 解释 Rust、错误信息和代码概念，也记录幻觉及失败案例。仅代表个人实践。"
     },
     {
@@ -5210,8 +5330,8 @@
       "url": "https://www.nber.org/papers/w31161",
       "kind": "paper",
       "published_at": "2023-04-20",
-      "accessed_at": "2026-09-15",
-      "scope": "核对 NBER 工作论文首版、5,179 名客服人员样本、每小时解决问题数平均提高 14%，以及新手和低技能人员提升 34%；这是特定公司和工具的研究，不代表所有职业。"
+      "accessed_at": "2026-09-30",
+      "scope": "NBER工作论文落地页同时列首版和后续修订；本轮检索正文含2023年11月修订摘要，5,179样本、平均14%、新手与低技能人员34%。不能把修订摘要所有数值直接当作4月首版。"
     },
     {
       "id": "S-31594d5d2748",
@@ -5230,6 +5350,15 @@
       "published_at": "2023-09-05",
       "accessed_at": "2026-09-15",
       "scope": "核对作品使用 Midjourney、Photoshop 与 Gigapixel AI 的行政记录，以及 2023 年对整件作品登记申请的最终行政决定；不外推其他司法辖区。"
+    },
+    {
+      "id": "S-nber-w31161-first-version",
+      "title": "Generative AI at Work · 2023年4月首版 PDF",
+      "url": "https://www.nber.org/system/files/working_papers/w31161/revisions/w31161.rev0.pdf",
+      "kind": "paper",
+      "published_at": "2023-04-20",
+      "accessed_at": "2026-09-30",
+      "scope": "本轮检索索引可读首版摘要，核对5,179样本、平均14%和经验差异方向；PDF直连403，未核全文。首版与含11月修订的落地页分开，不采用后续摘要34%的数值回填首版。"
     }
   ],
   "materials": [
@@ -5237,393 +5366,457 @@
       "id": "M-spring-headline",
       "title": "当时的报道标题",
       "kind": "quote",
-      "text": "烈火烹油",
-      "source_id": "S-38439bf3905d"
+      "text": "2023 年 3 月 17 日，21经济网以“烈火烹油，GPT-4将接入Office全家桶”为标题报道办公场景。这种语气记录了当时的期待，不能用来证明产品已经普及。",
+      "source_id": "S-38439bf3905d",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-chatgpt-writing-trial",
       "title": "小说框架写到一半之后",
       "kind": "report",
       "text": "深燃公开试用报道及配图记录：模型回答在“并且”处停下，用户提醒框架尚未写完，随后得到续写。这是一则公开试用，不代表普遍效果。",
-      "source_id": "S-95019cd0fde6"
+      "source_id": "S-95019cd0fde6",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-early-chinese-headline",
       "title": "早期中文报道的语气",
       "kind": "quote",
-      "text": "拳打谷歌",
-      "source_id": "S-2733765202cd"
+      "text": "2022 年 12 月 7 日，第一财经用“拳打谷歌”形容 ChatGPT 的出圈，同时在标题中提醒投资泡沫化跟风。兴奋与警惕并列在一篇报道中；这里保留的是该报道的语气。",
+      "source_id": "S-2733765202cd",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-gemini-15-long-context-1",
       "title": "一份 402 页的登月任务记录",
       "kind": "demo",
       "text": "Google 用一份 402 页的 Apollo 11 任务记录展示长上下文：把整份资料交给模型，再询问其中跨页的对话与事件。这是厂商发布时的演示案例。",
-      "source_id": "S-5874eeeca675"
+      "source_id": "S-5874eeeca675",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-claude-35-artifacts-1",
       "title": "把生成物留在对话旁",
       "kind": "demo",
       "text": "代码、文档和网页设计出现在对话旁的独立窗口。用户可以看着生成物继续提要求，让同一个成果逐步成形。",
-      "source_id": "S-e6faefe9f65c"
+      "source_id": "S-e6faefe9f65c",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-china-myth-ai-short-drama-1",
       "title": "从神话故事到系列短剧",
       "kind": "report",
       "text": "节目从补天、逐日、奔月等熟悉的故事取材。可以沿这条分支进入作品入口，理解当时国内媒体在尝试把 AI 用在哪里。",
-      "source_id": "S-c469a187adfd"
+      "source_id": "S-c469a187adfd",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-sora-air-head-creators-1",
       "title": "一段生成，可能只留几秒",
       "kind": "report",
       "text": "Patrick Cederberg 说，有的素材生成了 20 秒，最后只用两三秒；气球被生成成蓝色时，他们还要把可用镜头中的气球改成黄色。",
-      "source_id": "S-72cf8f0d46e0"
+      "source_id": "S-72cf8f0d46e0",
+      "temporal_context": "undated"
     },
     {
       "id": "M-sora-air-head-creators-2",
       "title": "创作者的声音",
       "kind": "quote",
       "text": "“I can't wait to go work with the humans.”——Patrick Cederberg 在主创采访中说，他已经迫不及待想回去和人一起工作。",
-      "source_id": "S-72cf8f0d46e0"
+      "source_id": "S-72cf8f0d46e0",
+      "temporal_context": "undated"
     },
     {
       "id": "M-sky-voice-dispute-1",
       "title": "当事人的反应",
       "kind": "quote",
       "text": "“shocked, angered and in disbelief”——Johansson 在声明中形容自己听到演示后的反应：震惊、愤怒、难以置信。",
-      "source_id": "S-401b5fa1106a"
+      "source_id": "S-401b5fa1106a",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-ai-overviews-public-errors-1",
       "title": "披萨上的奶酪为什么会滑下来？",
       "kind": "report",
       "text": "Google 的回应承认，系统曾把论坛中用胶水固定披萨奶酪的恶作剧内容放进答案。问题在于它把什么当成了可靠材料。",
-      "source_id": "S-f940620a6b01"
+      "source_id": "S-f940620a6b01",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-kling-shanhai-production-1",
       "title": "创作者的一句话",
       "kind": "quote",
       "text": "“不是说一个 AI 就全都解决了。”——闲人一坤，谈图片生成、图生视频与人工剪辑如何衔接。",
-      "source_id": "S-e63537161b40"
+      "source_id": "S-e63537161b40",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-kling-shanhai-production-2",
       "title": "一部短剧背后的选择",
       "kind": "report",
       "text": "导演解释，图生视频有助于维持人物一致性；镜头并不是输入一句话后自动连成故事。对角色外观、画面和节奏的选择，仍留在制作流程里。",
-      "source_id": "S-e63537161b40"
+      "source_id": "S-e63537161b40",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-vibe-coding-karpathy-1",
       "title": "原帖里的随意感",
       "kind": "quote",
       "text": "“I don't read the diffs anymore.”——Karpathy 说，自己已经不再读代码改动了。这是他描述这种玩法时的原话。",
-      "source_id": "S-ca53c7af7e7b"
+      "source_id": "S-ca53c7af7e7b",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-manus-early-preview-1",
       "title": "热闹背后的入口",
       "kind": "quote",
       "text": "“内测期间系统容量有限”——张涛解释为何要逐步发放邀请。",
-      "source_id": "S-79d29430fa25"
+      "source_id": "S-79d29430fa25",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-github-copilot-coding-agent-1",
       "title": "一次交接怎样发生",
       "kind": "demo",
       "text": "把一个需要修复的问题单分配给 Copilot，稍后在草稿 PR 里检查它改了什么，再留下评审意见让它继续修改。这是发布时说明的工作流程。",
-      "source_id": "S-6d3ae6538702"
+      "source_id": "S-6d3ae6538702",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-chatgpt-agent-release-1",
       "title": "从竞品资料到一份演示稿",
       "kind": "demo",
       "text": "发布例子是：分析三家竞争对手，再制作演示稿。它要连着处理查找、筛选、分析与文件制作；这是官方给出的任务示例。",
-      "source_id": "S-2a4acadcb81f"
+      "source_id": "S-2a4acadcb81f",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-deepseek-app-public-surge-1",
       "title": "榜单上的一个位置",
       "kind": "report",
       "text": "报道记下了一个直观变化：在美国 iPhone 免费应用榜，DeepSeek 排在了 ChatGPT 前面。这个榜单位置成为当时公众试用热度的一张快照。",
-      "source_id": "S-416a59820a02"
+      "source_id": "S-416a59820a02",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-unitree-yangbot-spring-gala-1",
       "title": "舞台上几分钟，背后近三个月",
       "kind": "quote",
       "text": "“花了将近３个月的时间”——黄家玮向上游新闻解释这次舞蹈排练所用时间。自主控制与人工排练同时存在。",
-      "source_id": "S-b3b53e0e84fd"
+      "source_id": "S-b3b53e0e84fd",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-chatgpt-image-ghibli-wave-1",
       "title": "想把自家猫的图片挂到墙上",
       "kind": "report",
       "text": "Janu Lingeswaran上传了猫Mali的照片，请ChatGPT改成吉卜力风格。他告诉美联社，自己很喜欢结果，正考虑打印出来挂在墙上。",
-      "source_id": "S-c97407c92b87"
+      "source_id": "S-c97407c92b87",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-chatgpt-image-ghibli-wave-2",
       "title": "画师的另一种感受",
       "kind": "quote",
       "text": "“It’s an insult. It’s exploitation.”——Karla Ortiz批评这波风格生成在利用艺术家的创作与声誉。这是她的观点。",
-      "source_id": "S-c97407c92b87"
+      "source_id": "S-c97407c92b87",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-gpt4o-users-ask-choice-1",
       "title": "一位长期写作者的请求",
       "kind": "report",
       "text": "在现存的 AMA 留言中，Naddybear 请求保留 GPT-4o、4.1 与 GPT-5 并行选择。他在意的是已经磨合的写作过程。该评论有编辑标记，确切编辑日期未确认。",
-      "source_id": "S-67234d1f9e90"
+      "source_id": "S-67234d1f9e90",
+      "temporal_context": "undated"
     },
     {
       "id": "M-chatgpt-consumer-use-study-1",
       "title": "咨询、找资料、改写文本",
       "kind": "report",
       "text": "原论文把实用建议、信息查询和写作列为最常见主题。这个观察提醒我们：AI的使用故事也包含大量不成为新闻的日常小事。",
-      "source_id": "S-a29ba593f4ad"
+      "source_id": "S-a29ba593f4ad",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-alphaevolve-1",
       "title": "小比例，放在整个计算系统里",
       "kind": "report",
       "text": "团队展示的一个成果只是调度规则的改进：在原有计算资源上安排更多任务。它让算法发现的意义落到了日复一日运行的数据中心。",
-      "source_id": "S-037d07c04663"
+      "source_id": "S-037d07c04663",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-metr-experienced-developers-rct-1",
       "title": "做完后，仍以为自己节省了时间",
       "kind": "report",
       "text": "实验前，开发者预计 AI 能省下约 24% 的时间；结束后，他们仍估计省下了约 20%。记录的完成时间却朝相反方向变化。",
-      "source_id": "S-3e46675e99fa"
+      "source_id": "S-3e46675e99fa",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-mckinsey-ai-adoption-2025-1",
       "title": "用了，不等于已经全面部署",
       "kind": "report",
       "text": "调查把组织的 AI 使用阶段拆成试验、试点、扩大部署和全面部署。一个部门经常使用 AI，与整家公司围绕它改变工作方式，仍相隔多步。",
-      "source_id": "S-077005342e21"
+      "source_id": "S-077005342e21",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-google-antigravity-preview-1",
       "title": "交上来的不只是代码",
       "kind": "demo",
       "text": "官方展示的工作记录包括任务清单、实施计划、操作说明、截图与浏览器录屏：用户可以围绕一项成果查看代理做到了哪一步。",
-      "source_id": "S-0ef87254b6c6"
+      "source_id": "S-0ef87254b6c6",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-openclaw-personal-agent-rename-1",
       "title": "作者用三句话解释这种期待",
       "kind": "quote",
       "text": "“Your assistant. Your machine. Your rules.”——你的助手，你的机器，你的规则。更名公告把个人掌控感放在了最显眼的位置。",
-      "source_id": "S-8c055b3b2de3"
+      "source_id": "S-8c055b3b2de3",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-agent-skills-vscode-ga-1",
       "title": "同一套市场研究步骤，下次可以再用",
       "kind": "report",
       "text": "Manus 的同期示例把市场研究写成一套步骤：浏览指定网站，用脚本处理下载的数据，最后套用报告模板。它也介绍，完成一次满意的任务后，可以让系统把过程保存成 Skill。",
-      "source_id": "S-e40d0c727172"
+      "source_id": "S-e40d0c727172",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-chatgpt-work-launch-1",
       "title": "每周的例会材料，可以成为一个持续任务",
       "kind": "report",
       "text": "发布页举例：每周读取 Slack 的新进展，更新例会议程；收到邮件反馈后，再更新演示文稿。交给代理的东西，从一次性问题变成了有资料来源和更新节奏的工作。",
-      "source_id": "S-41173eb729ab"
+      "source_id": "S-41173eb729ab",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-alphagenome-nature-paper-1",
       "title": "把一个变化放回整段序列中看",
       "kind": "report",
       "text": "研究中的直观做法，是分别输入原始 DNA 和改变后的 DNA，再比较两组预测：哪一种基因活动可能上升，哪一种剪接过程可能被打乱。模型先帮助研究者缩小要验证的范围。",
-      "source_id": "S-86b9cf7eb639"
+      "source_id": "S-86b9cf7eb639",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-metr-productivity-study-update-1",
       "title": "想参加研究，又舍不得关掉工具",
       "kind": "report",
       "text": "METR 记录的一位开发者很矛盾：愿意帮助研究者得到新数据，却又很喜欢使用 AI。还有人挑着提交任务，因为不想冒着被分到“禁用 AI”组的可能去做某些工作。",
-      "source_id": "S-a4060b831064"
+      "source_id": "S-a4060b831064",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-iea-energy-ai-2026-1",
       "title": "机房之外，还有一条供电进度表",
       "kind": "report",
       "text": "IEA 跟踪的不是发布会上宣布了多少容量，而是项目现场有没有开始清场和施工。等待接入电网时，有些开发商转向自建燃气发电，但轮机供应又成了下一道现实门槛。",
-      "source_id": "S-fe88f9d0fbb4"
+      "source_id": "S-fe88f9d0fbb4",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-seedance-hollywood-reaction-1",
       "title": "2月13日报道记录的编剧回应",
       "kind": "quote",
       "text": "“It’s likely over for us.” —— Rhett Reese，由 Variety 报道记录。这是一名编剧当时的担忧。",
-      "source_id": "S-0952f2932b1b"
+      "source_id": "S-0952f2932b1b",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-block-ai-restructuring-workers-1",
       "title": "3月8日：一名员工的回应",
       "kind": "report",
       "text": "“an employee is more than a series of tasks” —— 受访员工 Mark（化名），《卫报》采访。",
-      "source_id": "S-220aed94e9e8"
+      "source_id": "S-220aed94e9e8",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-anthropic-81k-user-interviews-1",
       "title": "2025年12月自述，2026年3月公开",
       "kind": "report",
       "text": "报告收录的一名墨西哥软件工程师说，AI 帮助自己按时下班，去学校接孩子、陪他们吃饭和玩耍。这里保留的是匿名受访者对自己生活的讲述，不是研究独立测量出的家庭收益。",
-      "source_id": "S-bc883daf401a"
+      "source_id": "S-bc883daf401a",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-beijing-robot-half-marathon-2026-1",
       "title": "从一张成绩表理解“自主”",
       "kind": "report",
       "text": "赛事规则采用“净计时 × 系数 + 罚时”：自主导航系数为1.0，遥控系数为1.2。因而先冲线不必然等于最终排名更高；自主程度本身也成为比赛考量。",
-      "source_id": "S-851263928a75"
+      "source_id": "S-851263928a75",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-sora-consumer-service-closure-1",
       "title": "4月30日社区公告：名字留下，作品范围放开",
       "kind": "report",
       "text": "r/SoraAi 的管理公告允许其他主要 AI 视频模型的作品进入社区，仍保留原社区名。这是现存管理帖显示的调整；帖子的编辑时间未确认。",
-      "source_id": "S-ead8a2db5218"
+      "source_id": "S-ead8a2db5218",
+      "temporal_context": "undated"
     },
     {
       "id": "M-sora-consumer-service-closure-2",
       "title": "7月20日采访：导演回看制作中途的工具变化",
       "kind": "report",
       "text": "“the core technology we were building the film with went away in the middle of making the film.” —— Nik Kleverov。采访同时说明，其团队当时仍保有 API 渠道；这句话表达制作所依赖产品退出带来的不确定性。",
-      "source_id": "S-292c3675af26"
+      "source_id": "S-292c3675af26",
+      "temporal_context": "retrospective"
     },
     {
       "id": "M-openai-hugging-face-investigation-1",
       "title": "独立调查也要说明没看见什么",
       "kind": "report",
       "text": "METR把调查资料和限制放在结论旁：它分析了大量运行记录，同时明确没有核验公司的全部调查与修复计划。读者可以把不同来源的发现和范围并排看。",
-      "source_id": "S-9ad84ad00d20"
+      "source_id": "S-9ad84ad00d20",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-frontier-pacing-proposal-1",
       "title": "厂商提出放慢节奏",
       "kind": "quote",
       "text": "“We must slow the pace at which we improve the capabilities of AI models.”——Amodei在文章中提出这一主张。",
-      "source_id": "S-98264c64ca81"
+      "source_id": "S-98264c64ca81",
+      "temporal_context": "undated"
     },
     {
       "id": "M-cowork-research-preview-1",
       "title": "从截图到表格，从笔记到初稿",
       "kind": "demo",
       "text": "官方首发给出的任务很日常：让一堆截图变成表格，让散落的笔记形成初稿。交给它的对象开始是一个文件夹，而不只是聊天框里的文字。",
-      "source_id": "S-9f707cd4f760"
+      "source_id": "S-9f707cd4f760",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-github-copilot-general-availability-1",
       "title": "编辑器里的建议成为一项个人订阅",
       "kind": "report",
       "text": "公开版定价为每月10美元或每年100美元，经验证的学生与热门开源项目维护者可以免费使用。AI编程助手开始以一项日常工具，而不是实验演示，进入个人开发者的选择。",
-      "source_id": "S-8092837970d0"
+      "source_id": "S-8092837970d0",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-stable-diffusion-public-release-1",
       "title": "从排队使用网页，到下载模型自己运行",
       "kind": "report",
       "text": "公开发布把模型权重与许可交到开发者手中；公告同时把本地GPU支持及更多芯片优化列为随后开放的方向。参与图像生成开始包括下载、配置和改造模型。",
-      "source_id": "S-a09ff889d5db"
+      "source_id": "S-a09ff889d5db",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-new-bing-preview-1",
       "title": "搜索框开始接住一连串要求",
       "kind": "demo",
       "text": "发布页举的例子不再只是查一个网页：安排五天旅行、判断沙发能否放进汽车、总结财报后继续做对比表。搜索被描述成一段可以追问和改写的对话。",
-      "source_id": "S-c59db50c39d3"
+      "source_id": "S-c59db50c39d3",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-gpt4-release-1",
       "title": "能力演示很惊艳，入口仍然有限",
       "kind": "report",
       "text": "发布页把模拟律师考试成绩、图像理解和更长上下文摆在一起；同一页面也写明，当天通过ChatGPT与API开放的是文字输入，API需要排队，图像输入仍属研究预览。",
-      "source_id": "S-e594f9160e13"
+      "source_id": "S-e594f9160e13",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-ai-cover-songs-1",
       "title": "一首翻唱背后，是一条手工制作链",
       "kind": "report",
       "text": "北京商报记者记录，B站上的《发如雪》翻唱出圈；创作者展示的过程包括收集素材、分离人声、训练与翻唱。几分钟成品背后，仍有具体的人在准备和调整。",
-      "source_id": "S-b35751ba4cfe"
+      "source_id": "S-b35751ba4cfe",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-nvidia-compute-demand-earnings-1",
       "title": "热潮第一次明显写进收入预期",
       "kind": "report",
-      "text": "5月财报把下一季度总收入预期定在110亿美元；8月公布的实际总收入为135.1亿美元，其中数据中心收入103.2亿美元。模型热潮开始与机房、芯片和经营结果连在一起，但不能把全部收入都归给生成式AI。",
-      "source_id": "S-a2379c3f2bc0"
+      "text": "5月财报把下一季度总收入预期定在110亿美元。模型热潮开始与机房、芯片和经营预期连在一起，但不能把全部收入都归给生成式AI。后来的实际结果另见这个节点的“后来再看”。",
+      "source_id": "S-a2379c3f2bc0",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-wga-ai-contract-provisions-1",
       "title": "争论最终落在合同条款里",
       "kind": "report",
-      "text": "协议把几个抽象问题写成可执行条款：AI不取得合同中的编剧身份，公司不能强迫编剧使用AI，交付给编剧的材料若含AI生成内容须予披露。适用范围仍限于这份行业协议。",
-      "source_id": "S-d813ae6bd713"
+      "text": "协议把抽象争论落到具体工作关系：AI 不取得协议中的编剧身份，公司不能要求编剧使用 AI；向编剧提供条款所述 AI 生成书面材料时须披露。适用范围限于这份行业协议。",
+      "source_id": "S-d813ae6bd713",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-us-ai-executive-order-14110-1",
       "title": "一份命令展开成许多部门的时间表",
       "kind": "report",
       "text": "命令同时触及前沿模型报告、安全测试标准、关键基础设施、政府使用、民权与劳动影响。读者看到的不只是原则宣言，而是一系列分派给联邦部门的任务和期限。",
-      "source_id": "S-4a3b3fec13a8"
+      "source_id": "S-4a3b3fec13a8",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-chatgpt-prompt-bridge-1",
       "title": "让一个 AI 帮另一个 AI 写提示词",
       "kind": "report",
       "text": "第一财经采访的一位插画师，把 ChatGPT 当成人类语言与 Stable Diffusion 提示词之间的翻译器。新工具刚出现，人们已经开始把多个 AI 串在同一条创作流程里。",
-      "source_id": "S-2733765202cd"
+      "source_id": "S-2733765202cd",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-chatgpt-rust-learning-1",
       "title": "把聊天窗口当成学习搭档",
       "kind": "report",
       "text": "ChatGPT 上线第五天，Simon Willison 已用它学习 Rust：追问代码、解释编译错误、比较写法。他也记录了模型把不存在的命令说得十分肯定，兴奋和警惕同时出现。",
-      "source_id": "S-3b53fd07bd15"
+      "source_id": "S-3b53fd07bd15",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-generative-ai-at-work-paper-1",
-      "title": "平均提高 14%，新手提高 34%",
+      "title": "同一个助手，带来的增益并不相同",
       "kind": "report",
-      "text": "同一项研究里，新手和低技能客服的提升明显高于熟练员工。AI 并非给每个人同样的增益，它可能首先缩短了“还不知道该怎么做”的距离。",
-      "source_id": "S-48f9118e3a25"
+      "text": "首版论文研究客服人员获得 AI 助手后的工作：平均每小时解决问题数提高约 14%，提升更多集中在新手和较低技能人员。经验丰富者的变化较小。这里测量的是具体岗位，不能推广成所有工作的提效比例。",
+      "source_id": "S-nber-w31161-first-version",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-khanmigo-limited-pilot-1",
       "title": "它被要求提问，而不是直接交答案",
       "kind": "demo",
       "text": "Khanmigo 的设计目标是通过来回追问引导学生：可以讨论数学、共同构思故事、学编程或准备考试，但不替学生直接完成答案。这是小范围试点的产品设想，不是效果结论。",
-      "source_id": "S-5a53c0b3a6ba"
+      "source_id": "S-5a53c0b3a6ba",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-midjourney-state-fair-win-1",
       "title": "一张获奖图背后有 900 多次候选",
       "kind": "report",
       "text": "报道记录的流程包括约 80 小时工作、900 多张 Midjourney 生成图、人工挑选、Photoshop 调整、放大与打印。现场争论的焦点，恰恰是这些步骤该怎样被称作“创作”。",
-      "source_id": "S-c3869844de6c"
+      "source_id": "S-c3869844de6c",
+      "temporal_context": "contemporary"
     },
     {
       "id": "M-nyc-school-chatgpt-restriction-1",
       "title": "先封住入口，再学习怎么使用",
       "kind": "report",
       "text": "1 月的限制仍允许学校为研究申请访问；5 月，教育系统开始提供教学案例与资源。同一个机构在一个学期内完成了从应急反应到受控探索的转向。",
-      "source_id": "S-31594d5d2748"
+      "source_id": "S-31594d5d2748",
+      "temporal_context": "retrospective"
     },
     {
       "id": "M-stackoverflow-chatgpt-temporary-ban-1",
       "title": "生成很快，验证很慢",
       "kind": "report",
       "text": "政策帖说，错误答案往往写得很像正确答案，而且可以大量生成；要识别问题，却需要有专业知识的人逐条细读。五天之内，惊艳体验已经变成社区治理压力。",
-      "source_id": "S-63bb41b325b7"
+      "source_id": "S-63bb41b325b7",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-m365-document-to-slides",
+      "title": "上周的文档，可以成为这次演示稿的起点",
+      "kind": "demo",
+      "text": "微软发布说明举例：PowerPoint 可以根据提示，加入过去写过的文档内容；同一套 Copilot 也可帮助起草 Word 文档、整理邮件和会议。熟悉的办公动作成了 AI 的演示场景，这仍是发布时的产品说明。",
+      "source_id": "S-469efea3b606",
+      "temporal_context": "contemporary"
     }
   ],
   "relations": [
@@ -6564,6 +6757,43 @@
       "note": "两项研究的任务、人群、工具和年份均不同；连线用于比较效果为何会随工作情境变化，不把结果写成互相推翻。",
       "evidence_source_ids": [
         "S-48f9118e3a25"
+      ]
+    }
+  ],
+  "reading_routes": [
+    {
+      "id": "chat-window-to-public-life",
+      "title": "一个聊天窗口，为什么成了公共事件？",
+      "intro": "从 2022 年末出发，沿六个事件看试用、能力、工作和规则怎样进入同一场讨论。",
+      "steps": [
+        {
+          "event_id": "chatgpt-public-preview",
+          "transition_to_next": "有人拿它学编程，也有人试着写作。接下来，怎样判断一个新工具已经进入公共讨论？"
+        },
+        {
+          "event_id": "chatgpt-public-growth",
+          "transition_to_next": "关注度之外，接下来的能力展示又改变了什么期待？下一站回到 GPT-4 的发布现场。"
+        },
+        {
+          "event_id": "gpt4-release",
+          "transition_to_next": "能力展示之后，人们会在哪里遇见它？接下来看看微软怎样把 AI 放进熟悉的工作工具。"
+        },
+        {
+          "event_id": "m365-copilot-announcement",
+          "transition_to_next": "演示之外，真实工作里测到了什么？下一站是一项独立客服研究，并非 Copilot 的效果验证。"
+        },
+        {
+          "event_id": "generative-ai-at-work-paper",
+          "transition_to_next": "效率之外，谁有权决定怎么用？下一站转向另一种职业——编剧。这是并行的劳动观察，不是客服研究的后果。"
+        },
+        {
+          "event_id": "wga-ai-contract-provisions"
+        }
+      ],
+      "outro": "这条路线里，AI 从可直接尝试的聊天入口，走向具体工作和使用规则；兴奋、实际效果与人的选择始终交织。它只是一条观察公众入口与工作的路径，2023 年的创作热潮和开放生态仍有其他故事。",
+      "exit_event_ids": [
+        "ai-cover-songs",
+        "llama2-release"
       ]
     }
   ]
