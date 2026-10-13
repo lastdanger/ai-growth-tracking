@@ -94,12 +94,28 @@ export function checkMap(data) {
     fail(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.id) && route.title && route.intro && route.outro, `Route description: ${route.id}`);
     fail(Array.isArray(route.steps) && route.steps.length >= 2, `Route steps: ${route.id}`);
     refs(route.steps.map(step => step.event_id), events, `route ${route.id}`);
+    fail(typeof route.focus === 'string' && route.focus.trim(), `Route focus: ${route.id}`);
     route.steps.forEach((step, i) => {
       fail(events.get(step.event_id).change, `Route event lacks change: ${step.event_id}`);
       fail(i === route.steps.length - 1 ? !step.transition_to_next : !!step.transition_to_next, `Route transition: ${step.event_id}`);
       if (step.source_ids) refs(step.source_ids, sources, `transition ${step.event_id}`);
+      if (step.explore) {
+        fail(events.has(step.explore.event_id) && !route.steps.some(s => s.event_id === step.explore.event_id) && typeof step.explore.reason === 'string' && step.explore.reason.trim(), `Route branch: ${step.event_id}`);
+        fail(i < route.steps.length - 1, `Final step branch belongs in exits: ${step.event_id}`);
+      }
     });
     refs(route.exit_event_ids, events, `route exits ${route.id}`);
+    fail(route.exit_notes && Object.keys(route.exit_notes).length === route.exit_event_ids.length, `Route exit notes: ${route.id}`);
+    for (const id of route.exit_event_ids) {
+      const note = route.exit_notes[id];
+      fail(note && typeof note.label === 'string' && note.label.trim() && typeof note.reason === 'string' && note.reason.trim(), `Route exit reason: ${id}`);
+    }
+    if (route.continuation) {
+      const next = routes.get(route.continuation.route_id);
+      const owner = [...years.values()].find(y => y.reading_route_id === route.id);
+      const nextOwner = [...years.values()].find(y => y.reading_route_id === next?.id);
+      fail(next && owner && nextOwner && nextOwner.year === owner.year + 1 && typeof route.continuation.reason === 'string' && route.continuation.reason.trim(), `Route continuation: ${route.id}`);
+    }
   }
   const edgeIds = new Set();
   for (const r of data.relations) {

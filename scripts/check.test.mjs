@@ -24,6 +24,12 @@ rejects('拒绝无效路线引用', d => d.reading_routes[0].steps[0].event_id =
 rejects('拒绝重复路线站点', d => d.reading_routes[0].steps[1].event_id = d.reading_routes[0].steps[0].event_id, /Repeated route/);
 rejects('拒绝缺少下一站理由', d => delete d.reading_routes[0].steps[0].transition_to_next, /Route transition/);
 rejects('拒绝不存在的路线出口', d => d.reading_routes[0].exit_event_ids.push('missing'), /Unknown route exits/);
+rejects('拒绝跨年入口指向不存在的路线', d => d.reading_routes[0].continuation.route_id = 'missing', /Route continuation/);
+rejects('拒绝跨年入口形成回环', d => d.reading_routes[1].continuation.route_id = d.reading_routes[0].id, /Route continuation/);
+rejects('拒绝跨年入口缺少阅读理由', d => d.reading_routes[0].continuation.reason = '', /Route continuation/);
+rejects('拒绝有出口但无解释', d => delete d.reading_routes[0].exit_notes[d.reading_routes[0].exit_event_ids[0]], /Route exit notes/);
+rejects('拒绝分支指向不存在的事件', d => d.reading_routes[3].steps[1].explore.event_id = 'missing', /Route branch/);
+rejects('拒绝分支重复主路', d => d.reading_routes[3].steps[1].explore.event_id = d.reading_routes[3].steps[0].event_id, /Route branch/);
 rejects('拒绝正文复制摘要', d => d.events[0].then.text = d.events[0].summary, /Repeated summary/);
 rejects('拒绝无日期材料冒充同期', d => {
   const m = d.materials.find(m => !d.sources.find(s => s.id === m.source_id).published_at);

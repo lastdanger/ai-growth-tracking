@@ -134,7 +134,11 @@
 
   function renderRouteEntry(year) {
     const route = routesById.get(year.reading_route_id);
-    return route ? `<section class="route-entry"><div><div class="eyebrow">一条推荐路线 · ${route.steps.length} 站</div><h2>${escapeHTML(route.title)}</h2><p>${escapeHTML(route.intro)}</p></div>${routeButton(route, 0, '从第一站开始')}</section>` : '';
+    return route ? `<section class="route-entry"><div><div class="eyebrow">一条推荐路线 · ${route.steps.length} 站</div><h2>${escapeHTML(route.title)}</h2><p>${escapeHTML(route.intro)}</p><p class="route-focus">这条路线看的是：${escapeHTML(route.focus)}</p></div>${routeButton(route, 0, '从第一站开始')}</section>` : '';
+  }
+
+  function routeBranch(branch, label) {
+    return `<div class="route-branch"><div class="eyebrow">${escapeHTML(label)}</div><p>${escapeHTML(branch.reason)}</p><button type="button" class="route-button" data-action="event" data-event="${escapeHTML(branch.event_id)}">${escapeHTML(eventsById.get(branch.event_id).title)} ↗</button></div>`;
   }
 
   function renderRouteExit(event) {
@@ -146,8 +150,10 @@
     }
     const index = route.steps.findIndex(step => step.event_id === event.id);
     const previous = index > 0 ? routeButton(route, index - 1, '上一站') : '';
-    if (index + 1 < route.steps.length) return `<section class="route-next"><div class="eyebrow">接下来 · ${index + 2} / ${route.steps.length}</div><p>${escapeHTML(route.steps[index].transition_to_next)}</p>${routeButton(route, index + 1, eventsById.get(route.steps[index + 1].event_id).title)}<div class="route-previous">${previous}</div></section>`;
-    return `<section class="route-next"><div class="eyebrow">这条路线读到这里</div><p>${escapeHTML(route.outro)}</p><p class="route-reflection">回想一下：哪个变化最具体？它改变了谁的工作或选择？</p><div class="route-exits">${route.exit_event_ids.map(id => `<button type="button" class="route-button" data-action="event" data-event="${escapeHTML(id)}">继续看 · ${escapeHTML(eventsById.get(id).title)} ↗</button>`).join('')}</div><div class="route-previous">${previous}</div></section>`;
+    const step = route.steps[index];
+    if (index + 1 < route.steps.length) return `<section class="route-next"><div class="eyebrow">接下来 · ${index + 2} / ${route.steps.length}</div><p>${escapeHTML(step.transition_to_next)}</p>${routeButton(route, index + 1, eventsById.get(route.steps[index + 1].event_id).title)}${step.explore ? routeBranch(step.explore, '也可以沿效果问题看分支') : ''}<div class="route-previous">${previous}</div></section>`;
+    const next = route.continuation && routesById.get(route.continuation.route_id);
+    return `<section class="route-next"><div class="eyebrow">这条路线读到这里</div><p>${escapeHTML(route.outro)}</p>${next ? `<div class="route-continuation"><div class="eyebrow">沿这个问题，继续到下一年</div><p>${escapeHTML(route.continuation.reason)}</p>${routeButton(next, 0, next.title)}</div>` : ''}<div class="route-exits">${route.exit_event_ids.map(id => routeBranch({event_id: id, reason: route.exit_notes[id].reason}, route.exit_notes[id].label)).join('')}</div><div class="route-previous">${previous}</div></section>`;
   }
 
   function renderMaterial(material) {

@@ -251,6 +251,10 @@ p:last-child { margin-bottom: 0; }
 .route-next .route-reflection { font-size: 14px; color: var(--accent); }
 .route-previous .route-button { background: transparent; color: var(--accent); margin-top: 12px; padding: 3px 0; width: auto; font-size: 13px; }
 .route-exits { display: grid; gap: 12px; }
+.route-branch { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 18px; }
+.route-branch .route-button { background: transparent; color: var(--accent); border: 1px solid #497868; }
+.route-continuation { margin: 24px 0; }
+.route-entry .route-focus { font-size: 13px; color: var(--accent); }
 .reading-fold { border-top: 1px solid var(--line); padding: 16px 0; margin-top: 12px; }
 .reading-fold summary { color: var(--muted); font-size: 14px; }
 .reading-fold[open] > summary { margin-bottom: 18px; }

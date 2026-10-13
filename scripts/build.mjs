@@ -31,12 +31,19 @@ for (const y of data.years) {
   let md = `# ${y.year} · ${y.keyword}\n\n**${y.tagline}**\n\n${y.lead || y.summary}\n\n状态：${statusLabels[y.status]}。${y.coverage_note}\n\n> 本文件由 data/map.json 生成，不直接编辑。内容包更新 ${data.updated_at}；年度核验截止 ${y.as_of}。关键词和主次是编辑判断，日期按来源性质显示。\n\n`;
   const route = data.reading_routes.find(route => route.id === y.reading_route_id);
   if (route) {
-    md += `## 推荐路线：${route.title}\n\n${route.intro}\n\n`;
+    md += `## 推荐路线：${route.title}\n\n${route.intro}\n\n这条路线看的是：${route.focus}。\n\n`;
     route.steps.forEach((step, i) => {
       const event = data.events.find(event => event.id === step.event_id);
       md += `${i + 1}. **${event.title}（${event.year}）**：${event.change}${step.transition_to_next ? ` 接下来：${step.transition_to_next}` : ''}\n`;
+      if (step.explore) md += `   分支：${data.events.find(e => e.id === step.explore.event_id).title}。${step.explore.reason}\n`;
     });
     md += `\n${route.outro}\n\n`;
+    if (route.continuation) {
+      const nextYear = data.years.find(y => y.reading_route_id === route.continuation.route_id);
+      md += `沿这个问题继续：[${nextYear.year} 年路线](${nextYear.year}.md)。${route.continuation.reason}\n\n`;
+    }
+    for (const id of route.exit_event_ids) md += `- ${route.exit_notes[id].label}：**${data.events.find(e => e.id === id).title}**。${route.exit_notes[id].reason}\n`;
+    md += '\n';
   }
   md += '## 年度主线\n\n';
   md += table(items.filter(e => e.tier === 'main'));

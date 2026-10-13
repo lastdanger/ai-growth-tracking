@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-13",
   "years": [
     {
       "year": 2022,
@@ -214,7 +214,7 @@
         }
       ],
       "reading_route_id": "delegation-and-boundaries",
-      "lead": "一堆截图、一个文件夹、每周都要更新的材料：交给 AI 的事情开始有了持续的上下文。有人想把代理放在自己的机器上，也有人已经舍不得关掉工作中的工具。但愿意使用、实际有效、始终受控，是三个需要分别回答的问题。这五站沿着具体委托往下读，最后走进一次调查。2026 仍在进行中，这是一条阶段路线。"
+      "lead": "一堆截图、一个文件夹、每周都要更新的材料：交给 AI 的事情开始有了持续的上下文。这三站从交材料、选择个人代理，走到让同一项工作持续推进；效果测量与授权边界从分支展开。2026 仍在进行中，这是一条阶段路线。"
     }
   ],
   "events": [
@@ -2649,7 +2649,7 @@
       "roles": [
         "public-impact"
       ],
-      "why_selected": "用独立真实任务实验检验效率期待；这不是上一站 GitHub coding agent 的专门测评，也不能推广为所有人或后来工具都会变慢。",
+      "why_selected": "用独立真实任务实验检验效率期待；这不是 GitHub coding agent 的专门测评，也不能推广为所有人或后来工具都会变慢。",
       "later": null,
       "then": {
         "text": "7 月 10 日，METR 公布一项随机实验：16 名资深开源开发者在熟悉的项目里完成 246 项任务，任务被分为允许或不允许使用 AI。允许 AI 的任务耗时反而增加约 19%。使用的主要是当年早期的 Cursor 与 Claude 工具，结果限定于这批人员、代码库和任务。",
@@ -3576,7 +3576,7 @@
       ],
       "why_selected": "以公司说明和独立调查并读实际控制失效，区分事件发生与调查公开日期；不外推为所有代理必然越界，也不把公司修复承诺当作独立验收。",
       "then": {
-        "text": "8 月 26 日，OpenAI 与 METR 公布对 7 月事件的调查。OpenAI 说明，事件主要由内部研究模型驱动，评估环境减少了安全限制；这不是上一站 ChatGPT Work 的日常使用记录。METR 重点调查 7 月 7 日至 13 日的行为，其六天现场工作不覆盖公司的全部调查和修复计划。",
+        "text": "8 月 26 日，OpenAI 与 METR 公布对 7 月事件的调查。OpenAI 说明，事件主要由内部研究模型驱动，评估环境减少了安全限制；调查对象是内部研究环境中的行为。METR 重点调查 7 月 7 日至 13 日的行为，其六天现场工作不覆盖公司的全部调查和修复计划。",
         "source_ids": [
           "S-08bdbdb0023f",
           "S-9ad84ad00d20"
@@ -6820,130 +6820,187 @@
     {
       "id": "chat-window-to-public-life",
       "title": "一个聊天窗口，为什么成了公共事件？",
-      "intro": "从 2022 年末出发，沿六个事件看试用、能力、工作和规则怎样进入同一场讨论。",
+      "intro": "从一次好奇的试用，到公众讨论，再到工作与合同：这六站看聊天窗口怎样进入公共生活。",
       "steps": [
         {
           "event_id": "chatgpt-public-preview",
-          "transition_to_next": "有人拿它学编程，也有人试着写作。接下来，怎样判断一个新工具已经进入公共讨论？"
+          "transition_to_next": "一个人发现它能帮上忙之后，更多人开始试用、分享和争论。下一站看这股兴趣怎样成为公众热潮。"
         },
         {
           "event_id": "chatgpt-public-growth",
-          "transition_to_next": "关注度之外，接下来的能力展示又改变了什么期待？下一站回到 GPT-4 的发布现场。"
+          "transition_to_next": "热度带来了更高的期待。接下来看看 GPT-4 展示了哪些能力，又有哪些还停留在演示与有限开放中。"
         },
         {
           "event_id": "gpt4-release",
-          "transition_to_next": "能力展示之后，人们会在哪里遇见它？接下来看看微软怎样把 AI 放进熟悉的工作工具。"
+          "transition_to_next": "能力展示怎样进入日常工作？下一站看熟悉的文档、邮件和会议，如何成为 AI 的应用入口。"
         },
         {
           "event_id": "m365-copilot-announcement",
-          "transition_to_next": "演示之外，真实工作里测到了什么？下一站是一项独立客服研究，并非 Copilot 的效果验证。"
+          "transition_to_next": "办公演示让人期待省下时间。接下来换一个有实际测量的岗位——客服，看看谁获得了帮助。这项独立研究观察的工具并非 Copilot。"
         },
         {
           "event_id": "generative-ai-at-work-paper",
-          "transition_to_next": "效率之外，谁有权决定怎么用？下一站转向另一种职业——编剧。这是并行的劳动观察，不是客服研究的后果。"
+          "transition_to_next": "工作变化不只有效率。转向编剧的合同，我们接着看：谁能决定是否使用 AI，谁的劳动需要被保护？"
         },
         {
           "event_id": "wga-ai-contract-provisions"
         }
       ],
-      "outro": "这条路线里，AI 从可直接尝试的聊天入口，走向具体工作和使用规则；兴奋、实际效果与人的选择始终交织。它只是一条观察公众入口与工作的路径，2023 年的创作热潮和开放生态仍有其他故事。",
+      "outro": "这六站里，聊天窗口从个人试用走进公众讨论，再进入工作现场和劳动规则。下一年，问题继续扩展：人交给 AI 的不再只有文字。",
       "exit_event_ids": [
         "ai-cover-songs",
         "llama2-release"
-      ]
+      ],
+      "focus": "从公众对话到工作与规则",
+      "continuation": {
+        "route_id": "beyond-the-chat-window",
+        "reason": "2024：当画面、声音和屏幕操作加入进来，人会怎样与 AI 打交道？"
+      },
+      "exit_notes": {
+        "ai-cover-songs": {
+          "label": "换个视角看这一年",
+          "reason": "从聊天与办公转到流行文化，看 AI 翻唱怎样引发围观和争议。"
+        },
+        "llama2-release": {
+          "label": "换个视角看这一年",
+          "reason": "从使用成品转到开放模型，看开发者获得了怎样不同的参与入口。"
+        }
+      }
     },
     {
       "id": "beyond-the-chat-window",
-      "title": "AI 走出聊天框之后，人还需要做什么？",
-      "intro": "沿五站看视频怎样成为作品、交互怎样扩展，以及答案和动作为什么仍需要人的判断。",
+      "title": "从生成画面到操作电脑，AI 怎样走出聊天框？",
+      "intro": "先看一段视频怎样成为作品，再看画面与声音怎样进入对话，最后走到日常搜索和屏幕操作。五站串起能力进入不同场景的过程。",
       "steps": [
         {
           "event_id": "sora-research-preview",
-          "transition_to_next": "能生成片段，离做成作品还有多远？下一站进入同一工具的创作者案例，看看人接着做了什么。"
+          "transition_to_next": "生成片段只是起点。下一站跟着创作者走进剪辑过程，看零散画面怎样成为一个故事。"
         },
         {
           "event_id": "sora-air-head-creators",
-          "transition_to_next": "从剪辑生成素材，换到另一种与 AI 相处的方式：如果文字、声音和图像进入同一场对话，使用门槛会怎样变化？这是一条并行发展线。"
+          "transition_to_next": "前面，人从 AI 生成的画面里挑选素材；接下来，画面和声音也开始成为人向 AI 提问的方式。"
         },
         {
           "event_id": "gpt-4o-announcement",
-          "transition_to_next": "交互更自然，并不自动让答案更可靠。接下来转到另一家公司的搜索入口，看生成式回答遇到了什么具体问题。"
+          "transition_to_next": "新的交互需要人主动尝试；搜索摘要则把生成式回答带到熟悉的入口。下一站看这种接触方式扩大后，一个错误怎样进入公共讨论。"
         },
         {
           "event_id": "ai-overviews-public-errors",
-          "transition_to_next": "如果 AI 不只回答，还开始点击和输入，判断的对象又会怎样变化？下一站看电脑操作的实验入口；它并不是为解决前面的搜索错误而推出。"
+          "transition_to_next": "搜索里的问题是“答案可靠吗”；接下来，AI 开始点击和输入，问题又多了一层：“它能把步骤做对吗？”下一站看电脑操作的实验入口。"
         },
         {
           "event_id": "claude-computer-use"
         }
       ],
-      "outro": "这一年，AI 的生成和交互开始进入更多场景，人仍在选择素材、核对信息和检查操作。“扩界”既是能力的扩展，也是具体限制的显现；这五站没有涵盖同年的科学、算力和制度变化。",
+      "outro": "画面可以成为素材，声音和图像可以进入对话，屏幕上的按钮也开始成为操作对象。这些是并行扩展的场景；到了下一年，我们继续追问：能否把几个步骤交成一项任务？",
       "exit_event_ids": [
         "alphafold-3",
         "eu-ai-act-enters-force"
-      ]
+      ],
+      "focus": "从文字交互到画面、声音和操作",
+      "continuation": {
+        "route_id": "from-trying-to-delegating",
+        "reason": "2025：有了更多能力，能否把一项任务交出去，收回可用的结果？"
+      },
+      "exit_notes": {
+        "alphafold-3": {
+          "label": "换个视角看这一年",
+          "reason": "离开日常交互，看 AI 在分子结构研究中带来的另一种能力扩展。"
+        },
+        "eu-ai-act-enters-force": {
+          "label": "换个视角看这一年",
+          "reason": "从具体产品转到制度，看这一年如何尝试为不同风险划定规则。"
+        }
+      }
     },
     {
       "id": "from-trying-to-delegating",
       "title": "说出想法以后，AI 能替人做到哪一步？",
-      "intro": "从 DeepSeek 试用热潮，走到写程序、交接代码、核对效率与制作文件；沿五站看“试试看”怎样变成“交给它”。",
+      "intro": "热潮让人开始尝试，原型让想法变得可见，任务交接让结果可以审阅。这五站追问：把工作交出去以后，究竟得到什么？",
       "steps": [
         {
           "event_id": "deepseek-app-public-surge",
-          "transition_to_next": "下载之后，可以拿 AI 做点什么？下一站换到一位开发者的个人玩法：把想法说出来，让网页先跑起来。这不是 DeepSeek 引发的后续事件，而是同年另一种使用尝试。"
+          "transition_to_next": "热潮把新工具带到更多人面前。接下来换一个具体玩法：把想法说出来，让网页先跑起来。两站呈现同年不同的尝试。"
         },
         {
           "event_id": "vibe-coding-karpathy",
-          "transition_to_next": "随手做原型之后，如果要把一项正式修改交出去，怎样收回结果？下一站看 GitHub 如何把任务放进问题单和代码审阅流程。"
+          "transition_to_next": "随手跑出原型之后，如果要交出一项正式修改，怎样收回结果？下一站看任务如何进入问题单和代码审阅流程。"
         },
         {
           "event_id": "github-copilot-coding-agent",
-          "transition_to_next": "能交回修改，就意味着更快完成工作吗？下一站看一项独立实验；它研究的是另一组工具与开发者，不是对上一站产品的测评。"
+          "transition_to_next": "任务交出去了，审阅和返工还要花时间。把完成任务的时间一起算上，人真的更快了吗？下一站用独立实验追问效果，研究对象是另一组工具与开发者。"
         },
         {
           "event_id": "metr-experienced-developers-rct",
-          "transition_to_next": "带着“实际效果要怎样判断”这个问题，再看同月另一个入口：当任务从代码变成资料和文件，工具打算接手哪些步骤，人在哪里接回来？"
+          "transition_to_next": "带着“交回什么、怎样验收”的问题，再从代码走向资料和文件：下一站看查找、分析和制作怎样被接成一项任务。"
         },
         {
           "event_id": "chatgpt-agent-release"
         }
       ],
-      "outro": "这五站里，人从尝试一个新入口，走到提出要求、收回修改和检查交付。把步骤交给 AI 的可能性在增加，效果仍要放回具体任务里判断；创作热潮和共同工具规则，还有另外的故事。",
+      "outro": "从随手做原型，到收回可审阅的代码和文件，交接的单位开始成为一项任务。效率实验提醒我们核对实际结果；接下来把时间拉长，看任务怎样成为持续工作。",
       "exit_event_ids": [
         "chatgpt-image-ghibli-wave",
         "mcp-agentic-ai-foundation"
-      ]
+      ],
+      "focus": "从提出想法到交付一项任务",
+      "continuation": {
+        "route_id": "delegation-and-boundaries",
+        "reason": "2026：一次任务完成之后，同一项工作能否持续推进？"
+      },
+      "exit_notes": {
+        "chatgpt-image-ghibli-wave": {
+          "label": "换个视角看这一年",
+          "reason": "从软件任务转向图像创作，看一种视觉风格如何成为公众热潮。"
+        },
+        "mcp-agentic-ai-foundation": {
+          "label": "换个视角看这一年",
+          "reason": "从单个代理转到工具连接，看共同协议怎样进入组织治理。"
+        }
+      }
     },
     {
       "id": "delegation-and-boundaries",
-      "title": "让 AI 持续做事，边界放在哪里？",
-      "intro": "2026 阶段路线：从文件夹和个人代理，读到使用习惯、持续任务与一次控制失效调查。",
+      "title": "从一次交接到持续工作，怎样把事情交给 AI？",
+      "intro": "2026 阶段路线：沿文件夹、个人代理和持续任务三站，看人怎样交材料、选择运行方式，再让同一项工作继续推进。效果与授权边界从分支展开。",
       "steps": [
         {
           "event_id": "cowork-research-preview",
-          "transition_to_next": "指定文件夹是一种交接方式。如果想让代理运行在自己的机器上，再从聊天软件找它，会多出哪些选择和维护工作？下一站看另一条个人代理路线。"
+          "transition_to_next": "先把文件交给工具，再问工具在哪里运行、怎样找到它。下一站看个人代理如何把自己的机器和常用聊天入口连起来。"
         },
         {
           "event_id": "openclaw-personal-agent-rename",
-          "transition_to_next": "有了更多入口，人真的更愿意把工作交出去了吗？下一站看独立研究中的开发者反馈；它不测评 OpenClaw，而是观察工具进入习惯后，效果为什么更难量清。"
+          "transition_to_next": "前两站关注怎样交材料、从哪里发起任务。接下来把时间拉长：资料每周都在变化，同一项工作能否持续跟进？",
+          "explore": {
+            "event_id": "metr-productivity-study-update",
+            "reason": "接着 2025 年的效率实验看：当开发者已经习惯使用 AI，为什么更难测清它究竟省了多少时间？"
+          }
         },
         {
-          "event_id": "metr-productivity-study-update",
-          "transition_to_next": "效果还要继续测量，产品也在尝试接住更长的工作。下一站换到持续更新资料的入口，看用户怎样从交出一件事，走向让同一项工作继续推进。"
-        },
-        {
-          "event_id": "chatgpt-work-launch",
-          "transition_to_next": "任务持续执行时，怎样判断它仍在授权范围内？最后一站读同年公开的研究环境调查。这是另一种环境中的事件，不能当作上一站产品发生了同样的问题。"
-        },
-        {
-          "event_id": "openai-hugging-face-investigation"
+          "event_id": "chatgpt-work-launch"
         }
       ],
-      "outro": "这条路线把三件事放在一起看：人愿意交出什么，工具实际上能做到什么，以及行动怎样留在授权之内。它们仍在变化；这不是2026全年的结论，科学与机器人也有各自的进展可以继续探索。",
+      "outro": "这三站把交接拆成了具体选择：交哪些材料、从哪里使用代理、怎样让工作持续更新。再往下，可以追问行动的授权边界，也可以换到科学与机器人。这仍是阶段观察，不是 2026 全年的结论。",
       "exit_event_ids": [
+        "openai-hugging-face-investigation",
         "alphagenome-nature-paper",
         "beijing-robot-half-marathon-2026"
-      ]
+      ],
+      "focus": "从一次交接到持续工作",
+      "exit_notes": {
+        "openai-hugging-face-investigation": {
+          "label": "沿授权问题继续",
+          "reason": "任务持续行动时，怎样发现它越过了授权？这份调查发生在安全限制减少的内部研究环境，不能据此判断上一站消费产品的行为。"
+        },
+        "alphagenome-nature-paper": {
+          "label": "换个视角看这一年",
+          "reason": "转向基因组研究，看看持续任务之外的科学进展。"
+        },
+        "beijing-robot-half-marathon-2026": {
+          "label": "换个视角看这一年",
+          "reason": "从屏幕转到赛道，看机器人在实体环境中的进展。"
+        }
+      }
     }
   ]
 }
