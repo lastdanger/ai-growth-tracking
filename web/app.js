@@ -163,7 +163,7 @@
 
   function renderDetail(event) {
     const materials = event.material_ids.map(id => materialsById.get(id));
-    const scene = materials.find(material => material.temporal_context === 'contemporary');
+    const scene = event.scene_material_id ? materialsById.get(event.scene_material_id) : materials.find(material => material.temporal_context === 'contemporary');
     const additional = materials.filter(material => material !== scene);
     const related = relations.filter(relation => relation.from === event.id || relation.to === event.id)
       .map(relation => ({ relation, target: eventsById.get(relation.from === event.id ? relation.to : relation.from) })).filter(item => item.target);

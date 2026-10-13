@@ -42,6 +42,7 @@ export function checkMap(data) {
     fail(Array.isArray(e.roles) && e.roles.length && e.roles.every(r => ['milestone', 'public-impact', 'early-signal'].includes(r)), `Selection roles: ${e.id}`);
     refs(e.source_ids, sources, `${e.id} sources`);
     refs(e.material_ids, materials, `${e.id} materials`, false);
+    if (e.scene_material_id !== undefined) fail(e.material_ids.includes(e.scene_material_id), `Scene material outside event: ${e.id}`);
     fail(e.then && e.then.text, `Missing contemporary perspective: ${e.id}`);
     fail(e.summary.trim() !== e.then.text.trim(), `Repeated summary: ${e.id}`);
     fail(!e.why_selected.includes('的具体分支，补充同年主线'), `Generic selection reason: ${e.id}`);

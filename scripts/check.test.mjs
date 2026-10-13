@@ -9,6 +9,7 @@ const rejects = (name, change, error) => test(name, () => {
   assert.throws(() => checkMap(data), error);
 });
 test('当前数据契约可校验', () => assert.equal(checkMap(original).events, original.events.length));
+rejects('开场材料必须属于当前事件', d => d.events[0].scene_material_id = 'missing', /Scene material outside event/);
 rejects('一个分支不能重复挂接', d => {
   const y = d.years[1]; y.display_groups[1].children.push(y.display_groups[0].children[0]);
 }, /Repeated\/unlabelled display child/);
