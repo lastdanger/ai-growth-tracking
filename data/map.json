@@ -1169,7 +1169,7 @@
       ],
       "why_selected": "模型权重与代码的可获得性改变开发参与条件，和在线聊天服务是不同入口。",
       "then": {
-        "text": "模型权重和起始代码提供了研究、开发与商用的参与入口，使用者仍须遵守具体许可，不能把可获得理解成没有条件。",
+        "text": "2023 年 7 月 18 日，Meta 发布 Llama 2，提供预训练模型与对话微调版本的权重和起始代码，宣布可用于研究和商业用途。开发者可以通过下载和云平台等渠道使用，具体用途仍受模型许可约束。",
         "source_ids": [
           "S-e237a6659214"
         ]
@@ -1178,9 +1178,30 @@
       "source_ids": [
         "S-e237a6659214"
       ],
-      "material_ids": [],
+      "material_ids": [
+        "M-llama2-download-entry"
+      ],
       "fact_ids": [
         "EV-20230718-001"
+      ],
+      "scene_material_id": "M-llama2-download-entry",
+      "change": "参与者不只是在聊天窗口里提问，也可以拿模型继续开发自己的系统。开放的是另一种动手机会；获得权重不等于完成了部署、维护或安全验证。",
+      "reading_picks": [
+        {
+          "event_id": "llama-31-open-weights",
+          "label": "后来怎样了",
+          "reason": "到 2024 年，下载模型之后可以继续加工什么？"
+        },
+        {
+          "event_id": "llama-research-release",
+          "label": "前面发生了什么",
+          "reason": "回到同一系列更早的研究入口，比较参与条件。"
+        },
+        {
+          "event_id": "qlora-paper",
+          "label": "怎样降低参与门槛",
+          "reason": "同年另一条方法线：微调模型怎样减少显存需求？"
+        }
       ]
     },
     {
@@ -2289,7 +2310,7 @@
       ],
       "why_selected": "开放权重、小模型与服务方案成为推理竞争的新变量。",
       "then": {
-        "text": "网页上的 DeepThink 让普通用户接触到这条推理路线。代码与 R1 权重采用 MIT 许可，蒸馏模型还需看各自基础模型的许可；发布时的基准比较由团队自行报告。",
+        "text": "2025 年 1 月 20 日，DeepSeek 发布 R1，提供在线服务、API 和权重下载，也发布六个蒸馏模型。蒸馏在这里指用 R1 生成的推理数据继续训练较小的基础模型；这些模型基于 Qwen 和 Llama，不能与 R1 主模型混为一谈。",
         "source_ids": [
           "S-7fec6fad143e",
           "S-7c57c255a26a",
@@ -2302,7 +2323,9 @@
         "S-7c57c255a26a",
         "S-767b4ac07aa3"
       ],
-      "material_ids": [],
+      "material_ids": [
+        "M-r1-deepthink-entry"
+      ],
       "fact_ids": [],
       "reading_picks": [
         {
@@ -2320,7 +2343,9 @@
           "label": "后来怎样了",
           "reason": "模型讨论怎样走向手机上的公众试用？"
         }
-      ]
+      ],
+      "scene_material_id": "M-r1-deepthink-entry",
+      "change": "推理能力不只出现在一个在线入口里，也通过权重和不同规模的蒸馏模型成为开发材料。普通用户可以试用，开发者则可以比较部署与调整的可能性；R1 代码和权重采用 MIT 许可，蒸馏模型还需看各自基础许可，发布方的基准成绩不等于独立效果验证。"
     },
     {
       "id": "stargate-project",
@@ -4053,8 +4078,8 @@
       "url": "https://about.fb.com/news/2023/07/llama-2/",
       "kind": "official",
       "published_at": "2023-07-18",
-      "accessed_at": "2026-09-14",
-      "scope": "沿用既有核验收据；Meta 提供模型权重和起始代码，宣布可用于研究和商业用途；具体使用仍受许可约束。"
+      "accessed_at": "2026-10-13",
+      "scope": "沿用既有核验收据；Meta 提供模型权重和起始代码，宣布可用于研究和商业用途；具体使用仍受许可约束。；10-13重读同期公告，核对权重/起始代码与云端入口；不采用开放必然更安全等厂商价值判断。"
     },
     {
       "id": "S-bb693a0bcf5c",
@@ -4359,8 +4384,8 @@
       "url": "https://deepseek.com/news/deepseek-r1/",
       "kind": "official",
       "published_at": "2025-01-20",
-      "accessed_at": "2026-09-14",
-      "scope": "发布日期、MIT 许可、蒸馏模型和服务入口。"
+      "accessed_at": "2026-10-13",
+      "scope": "发布日期、MIT 许可、蒸馏模型和服务入口。；10-13重读中文首发公告，核对深度思考、API与权重入口。"
     },
     {
       "id": "S-80d76661dadf",
@@ -4566,8 +4591,8 @@
       "url": "https://github.com/deepseek-ai/DeepSeek-R1",
       "published_at": null,
       "kind": "official",
-      "scope": "网页检索可读 README；明确 R1/R1-Zero 基于 V3-Base，蒸馏表列出 Qwen2.5-Math-1.5B/7B、Qwen2.5-14B/32B 和 Llama 模型。支持具体采用，不证明 Qwen 全系列或全行业的使用量。；09-15另核对MIT与各蒸馏模型基础许可，第7节区别保留。",
-      "accessed_at": "2026-09-15"
+      "scope": "网页检索可读 README；明确 R1/R1-Zero 基于 V3-Base，蒸馏表列出 Qwen2.5-Math-1.5B/7B、Qwen2.5-14B/32B 和 Llama 模型。支持具体采用，不证明 Qwen 全系列或全行业的使用量。；09-15另核对MIT与各蒸馏模型基础许可，第7节区别保留。；10-13重读模型说明与许可，核对蒸馏用途、基础模型及许可差异；现有README仅支持具体技术说明，未作为同期现场材料。",
+      "accessed_at": "2026-10-13"
     },
     {
       "id": "S-7c57c255a26a",
@@ -4575,8 +4600,8 @@
       "url": "https://api-docs.deepseek.com/news/news250120/",
       "published_at": "2025-01-20",
       "kind": "official",
-      "scope": "网页检索可读正文与标日期导航；支持 R1 及六个蒸馏模型发布、网页/API 可用时间，不采用性能宣传。；09-15再次核对R1首发的在线入口与许可声明。",
-      "accessed_at": "2026-09-15"
+      "scope": "网页检索可读正文与标日期导航；支持 R1 及六个蒸馏模型发布、网页/API 可用时间，不采用性能宣传。；09-15再次核对R1首发的在线入口与许可声明。；10-13原URL直读失败，经检索所得同路径带查询参数版本读到完整首发正文。",
+      "accessed_at": "2026-10-13"
     },
     {
       "id": "S-03af66389e97",
@@ -6008,6 +6033,22 @@
       "kind": "report",
       "text": "发布页用一个具体组合说明预测对象：蛋白质、RNA 和两个离子放在同一个复合物中，与真实结构作比较。这里关心的是它们怎样结合，而不是让模型写一段解释生命的文字。",
       "source_id": "S-07c8251f8ac6",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-llama2-download-entry",
+      "title": "发布页给出的，是权重和起始代码",
+      "kind": "report",
+      "text": "Meta 的发布页一边宣布研究与商用入口，一边给出模型权重、起始代码和云平台渠道。对于想自己搭东西的开发者，下一步从“打开聊天窗口”变成了“把模型接进项目”。",
+      "source_id": "S-e237a6659214",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-r1-deepthink-entry",
+      "title": "同一份公告，给了两种起点",
+      "kind": "report",
+      "text": "官方公告邀请用户到网页开启“深度思考”，也向开发者提供模型下载和 API。可以先试一道问题，也可以把模型接进自己的程序；同一次发布，把使用和继续开发放在了相邻的入口。",
+      "source_id": "S-7fec6fad143e",
       "temporal_context": "contemporary"
     }
   ],
