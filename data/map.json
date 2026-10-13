@@ -996,7 +996,7 @@
       ],
       "why_selected": "从论文走进下一代模型的微调工具链，有明确后续集成证据，解释参与门槛的变化。",
       "then": {
-        "text": "当时是面向研究者和开发者的训练效率方法；跨圈关注程度未核定。论文报告单张 48GB GPU 微调 65B 模型，是特定配置和实验结果。微调与本地推理须分开。",
+        "text": "2023 年 5 月 23 日提交的 QLoRA 论文，把预训练模型以 4-bit 量化形式保存并冻结，再训练较小的低秩适配器。可以把它理解为：让大模型占用更少显存，把需要学习的改动放到额外的小模块里，而不是更新全部模型参数。",
         "source_ids": [
           "S-03851de6dae7"
         ]
@@ -1012,8 +1012,24 @@
         "S-03851de6dae7",
         "S-34a09cc32d06"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-qlora-single-gpu"
+      ],
+      "fact_ids": [],
+      "scene_material_id": "M-qlora-single-gpu",
+      "change": "开放模型可下载之后，硬件往往仍是一道门槛。QLoRA 让有限显存上的微调有了更具体的方法，使开发者能尝试用自己的数据调整模型；数据质量、任务效果和实际硬件配置仍需分别验证。",
+      "reading_picks": [
+        {
+          "event_id": "lora-paper",
+          "label": "方法从哪里来",
+          "reason": "低秩适配器怎样减少需要训练的参数？"
+        },
+        {
+          "event_id": "llama2-release",
+          "label": "同年的另一块拼图",
+          "reason": "方法降低微调门槛，模型发布改变获取条件；这两件事怎样放在一起看？"
+        }
+      ]
     },
     {
       "id": "nvidia-compute-demand-earnings",
@@ -2271,7 +2287,7 @@
       ],
       "why_selected": "它补上 2024 年末到 2025 年初之间的重要一环：次年的 R1 从 V3-Base 继续训练而来，不是突然独立出现。",
       "then": {
-        "text": "首发公告明确当前不支持多模态输入输出。V3 的模型上线日是 12 月 26 日，arXiv 技术报告首版提交在次日，两个日期分别记录。",
+        "text": "2024 年 12 月 26 日，DeepSeek-V3 上线并开放权重，网页和 API 同步更新；首发版本处理文本，不支持多模态输入输出。次日提交的技术报告说明，它沿用 V2 的 MLA 与混合专家结构，在计算与存储效率上继续改进。",
         "source_ids": [
           "S-0d156abd0924",
           "S-b96207a197ed"
@@ -2291,8 +2307,24 @@
         "S-767b4ac07aa3",
         "S-7c57c255a26a"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-v3-total-active"
+      ],
+      "fact_ids": [],
+      "scene_material_id": "M-v3-total-active",
+      "change": "模型规模之外，还要看每次生成怎样使用计算资源。V3 提供了可以继续开发的基础模型，但“激活参数较少”不能直接等同于整套系统成本同比例下降；它与后来 R1 的具体关系，见下方后续记录。",
+      "reading_picks": [
+        {
+          "event_id": "deepseek-v2-efficiency",
+          "label": "前面发生了什么",
+          "reason": "V3 延续了哪些更早的计算与存储思路？"
+        },
+        {
+          "event_id": "deepseek-r1-release",
+          "label": "后来怎样了",
+          "reason": "从 V3-Base 继续训练，怎样走到 R1 的推理路线？"
+        }
+      ]
     },
     {
       "id": "deepseek-r1-release",
@@ -4201,11 +4233,11 @@
     {
       "id": "S-03851de6dae7",
       "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
-      "url": "https://arxiv.org/abs/2305.14314",
+      "url": "https://arxiv.org/abs/2305.14314v1",
       "kind": "paper",
       "published_at": "2023-05-23",
-      "accessed_at": "2026-09-14",
-      "scope": "首次提交日期、算法及论文条件下实验"
+      "accessed_at": "2026-10-13",
+      "scope": "首次提交日期、算法及论文条件下实验；10-13固定v1并读取摘要，核对4-bit冻结基座、低秩适配和单48GB GPU实验；不采用聊天能力百分比排名。"
     },
     {
       "id": "S-34a09cc32d06",
@@ -4213,8 +4245,8 @@
       "url": "https://huggingface.co/blog/llama3",
       "kind": "official",
       "published_at": "2024-04-18",
-      "accessed_at": "2026-09-14",
-      "scope": "Fine-tuning with TRL 部分直接采用 QLoRA"
+      "accessed_at": "2026-10-13",
+      "scope": "Fine-tuning with TRL 部分直接采用 QLoRA；10-13重读Fine-tuning with TRL确认4-bit QLoRA示例；不把当前工具命令作为已实测环境。"
     },
     {
       "id": "S-a2379c3f2bc0",
@@ -4555,8 +4587,8 @@
       "url": "https://arxiv.org/html/2412.19437v1",
       "published_at": "2024-12-27",
       "kind": "paper",
-      "scope": "网页检索可读原始版本；第 2.1 节明确 V3 延续 V2 的 MLA 与 DeepSeekMoE。固定 v1，避免混入 2025 修订。",
-      "accessed_at": "2026-09-14"
+      "scope": "网页检索可读原始版本；第 2.1 节明确 V3 延续 V2 的 MLA 与 DeepSeekMoE。固定 v1，避免混入 2025 修订。；10-13重读v1摘要与架构说明，采用总参数/激活参数的区别，不外推成本比例。",
+      "accessed_at": "2026-10-13"
     },
     {
       "id": "S-e6faefe9f65c",
@@ -4618,8 +4650,8 @@
       "url": "https://www.deepseek.com/news/deepseek-v3/",
       "published_at": "2024-12-26",
       "kind": "official",
-      "scope": "网页检索可读正文；核对 12-26 上线并开放权重、网页与 API 同步、当时不支持多模态输入输出。未采用跑分胜负或将训练费用当公司总投入。",
-      "accessed_at": "2026-09-14"
+      "scope": "网页检索可读正文；核对 12-26 上线并开放权重、网页与 API 同步、当时不支持多模态输入输出。未采用跑分胜负或将训练费用当公司总投入。；10-13首发正文直读成功，核对网页/API同步与文本范围，不采用性能/成本宣传。",
+      "accessed_at": "2026-10-13"
     },
     {
       "id": "S-92e69f36cd30",
@@ -6049,6 +6081,22 @@
       "kind": "report",
       "text": "官方公告邀请用户到网页开启“深度思考”，也向开发者提供模型下载和 API。可以先试一道问题，也可以把模型接进自己的程序；同一次发布，把使用和继续开发放在了相邻的入口。",
       "source_id": "S-7fec6fad143e",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-v3-total-active",
+      "title": "6710 亿参数，不是每一步都一起计算",
+      "kind": "report",
+      "text": "V3 首版技术报告并列给出两个数：模型共有 6710 亿参数，每处理一个 token 激活约 370 亿。token 是模型处理文字的基本片段。这组数字把“模型有多大”和“每一步动用多少”分开了。",
+      "source_id": "S-b96207a197ed",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-qlora-single-gpu",
+      "title": "一张 48GB 显卡，尝试微调 650 亿参数模型",
+      "kind": "report",
+      "text": "论文摘要给出一个具体实验：在单张 48GB GPU 上微调 650 亿参数模型。这个数字说的是论文配置下的微调，不是从零训练，也不是所有电脑都能跑同样的任务。",
+      "source_id": "S-03851de6dae7",
       "temporal_context": "contemporary"
     }
   ],
