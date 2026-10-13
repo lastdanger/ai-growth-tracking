@@ -128,6 +128,12 @@
     return route?.steps.some(step => step.event_id === state.eventId) ? route : null;
   }
 
+  function returnRoute() {
+    const origin = state.routeOrigin;
+    const route = routesById.get(origin?.routeId);
+    return route?.steps.some(step => step.event_id === origin.eventId) ? route : null;
+  }
+
   function routeButton(route, index, label) {
     return `<button type="button" class="route-button" data-action="route" data-route="${escapeHTML(route.id)}" data-event="${escapeHTML(route.steps[index].event_id)}">${escapeHTML(label)} <span aria-hidden="true">↗</span></button>`;
   }
@@ -167,11 +173,19 @@
     const additional = materials.filter(material => material !== scene);
     const related = relations.filter(relation => relation.from === event.id || relation.to === event.id)
       .map(relation => ({ relation, target: eventsById.get(relation.from === event.id ? relation.to : relation.from) })).filter(item => item.target);
+    const picks = event.reading_picks || [];
+    const rank = id => { const i = picks.findIndex(pick => pick.event_id === id); return i < 0 ? picks.length : i; };
+    related.sort((a, b) => rank(a.target.id) - rank(b.target.id));
     const ids = [...event.source_ids, ...materials.map(material => material.source_id), ...related.flatMap(item => item.relation.evidence_source_ids || [])];
     const route = activeRoute();
+    const originRoute = returnRoute();
+    const returnHeader = originRoute ? `<div class="route-return"><span>从「${escapeHTML(originRoute.title)}」展开的分支</span>${routeButton(originRoute, originRoute.steps.findIndex(step => step.event_id === state.routeOrigin.eventId), `回到原路线 · 第 ${originRoute.steps.findIndex(step => step.event_id === state.routeOrigin.eventId) + 1} 站`)}</div>` : '';
     const routeHeader = route ? `<div class="route-progress"><span>${escapeHTML(route.title)}<strong>第 ${route.steps.findIndex(step => step.event_id === event.id) + 1} / ${route.steps.length} 站 · ${event.year}</strong></span><button type="button" data-action="leave-route">自由浏览</button></div>` : '';
-    const relatedCard = ({relation, target}) => `<div><button type="button" class="related-event" data-action="event" data-event="${escapeHTML(target.id)}"><span class="related-type">${escapeHTML(relation.type === 'follow-up' && relation.to === event.id ? '前序事件' : relationNames[relation.type])} · ${escapeHTML(target.date_label || target.date)}</span><span class="related-title">${escapeHTML(target.title)} ↗</span><span class="related-note">${escapeHTML(relation.note)}</span></button>${sourceCues(relation.evidence_source_ids)}</div>`;
-    return `<aside class="detail-panel" aria-labelledby="detail-title">${routeHeader}<div class="detail-head"><div class="detail-top"><div class="eyebrow">Event file / 事件</div><button type="button" class="close-detail" data-action="close">返回脉络 ×</button></div><h2 id="detail-title" tabindex="-1">${escapeHTML(event.title)}</h2>${eventMeta(event)}</div>
+    const relatedCard = ({relation, target}) => {
+      const pick = picks.find(pick => pick.event_id === target.id);
+      return `<div><button type="button" class="related-event" data-action="event" data-event="${escapeHTML(target.id)}"><span class="related-type">${escapeHTML(pick?.label || (relation.type === 'follow-up' && relation.to === event.id ? '前序事件' : relationNames[relation.type]))} · ${escapeHTML(target.date_label || target.date)}</span><span class="related-title">${escapeHTML(target.title)} ↗</span>${pick ? `<span class="related-prompt">${escapeHTML(pick.reason)}</span>` : ''}<span class="related-note">${escapeHTML(relation.note)}</span></button>${sourceCues(relation.evidence_source_ids)}</div>`;
+    };
+    return `<aside class="detail-panel" aria-labelledby="detail-title">${returnHeader}${routeHeader}<div class="detail-head"><div class="detail-top"><div class="eyebrow">Event file / 事件</div><button type="button" class="close-detail" data-action="close">返回脉络 ×</button></div><h2 id="detail-title" tabindex="-1">${escapeHTML(event.title)}</h2>${eventMeta(event)}</div>
       <div class="detail-body">${scene ? `<section class="detail-section scene">${renderMaterial(scene)}</section>` : ''}
       ${!event.change ? `<section class="detail-section"><h3>发生了什么</h3><p>${escapeHTML(event.summary)}</p>${sourceCues(event.source_ids)}</section>` : ''}
       <section class="detail-section"><h3>${event.change ? '发生的变化' : '放回当时'}</h3><p>${escapeHTML(event.then.text)}</p>${sourceCues(event.then.source_ids)}</section>
@@ -214,7 +228,8 @@
     breadcrumbs.innerHTML = `<button type="button" data-action="overview"${state.overview ? ' aria-current="page" class="current"' : ''}>年度总览</button>${!state.overview ? `<span aria-hidden="true">/</span><button type="button" data-action="${state.prehistory ? 'prehistory' : 'year'}"${state.prehistory ? '' : ` data-year="${escapeHTML(year.year)}"`}${!selected ? ' aria-current="page" class="current"' : ''}>${escapeHTML(locationName)}</button>` : ''}${!state.overview && selected ? `<span aria-hidden="true">/</span><span class="current" aria-current="page">${escapeHTML(selected.title)}</span>` : ''}`;
     app.innerHTML = state.overview ? renderOverview() : state.prehistory ? renderPrehistory() : renderYear(year);
     document.title = `${state.overview ? '年度总览' : selected?.title || locationName} — 仍在生成`;
-    document.getElementById('updated-at').textContent = content.updated_at ? `内容更新 ${content.updated_at}` : '本地内容快照';
+    document.getElementById('updated-at').textContent = content.updated_at ? `页面与文字更新 ${content.updated_at}` : '本地内容快照';
+    document.getElementById('coverage-as-of').textContent = state.overview || state.prehistory ? '资料覆盖截止见各年，不代表已收齐最新事件' : `${year.year} 年资料覆盖核验截至 ${year.as_of} · 非全年穷尽`;
   }
 
   let restoring = false;
@@ -240,6 +255,10 @@
       if (state.eventId) params.set('event', state.eventId);
     }
     if (activeRoute()) params.set('route', state.routeId);
+    if (returnRoute() && state.eventId) {
+      params.set('from_route', state.routeOrigin.routeId);
+      params.set('from_event', state.routeOrigin.eventId);
+    }
     const hash = `#${params.toString()}`;
     if (location.hash !== hash) {
       try { history.pushState(null, '', hash); } catch { location.hash = hash; }
@@ -258,6 +277,9 @@
     state.eventId = event?.id || null;
     const route = routesById.get(params.get('route'));
     state.routeId = !state.overview && route?.steps.some(step => step.event_id === event?.id) ? route.id : null;
+    const origin = routesById.get(params.get('from_route'));
+    const originId = params.get('from_event');
+    state.routeOrigin = !state.overview && event && !state.routeId && origin?.steps.some(step => step.event_id === originId) ? { routeId: origin.id, eventId: originId } : null;
     state.density = view?.density || 'main';
     state.expanded = new Set(view?.expanded || []);
     state.year = event ? Number(event.year) : years.some(item => Number(item.year) === year) ? year : Number(fallbackYear?.year);
@@ -296,6 +318,8 @@
     const previousId = state.eventId;
     rememberView();
     const previousView = history.state?.mapView;
+    if (action === 'event' && activeRoute()) state.routeOrigin = { routeId: state.routeId, eventId: state.eventId };
+    else if (!['event', 'density', 'branch'].includes(action)) state.routeOrigin = null;
     if (!['route', 'density', 'branch'].includes(action)) state.routeId = null;
     let announcement = '';
     if (action === 'overview') {
@@ -385,6 +409,7 @@
       const id = state.eventId;
       state.eventId = null;
       state.routeId = null;
+      state.routeOrigin = null;
       render();
       writeLocation();
       focusMatching('event', 'event', id);

@@ -43,6 +43,14 @@ export function checkMap(data) {
     refs(e.source_ids, sources, `${e.id} sources`);
     refs(e.material_ids, materials, `${e.id} materials`, false);
     if (e.scene_material_id !== undefined) fail(e.material_ids.includes(e.scene_material_id), `Scene material outside event: ${e.id}`);
+    if (e.reading_picks !== undefined) {
+      fail(Array.isArray(e.reading_picks) && e.reading_picks.length > 0 && e.reading_picks.length <= 3, `Reading picks count: ${e.id}`);
+      refs(e.reading_picks.map(pick => pick.event_id), events, `reading picks ${e.id}`);
+      for (const pick of e.reading_picks) {
+        fail(typeof pick.label === 'string' && pick.label.trim() && typeof pick.reason === 'string' && pick.reason.trim(), `Reading pick reason: ${e.id}`);
+        fail(data.relations.some(r => (r.from === e.id && r.to === pick.event_id) || (r.to === e.id && r.from === pick.event_id)), `Reading pick without relation: ${e.id}/${pick.event_id}`);
+      }
+    }
     fail(e.then && e.then.text, `Missing contemporary perspective: ${e.id}`);
     fail(e.summary.trim() !== e.then.text.trim(), `Repeated summary: ${e.id}`);
     fail(!e.why_selected.includes('的具体分支，补充同年主线'), `Generic selection reason: ${e.id}`);

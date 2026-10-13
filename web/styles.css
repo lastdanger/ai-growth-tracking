@@ -251,6 +251,9 @@ p:last-child { margin-bottom: 0; }
 .route-next .route-reflection { font-size: 14px; color: var(--accent); }
 .route-previous .route-button { background: transparent; color: var(--accent); margin-top: 12px; padding: 3px 0; width: auto; font-size: 13px; }
 .route-exits { display: grid; gap: 12px; }
+.route-return { display: grid; gap: 12px; padding: 18px 24px; background: #193c32; color: var(--muted); font-size: 13px; }
+.related-prompt { display: block; color: var(--accent); margin: 6px 0; }
+#coverage-as-of { display: block; max-width: 310px; white-space: normal; font-size: 11px; color: var(--muted); }
 .route-branch { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 18px; }
 .route-branch .route-button { background: transparent; color: var(--accent); border: 1px solid #497868; }
 .route-continuation { margin: 24px 0; }

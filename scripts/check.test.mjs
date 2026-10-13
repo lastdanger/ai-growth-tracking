@@ -9,6 +9,9 @@ const rejects = (name, change, error) => test(name, () => {
   assert.throws(() => checkMap(data), error);
 });
 test('当前数据契约可校验', () => assert.equal(checkMap(original).events, original.events.length));
+rejects('精选出口必须已有关系', d => d.events.find(e => e.id === 'chatgpt-agent-release').reading_picks[0].event_id = 'alphafold-3', /Reading pick without relation/);
+rejects('精选出口不能重复', d => { const e = d.events.find(e => e.id === 'chatgpt-agent-release'); e.reading_picks[1] = e.reading_picks[0]; }, /Repeated reading picks/);
+rejects('精选出口必须解释阅读理由', d => d.events.find(e => e.id === 'chatgpt-agent-release').reading_picks[0].reason = '', /Reading pick reason/);
 rejects('开场材料必须属于当前事件', d => d.events[0].scene_material_id = 'missing', /Scene material outside event/);
 rejects('一个分支不能重复挂接', d => {
   const y = d.years[1]; y.display_groups[1].children.push(y.display_groups[0].children[0]);

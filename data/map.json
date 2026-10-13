@@ -1738,7 +1738,7 @@
       ],
       "why_selected": "补入聊天、画图以外的科学主线：AI 预测的对象从单类结构继续扩展到多种生物分子的结合方式。",
       "then": {
-        "text": "研究者可提交分子信息，得到它们如何组合的结构预测。免费服务器覆盖部分能力，面向非商业研究；预测帮助形成待实验检验的假设，不能直接写成新药研发已成功。",
+        "text": "2024 年 5 月 8 日，Google DeepMind 与 Isomorphic Labs 推出 AlphaFold 3，并发布研究。模型预测多种生物分子组成的复合物结构；同日开放的免费服务器面向非商业研究，提供部分能力。",
         "source_ids": [
           "S-07c8251f8ac6"
         ]
@@ -1747,8 +1747,29 @@
       "source_ids": [
         "S-07c8251f8ac6"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-alphafold3-molecular-complex"
+      ],
+      "fact_ids": [],
+      "scene_material_id": "M-alphafold3-molecular-complex",
+      "change": "研究者可以把分子信息交给模型，得到关于它们怎样组合的结构假设，再设计实验检验。AI 的用途从生成供人阅读的内容，走向帮助提出科研问题；预测结构并不等于药物已经研制成功。",
+      "reading_picks": [
+        {
+          "event_id": "nobel-chemistry-protein-ai",
+          "label": "回看科学背景",
+          "reason": "同年诺奖回顾的是哪些蛋白质研究？"
+        },
+        {
+          "event_id": "alphagenome-nature-paper",
+          "label": "另一个科学问题",
+          "reason": "从分子结构换到 DNA 调控效应，问题怎样变了？"
+        },
+        {
+          "event_id": "alphaevolve",
+          "label": "另一种科研用法",
+          "reason": "从预测结构转向搜索算法。"
+        }
+      ]
     },
     {
       "id": "gpt-4o-announcement",
@@ -1957,7 +1978,7 @@
       ],
       "why_selected": "重要性在参与方式：开发者可以围绕可下载模型继续搭建系统，而不只购买封闭接口。405B 的规模不代表普通电脑能够直接运行。",
       "then": {
-        "text": "Meta 在发布时列出超过 25 家合作伙伴，覆盖云服务、推理、微调等环节。开放权重仍有模型许可条件；模型越大，部署所需的算力与工程门槛仍越高。",
+        "text": "2024 年 7 月 23 日，Meta 发布 Llama 3.1 的 405B、70B 和 8B 模型，提供权重下载，并列出首日支持的云服务与开发工具伙伴。模型许可允许用输出改进其他模型，但开放权重仍受许可条件约束。",
         "source_ids": [
           "S-2b8b931fcf38"
         ]
@@ -1966,8 +1987,24 @@
       "source_ids": [
         "S-2b8b931fcf38"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-llama31-build-with-model"
+      ],
+      "fact_ids": [],
+      "scene_material_id": "M-llama31-build-with-model",
+      "change": "参与方式从调用别人的服务，扩展到自行部署、用自己的数据调整模型，再围绕它搭建工具。权重可下载并不意味着部署没有成本，更不意味着最大的型号可以在普通电脑上直接运行。",
+      "reading_picks": [
+        {
+          "event_id": "llama2-release",
+          "label": "前面发生了什么",
+          "reason": "回到同一系列较早的开放入口。"
+        },
+        {
+          "event_id": "qwen25-model-family",
+          "label": "另一种选择",
+          "reason": "看看另一模型家族提供了哪些规模与用途。"
+        }
+      ]
     },
     {
       "id": "kling-ai-preview-and-global-beta",
@@ -2043,7 +2080,7 @@
       ],
       "why_selected": "把推理时计算放到年度能力路线中。",
       "then": {
-        "text": "改善表现是特定评测与任务中的声明，不等于人类心智。",
+        "text": "2024 年 9 月 12 日，OpenAI 开放 o1-preview 的早期访问，并介绍用强化学习训练推理的方向。团队报告，增加训练计算和回答前的计算时间，都能改善其评测表现；发布页中的 o1 与 o1-preview 并非同一组成绩，不能混用。",
         "source_ids": [
           "S-35480cf490f5"
         ]
@@ -2052,8 +2089,19 @@
       "source_ids": [
         "S-35480cf490f5"
       ],
-      "material_ids": [],
-      "fact_ids": []
+      "material_ids": [
+        "M-o1-reasoning-time"
+      ],
+      "fact_ids": [],
+      "scene_material_id": "M-o1-reasoning-time",
+      "change": "能力竞争多了一个维度：除了怎样训练模型，还可以考察每道问题投入多少计算。对读者而言，等待更久是否值得，要看具体问题与结果；这不等于模型在所有任务上都更好。",
+      "reading_picks": [
+        {
+          "event_id": "deepseek-r1-release",
+          "label": "下一年的另一种参与方式",
+          "reason": "到 R1 发布时，推理模型提供了哪些下载与试用入口？"
+        }
+      ]
     },
     {
       "id": "qwen25-model-family",
@@ -2255,7 +2303,24 @@
         "S-767b4ac07aa3"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "reading_picks": [
+        {
+          "event_id": "openai-o1-preview",
+          "label": "此前的另一条路线",
+          "reason": "为什么推理时投入的计算开始受到重视？"
+        },
+        {
+          "event_id": "deepseek-v3-release",
+          "label": "技术基础",
+          "reason": "R1 与 V3-Base 的具体关系是什么？"
+        },
+        {
+          "event_id": "deepseek-app-public-surge",
+          "label": "后来怎样了",
+          "reason": "模型讨论怎样走向手机上的公众试用？"
+        }
+      ]
     },
     {
       "id": "stargate-project",
@@ -2323,7 +2388,14 @@
         "M-deepseek-app-public-surge-1"
       ],
       "fact_ids": [],
-      "change": "模型竞争来到普通人能直接下载的应用里。一家中国团队获得的关注，变成了跨国公众试用的具体切片；榜单能说明那一刻的热度，却不能替用户回答它是否适合自己的任务。"
+      "change": "模型竞争来到普通人能直接下载的应用里。一家中国团队获得的关注，变成了跨国公众试用的具体切片；榜单能说明那一刻的热度，却不能替用户回答它是否适合自己的任务。",
+      "reading_picks": [
+        {
+          "event_id": "deepseek-r1-release",
+          "label": "热潮背后的模型",
+          "reason": "从榜单回到模型发布，看开发者拿到了什么。"
+        }
+      ]
     },
     {
       "id": "unitree-yangbot-spring-gala",
@@ -2701,7 +2773,24 @@
         "M-chatgpt-agent-release-1"
       ],
       "fact_ids": [],
-      "change": "任务委托继续从代码扩展到资料和文件：人可以提出想要的交付物，让工具尝试把几个步骤接起来。交回来的表格或演示稿更接近工作成果，也更需要人检查内容是否完整、结果是否可用。"
+      "change": "任务委托继续从代码扩展到资料和文件：人可以提出想要的交付物，让工具尝试把几个步骤接起来。交回来的表格或演示稿更接近工作成果，也更需要人检查内容是否完整、结果是否可用。",
+      "reading_picks": [
+        {
+          "event_id": "chatgpt-work-launch",
+          "label": "后来怎样了",
+          "reason": "一次性交付怎样变成持续工作？"
+        },
+        {
+          "event_id": "claude-computer-use",
+          "label": "前面发生了什么",
+          "reason": "先回到屏幕操作能力的实验入口。"
+        },
+        {
+          "event_id": "manus-early-preview",
+          "label": "另一种选择",
+          "reason": "另一支团队怎样尝试交接多步任务？"
+        }
+      ]
     },
     {
       "id": "eu-gpai-obligations-apply",
@@ -3526,7 +3615,24 @@
         "M-chatgpt-work-launch-1"
       ],
       "fact_ids": [],
-      "change": "相较一次查资料、交文件，产品进一步围绕同一份工作持续跟进：资料更新了，交付物也可以继续改。人要交代的不只是这次做什么，还包括以后依据哪些新信息继续、到什么地方停下来。"
+      "change": "相较一次查资料、交文件，产品进一步围绕同一份工作持续跟进：资料更新了，交付物也可以继续改。人要交代的不只是这次做什么，还包括以后依据哪些新信息继续、到什么地方停下来。",
+      "reading_picks": [
+        {
+          "event_id": "chatgpt-agent-release",
+          "label": "前面发生了什么",
+          "reason": "持续工作之前，一次任务已经能接到哪里？"
+        },
+        {
+          "event_id": "gemini-spark-announcement",
+          "label": "另一种选择",
+          "reason": "同年的云端后台任务入口怎样组织工作？"
+        },
+        {
+          "event_id": "metr-productivity-study-update",
+          "label": "换个角度看效果",
+          "reason": "愿意用与实际省时，为什么需要分别测量？"
+        }
+      ]
     },
     {
       "id": "eu-ai-omnibus-in-force",
@@ -4118,8 +4224,8 @@
       "url": "https://ai.meta.com/blog/meta-llama-3-1/",
       "kind": "official",
       "published_at": "2024-07-23",
-      "accessed_at": "2026-09-14",
-      "scope": "Instruction and chat fine-tuning 部分明确采用 DPO；本轮另核对2024-07-23发布、405B/70B/8B权重下载、输出可用于改进其他模型及伙伴生态。开放权重仍受许可约束，不采用能力排名宣传。"
+      "accessed_at": "2026-10-13",
+      "scope": "Instruction and chat fine-tuning 部分明确采用 DPO；本轮另核对2024-07-23发布、405B/70B/8B权重下载、输出可用于改进其他模型及伙伴生态。开放权重仍受许可约束，不采用能力排名宣传。；10-13重读历史发布正文，仅采用本文新增材料对应文字说明；不采用当前产品导流、后补更新或能力排名。"
     },
     {
       "id": "S-569dc346f1f2",
@@ -4226,8 +4332,8 @@
       "url": "https://openai.com/index/learning-to-reason-with-llms/",
       "kind": "official",
       "published_at": "2024-09-12",
-      "accessed_at": "2026-09-14",
-      "scope": "早期版本提供与强化学习、推理时计算方向。"
+      "accessed_at": "2026-10-13",
+      "scope": "早期版本提供与强化学习、推理时计算方向。；10-13重读历史发布正文，仅采用本文新增材料对应文字说明；不采用当前产品导流、后补更新或能力排名。"
     },
     {
       "id": "S-3a99f53535c9",
@@ -4514,8 +4620,8 @@
       "url": "https://blog.google/innovation-and-ai/products/google-deepmind-isomorphic-alphafold-3-ai-model/",
       "published_at": "2024-05-08",
       "kind": "official",
-      "scope": "已读原始发布正文：模型对象、结构预测用途、非商业服务器范围；页面另有 11 月更新，须与 5 月原文分开。",
-      "accessed_at": "2026-09-14"
+      "scope": "已读原始发布正文：模型对象、结构预测用途、非商业服务器范围；页面另有 11 月更新，须与 5 月原文分开。；10-13重读历史发布正文，仅采用本文新增材料对应文字说明；不采用当前产品导流、后补更新或能力排名。",
+      "accessed_at": "2026-10-13"
     },
     {
       "id": "S-19c3f79ce213",
@@ -5878,6 +5984,30 @@
       "kind": "demo",
       "text": "官方说明的操作包括看屏幕、移动光标、点击和输入；面向开发者的 API 公测把这些动作接进任务步骤。发布同时提醒能力仍处于实验阶段，不能把介绍中的流程当成每次都成功的结果。",
       "source_id": "S-03af66389e97",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-o1-reasoning-time",
+      "title": "遇到难题，先换一种解法再回答",
+      "kind": "report",
+      "text": "发布说明把拆解难题、识别错误、尝试另一种解法列为训练目标。重点不再只是更快吐出答案，而是让回答前的计算过程有机会多走几步。这是团队对训练方式的描述。",
+      "source_id": "S-35480cf490f5",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-llama31-build-with-model",
+      "title": "下载之后，还可以接着改",
+      "kind": "report",
+      "text": "Meta 的发布页把微调、合成训练数据和模型蒸馏列进开发清单：开发者拿到的不只是一个问答入口，也是一份可以继续加工的模型。页面同时承认，405B 对算力和工程经验的要求很高。",
+      "source_id": "S-2b8b931fcf38",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-alphafold3-molecular-complex",
+      "title": "一条 RNA、一个蛋白质，还有两个离子",
+      "kind": "report",
+      "text": "发布页用一个具体组合说明预测对象：蛋白质、RNA 和两个离子放在同一个复合物中，与真实结构作比较。这里关心的是它们怎样结合，而不是让模型写一段解释生命的文字。",
+      "source_id": "S-07c8251f8ac6",
       "temporal_context": "contemporary"
     }
   ],
