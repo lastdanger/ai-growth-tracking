@@ -64,13 +64,23 @@ for (const series of data.series) {
   let md = `# ${series.name} · ${series.provider}\n\n**${series.question}**\n\n${series.intro}\n\n${series.coverage_note}\n\n> 由 data/map.json 生成，与年度视图共用事件，不直接编辑。\n\n`;
   for (const entry of series.entries) {
     const event = data.events.find(e => e.id === entry.event_id);
-    md += `## ${event.date_label} · ${event.title}${entry.level === 'supporting' ? '（补充）' : ''}\n\n${entry.reason}\n\n${event.then.text}\n\n`;
+    md += `## ${event.date_label} · ${event.title}${entry.level === 'supporting' ? '（补充）' : ''}\n\n${entry.reason}\n\n`;
+    for (const id of event.material_ids) {
+      const material = data.materials.find(m => m.id === id);
+      const source = sources.get(material.source_id);
+      const timing = { contemporary: '同期材料', retrospective: '后来材料', undated: '日期未定' }[material.temporal_context];
+      md += `**${material.title}**（${timing}${source.published_at ? ` · ${source.published_at}` : ''}）\n\n${material.text}\n\n[${safe(source.title)}](${source.url})\n\n`;
+    }
+    md += `${event.then.text}\n\n`;
     if (event.change) md += `变化与意义：${event.change}\n\n`;
     if (event.later) md += `后来再看（截至${event.later.as_of}）：${event.later.text}\n\n`;
     md += event.source_ids.map(id => `[${safe(sources.get(id).title)}](${sources.get(id).url})`).join(' · ') + '\n\n';
     if (entry.transition_to_next) md += `接下来：${entry.transition_to_next}\n\n`;
+    if (entry.return_to) md += `回到关键站：**${data.events.find(e => e.id === entry.return_to.event_id).title}**。${entry.return_to.reason}\n\n`;
     md += `[查看${event.year}年背景](../${event.tier === 'root' ? 'roots' : event.year}.md)\n\n`;
   }
+  const exit = data.events.find(e => e.id === series.exit.event_id);
+  md += `## 这条线读到这里\n\n${series.outro}\n\n${series.exit.label}：**${exit.title}**。${series.exit.reason}\n\n[查看这件事所在的${exit.year}年](../${exit.tier === 'root' ? 'roots' : exit.year}.md)\n\n`;
   fs.writeFileSync(path.join(seriesDir, `${series.id}.md`), md + '[返回系列目录](README.md)\n', 'utf8');
 }
 console.log('Built dist/index.html and chronology views:', JSON.stringify(counts));

@@ -4,7 +4,7 @@
 
 Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。
 
-截至2026-10-28核验本系列选材。补齐2025的三个能力转折；AI Overviews、Spark及Antigravity放在产品分支。仍非全部版本史，图像玩法的公众热度与独立使用效果尚未完整核验。
+截至2026-10-28核验本系列选材。六个关键站；图像编辑补入Gemini应用入口、Arena回顾与个人玩法讨论。平台自述和个案不代表全民热度；AI Overviews、Spark及Antigravity仍为产品分支，未完整覆盖全部版本及独立效果。
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
@@ -16,6 +16,8 @@ Gemini的特点先是多模态，再是长上下文；2025补上推理、对话�
 
 [Google 公布 Bard · 原始来源](https://blog.google/innovation-and-ai/technology/ai/bard-google-ai-search-updates/)
 
+回到关键站：**Google 发布 Gemini**。Bard是面向用户的前身背景；从Gemini正式公布开始，看新的多模态模型家族。
+
 [查看2023年背景](../2023.md)
 
 ## 05-10 · Google 发布 PaLM 2（补充）
@@ -25,6 +27,8 @@ Gemini的特点先是多模态，再是长上下文；2025补上推理、对话�
 多语言、推理和编程是这次发布强调的方向。这里记录厂商给出的能力定位，不据此认定独立性能排名。
 
 [Google 发布 PaLM 2 · 原始来源](https://blog.google/innovation-and-ai/products/google-palm-2-ai-large-language-model/)
+
+回到关键站：**Google 发布 Gemini**。PaLM 2交代前一阶段的语言模型路线；接着读Gemini，避免把前身混成同一个版本序列。
 
 [查看2023年背景](../2023.md)
 
@@ -46,6 +50,12 @@ Gemini从文字、图像、声音和视频等多种信息的共同处理出发�
 
 材料规模发生变化，读者可以带入整份资料。
 
+**一份 402 页的登月任务记录**（同期材料 · 2024-02-15）
+
+Google 用一份 402 页的 Apollo 11 任务记录展示长上下文：把整份资料交给模型，再询问其中跨页的对话与事件。这是厂商发布时的演示案例。
+
+[Our next-generation model: Gemini 1.5](https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/)
+
 预览仍需申请，100 万 token 属实验性能力。Google 用 402 页 Apollo 11 任务记录解释其用途：可以就跨页的对话和事件提问。普通用户当日并非人人都能使用。
 
 变化与意义：长文档、视频与代码可以更完整地作为同一次提问的材料，减少人工先切碎再拼接的步骤。能装下更多内容仍不等于能准确处理每个细节，下一阶段要看读完之后的推理。
@@ -60,11 +70,19 @@ Gemini从文字、图像、声音和视频等多种信息的共同处理出发�
 
 多模态能力进入搜索并不自动保证答案可靠；这是应用反馈分支。
 
+**披萨上的奶酪为什么会滑下来？**（同期材料 · 2024-05-30）
+
+Google 的回应承认，系统曾把论坛中用胶水固定披萨奶酪的恶作剧内容放进答案。问题在于它把什么当成了可靠材料。
+
+[Google：AI Overviews: About last week](https://blog.google/products-and-platforms/products/search/ai-overviews-update-may-2024/)
+
 AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话题。5 月 30 日，Google 承认系统在部分查询中误用了讽刺和论坛恶作剧内容，同时指出流传截图中也有伪造。公司宣布调整触发条件和内容使用方式；这些说明来自产品方的回应。
 
 变化与意义：当生成式回答来到日常搜索入口，错误就不再只发生在主动试用聊天工具的人面前。用户需要判断答案及其来源，产品也要决定什么时候不该给出摘要；公开反馈成为使用过程的一部分。
 
 [Google：AI Overviews: About last week](https://blog.google/products-and-platforms/products/search/ai-overviews-update-may-2024/) · [Google I/O：AI Overviews 向美国用户推出](https://blog.google/products-and-platforms/products/search/generative-ai-google-search-may-2024/)
+
+回到关键站：**Gemini 2.5：读进材料之后，还要推理**。搜索中的错误提醒我们，读到资料不等于正确使用资料；回到2.5推理，但不把发布写成这些错误已被解决。
 
 [查看2024年背景](../2024.md)
 
@@ -86,11 +104,31 @@ AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话�
 
 把多模态落到可反复修改的视觉成果。
 
-保留画面中的人物，换一个场景，再改掉衣服上的细节：Google用这类连续修改来介绍Gemini 2.5 Flash Image，也称Nano Banana。发布说明强调多图融合、主体一致性和自然语言编辑，当天在Vertex AI提供预览。这里采用的是官方文字描述，尚不能据此判断每次改图都能保住细节，也不能把发布本身等同于已经形成公众热潮。
+**想改的是同一张图，而不是重新抽一张**（同期材料 · 2025-08-26）
+
+Google在发布说明中举出保留主体、换场景和改小细节等用法，还转述合作方对连续编辑的期待。它提供了理解产品目标的具体场景；这里未将这些表态当成独立实测或公众热度。
+
+[Use Gemini 2.5 Flash Image (nano banana) on Vertex AI](https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-flash-image-on-vertex-ai)
+
+**“这是图片，还是已经能用的网站？”**（同期材料 · 2025-08-27）
+
+8月27日，一位Reddit用户分享用Nano Banana重设计网站视觉的尝试，并公开了改版提示词。评论有人挑选喜欢的方案，也有人追问：这是图片，还是网站？另一条评论直接指出只是图片。新鲜感已经从“能改图”走到“拿它做设计”，成果与可运行产品之间却还有一步。这里只记录原帖文字和讨论，不据此认定设计质量。
+
+[Reddit原帖：Nano Banana is a great web designer](https://www.reddit.com/r/Bard/comments/1n1o4eo/nano_banana_is_a_great_web_designer/)
+
+**先记住昵称，再知道它是谁**（后来材料 · 2025-08-27）
+
+Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发布前测试的匿名代号。参与者用同一提示比较结果，社区讨论集中在复杂指令和人物一致性。这个昵称比正式型号更容易进入谈话，但平台中的偏好与讨论不能直接换算成全民热度。
+
+[Arena：Nano Banana匿名试用与社区反应](https://arena.ai/blog/nano-banana)
+
+先给空房间换墙色，再添书架和家具，不必每轮从头描述整张图。2025年8月26日，Google把这种连续修改作为Gemini应用新图像模型的用法；同日Vertex AI提供预览。模型正式名称是Gemini 2.5 Flash Image，发布前在Arena试用时叫Nano Banana。变化在于围绕已有画面继续沟通，而不是每次重新抽取一张图；细节是否保住，仍需逐张检查。
 
 变化与意义：多模态开始从理解图片走向直接修改图片。用户可以围绕同一份视觉成果反复沟通，变化落在创作过程，而不只是一张生成结果。
 
-[Use Gemini 2.5 Flash Image (nano banana) on Vertex AI](https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-flash-image-on-vertex-ai)
+后来再看（截至2025-09-02）：Arena在9月2日更新的回顾把匿名代号与Gemini 2.5 Flash Image对应起来，并记录社区对指令遵循和主体一致性的关注。这提供了发布公告之外的参与证据；现存页面经过更新，不能用其中票数或排名回填发布首日。
+
+[Use Gemini 2.5 Flash Image (nano banana) on Vertex AI](https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-flash-image-on-vertex-ai) · [Google：Gemini应用中的连续改图](https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/) · [Reddit原帖：Nano Banana is a great web designer](https://www.reddit.com/r/Bard/comments/1n1o4eo/nano_banana_is_a_great_web_designer/) · [Arena：Nano Banana匿名试用与社区反应](https://arena.ai/blog/nano-banana)
 
 接下来：改图提供了一种可见的用法，但Gemini的范围不止图像。Gemini 3把多种材料的理解与规划、工具调用放到同一工作过程中。
 
@@ -114,9 +152,17 @@ AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话�
 
 与Gemini 3同日的工作界面：开发者怎样管理代理、查看产物和反馈。
 
+**交上来的不只是代码**（同期材料 · 2025-11-18）
+
+官方展示的工作记录包括任务清单、实施计划、操作说明、截图与浏览器录屏：用户可以围绕一项成果查看代理做到了哪一步。
+
+[Introducing Google Antigravity, a New Era in AI-Assisted Software Development](https://www.antigravity.google/blog/introducing-google-antigravity)
+
 首发预览面向个人免费，受模型用量限制。代理会交付任务清单、实施计划、截图或验证记录，开发者可以围绕这些产物反馈；公开预览不代表可以数天无人看管地可靠运行。
 
 [Introducing Google Antigravity, a New Era in AI-Assisted Software Development](https://www.antigravity.google/blog/introducing-google-antigravity)
+
+回到关键站：**Gemini 3：多模态与工具进入同一工作过程**。工作界面把计划、产物和反馈摆到一起；回到同日的Gemini 3，区分界面工作流与模型能力。
 
 [查看2025年背景](../2025.md)
 
@@ -127,6 +173,8 @@ AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话�
 官方举例是整理会议资料、生成文档、跟进重复事项。公告安排当周先给受信任测试者，下一周向美国Ultra用户推出Beta；这些是当日的测试计划，不能据此认定已按期开放。
 
 [The Gemini app becomes more agentic, delivering proactive, 24/7 help](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+
+回到关键站：**Gemini 4 Argon：从发布期待走到实际入口**。Spark是持续任务方向的受限预览；回到Argon，核对真正可用的模型和产品入口。
 
 [查看2026年背景](../2026.md)
 
@@ -141,5 +189,13 @@ AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话�
 [Gemini API release notes：Gemini 4 Argon GA](https://ai.google.dev/gemini-api/docs/changelog) · [Gemini Apps：2026年10月13日更新](https://gemini.google/sc/release-notes/?hl=en-GB)
 
 [查看2026年背景](../2026.md)
+
+## 这条线读到这里
+
+Gemini从理解多种材料、容纳长上下文，走到推理、连续改图与工具工作。能力进入日常产品后，读者既会看到具体玩法，也会碰到错误；演示中的可能性还需要使用反馈来补全。
+
+换到真实产品的反馈：**AI 搜索摘要铺开，错误也来到用户面前**。看搜索摘要怎样暴露应用中的可靠性问题，不把改图体验或模型成绩当作所有产品的保证。
+
+[查看这件事所在的2024年](../2024.md)
 
 [返回系列目录](README.md)

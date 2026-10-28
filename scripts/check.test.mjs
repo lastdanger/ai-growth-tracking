@@ -16,8 +16,17 @@ rejects('系列必须说明每个条目的关联', d => d.series[0].entries[0].r
 rejects('系列关键站需要转场', d => delete d.series[0].entries.find(e => e.level === 'key').transition_to_next, /Series transition/);
 rejects('系列关键站需要解释变化与意义', d => delete d.events.find(e => e.id === 'gpt-oss-open-weights').change, /Series key change/);
 rejects('系列末站不得有悬空转场', d => d.series[0].entries.filter(e => e.level === 'key').at(-1).transition_to_next = 'next', /Series transition/);
+rejects('系列结尾必须总结变化', d => d.series[0].outro = ' ', /Series ending/);
+rejects('系列出口必须是存在的探索分支', d => d.series[0].exit.event_id = 'missing', /Series exit/);
+rejects('系列出口不重复关键主线', d => d.series[0].exit.event_id = d.series[0].entries.find(e => e.level === 'key').event_id, /Series exit/);
+rejects('系列出口须有阅读理由', d => d.series[0].exit.reason = '', /Series exit/);
+rejects('补充节点必须有具体返回说明', d => delete d.series[0].entries.find(e => e.level === 'supporting').return_to, /Series branch return/);
+rejects('补充节点只能返回本系列关键站', d => d.series[0].entries.find(e => e.level === 'supporting').return_to.event_id = 'claude-introduction', /Series branch return/);
+rejects('补充分支的返回理由不能空白', d => d.series[0].entries.find(e => e.level === 'supporting').return_to.reason = ' ', /Series branch return/);
+rejects('关键站不能混用补充分支返回', d => d.series[0].entries.find(e => e.level === 'key').return_to = { event_id: 'gpt4-release', reason: '错误返回' }, /Series key has branch return/);
 rejects('系列截止不能超出内容包', d => d.series[0].as_of = '2099-01-01', /Series cutoff/);
-rejects('系列事件不能晚于核验截止', d => { d.series[0].as_of = '2023-01-01'; d.series[0].coverage_note = '截至2023-01-01'; }, /Series event exceeds cutoff/);
+rejects('系列事件不能晚于核验截止', d => { d.series[0].as_of = '2023-04-01'; d.series[0].coverage_note = '截至2023-04-01'; d.series[0].exit.event_id = 'chatgpt-public-growth'; }, /Series event exceeds cutoff/);
+rejects('系列出口不能引用截止之后的事件', d => { const s = d.series.find(s => s.id === 'qwen'); s.as_of = '2026-08-31'; s.coverage_note = '截至2026-08-31'; s.exit.event_id = 'gpt61-terra-release'; }, /Series exit exceeds cutoff/);
 test('同一事件可被多个系列明确引用，不改变年度主次', () => {
   const d = structuredClone(original);
   const before = d.events.map(e => [e.id, e.tier]);

@@ -2168,19 +2168,23 @@
         ]
       },
       "later": {
-        "text": "2025-01-20 发布的 R1 蒸馏系列采用 Qwen2.5-Math 的 1.5B、7B，以及 Qwen2.5 的 14B、32B。它们成了另一个团队训练小型推理模型的基础，构成具体跨团队采用证据。",
+        "text": "2024年11月，Aider的代码编辑测试把同一款Qwen2.5-Coder-32B-Instruct放到不同服务和本地配置中，指出量化、上下文和输出上限都会影响结果；文章经历了配置纠错，现存结果不能倒作9月首发成绩。2025-01-20，R1蒸馏系列又采用Qwen2.5-Math的1.5B、7B，以及Qwen2.5的14B、32B作为基础。一个家族既被接进工具，也被其他团队继续训练，开放生态由这些具体使用形成。",
         "as_of": "2025-01-20",
         "source_ids": [
           "S-767b4ac07aa3",
-          "S-7c57c255a26a"
+          "S-7c57c255a26a",
+          "S-aider-qwen-serving"
         ]
       },
       "source_ids": [
         "S-386c6f9991a4",
         "S-767b4ac07aa3",
-        "S-7c57c255a26a"
+        "S-7c57c255a26a",
+        "S-aider-qwen-serving"
       ],
-      "material_ids": [],
+      "material_ids": [
+        "M-qwen-aider-config"
+      ],
       "fact_ids": [],
       "change": "选择不再只按参数规模，还按代码、数学等任务展开。开发者可以选专门模型作为自己的应用或后续训练基础；下面的后来记录再说明这些模型实际被谁采用。",
       "reading_picks": [
@@ -2189,7 +2193,8 @@
           "label": "模型被别人继续加工",
           "reason": "Qwen2.5怎样成为R1蒸馏模型的基础，看到开放生态里的具体采用。"
         }
-      ]
+      ],
+      "scene_material_id": "M-qwen-aider-config"
     },
     {
       "id": "nobel-chemistry-protein-ai",
@@ -2702,13 +2707,23 @@
           "S-32b8158ff23a"
         ]
       },
-      "later": null,
+      "later": {
+        "as_of": "2025-05-27",
+        "text": "一个月后，LLM工具作者用Ollama运行Qwen3:4b，展示了查询工具版本的完整调用过程。对开发者来说，开放小模型开始成为可以接入自己函数的组件；这里的证据只覆盖简单工具调用，尚不是长期工作效果。",
+        "source_ids": [
+          "S-willison-qwen3-tools"
+        ]
+      },
       "source_ids": [
-        "S-32b8158ff23a"
+        "S-32b8158ff23a",
+        "S-willison-qwen3-tools"
       ],
-      "material_ids": [],
+      "material_ids": [
+        "M-qwen3-local-tool"
+      ],
       "fact_ids": [],
-      "change": "模型尺寸之外，开发者又获得一次回答是否先推理的选择。等待时间、计算预算与结果质量被放到同一项应用设计中，开放模型也需要按实际任务安排用法。"
+      "change": "模型尺寸之外，开发者又获得一次回答是否先推理的选择。等待时间、计算预算与结果质量被放到同一项应用设计中，开放模型也需要按实际任务安排用法。",
+      "scene_material_id": "M-qwen3-local-tool"
     },
     {
       "id": "alphaevolve",
@@ -4581,7 +4596,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Nano Banana：一张图可以接着改",
-      "summary": "Gemini 2.5 Flash Image提供图像生成与对话修改，开始进入开发者预览。",
+      "summary": "Gemini 2.5 Flash Image把连续改图带进Gemini应用，同时提供开发者入口；匿名试用中的Nano Banana也有了正式身份。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -4589,17 +4604,23 @@
       ],
       "why_selected": "多模态开始从理解图片走向直接修改图片。用户可以围绕同一份视觉成果反复沟通，变化落在创作过程，而不只是一张生成结果。",
       "then": {
-        "text": "保留画面中的人物，换一个场景，再改掉衣服上的细节：Google用这类连续修改来介绍Gemini 2.5 Flash Image，也称Nano Banana。发布说明强调多图融合、主体一致性和自然语言编辑，当天在Vertex AI提供预览。这里采用的是官方文字描述，尚不能据此判断每次改图都能保住细节，也不能把发布本身等同于已经形成公众热潮。",
+        "text": "先给空房间换墙色，再添书架和家具，不必每轮从头描述整张图。2025年8月26日，Google把这种连续修改作为Gemini应用新图像模型的用法；同日Vertex AI提供预览。模型正式名称是Gemini 2.5 Flash Image，发布前在Arena试用时叫Nano Banana。变化在于围绕已有画面继续沟通，而不是每次重新抽取一张图；细节是否保住，仍需逐张检查。",
         "source_ids": [
-          "S-gemini25-flash-image"
+          "S-gemini25-flash-image",
+          "S-gemini-image-app-20250826"
         ]
       },
       "change": "多模态开始从理解图片走向直接修改图片。用户可以围绕同一份视觉成果反复沟通，变化落在创作过程，而不只是一张生成结果。",
       "source_ids": [
-        "S-gemini25-flash-image"
+        "S-gemini25-flash-image",
+        "S-gemini-image-app-20250826",
+        "S-reddit-nano-banana-web-design",
+        "S-arena-nano-banana-community"
       ],
       "material_ids": [
-        "M-gemini25-flash-image-preview-reading"
+        "M-gemini25-flash-image-preview-reading",
+        "M-nano-banana-web-design",
+        "M-nano-banana-arena-reaction"
       ],
       "fact_ids": [],
       "reading_picks": [
@@ -4609,7 +4630,14 @@
           "reason": "同年另一种对话改图怎样进入公众创作与争议；不据此比较模型胜负。"
         }
       ],
-      "scene_material_id": "M-gemini25-flash-image-preview-reading"
+      "scene_material_id": "M-nano-banana-web-design",
+      "later": {
+        "as_of": "2025-09-02",
+        "text": "Arena在9月2日更新的回顾把匿名代号与Gemini 2.5 Flash Image对应起来，并记录社区对指令遵循和主体一致性的关注。这提供了发布公告之外的参与证据；现存页面经过更新，不能用其中票数或排名回填发布首日。",
+        "source_ids": [
+          "S-arena-nano-banana-community"
+        ]
+      }
     },
     {
       "id": "gemini3-pro-preview",
@@ -4746,18 +4774,22 @@
       ],
       "why_selected": "4月的型号分工之后，GLM又尝试把多种能力组合成能接工具的工作基础。它为理解后来的持续工程任务提供了更具体的前因，而不必直接跳到GLM-5论文。",
       "then": {
-        "text": "如果一个编程任务既要查资料，又要改文件和检查结果，分开擅长几类问题还不够。GLM-4.5把推理、编程与代理能力放进同一模型设计，提供思考和非思考模式，并以MIT许可开放基础与后训练模型。7月28日的厂商新闻稿确认发布，官方仓库保留相应说明；真实工程效果仍要看任务与运行环境。",
+        "text": "如果一个编程任务既要查资料，又要改文件和检查结果，分开擅长几类问题还不够。GLM-4.5把推理、编程与代理能力放进同一模型设计，提供思考和非思考模式，并以MIT许可开放基础与后训练模型。7月28日的厂商新闻稿确认发布，官方仓库保留相应说明；真实工程效果仍要看任务与运行环境。 次日的一手试用把这件事拉到个人设备上：开发者让量化Air写出小游戏，也遇到内存占用的实际门槛。一次小作品说明了可尝试的用法，不能替代大型代码库或长期任务验证。",
         "source_ids": [
           "S-glm45-announcement",
-          "S-glm45-repository"
+          "S-glm45-repository",
+          "S-willison-glm45-local"
         ]
       },
       "change": "4月的型号分工之后，GLM又尝试把多种能力组合成能接工具的工作基础。它为理解后来的持续工程任务提供了更具体的前因，而不必直接跳到GLM-5论文。",
       "source_ids": [
         "S-glm45-announcement",
-        "S-glm45-repository"
+        "S-glm45-repository",
+        "S-willison-glm45-local"
       ],
-      "material_ids": [],
+      "material_ids": [
+        "M-glm45-laptop-game"
+      ],
       "fact_ids": [],
       "reading_picks": [
         {
@@ -4765,7 +4797,8 @@
           "label": "方法继续演进",
           "reason": "GLM-5报告怎样讨论长任务训练；这是论文方法线索。"
         }
-      ]
+      ],
+      "scene_material_id": "M-glm45-laptop-game"
     }
   ],
   "sources": [
@@ -6658,6 +6691,60 @@
       "accessed_at": "2026-10-28",
       "kind": "official",
       "scope": "为2026桌面应用提供前因：2025已有云端隔离任务环境、编辑与执行测试。只采用历史正文；当前导流与06-03后续更新不倒填首发。"
+    },
+    {
+      "id": "S-aider-qwen-serving",
+      "title": "Aider：开放模型的部署细节会改变代码编辑结果",
+      "url": "https://aider.chat/2024/11/21/quantization.html",
+      "published_at": "2024-11-21",
+      "kind": "official",
+      "accessed_at": "2026-10-28",
+      "scope": "Aider工具作者的测试记录，独立于Qwen厂商；核对Qwen2.5-Coder-32B-Instruct、本地/云端、量化与上下文设置。正文有后续修订并记录11-24修复，不把现存表格当成11-21初版；不引用跨模型排名或作为当前配置教程。"
+    },
+    {
+      "id": "S-willison-qwen3-tools",
+      "title": "Simon Willison：用Qwen3:4b调用本地工具",
+      "url": "https://simonwillison.net/2025/May/27/llm-tools/",
+      "published_at": "2025-05-27",
+      "kind": "media",
+      "accessed_at": "2026-10-28",
+      "scope": "工具作者的一手运行自述；只采用Qwen3:4b经Ollama调用llm_version并读取结果的段落，不将文中其他模型的数据库和计算示例归给Qwen。未复跑命令。"
+    },
+    {
+      "id": "S-willison-glm45-local",
+      "title": "Simon Willison：在笔记本上用GLM-4.5 Air写小游戏",
+      "url": "https://simonwillison.net/2025/Jul/29/space-invaders/",
+      "published_at": "2025-07-29",
+      "kind": "media",
+      "accessed_at": "2026-10-28",
+      "scope": "一手使用自述：64GB M2 MacBook Pro、MLX的3-bit量化Air、约44GB下载与约48GB峰值内存；作者称游戏一次可运行，但需退出若干应用。核对正文与输出日志，未运行游戏或复现，不外推大型工程性能。"
+    },
+    {
+      "id": "S-gemini-image-app-20250826",
+      "title": "Google：Gemini应用中的连续改图",
+      "url": "https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/",
+      "published_at": "2025-08-26",
+      "kind": "official",
+      "accessed_at": "2026-10-28",
+      "scope": "核对当天Gemini应用入口、逐轮装修空房间的文字示例与水印说明；和Vertex AI预览分开。只采用正文，不把营销评价当独立效果，不称本轮实测。"
+    },
+    {
+      "id": "S-arena-nano-banana-community",
+      "title": "Arena：Nano Banana匿名试用与社区反应",
+      "url": "https://arena.ai/blog/nano-banana",
+      "published_at": "2025-08-27",
+      "kind": "official",
+      "accessed_at": "2026-10-28",
+      "scope": "平台自身的社区记录，独立于Google公告但不是独立人口统计；页面标注09-02更新。采用匿名代号、投票比较与社区对主体一致性的讨论，不采用现存票数/Elo作为08-26首日规模，不观看嵌入视频。"
+    },
+    {
+      "id": "S-reddit-nano-banana-web-design",
+      "title": "Reddit原帖：Nano Banana is a great web designer",
+      "url": "https://www.reddit.com/r/Bard/comments/1n1o4eo/nano_banana_is_a_great_web_designer/",
+      "published_at": "2025-08-27",
+      "kind": "media",
+      "accessed_at": "2026-10-28",
+      "scope": "一手作品分享与评论原文；检索日期及页尾当日归档交叉定位08-27。采用发帖者提供的改版提示词、评论对图片/可运行网站的区分及昵称反应；未核验图片效果、身份或群体代表性，不采用当前赞数证明当时热度，评论具体发表日未逐条核定。"
     }
   ],
   "materials": [
@@ -7252,6 +7339,46 @@
       "title": "从终端试用，走进编辑器与后台任务",
       "text": "Claude 4发布时，公告同时宣布Claude Code正式可用，提供VS Code与JetBrains集成，以及GitHub Actions后台任务。这几项入口把模型发布与开发者每天工作的地方接了起来。",
       "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-qwen-aider-config",
+      "title": "拿到同一个模型，为什么改代码的表现不同？",
+      "kind": "report",
+      "text": "2024年11月，Aider把Qwen2.5-Coder-32B-Instruct接到本地和不同云端服务中测试。结果让讨论从“这个模型强不强”转向量化、上下文窗口和输出长度：部署时丢掉的上下文，可能让代码编辑明显变差。文章还保留了早期配置错误与后来修正的记录；这是一轮具体测试，不是今天的性能榜。",
+      "source_id": "S-aider-qwen-serving",
+      "temporal_context": "retrospective"
+    },
+    {
+      "id": "M-qwen3-local-tool",
+      "title": "一个小模型，先去问工具版本",
+      "kind": "report",
+      "text": "2025年5月27日，工具作者Simon Willison展示：本地运行的Qwen3:4b先调用llm_version，拿到返回值后再作答。它没有靠训练记忆猜软件版本，而是接上了外部函数。这是作者的一次简单演示，不能据此推成复杂任务已经可靠。",
+      "source_id": "S-willison-qwen3-tools",
+      "temporal_context": "retrospective"
+    },
+    {
+      "id": "M-glm45-laptop-game",
+      "title": "游戏跑起来了，但要先关掉几个应用",
+      "kind": "report",
+      "text": "发布次日，Simon Willison在一台64GB内存的M2 MacBook Pro上，用GLM-4.5 Air的3-bit量化版生成太空射击小游戏。他称代码第一次就能运行，也记下了约44GB下载和约48GB峰值内存：为了腾出空间，他得先退出一些应用。兴奋与门槛出现在同一篇使用记录里。",
+      "source_id": "S-willison-glm45-local",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-nano-banana-web-design",
+      "title": "“这是图片，还是已经能用的网站？”",
+      "kind": "report",
+      "text": "8月27日，一位Reddit用户分享用Nano Banana重设计网站视觉的尝试，并公开了改版提示词。评论有人挑选喜欢的方案，也有人追问：这是图片，还是网站？另一条评论直接指出只是图片。新鲜感已经从“能改图”走到“拿它做设计”，成果与可运行产品之间却还有一步。这里只记录原帖文字和讨论，不据此认定设计质量。",
+      "source_id": "S-reddit-nano-banana-web-design",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-nano-banana-arena-reaction",
+      "title": "先记住昵称，再知道它是谁",
+      "kind": "report",
+      "text": "Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发布前测试的匿名代号。参与者用同一提示比较结果，社区讨论集中在复杂指令和人物一致性。这个昵称比正式型号更容易进入谈话，但平台中的偏好与讨论不能直接换算成全民热度。",
+      "source_id": "S-arena-nano-banana-community",
+      "temporal_context": "retrospective"
     }
   ],
   "relations": [
@@ -8527,7 +8654,11 @@
         {
           "event_id": "chatgpt-public-growth",
           "level": "supporting",
-          "reason": "公众怎样试用、分享和争论，补足产品发布之外的传播。"
+          "reason": "公众怎样试用、分享和争论，补足产品发布之外的传播。",
+          "return_to": {
+            "event_id": "gpt4-release",
+            "reason": "传播让更多人愿意试，接着回到GPT-4，看复杂问题的能力怎样抬高期待。"
+          }
         },
         {
           "event_id": "gpt4-release",
@@ -8538,7 +8669,11 @@
         {
           "event_id": "chatgpt-voice-vision",
           "level": "supporting",
-          "reason": "产品中的语音与图像入口，是GPT-4o之前可对照的一步。"
+          "reason": "产品中的语音与图像入口，是GPT-4o之前可对照的一步。",
+          "return_to": {
+            "event_id": "gpt-4o-announcement",
+            "reason": "这个分支交代语音和图像的早期产品入口；再看GPT-4o怎样把它们组织为更自然的交互。"
+          }
         },
         {
           "event_id": "gpt-4o-announcement",
@@ -8555,7 +8690,11 @@
         {
           "event_id": "chatgpt-image-ghibli-wave",
           "level": "supporting",
-          "reason": "看一次能力更新怎样变成可传播的创作玩法。"
+          "reason": "看一次能力更新怎样变成可传播的创作玩法。",
+          "return_to": {
+            "event_id": "chatgpt-agent-release",
+            "reason": "图像玩法说明对话能产出可分享的作品；回到agent，换看资料、浏览和文件怎样组成一项任务。"
+          }
         },
         {
           "event_id": "chatgpt-agent-release",
@@ -8578,22 +8717,38 @@
         {
           "event_id": "gpt4o-users-ask-choice",
           "level": "supporting",
-          "reason": "GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用法？"
+          "reason": "GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用法？",
+          "return_to": {
+            "event_id": "gpt5-unified-system",
+            "reason": "这段反馈解释默认入口为何也关乎使用习惯。回到GPT-5，重新看统一入口带来的选择问题。"
+          }
         },
         {
           "event_id": "chatgpt-consumer-use-study",
           "level": "supporting",
-          "reason": "发布之后，人们到底拿它做什么？用带样本边界的研究来回答。"
+          "reason": "发布之后，人们到底拿它做什么？用带样本边界的研究来回答。",
+          "return_to": {
+            "event_id": "gpt6-astra-release",
+            "reason": "使用研究提供了日常任务的参照；再看Astra对更长任务的承诺，分清已观察到的用法与待验证的提升。"
+          }
         },
         {
           "event_id": "codex-app-macos",
           "level": "supporting",
-          "reason": "代码工作的支线：从已有云端任务到桌面任务管理。"
+          "reason": "代码工作的支线：从已有云端任务到桌面任务管理。",
+          "return_to": {
+            "event_id": "gpt6-astra-release",
+            "reason": "桌面应用说明代码任务怎样管理；回到Astra，观察模型层面怎样支持更长的软件操作。"
+          }
         },
         {
           "event_id": "chatgpt-work-launch",
           "level": "supporting",
-          "reason": "资料工作如何从一次交付转为持续跟进。"
+          "reason": "资料工作如何从一次交付转为持续跟进。",
+          "return_to": {
+            "event_id": "gpt6-astra-release",
+            "reason": "Work解释持续跟进的产品安排；回到Astra，区分任务环境与模型能力各自的作用。"
+          }
         },
         {
           "event_id": "gpt6-astra-release",
@@ -8603,9 +8758,19 @@
         {
           "event_id": "gpt61-terra-release",
           "level": "supporting",
-          "reason": "近期型号分工与效率定位，等待更多实际任务证据。"
+          "reason": "近期型号分工与效率定位，等待更多实际任务证据。",
+          "return_to": {
+            "event_id": "gpt6-astra-release",
+            "reason": "Terra补充视觉与电脑操作的效率取舍；回到Astra这处关键转折，比较的是任务要求，不只是哪款更新。"
+          }
         }
-      ]
+      ],
+      "outro": "GPT这条线从一个人人能试的聊天入口，走到多模态、推理和任务交付；开放权重与默认模型又把选择权带到前台。能力在扩大，用户是否愿意改变熟悉的用法，还要回到实际使用中看。",
+      "exit": {
+        "event_id": "chatgpt-consumer-use-study",
+        "label": "回到人们怎样使用",
+        "reason": "看带有样本边界的使用研究，区分发布时的期待与日常真正发生的事。"
+      }
     },
     {
       "id": "claude",
@@ -8643,7 +8808,11 @@
         {
           "event_id": "model-context-protocol-introduction",
           "level": "supporting",
-          "reason": "Claude Desktop怎样取得外部资料？MCP提供连接方法，不是又一个Claude型号。"
+          "reason": "Claude Desktop怎样取得外部资料？MCP提供连接方法，不是又一个Claude型号。",
+          "return_to": {
+            "event_id": "claude-code-research-preview",
+            "reason": "MCP交代外部资料和工具怎样连接；回到Claude Code，看终端中的整项任务如何交接。"
+          }
         },
         {
           "event_id": "claude-code-research-preview",
@@ -8666,14 +8835,24 @@
         {
           "event_id": "anthropic-81k-user-interviews",
           "level": "supporting",
-          "reason": "用户希望省下时间，也担心失去哪些东西；补足厂商演示以外的声音。"
+          "reason": "用户希望省下时间，也担心失去哪些东西；补足厂商演示以外的声音。",
+          "return_to": {
+            "event_id": "claude-opus55-release",
+            "reason": "访谈补上使用者的期待和顾虑；再读Opus 5.5，把能力宣称放回实际工作的要求中。"
+          }
         },
         {
           "event_id": "claude-opus55-release",
           "level": "key",
           "reason": "回到模型能力与发布评估，检验工作委托的期待。"
         }
-      ]
+      ],
+      "outro": "Claude的变化不只在型号：对话旁出现工作区，终端与文件夹成为交接任务的地方，工具连接也成了工作的一部分。任务越长，怎样检查成果、保留人的判断越重要。",
+      "exit": {
+        "event_id": "anthropic-81k-user-interviews",
+        "label": "听听使用者的期待",
+        "reason": "从用户访谈看省下时间与保留判断之间的张力；厂商组织的访谈仍有样本边界。"
+      }
     },
     {
       "id": "gemini",
@@ -8682,17 +8861,25 @@
       "question": "从看懂多种材料，到改图和用工具，Gemini怎样落地？",
       "intro": "Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。",
       "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。补齐2025的三个能力转折；AI Overviews、Spark及Antigravity放在产品分支。仍非全部版本史，图像玩法的公众热度与独立使用效果尚未完整核验。",
+      "coverage_note": "截至2026-10-28核验本系列选材。六个关键站；图像编辑补入Gemini应用入口、Arena回顾与个人玩法讨论。平台自述和个案不代表全民热度；AI Overviews、Spark及Antigravity仍为产品分支，未完整覆盖全部版本及独立效果。",
       "entries": [
         {
           "event_id": "bard-announcement",
           "level": "supporting",
-          "reason": "前身产品背景，Bard不是Gemini版本。"
+          "reason": "前身产品背景，Bard不是Gemini版本。",
+          "return_to": {
+            "event_id": "gemini-announcement",
+            "reason": "Bard是面向用户的前身背景；从Gemini正式公布开始，看新的多模态模型家族。"
+          }
         },
         {
           "event_id": "palm2-announcement",
           "level": "supporting",
-          "reason": "前序模型背景，不用旧型号填充Gemini主线。"
+          "reason": "前序模型背景，不用旧型号填充Gemini主线。",
+          "return_to": {
+            "event_id": "gemini-announcement",
+            "reason": "PaLM 2交代前一阶段的语言模型路线；接着读Gemini，避免把前身混成同一个版本序列。"
+          }
         },
         {
           "event_id": "gemini-announcement",
@@ -8709,7 +8896,11 @@
         {
           "event_id": "ai-overviews-public-errors",
           "level": "supporting",
-          "reason": "多模态能力进入搜索并不自动保证答案可靠；这是应用反馈分支。"
+          "reason": "多模态能力进入搜索并不自动保证答案可靠；这是应用反馈分支。",
+          "return_to": {
+            "event_id": "gemini25-thinking-preview",
+            "reason": "搜索中的错误提醒我们，读到资料不等于正确使用资料；回到2.5推理，但不把发布写成这些错误已被解决。"
+          }
         },
         {
           "event_id": "gemini25-thinking-preview",
@@ -8732,19 +8923,33 @@
         {
           "event_id": "google-antigravity-preview",
           "level": "supporting",
-          "reason": "与Gemini 3同日的工作界面：开发者怎样管理代理、查看产物和反馈。"
+          "reason": "与Gemini 3同日的工作界面：开发者怎样管理代理、查看产物和反馈。",
+          "return_to": {
+            "event_id": "gemini3-pro-preview",
+            "reason": "工作界面把计划、产物和反馈摆到一起；回到同日的Gemini 3，区分界面工作流与模型能力。"
+          }
         },
         {
           "event_id": "gemini-spark-announcement",
           "level": "supporting",
-          "reason": "持续任务的产品方向，保留预告与受限测试身份。"
+          "reason": "持续任务的产品方向，保留预告与受限测试身份。",
+          "return_to": {
+            "event_id": "gemini4-argon-ga",
+            "reason": "Spark是持续任务方向的受限预览；回到Argon，核对真正可用的模型和产品入口。"
+          }
         },
         {
           "event_id": "gemini4-argon-ga",
           "level": "key",
           "reason": "以实际入口和开放条件收束近期演进。"
         }
-      ]
+      ],
+      "outro": "Gemini从理解多种材料、容纳长上下文，走到推理、连续改图与工具工作。能力进入日常产品后，读者既会看到具体玩法，也会碰到错误；演示中的可能性还需要使用反馈来补全。",
+      "exit": {
+        "event_id": "ai-overviews-public-errors",
+        "label": "换到真实产品的反馈",
+        "reason": "看搜索摘要怎样暴露应用中的可靠性问题，不把改图体验或模型成绩当作所有产品的保证。"
+      }
     },
     {
       "id": "deepseek",
@@ -8799,9 +9004,19 @@
         {
           "event_id": "deepseek-v41-flash-oct17",
           "level": "supporting",
-          "reason": "同一调用名下的模型与搜索服务更新，作为后续运维和成本观察。"
+          "reason": "同一调用名下的模型与搜索服务更新，作为后续运维和成本观察。",
+          "return_to": {
+            "event_id": "deepseek-v41-flash-release",
+            "reason": "10月更新说明发布后的服务仍在变；回到V4.1首发，分清新增视觉能力与后来的搜索、费用调整。"
+          }
         }
-      ]
+      ],
+      "outro": "DeepSeek先在计算与存储效率上积累，再把开放模型、推理和公众试用连在一起。后续的工具、长上下文和视觉扩展了能做的事；使用者还会遇到同名服务的更新与不同运行条件。",
+      "exit": {
+        "event_id": "deepseek-v41-flash-oct17",
+        "label": "追踪发布之后的服务变化",
+        "reason": "同一调用名下面，模型、搜索入口和费用口径还会变化；看看10月服务更新具体改了什么。"
+      }
     },
     {
       "id": "qwen",
@@ -8810,7 +9025,7 @@
       "question": "从通义服务到可加工的模型家族，Qwen怎样形成生态？",
       "intro": "先分清通义千问的产品公布与首次权重开放，再看尺寸、多语言和专门模型的分工。Qwen2.5的跨团队采用、Omni的声音图像与Qwen3的思考选择，让这条线不只是型号递增。",
       "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。七个关键站；代码与数学分工在2.5站说明，未把所有专门型号逐个展开。近期全模态和实时翻译候选仍待核，最近收录止于8月。",
+      "coverage_note": "截至2026-10-28核验本系列选材。七个关键站；补入Aider部署测试和小模型工具调用自述，不代表长期工程效果。代码与数学分工在2.5站说明；近期全模态候选仍待核，最近收录止于8月。",
       "entries": [
         {
           "event_id": "tongyi-qianwen-announcement",
@@ -8853,7 +9068,13 @@
           "level": "key",
           "reason": "以运行条件与开放许可观察近期架构实验。"
         }
-      ]
+      ],
+      "outro": "Qwen从通义服务走到可下载、可选择、可继续训练的模型家族。尺寸和专门能力给开发者更多组合方式，而实际表现仍取决于部署、工具与任务；开放生态最终要由谁拿去做了什么来说明。",
+      "exit": {
+        "event_id": "deepseek-r1-release",
+        "label": "看别人怎样继续加工",
+        "reason": "回到R1及蒸馏模型，观察Qwen基础模型被另一个团队采用的具体方式。"
+      }
     },
     {
       "id": "glm",
@@ -8862,7 +9083,7 @@
       "question": "本地中文对话，怎样发展成能接工具的工作基础？",
       "intro": "从ChatGLM-6B的本地运行入口出发，先看长资料与工具，再看任务分工和GLM-4.5的能力组合。GLM-5论文留在方法分支，近期以5.3的后训练和开放节奏收束。",
       "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。五个关键站，GLM-4.5补上工程方向的转折。GLM-5以论文方法分支呈现，不代替服务上线；中间版本、独立用户反馈与首次权重上传日期仍有缺口。",
+      "coverage_note": "截至2026-10-28核验本系列选材。五个关键站，补入GLM-4.5 Air的一手本地使用记录；小作品不代表大型工程效果。GLM-5以论文分支呈现，中间版本、更多独立使用证据与首次权重上传日期仍有缺口。",
       "entries": [
         {
           "event_id": "chatglm6b-open-release",
@@ -8891,14 +9112,24 @@
         {
           "event_id": "glm5-agentic-report",
           "level": "supporting",
-          "reason": "方法分支：论文怎样解释持续工程任务训练；这里的日期是论文提交，不是服务首发。"
+          "reason": "方法分支：论文怎样解释持续工程任务训练；这里的日期是论文提交，不是服务首发。",
+          "return_to": {
+            "event_id": "glm53-release",
+            "reason": "论文解释长任务训练的方法方向；回到5.3，看后训练与开放安排具体如何呈现，不把论文等同于使用效果。"
+          }
         },
         {
           "event_id": "glm53-release",
           "level": "key",
           "reason": "模型提升与获得模型的时间差需要一起理解。"
         }
-      ]
+      ],
+      "outro": "GLM从本地中文对话，逐步接上长资料、型号分工和工程任务。个人电脑上的小作品让开放模型变得具体，也提醒人们：能下载、能跑起来与能长期胜任工作，是要分别验证的几步。",
+      "exit": {
+        "event_id": "glm5-agentic-report",
+        "label": "继续看长任务的方法",
+        "reason": "GLM-5论文怎样讨论持续工程任务训练？沿方法线深入，同时保留论文与实际服务效果的区别。"
+      }
     }
   ]
 }

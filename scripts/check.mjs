@@ -134,10 +134,16 @@ export function checkMap(data) {
     refs(item.entries.map(entry => entry.event_id), events, `series ${item.id}`);
     const keys = item.entries.filter(entry => entry.level === 'key');
     fail(keys.length >= 2, `Series key stops: ${item.id}`);
+    fail(typeof item.outro === 'string' && item.outro.trim(), `Series ending: ${item.id}`);
+    fail(item.exit && events.has(item.exit.event_id) && !keys.some(entry => entry.event_id === item.exit.event_id) && ['label', 'reason'].every(key => typeof item.exit[key] === 'string' && item.exit[key].trim()), `Series exit: ${item.id}`);
+    fail(events.get(item.exit.event_id).date <= item.as_of, `Series exit exceeds cutoff: ${item.id}`);
     item.entries.forEach((entry, i) => {
       const event = events.get(entry.event_id);
       fail(['key', 'supporting'].includes(entry.level) && typeof entry.reason === 'string' && entry.reason.trim(), `Series entry meaning: ${entry.event_id}`);
       if (entry.level === 'key') fail(typeof event.change === 'string' && event.change.trim(), `Series key change: ${entry.event_id}`);
+      if (entry.level === 'supporting') {
+        fail(entry.return_to && keys.some(key => key.event_id === entry.return_to.event_id) && typeof entry.return_to.reason === 'string' && entry.return_to.reason.trim(), `Series branch return: ${entry.event_id}`);
+      } else fail(!entry.return_to, `Series key has branch return: ${entry.event_id}`);
       fail(event.date <= item.as_of, `Series event exceeds cutoff: ${entry.event_id}`);
       if (i) {
         const previous = events.get(item.entries[i - 1].event_id);

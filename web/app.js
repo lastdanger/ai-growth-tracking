@@ -19,7 +19,7 @@
   const roleNames = { milestone: '重要转折', 'public-impact': '社会回响', 'early-signal': '后续影响线索' };
   const statusNames = { reviewed: '代表事件已整理', seed: '起步事件选读', partial: '阶段整理中' };
   const dateBasisNames = { announcement: '发布/公告', event: '事件', paper: '论文提交', 'paper-release': '论文公开', commit: '代码提交', report: '报道', period: '时期观察', 'announcement-and-effective': '公布与施行', agreement: '协议文本' };
-  const sourceKindNames = { official: '官方记录', paper: '研究论文', media: '公开报道' };
+  const sourceKindNames = { official: '官方记录', paper: '研究论文', media: '公开报道与自述' };
   const relationNames = { uses: '采用关系', extends: '扩展关系', context: '背景关联', 'follow-up': '后续关联' };
   const materialNames = { quote: '原话', report: '报道片段', demo: '演示记录' };
   const temporalNames = { contemporary: '同期材料', retrospective: '后来回看', undated: '材料日期或版本未完全确认' };
@@ -213,13 +213,24 @@
     const series = seriesById.get(state.seriesId);
     const origin = seriesById.get(state.seriesOrigin?.seriesId);
     const yearLink = `<button type="button" class="route-button secondary" data-action="event-year" data-event="${escapeHTML(event.id)}">查看 ${event.year} 年背景 ↗</button>`;
-    if (!series) return `<section class="route-next"><p>这是从 ${escapeHTML(origin.name)} 展开的相关事件。</p>${seriesButton(origin, '返回系列原站', state.seriesOrigin.eventId)}${yearLink}</section>`;
+    if (!series) {
+      const originEvent = eventsById.get(state.seriesOrigin.eventId);
+      const question = origin.exit?.event_id === event.id ? origin.exit.reason : originEvent.reading_picks?.find(pick => pick.event_id === event.id)?.reason;
+      return `<section class="route-next"><div class="eyebrow">从 ${escapeHTML(origin.name)} 展开的相关事件</div>${question ? `<p>${escapeHTML(question)}</p>` : ''}<p>带着这条线索，回到「${escapeHTML(originEvent.title)}」接着读。</p>${seriesButton(origin, '返回系列原站', state.seriesOrigin.eventId)}${yearLink}</section>`;
+    }
     const keys = series.entries.filter(e => e.level === 'key');
     const current = series.entries.find(e => e.event_id === event.id);
     const position = series.entries.indexOf(current);
     const next = series.entries.slice(position + 1).find(e => e.level === 'key');
     const previous = series.entries.slice(0, position).filter(e => e.level === 'key').at(-1);
-    return `<section class="route-next"><div class="eyebrow">${escapeHTML(series.name)} · ${current.level === 'key' ? `第 ${keys.indexOf(current) + 1} / ${keys.length} 个关键站` : '补充阅读'}</div><p>${escapeHTML(next ? current.transition_to_next || '回到关键脉络，继续看下一次变化。' : '已读到本系列最近收录的关键站；这不是完整版本史，后续仍将补充。')}</p>${next ? seriesButton(series, eventsById.get(next.event_id).title, next.event_id) : seriesButton(series, '回到系列总览')}${previous ? `<div class="route-previous">${seriesButton(series, '上一关键站', previous.event_id)}</div>` : ''}${yearLink}</section>`;
+    if (current.level === 'supporting') {
+      const target = eventsById.get(current.return_to.event_id);
+      return `<section class="route-next"><div class="eyebrow">${escapeHTML(series.name)} · 补充阅读之后</div><p>${escapeHTML(current.return_to.reason)}</p>${seriesButton(series, `回到关键站 · ${target.title}`, target.id)}${yearLink}</section>`;
+    }
+    const onward = next
+      ? `<p>${escapeHTML(current.transition_to_next)}</p>${seriesButton(series, eventsById.get(next.event_id).title, next.event_id)}`
+      : `<div class="series-ending"><h3>这条线读到这里</h3><p>${escapeHTML(series.outro)}</p>${routeBranch(series.exit, series.exit.label)}${seriesButton(series, '回到系列总览')}</div>`;
+    return `<section class="route-next"><div class="eyebrow">${escapeHTML(series.name)} · 第 ${keys.indexOf(current) + 1} / ${keys.length} 个关键站</div>${onward}${previous ? `<div class="route-previous">${seriesButton(series, '上一关键站', previous.event_id)}</div>` : ''}${yearLink}</section>`;
   }
 
   function renderSeriesDirectory() {
