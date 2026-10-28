@@ -9,6 +9,22 @@ const rejects = (name, change, error) => test(name, () => {
   assert.throws(() => checkMap(data), error);
 });
 test('当前数据契约可校验', () => assert.equal(checkMap(original).events, original.events.length));
+rejects('系列引用必须存在', d => d.series[0].entries[0].event_id = 'missing', /Unknown series/);
+rejects('系列内不能重复事件', d => d.series[0].entries.push(d.series[0].entries[0]), /Repeated series/);
+rejects('系列须按日期排序', d => { const a = d.series[0].entries; [a[2], a[3]] = [a[3], a[2]]; }, /Series chronological order/);
+rejects('系列必须说明每个条目的关联', d => d.series[0].entries[0].reason = ' ', /Series entry meaning/);
+rejects('系列关键站需要转场', d => delete d.series[0].entries.find(e => e.level === 'key').transition_to_next, /Series transition/);
+rejects('系列关键站需要解释变化与意义', d => delete d.events.find(e => e.id === 'gpt-oss-open-weights').change, /Series key change/);
+rejects('系列末站不得有悬空转场', d => d.series[0].entries.filter(e => e.level === 'key').at(-1).transition_to_next = 'next', /Series transition/);
+rejects('系列截止不能超出内容包', d => d.series[0].as_of = '2099-01-01', /Series cutoff/);
+rejects('系列事件不能晚于核验截止', d => { d.series[0].as_of = '2023-01-01'; d.series[0].coverage_note = '截至2023-01-01'; }, /Series event exceeds cutoff/);
+test('同一事件可被多个系列明确引用，不改变年度主次', () => {
+  const d = structuredClone(original);
+  const before = d.events.map(e => [e.id, e.tier]);
+  const second = structuredClone(d.series[0]); second.id = 'comparison-context'; d.series.push(second);
+  assert.equal(checkMap(d).series, original.series.length + 1);
+  assert.deepEqual(d.events.map(e => [e.id, e.tier]), before);
+});
 rejects('精选出口必须已有关系', d => d.events.find(e => e.id === 'chatgpt-agent-release').reading_picks[0].event_id = 'alphafold-3', /Reading pick without relation/);
 rejects('精选出口不能重复', d => { const e = d.events.find(e => e.id === 'chatgpt-agent-release'); e.reading_picks[1] = e.reading_picks[0]; }, /Repeated reading picks/);
 rejects('精选出口必须解释阅读理由', d => d.events.find(e => e.id === 'chatgpt-agent-release').reading_picks[0].reason = '', /Reading pick reason/);

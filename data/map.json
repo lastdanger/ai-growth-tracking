@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "updated_at": "2026-10-13",
+  "schema_version": 3,
+  "updated_at": "2026-10-28",
   "years": [
     {
       "year": 2022,
@@ -186,9 +186,9 @@
       "year": 2026,
       "keyword": "委托与边界",
       "tagline": "让 AI 持续做事，也要弄清它该做到哪里。",
-      "summary": "代理从桌面走向个人和团队的持续工作，模型、影像与机器人继续扩展能力。真实使用、产品退场和越界事件，又把效果、授权与规则推到台前。",
+      "summary": "代理继续进入持续工作，模型能力、运行效率和开放部署也在变化。实际效果、授权与评估仍决定哪些任务值得交出去；本年度尚未结束。",
       "status": "partial",
-      "coverage_note": "截至 2026-09-15，进行中。现收录20个阶段代表事件，8个主节点、12个分支，最新录入为9月12日的公开主张报道；不是完整覆盖至该日，更不是全年结论。",
+      "coverage_note": "截至 2026-10-28，进行中。本轮定向补查模型发布、开放与部署，新增近期代表事件及必要前因；科研、机器人、治理等方向没有同步完成全面补查。现有32个阶段代表事件，仍非全年或截至该日的穷尽覆盖。",
       "anchor_ids": [
         "alphagenome-nature-paper",
         "openclaw-personal-agent-rename",
@@ -199,7 +199,7 @@
         "eu-ai-omnibus-in-force",
         "openai-hugging-face-investigation"
       ],
-      "as_of": "2026-09-15",
+      "as_of": "2026-10-28",
       "featured_event_id": "openclaw-personal-agent-rename",
       "featured_reason": "从个人代理的期待进入持续委托，再看授权、效果与控制问题。",
       "display_groups": [
@@ -214,7 +214,7 @@
         }
       ],
       "reading_route_id": "delegation-and-boundaries",
-      "lead": "一堆截图、一个文件夹、每周都要更新的材料：交给 AI 的事情开始有了持续的上下文。这三站从交材料、选择个人代理，走到让同一项工作持续推进；效果测量与授权边界从分支展开。2026 仍在进行中，这是一条阶段路线。"
+      "lead": "一堆截图、一个文件夹、每周都要更新的材料：交给 AI 的事情开始有了持续的上下文。这三站从交材料、选择个人代理，走到让同一项工作持续推进；效果测量与授权边界从分支展开。2026 仍在进行中，这是一条阶段路线。 沿模型系列入口，还可以跨年追踪这些工作能力从哪里来，以及成本和开放方式怎样变化。"
     }
   ],
   "events": [
@@ -715,7 +715,8 @@
       "material_ids": [],
       "fact_ids": [
         "EV-20230314-005"
-      ]
+      ],
+      "change": "另一种对话助手开始提供聊天与接口两个入口：人可以直接使用，开发者也可以将它接进应用。这是后续型号分工与工作工具展开的共同起点。"
     },
     {
       "id": "gpt4-release",
@@ -881,7 +882,8 @@
       "material_ids": [],
       "fact_ids": [
         "EV-20230411-001"
-      ]
+      ],
+      "change": "通义千问先作为服务与产品接入计划被介绍；它回答的是用户将在哪里遇到AI。开发者何时能拿到可自行运行的模型，要继续看后来的权重开放。"
     },
     {
       "id": "chatbot-arena-initial-leaderboard",
@@ -1495,7 +1497,7 @@
       ],
       "why_selected": "展示按不同规模提供模型的产品安排，同时保留各型号开放程度的差异。",
       "then": {
-        "text": "Ultra、Pro、Nano 同时被介绍，但各型号开放安排不同，Ultra 当时尚未普遍提供。产品家族的公布不能当成全部能力已可使用。",
+        "text": "Gemini从文字、图像、声音和视频等多种信息的共同处理出发，介绍Ultra、Pro、Nano三种规模。不同型号有不同开放安排，Ultra当时尚未普遍提供。读者首先看到的是一个多模态家族的方向，随后才是哪些能力真正进入产品。",
         "source_ids": [
           "S-a91b519f3db9"
         ]
@@ -1507,7 +1509,8 @@
       "material_ids": [],
       "fact_ids": [
         "EV-20231206-001"
-      ]
+      ],
+      "change": "多模态被放到整个模型家族的起点，而不只是给文字助手增加一个附件按钮；不同规模对应不同运行位置，各自开放安排仍需分开看。"
     },
     {
       "id": "eu-ai-act-provisional-agreement",
@@ -1595,7 +1598,8 @@
       "material_ids": [
         "M-gemini-15-long-context-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "长文档、视频与代码可以更完整地作为同一次提问的材料，减少人工先切碎再拼接的步骤。能装下更多内容仍不等于能准确处理每个细节，下一阶段要看读完之后的推理。"
     },
     {
       "id": "sora-research-preview",
@@ -1757,7 +1761,8 @@
         "S-b96207a197ed"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "效率成为结构设计的一部分，影响模型怎样使用计算与显存。它的重要性还在于这些方法被后来的V3延续；这为理解热潮之前的技术积累提供了落点。"
     },
     {
       "id": "alphafold-3",
@@ -1934,7 +1939,8 @@
       "material_ids": [
         "M-claude-35-artifacts-1"
       ],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "答案可以留在旁边继续修改：网页、代码或文稿成为反复加工的对象。模型表现与工作区一起影响体验，读者开始能围绕成果而不是一串回复组织工作。"
     },
     {
       "id": "suno-udio-copyright-lawsuits",
@@ -2147,7 +2153,7 @@
       "date_label": "09-19",
       "date_precision": "day",
       "date_basis": "announcement",
-      "title": "Qwen2.5：不同尺寸的模型成为开发原料",
+      "title": "Qwen2.5：开发者按任务选择模型",
       "summary": "Qwen2.5 发布多种尺寸的通用模型，以及代码、数学方向的模型。开发者可以按设备、预算与任务选择基础，而不必只围绕一个最大型号。",
       "lane": "ecosystem",
       "tier": "branch",
@@ -2156,7 +2162,7 @@
       ],
       "why_selected": "后续被采用的意义比型号清单更重要：其中的通用与数学模型后来成为 DeepSeek-R1 蒸馏模型的基础。",
       "then": {
-        "text": "首发通用模型从 0.5B 到 72B，多数采用 Apache 2.0，3B 和 72B 有许可例外；代码模型的 32B 版本当时仍在预告中。开放权重不意味着所有尺寸和许可都一样。",
+        "text": "写代码、处理数学问题和一般对话，开始对应家族里的不同分工。Qwen2.5首发既有0.5B到72B的通用模型，也有代码、数学方向的模型；多数通用型号采用Apache 2.0，3B和72B有许可例外。32B代码模型当时还在预告中，选模型时仍需逐项看实际开放的尺寸与许可。",
         "source_ids": [
           "S-386c6f9991a4"
         ]
@@ -2175,7 +2181,15 @@
         "S-7c57c255a26a"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "选择不再只按参数规模，还按代码、数学等任务展开。开发者可以选专门模型作为自己的应用或后续训练基础；下面的后来记录再说明这些模型实际被谁采用。",
+      "reading_picks": [
+        {
+          "event_id": "deepseek-r1-release",
+          "label": "模型被别人继续加工",
+          "reason": "Qwen2.5怎样成为R1蒸馏模型的基础，看到开放生态里的具体采用。"
+        }
+      ]
     },
     {
       "id": "nobel-chemistry-protein-ai",
@@ -2234,7 +2248,14 @@
         "M-computer-use-screen-actions"
       ],
       "fact_ids": [],
-      "change": "AI 开始从给出建议，走向尝试在软件里执行步骤。读者需要关心的也从“这句话对不对”，延伸到“这个动作做对了没有”；看懂屏幕和稳定完成整项工作之间，仍然有距离。"
+      "change": "AI 开始从给出建议，走向尝试在软件里执行步骤。读者需要关心的也从“这句话对不对”，延伸到“这个动作做对了没有”；看懂屏幕和稳定完成整项工作之间，仍然有距离。",
+      "reading_picks": [
+        {
+          "event_id": "model-context-protocol-introduction",
+          "label": "另一种连接方法",
+          "reason": "除了看屏幕操作，助手也可以通过协议连接数据与工具。"
+        }
+      ]
     },
     {
       "id": "model-context-protocol-introduction",
@@ -2252,7 +2273,7 @@
       ],
       "why_selected": "优先展示后续影响扩大的连接层节点。",
       "then": {
-        "text": "当时公众热度未知，不标无人注意。",
+        "text": "助手要读取项目文件或业务工具中的资料，开发者常常得为每一种连接分别实现接口。Anthropic开源MCP时，同时提供协议与SDK、Claude Desktop本地服务器支持和示例服务器，让数据连接可以按共同方式组织。协议提供连接办法，权限设置与结果核对仍由应用负责。",
         "source_ids": [
           "S-3a99f53535c9"
         ]
@@ -2269,7 +2290,8 @@
         "S-e3d71d6c2b3a"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "模型能否帮上忙，不只取决于它知道多少，也取决于能否取得当前任务的资料。MCP把反复接数据和工具的问题单独拿出来处理，是Claude工作入口之外的一层基础。"
     },
     {
       "id": "deepseek-v3-release",
@@ -2541,7 +2563,7 @@
       ],
       "why_selected": "从代码建议走向委托工程任务的产品节点。",
       "then": {
-        "text": "它能读取项目、编辑文件并调用命令行工具，开发者继续参与过程。首发时仍为有限研究预览；官方用内部调试与重构举例，实际节省多少时间还要看任务与工作方式。",
+        "text": "开发者可以在终端交出代码任务，让Claude Code读取项目、编辑文件并运行命令。同日发布的Claude 3.7 Sonnet提供快速回答与延长思考，API可控制思考预算。模型怎样分析问题、工具怎样执行步骤，在这次发布中同时出现；Claude Code本身仍是有限研究预览。",
         "source_ids": [
           "S-80d76661dadf"
         ]
@@ -2551,7 +2573,15 @@
         "S-80d76661dadf"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "开发者可以交出一项带有代码库上下文的任务，让工具读文件、修改并检查，而不必逐段搬运代码。模型的思考方式和工具的执行环境共同决定这件事能推进多远。",
+      "reading_picks": [
+        {
+          "event_id": "claude4-code-ga",
+          "label": "从预览到日常流程",
+          "reason": "继续看Code正式可用时，模型、编辑器和后台任务怎样一起变化。"
+        }
+      ]
     },
     {
       "id": "manus-early-preview",
@@ -2677,7 +2707,8 @@
         "S-32b8158ff23a"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "模型尺寸之外，开发者又获得一次回答是否先推理的选择。等待时间、计算预算与结果质量被放到同一项应用设计中，开放模型也需要按实际任务安排用法。"
     },
     {
       "id": "alphaevolve",
@@ -2910,7 +2941,8 @@
         "S-40645599261c"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "运行位置成为可以选择的一部分：开发者能取得权重，自行组织推理和工具环境。它与ChatGPT提供现成入口是两种参与方式，也让开放模型生态多了一个来源。"
     },
     {
       "id": "gpt5-unified-system",
@@ -2939,7 +2971,15 @@
         "S-1eafef0d9ac2"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "用户不必每次先判断该选快速模型还是推理模型，系统开始替人分配；同时，默认入口替换也会打断已经熟悉的写作语气和工作习惯。升级是否合适，开始包含选择权的问题。",
+      "reading_picks": [
+        {
+          "event_id": "gpt4o-users-ask-choice",
+          "label": "用户的选择",
+          "reason": "默认入口升级之后，部分用户为何要求恢复熟悉的4o？"
+        }
+      ]
     },
     {
       "id": "gpt4o-users-ask-choice",
@@ -3255,14 +3295,16 @@
       ],
       "why_selected": "多任务协作成为独立界面的阶段节点。",
       "then": {
-        "text": "首发界面支持分开的工作副本和任务记录，用户可以查看差异、提出修改意见。公告中的定时任务先作为本地应用能力提供；Windows直到3月4日才另有更新，云端持续触发则是后续计划。",
+        "text": "2025年5月，Codex已经提供云端隔离环境中的代码任务，可以读改文件、执行测试并交回记录。到2026年2月，macOS应用把分开的工作副本和任务记录放进桌面界面，用户可以查看差异并提出修改。这里记录工作界面的变化；Windows直到3月4日才另有更新。",
         "source_ids": [
-          "S-64de24504d54"
+          "S-64de24504d54",
+          "S-codex-2025-background"
         ]
       },
       "later": null,
       "source_ids": [
-        "S-64de24504d54"
+        "S-64de24504d54",
+        "S-codex-2025-background"
       ],
       "material_ids": [],
       "fact_ids": []
@@ -3572,7 +3614,8 @@
         "S-e37cc03ed433"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "长资料、模型权重和代理适配被放到同一次发布中，开放模型的竞争因此延伸到工作环境。能否接上工具，开始和一次回答的表现一样值得追踪。"
     },
     {
       "id": "sora-consumer-service-closure",
@@ -3795,7 +3838,15 @@
         "S-2ca2d97f92d7"
       ],
       "material_ids": [],
-      "fact_ids": []
+      "fact_ids": [],
+      "change": "能力目标继续从交回一份答案，扩展到在真实软件里推进较长的工作。人需要检查中间动作与最终产物，厂商演示的任务范围仍不能直接变成可靠性保证。",
+      "reading_picks": [
+        {
+          "event_id": "gpt61-terra-release",
+          "label": "近期型号分工",
+          "reason": "再看Terra的效率定位与实际调用范围；它作为近期补充，不替代前面的关键转折。"
+        }
+      ]
     },
     {
       "id": "frontier-pacing-proposal",
@@ -3957,6 +4008,764 @@
       ],
       "fact_ids": [],
       "change": "平均值背后是经验不同的人。判断工具有没有帮助，除了看整体提效，也要看谁受益、谁变化不大；这项岗位研究不能直接推广到所有职业。"
+    },
+    {
+      "id": "gpt61-terra-release",
+      "year": 2026,
+      "date": "2026-10-26",
+      "date_label": "2026-10-26",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "GPT-6.1 Terra：把视觉与电脑操作带到高效型号",
+      "summary": "Terra进入API，强调视觉推理、电脑操作与写作的效率。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "系列演进不只有能力上限，还包括让不同负载获得合适的速度与成本；具体收益仍需在自己的任务上测量。",
+      "then": {
+        "text": "从Astra展示长任务能力，到Terra进入API，开发者面对的问题变成了该把哪一类工作交给哪一个型号。10月26日的更新把Terra定位于视觉推理、精确电脑操作和自然写作，并提供Responses与Chat Completions调用入口。这是官方的能力与产品定位，不表示它在所有任务上胜过Astra，也不等于同日向所有ChatGPT用户开放。",
+        "source_ids": [
+          "S-openai-oct26-changelog"
+        ]
+      },
+      "source_ids": [
+        "S-openai-oct26-changelog"
+      ],
+      "material_ids": [],
+      "change": "系列演进不只有能力上限，还包括让不同负载获得合适的速度与成本；具体收益仍需在自己的任务上测量。"
+    },
+    {
+      "id": "claude-opus55-release",
+      "year": 2026,
+      "date": "2026-09-22",
+      "date_label": "2026-09-22",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Claude Opus 5.5：复杂工作的能力与评估一起发布",
+      "summary": "Claude 5.5系列以Opus开场，强调复杂任务和发布前评估。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "这次发布可同时接上Claude的工作工具路线与前沿发布讨论：能力、实际效果和授权边界需要一起看。",
+      "then": {
+        "text": "Anthropic介绍Opus 5.5时，把复杂代码工作和发布前外部评估放在同一篇公告里。它还转述了早期用户处理大型代码迁移的经历。这种描述把期待从“回答对不对”推向“整项工作能不能交付”。但案例来自厂商选取与转述，不是所有工程团队都能获得相同收益的证据；外部测试的存在也不等于模型已经没有越界风险。",
+        "source_ids": [
+          "S-opus55-release"
+        ]
+      },
+      "source_ids": [
+        "S-opus55-release"
+      ],
+      "material_ids": [
+        "M-claude-opus55-release-scene"
+      ],
+      "change": "这次发布可同时接上Claude的工作工具路线与前沿发布讨论：能力、实际效果和授权边界需要一起看。",
+      "scene_material_id": "M-claude-opus55-release-scene"
+    },
+    {
+      "id": "gemini4-argon-ga",
+      "year": 2026,
+      "date": "2026-10-13",
+      "date_label": "2026-10-13",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Gemini 4 Argon：从发布期待走到实际入口",
+      "summary": "Argon正式进入API，并开始向Gemini付费用户推出。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "模型进步要经过实际可访问的产品入口才会改变用法；正式可用、滚动开放与此前预告必须分开记录。",
+      "then": {
+        "text": "10月13日，Google的API日志把Gemini 4 Argon标为正式可用；产品更新则说明它开始向Pro和Ultra订阅用户推出。同日，Gemini的macOS应用加入Antigravity入口，让用户在聊天之后交出编程计划，等待代理构建和测试。模型的开放与工具的整合在这里相遇，但两者不是同一种能力，账户、地区和语言限制也仍然存在。",
+        "source_ids": [
+          "S-gemini-argon-ga",
+          "S-gemini-oct13-app"
+        ]
+      },
+      "source_ids": [
+        "S-gemini-argon-ga",
+        "S-gemini-oct13-app"
+      ],
+      "material_ids": [],
+      "change": "模型进步要经过实际可访问的产品入口才会改变用法；正式可用、滚动开放与此前预告必须分开记录。"
+    },
+    {
+      "id": "deepseek-v41-flash-release",
+      "year": 2026,
+      "date": "2026-09-10",
+      "date_label": "2026-09-10",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "DeepSeek V4.1 Flash：视觉理解进入新的API版本",
+      "summary": "V4.1 Flash将原生视觉理解带入新的结构系列。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "从V4预览到V4.1，关注点进一步转向多模态输入、吞吐与实际调用，而不只是模型规模。",
+      "then": {
+        "text": "DeepSeek把V4.1 Flash介绍为新结构系列中的较小型号，并将原生视觉理解接入API。对开发者而言，变化是图片与文字可以进入同一模型流程；与此同时，原有调用名存在迁移和路由兼容安排。发布页列出的测试成绩属于官方结果，本节点不据此推断它已经在所有工作中领先，也不将API上线视作权重同步开放。",
+        "source_ids": [
+          "S-deepseek-v41-sep10"
+        ]
+      },
+      "source_ids": [
+        "S-deepseek-v41-sep10"
+      ],
+      "material_ids": [],
+      "change": "从V4预览到V4.1，关注点进一步转向多模态输入、吞吐与实际调用，而不只是模型规模。",
+      "reading_picks": [
+        {
+          "event_id": "deepseek-v41-flash-oct17",
+          "label": "服务后续",
+          "reason": "再看同一调用名下的更新及搜索API，区分模型与工具的变化。"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-v41-flash-oct17",
+      "year": 2026,
+      "date": "2026-10-17",
+      "date_label": "2026-10-17",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "DeepSeek更新Flash，也把搜索能力开放给开发者",
+      "summary": "模型更新保持API价格与调用方式，同日开放搜索API。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "同样的单价未必意味着同样的任务成本；模型、工具和运行框架的共同变化，需要结合具体任务判断。",
+      "then": {
+        "text": "开发者继续使用deepseek-flash调用名，就会接到10月17日更新的模型；官方网页与应用也同步升级。DeepSeek同时开放自研搜索API，让外部程序可以获取网页信息。厂商称新模型缩短了输出和任务时间，并提醒用户升级配套框架。因此这里的“更能干”既涉及模型，也涉及搜索和执行环境，不能把一张测试表全归因于参数变化。",
+        "source_ids": [
+          "S-deepseek-v41-oct17"
+        ]
+      },
+      "source_ids": [
+        "S-deepseek-v41-oct17"
+      ],
+      "material_ids": [],
+      "change": "同样的单价未必意味着同样的任务成本；模型、工具和运行框架的共同变化，需要结合具体任务判断。"
+    },
+    {
+      "id": "kimi-k31-pro-release",
+      "year": 2026,
+      "date": "2026-10-23",
+      "date_label": "2026-10-23",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Kimi K3.1 Pro：任务表现上升，权重开放仍有时间差",
+      "summary": "服务发布与独立评测已经出现，完整权重仍属后续计划。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "模型排名、API单价、实际完成任务的花费与权重可得性是四件不同的事；这次发布提供了同时观察它们的窗口。",
+      "then": {
+        "text": "10月23日，Kimi发布K3.1 Pro及更快的Highspeed版本。官方将完整权重开放安排在11月4日前；截至本轮，不能把这一承诺写成已经完成。同日Artificial Analysis的测试显示，代理工作改善较明显，其他任务的变化并不齐步一致。它还指出，Token单价下降被更多输出消耗部分抵消，平均任务成本与前代大致相当。",
+        "source_ids": [
+          "S-kimi-k31-guide",
+          "S-kimi-k31-announcement",
+          "S-aa-kimi-k31"
+        ]
+      },
+      "source_ids": [
+        "S-kimi-k31-guide",
+        "S-kimi-k31-announcement",
+        "S-aa-kimi-k31"
+      ],
+      "material_ids": [
+        "M-kimi-k31-pro-release-scene"
+      ],
+      "change": "模型排名、API单价、实际完成任务的花费与权重可得性是四件不同的事；这次发布提供了同时观察它们的窗口。",
+      "scene_material_id": "M-kimi-k31-pro-release-scene"
+    },
+    {
+      "id": "muse-spark-open-release",
+      "year": 2026,
+      "date": "2026-10-15",
+      "date_label": "2026-10-15",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Muse Spark Open：多模态模型进入开放部署链条",
+      "summary": "Meta开放模型权重，Hugging Face提供推理与适配说明。",
+      "lane": "ecosystem",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "开放的意义不仅是能否试用，也在于谁能选择部署环境和继续修改；参与条件同时受硬件、软件与许可影响。",
+      "then": {
+        "text": "Muse Spark Open发布后，Hugging Face介绍了从加载权重到推理、微调的工具链。模型可以接收文字、图片、声音和视频，并生成文字；开放的是可加工、可部署的模型，不是一个已经替用户搭好所有工具的助手。它的规模也意味着下载得到不等于普通设备都能轻松运行，许可仍附带使用条件。",
+        "source_ids": [
+          "S-hf-muse-spark-open",
+          "S-muse-license"
+        ]
+      },
+      "source_ids": [
+        "S-hf-muse-spark-open",
+        "S-muse-license"
+      ],
+      "material_ids": [],
+      "change": "开放的意义不仅是能否试用，也在于谁能选择部署环境和继续修改；参与条件同时受硬件、软件与许可影响。"
+    },
+    {
+      "id": "nemotron35-local-agents",
+      "year": 2026,
+      "date": "2026-10-15",
+      "date_label": "2026-10-15",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Nemotron 3.5：把代理模型按部署环境拆开",
+      "summary": "Super VL与Bolt 74B分别面向服务器与本地代理工作。",
+      "lane": "ecosystem",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "模型能否进入日常使用，还取决于放在哪里、消耗多少资源；部署条件值得与能力成绩并列呈现。",
+      "then": {
+        "text": "NVIDIA在同一天推出Super VL与Bolt 74B，把服务器上的持续任务和本地设备上的代理放到不同型号中。公告把Bolt 74B的部署体积标为24GB；这并不等于任何24GB设备都能获得相同性能，还要考虑运行时和工作负载。更小的E4B在该公告中仍是后续预告，本节点没有把它的计划日期记为实际开放日。",
+        "source_ids": [
+          "S-nemotron35-release"
+        ]
+      },
+      "source_ids": [
+        "S-nemotron35-release"
+      ],
+      "material_ids": [],
+      "change": "模型能否进入日常使用，还取决于放在哪里、消耗多少资源；部署条件值得与能力成绩并列呈现。"
+    },
+    {
+      "id": "genie4-research-preview",
+      "year": 2026,
+      "date": "2026-10-27",
+      "date_label": "2026-10-27",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Genie 4：从生成片段走向可交互世界",
+      "summary": "新世界模型向受邀测试者开放研究预览，并加入原生声音。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "内容生成开始触及互动环境；研究预览的意义在于展示新方向，是否形成稳定用法还要等待后续证据。",
+      "then": {
+        "text": "Google公布Genie 4时，重点不只是生成一段影像，而是让人持续改变场景、让环境回应，并同时生成声音。它当时面向受邀测试者，公众与开发者入口仍在后续安排中。官方也明确指出，长时间运行后的物体一致性、空间精度和复杂物理互动仍有限制。这是一项可继续追踪的研究进展，还不能视作成熟的通用世界模拟器。",
+        "source_ids": [
+          "S-genie4-preview"
+        ]
+      },
+      "source_ids": [
+        "S-genie4-preview"
+      ],
+      "material_ids": [
+        "M-genie4-research-preview-scene"
+      ],
+      "change": "内容生成开始触及互动环境；研究预览的意义在于展示新方向，是否形成稳定用法还要等待后续证据。",
+      "scene_material_id": "M-genie4-research-preview-scene"
+    },
+    {
+      "id": "qwen2-open-family",
+      "year": 2024,
+      "date": "2024-06-07",
+      "date_label": "2024-06-07",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Qwen2：把模型做成不同规模的开发选择",
+      "summary": "Qwen2发布五种规模的基础与指令模型，并扩展多语言训练。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "这为理解后来的Qwen2.5与Qwen3提供前因：系列的价值来自一组可选的开发原料，而不只是一个聊天产品。",
+      "then": {
+        "text": "Qwen2发布时没有只交付一个最大的型号，而是给出五种规模的基础与指令模型。团队同时强调多语言训练和部分型号的长上下文能力。开发者可以根据设备、延迟和任务选择模型，再在开放平台上取得权重。不同型号的能力与许可并非完全相同，不能把其中一个配置推广到整个系列。",
+        "source_ids": [
+          "S-qwen2-release"
+        ]
+      },
+      "source_ids": [
+        "S-qwen2-release"
+      ],
+      "material_ids": [],
+      "change": "这为理解后来的Qwen2.5与Qwen3提供前因：系列的价值来自一组可选的开发原料，而不只是一个聊天产品。"
+    },
+    {
+      "id": "qwen38-flash-next",
+      "year": 2026,
+      "date": "2026-08-01",
+      "date_label": "2026年8月（发布月）",
+      "date_precision": "month",
+      "date_basis": "announcement",
+      "title": "Qwen3.8-Flash-Next：长任务背后的效率实验",
+      "summary": "开放权重的架构预览，关注长上下文和推理效率。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "开放模型的演进开始同时回答能力与运行效率问题；模型权重、托管服务和使用许可要分别辨认。",
+      "then": {
+        "text": "Qwen3.8-Flash-Next模型卡把它定位为下一代架构的实验预览，提供权重与多种推理工具的接入说明。它与托管API的产品配置有区别，不能把服务侧的工具和默认上下文直接当作下载权重后的现成功能。模型卡标注qwen-community-1.0许可，日期引用仅确认到2026年8月；本页因此不伪造精确首发日。",
+        "source_ids": [
+          "S-qwen38-next-card"
+        ]
+      },
+      "source_ids": [
+        "S-qwen38-next-card"
+      ],
+      "material_ids": [],
+      "change": "开放模型的演进开始同时回答能力与运行效率问题；模型权重、托管服务和使用许可要分别辨认。"
+    },
+    {
+      "id": "chatglm6b-open-release",
+      "year": 2023,
+      "date": "2023-03-14",
+      "date_label": "2023-03-14",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "ChatGLM-6B：中文对话模型可以放到本地",
+      "summary": "双语小模型让开发者尝试在自己的设备上运行对话。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "它把“在哪里使用模型”从网页入口扩展到本地设备，为GLM后来的开放模型路线提供起点。",
+      "then": {
+        "text": "在对话模型受到关注的2023年春天，ChatGLM-6B提供了另一种参与方式：取得模型，在自己的设备上运行中文和英文对话。官方仓库提供量化与演示说明，也提示上下文、显存和输出可靠性的限制。这里记录的是本地部署入口的出现，不把今天的仓库热度倒推成当时的全民热潮；具体发布日期由团队后来的技术报告回溯确认。",
+        "source_ids": [
+          "S-chatglm6-repository"
+        ]
+      },
+      "source_ids": [
+        "S-chatglm6-repository",
+        "S-chatglm-family-report"
+      ],
+      "material_ids": [
+        "M-chatglm6b-open-release-scene"
+      ],
+      "change": "它把“在哪里使用模型”从网页入口扩展到本地设备，为GLM后来的开放模型路线提供起点。",
+      "later": {
+        "as_of": "2024-06-18",
+        "text": "2024年技术报告回顾，ChatGLM-6B与在线大模型在2023年3月14日同日推出；小模型的重要目标之一是支持消费者显卡上的量化部署。这里采用作者的历史回顾，不将其自述的关注度当作独立统计。",
+        "source_ids": [
+          "S-chatglm-family-report"
+        ]
+      },
+      "scene_material_id": "M-chatglm6b-open-release-scene"
+    },
+    {
+      "id": "glm4-9b-open-release",
+      "year": 2024,
+      "date": "2024-06-05",
+      "date_label": "2024-06-05",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "GLM-4-9B：本地对话继续走向长资料与工具",
+      "summary": "GLM-4开放9B系列，加入长上下文、工具调用和视觉相关型号。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "系列沿着开放部署继续发展，同时把处理资料与调用工具纳入模型选择。",
+      "then": {
+        "text": "GLM-4在6月开放9B系列。保留的当日说明列出长上下文对话与工具调用能力，并提供视觉语言型号。对想自行部署的人来说，问题不再只是能否聊几轮，而是能不能处理较长的资料、接上工具或理解图片。这里的能力分布在不同型号中，不能把各自特点拼成一个全能模型；也不能把它与年初的商业GLM-4发布混为同一事件。",
+        "source_ids": [
+          "S-glm4-repository",
+          "S-glm4-9b-readme"
+        ]
+      },
+      "source_ids": [
+        "S-glm4-repository",
+        "S-glm4-9b-readme"
+      ],
+      "material_ids": [],
+      "change": "系列沿着开放部署继续发展，同时把处理资料与调用工具纳入模型选择。"
+    },
+    {
+      "id": "glm4-0414-release",
+      "year": 2025,
+      "date": "2025-04-14",
+      "date_label": "2025-04-14",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "GLM-4-0414：对话、推理与研究分成不同型号",
+      "summary": "32B系列把直接回答和更长推理放在不同模型配置中。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "从小型对话到任务分工，模型选择逐渐包含“需要想多久”和“如何接工具”两个维度。",
+      "then": {
+        "text": "GLM-4的4月更新增加32B系列，包括对话、推理与更长研究过程的不同型号。官方说明把代码、工具调用和报告生成放入应用场景。这不是简单把旧模型放大：不同任务开始对应不同推理方式。厂商给出的比较成绩只能说明其测试设置下的结果，不能直接推出本地运行就能获得与托管服务一致的体验。",
+        "source_ids": [
+          "S-glm4-repository"
+        ]
+      },
+      "source_ids": [
+        "S-glm4-repository"
+      ],
+      "material_ids": [],
+      "change": "从小型对话到任务分工，模型选择逐渐包含“需要想多久”和“如何接工具”两个维度。"
+    },
+    {
+      "id": "glm5-agentic-report",
+      "year": 2026,
+      "date": "2026-02-17",
+      "date_label": "2026-02-17（论文提交）",
+      "date_precision": "day",
+      "date_basis": "paper",
+      "title": "GLM-5技术报告：从写代码转向持续工程任务",
+      "summary": "论文把长任务交互与后训练效率放在代理工程的中心。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "GLM路线从开放对话继续延伸到多步骤工程；衡量对象也从一次回答转向持续任务的完成过程。",
+      "then": {
+        "text": "2月17日提交的GLM-5技术报告，讨论如何让模型在复杂、较长的交互中继续工作。它介绍稀疏注意力与异步强化学习等方法，将训练效率和长上下文能力联系起来。这里使用的是论文公开日，不把它冒充模型服务首发日。作者的测试支持研究方向与方法描述，但不等于所有真实工程项目已经可以无人监督地交付。",
+        "source_ids": [
+          "S-glm5-paper"
+        ]
+      },
+      "source_ids": [
+        "S-glm5-paper"
+      ],
+      "material_ids": [],
+      "change": "GLM路线从开放对话继续延伸到多步骤工程；衡量对象也从一次回答转向持续任务的完成过程。"
+    },
+    {
+      "id": "glm53-release",
+      "year": 2026,
+      "date": "2026-08-14",
+      "date_label": "2026-08-14",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "GLM-5.3：后训练提升与开放节奏同时受到关注",
+      "summary": "同一基座继续后训练，发布时把权重开放安排在稍后。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "能力改善不一定来自更换基座；训练环境和开放节奏本身也开始影响开发者能拿到什么、何时能用。",
+      "then": {
+        "text": "GLM-5.3公告强调，变化来自GLM-5.2基座上的继续后训练，训练环境更接近长期工程工作。团队也报告了增长的网络安全能力，并把权重开放安排在安全评估与加固之后。那些代码与安全成绩属于官方测试；API发布、权重开放以及现实使用效果，不能因为同属一次发布就合并成一个结论。",
+        "source_ids": [
+          "S-glm53-release"
+        ]
+      },
+      "source_ids": [
+        "S-glm53-release",
+        "S-glm53-card"
+      ],
+      "material_ids": [],
+      "change": "能力改善不一定来自更换基座；训练环境和开放节奏本身也开始影响开发者能拿到什么、何时能用。",
+      "later": {
+        "as_of": "2026-10-28",
+        "text": "本轮已核对官方模型仓库中的权重入口与glm-5.3许可。它说明截至10月28日已有开放部署入口，但未核清最初上传日期，不将公告中的“两周后”倒填为实际开放日。",
+        "source_ids": [
+          "S-glm53-card"
+        ]
+      }
+    },
+    {
+      "id": "claude3-model-family",
+      "year": 2024,
+      "date": "2024-03-04",
+      "date_label": "2024-03-04",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Claude 3：同一个家族，开始分工",
+      "summary": "Opus、Sonnet、Haiku按能力、速度与成本分工，首发先提供Opus和Sonnet。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "Claude从单一助手名称变成一组有分工的选择。后来看到Sonnet负责日常开发、Opus强调复杂工作时，读者有了理解这些名字的起点。",
+      "then": {
+        "text": "一个需要即时回复的对话窗口，与一份需要仔细分析的长材料，不一定适合交给同一型号。Claude 3把Opus、Sonnet、Haiku放在同一产品家族中，让使用者按能力、响应速度和成本选择。3月4日先开放Opus与Sonnet，Haiku还要等随后推出；三个名字同时公布，并不代表三个入口同日可用。",
+        "source_ids": [
+          "S-claude3-family"
+        ]
+      },
+      "change": "Claude从单一助手名称变成一组有分工的选择。后来看到Sonnet负责日常开发、Opus强调复杂工作时，读者有了理解这些名字的起点。",
+      "source_ids": [
+        "S-claude3-family"
+      ],
+      "material_ids": [],
+      "fact_ids": []
+    },
+    {
+      "id": "claude4-code-ga",
+      "year": 2025,
+      "date": "2025-05-22",
+      "date_label": "2025-05-22",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Claude 4：推理接上工具，Claude Code走出预览",
+      "summary": "Opus 4与Sonnet 4发布，Claude Code同日正式可用。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "从终端里的有限试用，走向嵌入已有开发流程；衡量对象也从一段代码，扩展到反复检查和修改的任务过程。",
+      "then": {
+        "text": "修代码往往要读文件、运行测试，再根据报错继续改。Claude 4公告把这类往返过程放到中心：Opus 4与Sonnet 4支持快速回答和延长思考，推理中使用工具仍为beta。同日Claude Code正式可用，并提供编辑器集成与GitHub Actions后台任务入口。模型和工作工具在一次发布中会合，实际交付仍要经过开发者审查。",
+        "source_ids": [
+          "S-claude4-release"
+        ]
+      },
+      "change": "从终端里的有限试用，走向嵌入已有开发流程；衡量对象也从一段代码，扩展到反复检查和修改的任务过程。",
+      "source_ids": [
+        "S-claude4-release"
+      ],
+      "material_ids": [
+        "M-claude4-code-ga-reading"
+      ],
+      "fact_ids": [],
+      "scene_material_id": "M-claude4-code-ga-reading"
+    },
+    {
+      "id": "gemini25-thinking-preview",
+      "year": 2025,
+      "date": "2025-03-25",
+      "date_label": "2025-03-25",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Gemini 2.5：读进材料之后，还要推理",
+      "summary": "Gemini 2.5 Pro实验版把回答前推理与原有长上下文、多模态能力结合。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "1.5突出一次能读多少，2.5进一步追问读完后能怎样分析和行动。材料容量与处理问题的能力，终于可以分开观察。",
+      "then": {
+        "text": "把整份代码库放进去之后，接下来的难题是找出哪里有问题、怎样修改。Google发布2.5 Pro实验版时，将回答前推理、代码修改和复杂问题处理列为重点，延续长上下文与多模态输入。首发可在AI Studio及Gemini Advanced中尝试，Vertex AI仍在后续安排中。这一站记录推理方向进入2.5，不把它说成Gemini第一次探索思考模型。",
+        "source_ids": [
+          "S-gemini25-thinking"
+        ]
+      },
+      "change": "1.5突出一次能读多少，2.5进一步追问读完后能怎样分析和行动。材料容量与处理问题的能力，终于可以分开观察。",
+      "source_ids": [
+        "S-gemini25-thinking"
+      ],
+      "material_ids": [],
+      "fact_ids": []
+    },
+    {
+      "id": "gemini25-flash-image-preview",
+      "year": 2025,
+      "date": "2025-08-26",
+      "date_label": "2025-08-26",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Nano Banana：一张图可以接着改",
+      "summary": "Gemini 2.5 Flash Image提供图像生成与对话修改，开始进入开发者预览。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "多模态开始从理解图片走向直接修改图片。用户可以围绕同一份视觉成果反复沟通，变化落在创作过程，而不只是一张生成结果。",
+      "then": {
+        "text": "保留画面中的人物，换一个场景，再改掉衣服上的细节：Google用这类连续修改来介绍Gemini 2.5 Flash Image，也称Nano Banana。发布说明强调多图融合、主体一致性和自然语言编辑，当天在Vertex AI提供预览。这里采用的是官方文字描述，尚不能据此判断每次改图都能保住细节，也不能把发布本身等同于已经形成公众热潮。",
+        "source_ids": [
+          "S-gemini25-flash-image"
+        ]
+      },
+      "change": "多模态开始从理解图片走向直接修改图片。用户可以围绕同一份视觉成果反复沟通，变化落在创作过程，而不只是一张生成结果。",
+      "source_ids": [
+        "S-gemini25-flash-image"
+      ],
+      "material_ids": [
+        "M-gemini25-flash-image-preview-reading"
+      ],
+      "fact_ids": [],
+      "reading_picks": [
+        {
+          "event_id": "chatgpt-image-ghibli-wave",
+          "label": "并行的改图体验",
+          "reason": "同年另一种对话改图怎样进入公众创作与争议；不据此比较模型胜负。"
+        }
+      ],
+      "scene_material_id": "M-gemini25-flash-image-preview-reading"
+    },
+    {
+      "id": "gemini3-pro-preview",
+      "year": 2025,
+      "date": "2025-11-18",
+      "date_label": "2025-11-18",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Gemini 3：多模态与工具进入同一工作过程",
+      "summary": "Gemini 3 Pro向企业与开发者提供预览，并进入Antigravity等工具。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "Gemini的多模态特色开始落到跨工具工作中：读材料、作判断和执行步骤可以被组织起来。接着看Antigravity，才能知道开发者怎样查看和检查这个过程。",
+      "then": {
+        "text": "同一项工作可能同时带着代码、截图和说明文件。Gemini 3发布介绍把综合理解这些输入、规划步骤和调用工具放在一起，3 Pro在Vertex AI与Gemini Enterprise以预览形式提供，也进入Antigravity、Gemini CLI等入口。模型能力与工作界面是两层变化；发布中的客户效率案例仍是厂商挑选的材料。",
+        "source_ids": [
+          "S-gemini3-enterprise-preview"
+        ]
+      },
+      "change": "Gemini的多模态特色开始落到跨工具工作中：读材料、作判断和执行步骤可以被组织起来。接着看Antigravity，才能知道开发者怎样查看和检查这个过程。",
+      "source_ids": [
+        "S-gemini3-enterprise-preview"
+      ],
+      "material_ids": [],
+      "fact_ids": [],
+      "reading_picks": [
+        {
+          "event_id": "google-antigravity-preview",
+          "label": "工作界面",
+          "reason": "同日的Antigravity怎样把任务、产物和检查过程交给开发者？"
+        }
+      ]
+    },
+    {
+      "id": "qwen7b-open-release",
+      "year": 2023,
+      "date": "2023-08-03",
+      "date_label": "2023-08-03",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Qwen-7B开放：通义千问成为可下载的模型",
+      "summary": "Qwen-7B和Qwen-7B-Chat发布到模型平台，开发者获得代码与权重入口。",
+      "lane": "ecosystem",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "参与方式从使用厂商服务扩展到自行部署和加工模型。后来的尺寸选择、专门能力和跨团队采用，都需要先有这个开放入口。",
+      "then": {
+        "text": "四月听到的是通义千问将接入哪些产品，八月开发者则能取得模型文件。官方仓库记录，8月3日Qwen-7B及其Chat版本在Hugging Face与魔搭发布，并提供技术说明。对话版与基础模型服务于不同的后续工作：一个可以试着交谈，一个可以作为继续训练的起点。这里依据历史发布记录，不用当前仓库配置替代当时版本。",
+        "source_ids": [
+          "S-qwen-initial-open"
+        ]
+      },
+      "change": "参与方式从使用厂商服务扩展到自行部署和加工模型。后来的尺寸选择、专门能力和跨团队采用，都需要先有这个开放入口。",
+      "source_ids": [
+        "S-qwen-initial-open"
+      ],
+      "material_ids": [],
+      "fact_ids": []
+    },
+    {
+      "id": "qwen25-omni-release",
+      "year": 2025,
+      "date": "2025-03-27",
+      "date_label": "2025-03-27",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Qwen2.5-Omni：开放模型也能听、看和说",
+      "summary": "Qwen公布处理文字、图像、声音和视频，并输出文字与语音的端到端模型。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "Qwen不只是不同大小的文本模型货架：输入和输出方式也在分化。开发者开始能围绕声音与画面组织应用，而不仅是选择回答文字问题的模型。",
+      "then": {
+        "text": "过去要先把语音转成文字再提问；Qwen2.5-Omni的公告把听、看与说放进同一个模型设计。它接收文字、图像、音频和视频，并流式输出文字与自然语音，提供模型平台下载与在线体验入口。3月27日是此处采用的官方博客公告日，模型的具体运行条件仍需按配置查看。",
+        "source_ids": [
+          "S-qwen25-omni"
+        ]
+      },
+      "change": "Qwen不只是不同大小的文本模型货架：输入和输出方式也在分化。开发者开始能围绕声音与画面组织应用，而不仅是选择回答文字问题的模型。",
+      "source_ids": [
+        "S-qwen25-omni"
+      ],
+      "material_ids": [],
+      "fact_ids": []
+    },
+    {
+      "id": "deepseek-v31-hybrid-release",
+      "year": 2025,
+      "date": "2025-08-21",
+      "date_label": "2025-08-21",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "DeepSeek-V3.1：推理重新接回通用模型",
+      "summary": "V3.1支持思考与非思考模式，并更新工具调用、服务与开放模型。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "R1让推理成为显眼的新选择，V3.1进一步把它接回日常对话和工具流程。这补上了公众热潮与后来代理适配之间的一步，也避免把V系列与R系列看成互不相干的两条线。",
+      "then": {
+        "text": "用户在同一个对话里开关“深度思考”，开发者则继续通过API选择响应方式。V3.1把思考与非思考模式放进同一个模型，网页、应用和API同步更新，并开放基础与后训练模型。公告同时介绍工具使用改进，以及接入Claude Code框架的Anthropic API格式兼容；这是接口适配，不是Claude Code厂商对其效果的背书。",
+        "source_ids": [
+          "S-deepseek31-release"
+        ]
+      },
+      "change": "R1让推理成为显眼的新选择，V3.1进一步把它接回日常对话和工具流程。这补上了公众热潮与后来代理适配之间的一步，也避免把V系列与R系列看成互不相干的两条线。",
+      "source_ids": [
+        "S-deepseek31-release"
+      ],
+      "material_ids": [],
+      "fact_ids": []
+    },
+    {
+      "id": "glm45-open-agents",
+      "year": 2025,
+      "date": "2025-07-28",
+      "date_label": "2025-07-28",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "GLM-4.5：推理、写代码和用工具开始合在一起",
+      "summary": "GLM-4.5与Air型号将推理、代码和代理能力结合，并开放模型权重。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "4月的型号分工之后，GLM又尝试把多种能力组合成能接工具的工作基础。它为理解后来的持续工程任务提供了更具体的前因，而不必直接跳到GLM-5论文。",
+      "then": {
+        "text": "如果一个编程任务既要查资料，又要改文件和检查结果，分开擅长几类问题还不够。GLM-4.5把推理、编程与代理能力放进同一模型设计，提供思考和非思考模式，并以MIT许可开放基础与后训练模型。7月28日的厂商新闻稿确认发布，官方仓库保留相应说明；真实工程效果仍要看任务与运行环境。",
+        "source_ids": [
+          "S-glm45-announcement",
+          "S-glm45-repository"
+        ]
+      },
+      "change": "4月的型号分工之后，GLM又尝试把多种能力组合成能接工具的工作基础。它为理解后来的持续工程任务提供了更具体的前因，而不必直接跳到GLM-5论文。",
+      "source_ids": [
+        "S-glm45-announcement",
+        "S-glm45-repository"
+      ],
+      "material_ids": [],
+      "fact_ids": [],
+      "reading_picks": [
+        {
+          "event_id": "glm5-agentic-report",
+          "label": "方法继续演进",
+          "reason": "GLM-5报告怎样讨论长任务训练；这是论文方法线索。"
+        }
+      ]
     }
   ],
   "sources": [
@@ -4173,8 +4982,8 @@
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-gemini-ai/",
       "kind": "official",
       "published_at": "2023-12-06",
-      "accessed_at": "2026-09-14",
-      "scope": "沿用既有核验收据；公布 Ultra、Pro、Nano 三种规模；各型号开放安排不同，Ultra 当时尚未普遍提供。"
+      "accessed_at": "2026-10-28",
+      "scope": "10-28重读2023发布正文，核对原生多模态、三种规模及分别开放安排；不采用厂商排名或把演示等同实际可用。"
     },
     {
       "id": "S-7e96fc67e903",
@@ -4398,8 +5207,8 @@
       "url": "https://www.anthropic.com/news/model-context-protocol",
       "kind": "official",
       "published_at": "2024-11-25",
-      "accessed_at": "2026-09-14",
-      "scope": "MCP 开源及连接 AI、数据与工具的目标。"
+      "accessed_at": "2026-10-28",
+      "scope": "MCP 开源及连接 AI、数据与工具的目标。；10-28补核规格/SDK、Claude Desktop本地服务器和示例连接；不以协议开放推断连接权限。"
     },
     {
       "id": "S-e3d71d6c2b3a",
@@ -4425,8 +5234,8 @@
       "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
       "kind": "official",
       "published_at": "2025-02-24",
-      "accessed_at": "2026-09-15",
-      "scope": "Claude Code 终端工具与有限研究预览。；09-15核对可读项目、编辑文件、执行测试等终端工作流程；仍按首发有限预览描述。"
+      "accessed_at": "2026-10-28",
+      "scope": "Claude Code 终端工具与有限研究预览。；09-15核对可读项目、编辑文件、执行测试等终端工作流程；仍按首发有限预览描述。；10-28补核同日3.7快速/延长思考及预算控制，与Code有限预览分别描述。"
     },
     {
       "id": "S-f3c3b3287a01",
@@ -5552,6 +6361,303 @@
       "published_at": "2023-04-20",
       "accessed_at": "2026-09-30",
       "scope": "本轮检索索引可读首版摘要，核对5,179样本、平均14%和经验差异方向；PDF直连403，未核全文。首版与含11月修订的落地页分开，不采用后续摘要34%的数值回填首版。"
+    },
+    {
+      "id": "S-openai-oct26-changelog",
+      "title": "OpenAI API 更新日志：GPT-6.1 Terra",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "kind": "official",
+      "published_at": "2026-10-26",
+      "accessed_at": "2026-10-28",
+      "scope": "采用10月26日的Terra发布条目；定位是官方说明，不据此推断独立排名、ChatGPT开放范围或所有任务的实际成本。"
+    },
+    {
+      "id": "S-opus55-release",
+      "title": "Introducing Claude Opus 5.5",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "kind": "official",
+      "published_at": "2026-09-22",
+      "accessed_at": "2026-10-28",
+      "scope": "支持发布时间、复杂任务定位及厂商描述的预发布外部评估；早期测试案例由厂商转述，不视为独立效率实验。"
+    },
+    {
+      "id": "S-gemini-argon-ga",
+      "title": "Gemini API release notes：Gemini 4 Argon GA",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "kind": "official",
+      "published_at": "2026-10-13",
+      "accessed_at": "2026-10-28",
+      "scope": "采用10月13日API正式可用条目，不把首次宣布与GA混为一日；不据此宣称所有账户均可使用。"
+    },
+    {
+      "id": "S-gemini-oct13-app",
+      "title": "Gemini Apps：2026年10月13日更新",
+      "url": "https://gemini.google/sc/release-notes/?hl=en-GB",
+      "kind": "official",
+      "published_at": "2026-10-13",
+      "accessed_at": "2026-10-28",
+      "scope": "支持Pro/Ultra滚动开放与macOS端Antigravity整合；语言、地区与账户资格存在限制。"
+    },
+    {
+      "id": "S-deepseek-v41-sep10",
+      "title": "DeepSeek：2026年9月10日V4.1 Flash发布",
+      "url": "https://api-docs.deepseek.com/zh-cn/updates/#时间-2026-09-10",
+      "kind": "official",
+      "published_at": "2026-09-10",
+      "accessed_at": "2026-10-28",
+      "scope": "采用9月10日官方日志，支持原生视觉与API上线；分数为官方测试，不推断独立领先或权重开放日期。"
+    },
+    {
+      "id": "S-deepseek-v41-oct17",
+      "title": "DeepSeek：2026年10月17日模型与搜索API更新",
+      "url": "https://api-docs.deepseek.com/zh-cn/updates/#时间-2026-10-17",
+      "kind": "official",
+      "published_at": "2026-10-17",
+      "accessed_at": "2026-10-28",
+      "scope": "支持模型更新、调用名与价格不变及搜索API开放；任务提速和输出缩短为厂商主张，评测框架并不统一。"
+    },
+    {
+      "id": "S-kimi-k31-guide",
+      "title": "Kimi K3.1 Pro：发布与开放计划",
+      "url": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
+      "kind": "official",
+      "published_at": "2026-10-23",
+      "accessed_at": "2026-10-28",
+      "scope": "与官方10月23日论坛公告交叉核对。API与Highspeed已发布；文档称完整权重将于11月4日前发布，截至本轮不将承诺登记为已开放。"
+    },
+    {
+      "id": "S-kimi-k31-announcement",
+      "title": "Kimi论坛：K3.1 Pro发布公告",
+      "url": "https://forum.moonshot.ai/t/kimi-k3-1-pro-has-launched-start-exploring-now/629",
+      "kind": "official",
+      "published_at": "2026-10-23",
+      "accessed_at": "2026-10-28",
+      "scope": "用于核对公告日期及API说明链接；公告中的open-weight称呼不能独立证明权重已可下载。"
+    },
+    {
+      "id": "S-aa-kimi-k31",
+      "title": "Artificial Analysis：Kimi K3.1 Pro发布评测",
+      "url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+      "kind": "media",
+      "published_at": "2026-10-23",
+      "accessed_at": "2026-10-28",
+      "scope": "评测机构自身结果，采用该日Intelligence Index任务成本及代理表现观察，不当作10月28日实时榜单；比较受推理设置、框架及样本限制。"
+    },
+    {
+      "id": "S-hf-muse-spark-open",
+      "title": "Hugging Face：运行Muse Spark Open",
+      "url": "https://huggingface.co/blog/meta-muse-spark-open",
+      "kind": "official",
+      "published_at": "2026-10-15",
+      "accessed_at": "2026-10-28",
+      "scope": "支持开放权重、输入模态与推理工具链；不采用“最强”宣传，也不将总参数量等同于每token计算量。"
+    },
+    {
+      "id": "S-muse-license",
+      "title": "Muse Spark Open模型许可",
+      "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B-NVFP4/blob/main/LICENSE.md",
+      "kind": "official",
+      "published_at": "2026-10-15",
+      "accessed_at": "2026-10-28",
+      "scope": "许可标明10月15日发布，采用开放附带使用条件这一事实，不提供法律适用判断。"
+    },
+    {
+      "id": "S-nemotron35-release",
+      "title": "NVIDIA：Nemotron 3.5 Super VL与Bolt",
+      "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+      "kind": "official",
+      "published_at": "2026-10-15",
+      "accessed_at": "2026-10-28",
+      "scope": "支持Super VL、Bolt 74B当日可用与本地部署定位；不把预告的E4B开放日期写成已验证事实，不采用5倍宣传作为通用实测。"
+    },
+    {
+      "id": "S-genie4-preview",
+      "title": "Genie 4：新一代世界模拟研究预览",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "kind": "official",
+      "published_at": "2026-10-27",
+      "accessed_at": "2026-10-28",
+      "scope": "支持面向受邀测试者的预览、原生声音与交互模拟定位及官方列出的限制。未观看视频，不描述未核实画面或普遍可用性。"
+    },
+    {
+      "id": "S-qwen2-release",
+      "title": "Hello Qwen2",
+      "url": "https://qwenlm.github.io/blog/qwen2/",
+      "kind": "official",
+      "published_at": "2024-06-07",
+      "accessed_at": "2026-10-28",
+      "scope": "支持五种尺寸、多语言与模型开放。上下文和许可应按具体型号理解，不将全部型号视作同一配置。"
+    },
+    {
+      "id": "S-qwen38-next-card",
+      "title": "Qwen3.8-Flash-Next官方模型卡",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "kind": "official",
+      "published_at": null,
+      "accessed_at": "2026-10-28",
+      "scope": "正文及引用信息将发布定位于2026年8月，故仅采用月精度；模型卡确认权重、工具链与qwen-community-1.0许可，不以下载数证明首发热度。"
+    },
+    {
+      "id": "S-chatglm6-repository",
+      "title": "ChatGLM-6B官方仓库",
+      "url": "https://github.com/zai-org/ChatGLM-6B",
+      "kind": "official",
+      "published_at": null,
+      "accessed_at": "2026-10-28",
+      "scope": "采用双语模型、量化本地运行与部署限制；仓库是持续更新文档，商业许可不倒推为首发时原样适用。"
+    },
+    {
+      "id": "S-chatglm-family-report",
+      "title": "ChatGLM家族技术报告v1",
+      "url": "https://arxiv.org/html/2406.12793v1",
+      "kind": "paper",
+      "published_at": "2024-06-18",
+      "accessed_at": "2026-10-28",
+      "scope": "回溯确认ChatGLM-6B于2023年3月14日开放及消费者显卡部署目标；是作者后来回顾，不冒充2023年同期反应。"
+    },
+    {
+      "id": "S-glm4-repository",
+      "title": "GLM-4官方仓库与发布日志",
+      "url": "https://github.com/zai-org/GLM-4",
+      "kind": "official",
+      "published_at": null,
+      "accessed_at": "2026-10-28",
+      "scope": "日志明确2024年6月5日9B系列开放和2025年4月14日32B系列发布；持续更新页不作为单一日期的同期评论。"
+    },
+    {
+      "id": "S-glm4-9b-readme",
+      "title": "GLM-4-9B：2024年6月5日版本说明",
+      "url": "https://github.com/zai-org/GLM-4/blob/main/README_20240605.md",
+      "kind": "official",
+      "published_at": "2024-06-05",
+      "accessed_at": "2026-10-28",
+      "scope": "使用保留的旧版说明核对9B系列的长上下文、工具调用与视觉型号，不能混入2025年32B配置。"
+    },
+    {
+      "id": "S-glm5-paper",
+      "title": "GLM-5: from Vibe Coding to Agentic Engineering",
+      "url": "https://arxiv.org/abs/2602.15763v1",
+      "kind": "paper",
+      "published_at": "2026-02-17",
+      "accessed_at": "2026-10-28",
+      "scope": "采用论文首次提交日而非模型首次服务开放日；摘要支持长任务训练、异步强化学习与效率目标，不采用作者领先声明。"
+    },
+    {
+      "id": "S-glm53-release",
+      "title": "GLM-5.3：后训练与网络安全能力",
+      "url": "https://z.ai/blog/glm-5.3",
+      "kind": "official",
+      "published_at": "2026-08-14",
+      "accessed_at": "2026-10-28",
+      "scope": "正文通过浏览器核对：同一GLM-5.2基座继续后训练，公告时权重仍待两周后开放；厂商评测和安全案例不当作独立复现。"
+    },
+    {
+      "id": "S-glm53-card",
+      "title": "GLM-5.3官方模型卡与当前权重入口",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "kind": "official",
+      "published_at": null,
+      "accessed_at": "2026-10-28",
+      "scope": "截至10月28日已核对模型卡、权重入口和glm-5.3许可；未确认最初权重上传日，不倒填8月28日。"
+    },
+    {
+      "id": "S-claude3-family",
+      "title": "Introducing the next generation of Claude",
+      "url": "https://www.anthropic.com/news/claude-3-family",
+      "published_at": "2024-03-04",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "核对三种型号的能力、速度与成本定位；Opus/Sonnet当日可用，Haiku仍为随后开放。只采用产品安排，不采用厂商领先排名。"
+    },
+    {
+      "id": "S-claude4-release",
+      "title": "Introducing Claude 4",
+      "url": "https://www.anthropic.com/news/claude-4",
+      "published_at": "2025-05-22",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "核对Opus 4/Sonnet 4、推理中使用工具beta及Claude Code正式可用；持续任务效果与合作方反馈为厂商发布材料。"
+    },
+    {
+      "id": "S-gemini25-thinking",
+      "title": "Gemini 2.5: Our most intelligent AI model",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/",
+      "published_at": "2025-03-25",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "核对2.5 Pro实验版、推理方向、AI Studio与Advanced入口；03-26追加评测不当成03-25初版成绩，未采用排名。"
+    },
+    {
+      "id": "S-gemini25-flash-image",
+      "title": "Use Gemini 2.5 Flash Image (nano banana) on Vertex AI",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-flash-image-on-vertex-ai",
+      "published_at": "2025-08-26",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "核对生成、融合、连续改图和Vertex AI预览；仅据官方文字举例，未观看演示。合作方表态由Google转述，不据此判断全民热潮。"
+    },
+    {
+      "id": "S-gemini3-enterprise-preview",
+      "title": "Bringing Gemini 3 to Enterprise",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-is-available-for-enterprise",
+      "published_at": "2025-11-18",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "核对Gemini 3 Pro在Vertex AI与Enterprise的预览、Antigravity与CLI接入；不把预览写为GA，不采用厂商排名与客户效率倍数。"
+    },
+    {
+      "id": "S-qwen-initial-open",
+      "title": "Qwen官方仓库：2023年首次开放记录",
+      "url": "https://github.com/QwenLM/Qwen",
+      "published_at": null,
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "News记录2023-08-03发布Qwen-7B与Chat权重；仓库为持续编辑文档，不把后来的上下文长度、模型规模或许可说明倒填到首发。"
+    },
+    {
+      "id": "S-qwen25-omni",
+      "title": "Qwen2.5 Omni: See, Hear, Talk, Write, Do It All!",
+      "url": "https://qwenlm.github.io/blog/qwen2.5-omni/",
+      "published_at": "2025-03-27",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "采用旧站可读正文及页面03-27公告日；支持多模态输入、文字/语音流式输出及模型入口，不混用论文提交日或断言权重最早上传时刻。"
+    },
+    {
+      "id": "S-deepseek31-release",
+      "title": "DeepSeek-V3.1 发布",
+      "url": "https://deepseek.com/news/deepseek-v3-1/",
+      "published_at": "2025-08-21",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "核对混合推理、网页/API更新、权重与Anthropic API兼容。厂商性能数字不作独立比较；09-06价格变化仍按未来安排描述。"
+    },
+    {
+      "id": "S-glm45-repository",
+      "title": "GLM-4.5官方仓库：Agentic, Reasoning, and Coding",
+      "url": "https://github.com/zai-org/GLM-4.5",
+      "published_at": null,
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "只采用GLM-4.5章节的混合推理、代码与代理、开放权重和MIT许可；仓库上方4.6/4.7后续内容不混入首发。"
+    },
+    {
+      "id": "S-glm45-announcement",
+      "title": "Z.ai Releases GLM-4.5",
+      "url": "https://www.prnewswire.com/news-releases/zai-releases-glm-4-5--setting-new-standards-for-ai-performance-and-accessibility-while-improving-affordability-302514803.html",
+      "published_at": "2025-07-28",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "Z.ai通过美通社分发的厂商新闻稿，用于交叉核对07-28发布日与型号，属于官方自述而非独立新闻报道。"
+    },
+    {
+      "id": "S-codex-2025-background",
+      "title": "Introducing Codex（2025年发布）",
+      "url": "https://openai.com/index/introducing-codex/",
+      "published_at": "2025-05-16",
+      "accessed_at": "2026-10-28",
+      "kind": "official",
+      "scope": "为2026桌面应用提供前因：2025已有云端隔离任务环境、编辑与执行测试。只采用历史正文；当前导流与06-03后续更新不倒填首发。"
     }
   ],
   "materials": [
@@ -6097,6 +7203,54 @@
       "kind": "report",
       "text": "论文摘要给出一个具体实验：在单张 48GB GPU 上微调 650 亿参数模型。这个数字说的是论文配置下的微调，不是从零训练，也不是所有电脑都能跑同样的任务。",
       "source_id": "S-03851de6dae7",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-kimi-k31-pro-release-scene",
+      "source_id": "S-aa-kimi-k31",
+      "kind": "report",
+      "title": "单价下降，任务账单却没有同步下降",
+      "text": "Artificial Analysis在10月23日的评测中指出，K3.1 Pro使用了更多输出Token，抵消部分单价下降，平均任务成本与K3大致相当。这是该评测任务集的观察，不是所有用户的账单预测。",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-claude-opus55-release-scene",
+      "source_id": "S-opus55-release",
+      "kind": "report",
+      "title": "一份迁移经历，代表了怎样的期待？",
+      "text": "发布文章转述早期测试者处理大型代码迁移的经历。它呈现了厂商希望模型承担的工作尺度；案例经厂商筛选，不能替代普遍生产率研究。",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-genie4-research-preview-scene",
+      "source_id": "S-genie4-preview",
+      "kind": "report",
+      "title": "先看到预览，再等待实际使用",
+      "text": "发布页同时给出研究预览与候补名单入口，并承认长时间运行后的一致性仍会漂移。兴奋的方向和尚未解决的问题，在同一则公告中并存。",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-chatglm6b-open-release-scene",
+      "source_id": "S-chatglm-family-report",
+      "kind": "report",
+      "title": "回看：为什么还要做一个较小的模型？",
+      "text": "团队在2024年的报告里回顾，小型模型的一项目标是让消费者显卡也能通过量化参与部署。这是作者后来的解释，不是2023年的采访。",
+      "temporal_context": "retrospective"
+    },
+    {
+      "id": "M-gemini25-flash-image-preview-reading",
+      "source_id": "S-gemini25-flash-image",
+      "kind": "report",
+      "title": "想改的是同一张图，而不是重新抽一张",
+      "text": "Google在发布说明中举出保留主体、换场景和改小细节等用法，还转述合作方对连续编辑的期待。它提供了理解产品目标的具体场景；这里未将这些表态当成独立实测或公众热度。",
+      "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-claude4-code-ga-reading",
+      "source_id": "S-claude4-release",
+      "kind": "report",
+      "title": "从终端试用，走进编辑器与后台任务",
+      "text": "Claude 4发布时，公告同时宣布Claude Code正式可用，提供VS Code与JetBrains集成，以及GitHub Actions后台任务。这几项入口把模型发布与开发者每天工作的地方接了起来。",
       "temporal_context": "contemporary"
     }
   ],
@@ -7037,6 +8191,134 @@
       "evidence_source_ids": [
         "S-48f9118e3a25"
       ]
+    },
+    {
+      "from": "deepseek-v41-flash-oct17",
+      "to": "kimi-k31-pro-release",
+      "type": "context",
+      "note": "并行观察模型改善与任务成本；不是同一评测条件下的直接胜负比较。",
+      "evidence_source_ids": [
+        "S-deepseek-v41-oct17",
+        "S-aa-kimi-k31"
+      ]
+    },
+    {
+      "from": "qwen38-flash-next",
+      "to": "muse-spark-open-release",
+      "type": "context",
+      "note": "不同开放模型的部署选择；权重、硬件与许可需要分别查看。",
+      "evidence_source_ids": [
+        "S-qwen38-next-card",
+        "S-hf-muse-spark-open"
+      ]
+    },
+    {
+      "from": "muse-spark-open-release",
+      "to": "nemotron35-local-agents",
+      "type": "context",
+      "note": "并行观察较大模型与面向本地环境优化的模型，不据参数量判断优劣。",
+      "evidence_source_ids": [
+        "S-hf-muse-spark-open",
+        "S-nemotron35-release"
+      ]
+    },
+    {
+      "from": "sora-research-preview",
+      "to": "genie4-research-preview",
+      "type": "context",
+      "note": "从影像生成转向交互世界这一阅读问题，不表示模型技术继承。",
+      "evidence_source_ids": [
+        "S-genie4-preview",
+        "S-3608f1db07a6"
+      ]
+    },
+    {
+      "from": "frontier-pacing-proposal",
+      "to": "claude-opus55-release",
+      "type": "follow-up",
+      "note": "Opus发布公告明确回应此前的发布节奏主张；这里仅记录厂商说明。",
+      "evidence_source_ids": [
+        "S-opus55-release"
+      ]
+    },
+    {
+      "from": "claude-code-research-preview",
+      "to": "claude4-code-ga",
+      "type": "context",
+      "note": "继续看Code正式可用时，模型、编辑器和后台任务怎样一起变化。",
+      "evidence_source_ids": [
+        "S-claude4-release"
+      ]
+    },
+    {
+      "from": "gemini3-pro-preview",
+      "to": "google-antigravity-preview",
+      "type": "context",
+      "note": "同日的Antigravity怎样把任务、产物和检查过程交给开发者？",
+      "evidence_source_ids": [
+        "S-gemini3-enterprise-preview",
+        "S-0ef87254b6c6"
+      ]
+    },
+    {
+      "from": "gemini25-flash-image-preview",
+      "to": "chatgpt-image-ghibli-wave",
+      "type": "context",
+      "note": "同年另一种对话改图怎样进入公众创作与争议；不据此比较模型胜负。",
+      "evidence_source_ids": [
+        "S-gemini25-flash-image",
+        "S-5ab7ff86510c",
+        "S-c97407c92b87"
+      ]
+    },
+    {
+      "from": "deepseek-v41-flash-release",
+      "to": "deepseek-v41-flash-oct17",
+      "type": "context",
+      "note": "再看同一调用名下的更新及搜索API，区分模型与工具的变化。",
+      "evidence_source_ids": [
+        "S-deepseek-v41-oct17"
+      ]
+    },
+    {
+      "from": "glm45-open-agents",
+      "to": "glm5-agentic-report",
+      "type": "context",
+      "note": "GLM-5报告怎样讨论长任务训练；这是论文方法线索。",
+      "evidence_source_ids": [
+        "S-glm5-paper"
+      ]
+    },
+    {
+      "from": "qwen7b-open-release",
+      "to": "qwen2-open-family",
+      "type": "context",
+      "note": "从首次权重开放到多尺寸家族，是开发选择的两个阶段。",
+      "evidence_source_ids": [
+        "S-qwen-initial-open",
+        "S-qwen2-release"
+      ]
+    },
+    {
+      "from": "deepseek-v31-hybrid-release",
+      "to": "deepseek-v4-preview",
+      "type": "context",
+      "note": "并行看两代模型对推理、工具与长上下文的安排；不据此断言具体训练继承。",
+      "evidence_source_ids": [
+        "S-deepseek31-release",
+        "S-0c924f77d568",
+        "S-e37cc03ed433"
+      ]
+    },
+    {
+      "from": "gpt6-astra-release",
+      "to": "gpt61-terra-release",
+      "type": "context",
+      "note": "从强调复杂任务的型号到强调效率的型号，是同系列的不同取舍，不构成统一条件下的性能比较。",
+      "evidence_source_ids": [
+        "S-c59c597501ce",
+        "S-openai-oct26-changelog"
+      ]
     }
   ],
   "reading_routes": [
@@ -7224,6 +8506,399 @@
           "reason": "从屏幕转到赛道，看机器人在实体环境中的进展。"
         }
       }
+    }
+  ],
+  "series": [
+    {
+      "id": "gpt",
+      "name": "GPT",
+      "provider": "OpenAI",
+      "question": "从人人能用，到怎样选择和托付，GPT改变了什么？",
+      "intro": "这条线从ChatGPT的公众入口出发，经过多模态、推理与任务执行，再看开放权重和默认模型怎样改变选择权。用户的习惯与反应也在其中；Codex和Work作为工作用法分支，不把所有OpenAI产品都并入型号史。",
+      "as_of": "2026-10-28",
+      "coverage_note": "截至2026-10-28核验本系列选材。关键站聚焦公众入口、能力与选择权；Terra等近期型号保留在补充阅读。GPT早期预训练史、全部中间型号及开放模型后续采用仍未完整收录。",
+      "entries": [
+        {
+          "event_id": "chatgpt-public-preview",
+          "level": "key",
+          "reason": "起点是普通人能直接尝试自己的问题。",
+          "transition_to_next": "对话让人愿意试，复杂问题能否处理则是另一层期待。下一站看GPT-4怎样抬高这份期待，以及首发实际开放到哪里。"
+        },
+        {
+          "event_id": "chatgpt-public-growth",
+          "level": "supporting",
+          "reason": "公众怎样试用、分享和争论，补足产品发布之外的传播。"
+        },
+        {
+          "event_id": "gpt4-release",
+          "level": "key",
+          "reason": "复杂任务成为公众衡量能力的新参照。",
+          "transition_to_next": "更复杂的答案仍要通过文字输入。GPT-4o把声音和图像带入交互，让人开始围绕眼前情境与模型沟通。"
+        },
+        {
+          "event_id": "chatgpt-voice-vision",
+          "level": "supporting",
+          "reason": "产品中的语音与图像入口，是GPT-4o之前可对照的一步。"
+        },
+        {
+          "event_id": "gpt-4o-announcement",
+          "level": "key",
+          "reason": "从打字提问，走向声音和图像参与对话。",
+          "transition_to_next": "交互更自然，不代表难题就能解开。o1转向回答前投入更多计算，下一站看等待时间怎样成为新的能力条件。"
+        },
+        {
+          "event_id": "openai-o1-preview",
+          "level": "key",
+          "reason": "把回答前计算与结果质量放在一起看。",
+          "transition_to_next": "会分析问题之后，还要把步骤做完。ChatGPT agent展示浏览、分析和文件制作如何放进一个任务；这是产品组合，不是o1单独带来的结果。"
+        },
+        {
+          "event_id": "chatgpt-image-ghibli-wave",
+          "level": "supporting",
+          "reason": "看一次能力更新怎样变成可传播的创作玩法。"
+        },
+        {
+          "event_id": "chatgpt-agent-release",
+          "level": "key",
+          "reason": "用户开始交代交付物，而不仅是一个问题。",
+          "transition_to_next": "前一站由平台提供任务环境。接下来换个视角：gpt-oss把权重交给开发者，让他们自己决定运行位置和工具配置。"
+        },
+        {
+          "event_id": "gpt-oss-open-weights",
+          "level": "key",
+          "reason": "开放权重让运行与改造成为另一种选择。",
+          "transition_to_next": "自行部署是一条路，使用现成服务是另一条。两天后的GPT-5把快速回答与推理收进默认入口，也把模型选择权带到用户面前。"
+        },
+        {
+          "event_id": "gpt5-unified-system",
+          "level": "key",
+          "reason": "默认模型改变，用户的既有习惯也受到影响。",
+          "transition_to_next": "用户会在意能否保留熟悉的模型，旁支记录了这场反馈。沿主线继续看Astra：期待又从选择回答方式，延伸到在软件里推进较长任务。"
+        },
+        {
+          "event_id": "gpt4o-users-ask-choice",
+          "level": "supporting",
+          "reason": "GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用法？"
+        },
+        {
+          "event_id": "chatgpt-consumer-use-study",
+          "level": "supporting",
+          "reason": "发布之后，人们到底拿它做什么？用带样本边界的研究来回答。"
+        },
+        {
+          "event_id": "codex-app-macos",
+          "level": "supporting",
+          "reason": "代码工作的支线：从已有云端任务到桌面任务管理。"
+        },
+        {
+          "event_id": "chatgpt-work-launch",
+          "level": "supporting",
+          "reason": "资料工作如何从一次交付转为持续跟进。"
+        },
+        {
+          "event_id": "gpt6-astra-release",
+          "level": "key",
+          "reason": "能力与参与方式最终回到具体工作的交接和检查。"
+        },
+        {
+          "event_id": "gpt61-terra-release",
+          "level": "supporting",
+          "reason": "近期型号分工与效率定位，等待更多实际任务证据。"
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "provider": "Anthropic",
+      "question": "从回答问题到共同做事，Claude怎样改变工作方式？",
+      "intro": "先认识助手与型号分工，再沿Artifacts、电脑操作和Claude Code观察工作怎样交出去。Claude 4连接模型与开发流程，Cowork把视角扩展到文件工作；MCP说明工具背后的连接方式。",
+      "as_of": "2026-10-28",
+      "coverage_note": "截至2026-10-28核验本系列选材。保留八个关键站；3.7作为Code同日发布背景交代，MCP为生态分支。5.5先收录Opus，其他型号和独立长期效率证据仍待补充。",
+      "entries": [
+        {
+          "event_id": "claude-introduction",
+          "level": "key",
+          "reason": "聊天和API是最初的两种使用入口。",
+          "transition_to_next": "同一个助手开始承担不同任务，速度、成本与能力就不能只看一个名字。Claude 3先把这组取舍做成不同型号。"
+        },
+        {
+          "event_id": "claude3-model-family",
+          "level": "key",
+          "reason": "解释Opus、Sonnet、Haiku这些名称背后的任务分工。",
+          "transition_to_next": "选好型号后，回答还得变成可用成果。3.5与Artifacts把工作区放到对话旁边，让网页和文稿可以接着修改。"
+        },
+        {
+          "event_id": "claude-35-artifacts",
+          "level": "key",
+          "reason": "可继续加工的成果开始成为对话中心。",
+          "transition_to_next": "工作区能留下成果，现有软件里却还有许多步骤。电脑操作公测尝试让模型看屏幕、点击和输入，下一站看这种行动能力的边界。"
+        },
+        {
+          "event_id": "claude-computer-use",
+          "level": "key",
+          "reason": "从建议动作，转向尝试执行动作。",
+          "transition_to_next": "操作界面是一种执行方式；对开发者，终端和代码库是另一种。Claude Code把整项代码任务交接放到这个环境中。"
+        },
+        {
+          "event_id": "model-context-protocol-introduction",
+          "level": "supporting",
+          "reason": "Claude Desktop怎样取得外部资料？MCP提供连接方法，不是又一个Claude型号。"
+        },
+        {
+          "event_id": "claude-code-research-preview",
+          "level": "key",
+          "reason": "终端任务与3.7的思考模式同时进入视野。",
+          "transition_to_next": "有限预览让开发者尝试委托，接着要看怎样进入日常开发流程。Claude 4发布时，推理中的工具使用与Code正式可用一起推进。"
+        },
+        {
+          "event_id": "claude4-code-ga",
+          "level": "key",
+          "reason": "模型推理、工具调用与开发工作流在此接合。",
+          "transition_to_next": "代码里形成的任务交接方式，随后出现在普通文件工作中。Cowork让用户选择文件夹并说明成果要求，使用人群和授权范围也随之变化。"
+        },
+        {
+          "event_id": "cowork-research-preview",
+          "level": "key",
+          "reason": "文件夹成为交接材料的入口。",
+          "transition_to_next": "任务变复杂后，模型升级是否真能支撑这些工作？Opus 5.5给出更高期待与发布评估，下一站同时看案例来源和仍需验证的部分。"
+        },
+        {
+          "event_id": "anthropic-81k-user-interviews",
+          "level": "supporting",
+          "reason": "用户希望省下时间，也担心失去哪些东西；补足厂商演示以外的声音。"
+        },
+        {
+          "event_id": "claude-opus55-release",
+          "level": "key",
+          "reason": "回到模型能力与发布评估，检验工作委托的期待。"
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "provider": "Google",
+      "question": "从看懂多种材料，到改图和用工具，Gemini怎样落地？",
+      "intro": "Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。",
+      "as_of": "2026-10-28",
+      "coverage_note": "截至2026-10-28核验本系列选材。补齐2025的三个能力转折；AI Overviews、Spark及Antigravity放在产品分支。仍非全部版本史，图像玩法的公众热度与独立使用效果尚未完整核验。",
+      "entries": [
+        {
+          "event_id": "bard-announcement",
+          "level": "supporting",
+          "reason": "前身产品背景，Bard不是Gemini版本。"
+        },
+        {
+          "event_id": "palm2-announcement",
+          "level": "supporting",
+          "reason": "前序模型背景，不用旧型号填充Gemini主线。"
+        },
+        {
+          "event_id": "gemini-announcement",
+          "level": "key",
+          "reason": "先确立多模态家族，而不是从某个应用按钮开始。",
+          "transition_to_next": "输入种类变多之后，一次能交多少材料成为下一道限制。1.5让长文档、音视频和代码更完整地进入上下文。"
+        },
+        {
+          "event_id": "gemini-15-long-context",
+          "level": "key",
+          "reason": "材料规模发生变化，读者可以带入整份资料。",
+          "transition_to_next": "能读进长材料，还得会从中解决问题。2.5把推理作为重点，接上复杂分析与代码工作。"
+        },
+        {
+          "event_id": "ai-overviews-public-errors",
+          "level": "supporting",
+          "reason": "多模态能力进入搜索并不自动保证答案可靠；这是应用反馈分支。"
+        },
+        {
+          "event_id": "gemini25-thinking-preview",
+          "level": "key",
+          "reason": "从输入容量转向处理问题的过程。",
+          "transition_to_next": "推理是一条变化，直接修改视觉内容是另一条。接下来用Nano Banana看多模态怎样成为围绕一张图反复沟通的工具。"
+        },
+        {
+          "event_id": "gemini25-flash-image-preview",
+          "level": "key",
+          "reason": "把多模态落到可反复修改的视觉成果。",
+          "transition_to_next": "改图提供了一种可见的用法，但Gemini的范围不止图像。Gemini 3把多种材料的理解与规划、工具调用放到同一工作过程中。"
+        },
+        {
+          "event_id": "gemini3-pro-preview",
+          "level": "key",
+          "reason": "模型与开发工具开始围绕同一项工作组织。",
+          "transition_to_next": "Antigravity分支能看到具体工作界面；沿主线则继续追踪Argon的API正式可用与产品开放，区分新能力和真正能使用它的入口。"
+        },
+        {
+          "event_id": "google-antigravity-preview",
+          "level": "supporting",
+          "reason": "与Gemini 3同日的工作界面：开发者怎样管理代理、查看产物和反馈。"
+        },
+        {
+          "event_id": "gemini-spark-announcement",
+          "level": "supporting",
+          "reason": "持续任务的产品方向，保留预告与受限测试身份。"
+        },
+        {
+          "event_id": "gemini4-argon-ga",
+          "level": "key",
+          "reason": "以实际入口和开放条件收束近期演进。"
+        }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "provider": "DeepSeek",
+      "question": "效率和开放，怎样连接推理突破与公众试用？",
+      "intro": "V2与V3交代热潮之前的效率积累，R1和应用热潮分别回答能力与传播。随后以V3.1连接混合推理与工具适配，再看V4的长任务和V4.1的视觉输入；服务更新留作补充。",
+      "as_of": "2026-10-28",
+      "coverage_note": "截至2026-10-28核验本系列选材。七个关键站，增加V3.1而将10月服务更新放入分支。V3.2等中间版本、更多独立部署与成本比较仍未完整整理。",
+      "entries": [
+        {
+          "event_id": "deepseek-v2-efficiency",
+          "level": "key",
+          "reason": "先交代效率方法，避免从公众热潮突然开场。",
+          "transition_to_next": "这些结构没有停在一代发布里。V3报告明确沿用MLA与DeepSeekMoE，下一站看更大基础模型怎样承接这份积累。"
+        },
+        {
+          "event_id": "deepseek-v3-release",
+          "level": "key",
+          "reason": "基础模型与计算方式为后续推理路线提供前因。",
+          "transition_to_next": "V3成为后续训练的基础；R1把推理与不同规模的蒸馏模型推到前台。下一站分别看主模型、下载权重和小模型的参与方式。"
+        },
+        {
+          "event_id": "deepseek-r1-release",
+          "level": "key",
+          "reason": "推理能力通过在线入口与开放模型向外扩散。",
+          "transition_to_next": "发布提供了能试的东西，传播却要看另一类证据。下一站转向应用榜单和同期报道，观察技术讨论怎样越出开发者圈子。"
+        },
+        {
+          "event_id": "deepseek-app-public-surge",
+          "level": "key",
+          "reason": "公众热潮有自己的入口、使用阻力和观察尺度。",
+          "transition_to_next": "热度并不能解释模型之后怎样改变。V3.1把思考与非思考放进同一模型，并连接工具流程，接回技术演进这条线。"
+        },
+        {
+          "event_id": "deepseek-v31-hybrid-release",
+          "level": "key",
+          "reason": "推理回到通用模型，接上实际工具调用。",
+          "transition_to_next": "接上工具之后，较长的资料和任务又带来新的要求。V4把百万上下文、效率设计和代理适配放到同一次预览。"
+        },
+        {
+          "event_id": "deepseek-v4-preview",
+          "level": "key",
+          "reason": "开放模型进一步面对长资料和代理工作环境。",
+          "transition_to_next": "长任务仍可能包含图片等非文字信息。V4.1 Flash把原生视觉带到API，下一站看输入范围怎样继续扩展。"
+        },
+        {
+          "event_id": "deepseek-v41-flash-release",
+          "level": "key",
+          "reason": "视觉输入成为近期服务演进的一部分。"
+        },
+        {
+          "event_id": "deepseek-v41-flash-oct17",
+          "level": "supporting",
+          "reason": "同一调用名下的模型与搜索服务更新，作为后续运维和成本观察。"
+        }
+      ]
+    },
+    {
+      "id": "qwen",
+      "name": "Qwen",
+      "provider": "阿里巴巴",
+      "question": "从通义服务到可加工的模型家族，Qwen怎样形成生态？",
+      "intro": "先分清通义千问的产品公布与首次权重开放，再看尺寸、多语言和专门模型的分工。Qwen2.5的跨团队采用、Omni的声音图像与Qwen3的思考选择，让这条线不只是型号递增。",
+      "as_of": "2026-10-28",
+      "coverage_note": "截至2026-10-28核验本系列选材。七个关键站；代码与数学分工在2.5站说明，未把所有专门型号逐个展开。近期全模态和实时翻译候选仍待核，最近收录止于8月。",
+      "entries": [
+        {
+          "event_id": "tongyi-qianwen-announcement",
+          "level": "key",
+          "reason": "服务和产品计划是起点，权重开放另有时点。",
+          "transition_to_next": "四月回答将在哪些产品里使用，八月则改变谁能拿到模型。下一站看Qwen-7B怎样从服务名称变成可下载的开发材料。"
+        },
+        {
+          "event_id": "qwen7b-open-release",
+          "level": "key",
+          "reason": "开放入口使自行部署与继续训练成为可能。",
+          "transition_to_next": "拿到一个模型只是起点，不同设备和语言需求还需要更多选择。Qwen2把这些需求扩展成多尺寸、多语言的家族。"
+        },
+        {
+          "event_id": "qwen2-open-family",
+          "level": "key",
+          "reason": "用尺寸与语言覆盖理解开发者的选择条件。",
+          "transition_to_next": "除了选大小，开发者还会按任务选模型。2.5把通用、代码和数学分工摆出来，后来的R1蒸馏又给出跨团队采用的具体例子。"
+        },
+        {
+          "event_id": "qwen25-model-family",
+          "level": "key",
+          "reason": "从尺寸选择走向专业分工与他人继续加工。",
+          "transition_to_next": "这些主要是文字和代码用途；声音与画面需要另一类输入输出能力。Omni把听、看和说接进开放模型家族。"
+        },
+        {
+          "event_id": "qwen25-omni-release",
+          "level": "key",
+          "reason": "补足声音与画面这条能力分支，避免只剩文本型号。",
+          "transition_to_next": "输入输出方式之外，每次回答投入多少思考也是一种选择。Qwen3将思考与非思考模式带到新的开放模型家族。"
+        },
+        {
+          "event_id": "qwen3-open-models",
+          "level": "key",
+          "reason": "模型规模与回答前计算一起进入应用设计。",
+          "transition_to_next": "可以控制思考后，长资料和长任务的运行开销仍需处理。Flash-Next作为架构预览，补看这条效率探索。"
+        },
+        {
+          "event_id": "qwen38-flash-next",
+          "level": "key",
+          "reason": "以运行条件与开放许可观察近期架构实验。"
+        }
+      ]
+    },
+    {
+      "id": "glm",
+      "name": "GLM",
+      "provider": "智谱 / Z.ai",
+      "question": "本地中文对话，怎样发展成能接工具的工作基础？",
+      "intro": "从ChatGLM-6B的本地运行入口出发，先看长资料与工具，再看任务分工和GLM-4.5的能力组合。GLM-5论文留在方法分支，近期以5.3的后训练和开放节奏收束。",
+      "as_of": "2026-10-28",
+      "coverage_note": "截至2026-10-28核验本系列选材。五个关键站，GLM-4.5补上工程方向的转折。GLM-5以论文方法分支呈现，不代替服务上线；中间版本、独立用户反馈与首次权重上传日期仍有缺口。",
+      "entries": [
+        {
+          "event_id": "chatglm6b-open-release",
+          "level": "key",
+          "reason": "模型先成为可以放到自己设备上的中文对话入口。",
+          "transition_to_next": "能在本地聊几轮之后，使用者会带来更长的资料，也希望接上工具。GLM-4-9B继续沿开放部署推进这些用法。"
+        },
+        {
+          "event_id": "glm4-9b-open-release",
+          "level": "key",
+          "reason": "本地运行延伸到长上下文和工具相关型号。",
+          "transition_to_next": "任务变复杂后，直接回答与更长推理需要不同配置。4月的32B系列将这类分工进一步摆到开发者面前。"
+        },
+        {
+          "event_id": "glm4-0414-release",
+          "level": "key",
+          "reason": "先看按任务分工，理解接下来的能力组合。",
+          "transition_to_next": "但同一项工程任务可能同时需要推理、编程和工具。GLM-4.5尝试把这些能力组合起来，并给出开放部署入口。"
+        },
+        {
+          "event_id": "glm45-open-agents",
+          "level": "key",
+          "reason": "推理、代码与代理能力结合，是通向工程任务的桥梁。",
+          "transition_to_next": "能力组合之后，系列继续围绕较长任务训练；GLM-5论文分支解释这层方法。主线到5.3，观察继续后训练与开放安排怎样改变开发者拿到的东西，中间版本仍未收齐。"
+        },
+        {
+          "event_id": "glm5-agentic-report",
+          "level": "supporting",
+          "reason": "方法分支：论文怎样解释持续工程任务训练；这里的日期是论文提交，不是服务首发。"
+        },
+        {
+          "event_id": "glm53-release",
+          "level": "key",
+          "reason": "模型提升与获得模型的时间差需要一起理解。"
+        }
+      ]
     }
   ]
 }

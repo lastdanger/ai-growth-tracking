@@ -5,9 +5,9 @@ export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export function checkMap(data) {
   const fail = (condition, message) => { if (!condition) throw new Error(message); };
   const day = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
-  fail(data.schema_version === 2, 'Unsupported schema_version');
+  fail(data.schema_version === 3, 'Unsupported schema_version');
   fail(day(data.updated_at), 'Invalid updated_at');
-  for (const key of ['years', 'events', 'sources', 'materials', 'relations', 'reading_routes']) fail(Array.isArray(data[key]), `Missing ${key}`);
+  for (const key of ['years', 'events', 'sources', 'materials', 'relations', 'reading_routes', 'series']) fail(Array.isArray(data[key]), `Missing ${key}`);
   const index = (items, key, kind) => {
     const ids = new Set();
     for (const item of items) { fail(item[key] !== undefined && !ids.has(item[key]), `Missing/duplicate ${kind}: ${item[key]}`); ids.add(item[key]); }
@@ -18,6 +18,7 @@ export function checkMap(data) {
   const sources = index(data.sources, 'id', 'source');
   const materials = index(data.materials, 'id', 'material');
   const routes = index(data.reading_routes, 'id', 'route');
+  const series = index(data.series, 'id', 'series');
   const refs = (ids, map, label, required = true) => {
     fail(Array.isArray(ids) && (!required || ids.length > 0), `Missing ${label}`);
     fail(new Set(ids).size === ids.length, `Repeated ${label}`);
@@ -126,6 +127,26 @@ export function checkMap(data) {
       fail(next && owner && nextOwner && nextOwner.year === owner.year + 1 && typeof route.continuation.reason === 'string' && route.continuation.reason.trim(), `Route continuation: ${route.id}`);
     }
   }
+  for (const item of series.values()) {
+    fail(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.id) && ['name', 'provider', 'question', 'intro', 'coverage_note'].every(key => typeof item[key] === 'string' && item[key].trim()), `Series description: ${item.id}`);
+    fail(day(item.as_of) && item.as_of <= data.updated_at && item.coverage_note.includes(item.as_of), `Series cutoff: ${item.id}`);
+    fail(Array.isArray(item.entries), `Series entries: ${item.id}`);
+    refs(item.entries.map(entry => entry.event_id), events, `series ${item.id}`);
+    const keys = item.entries.filter(entry => entry.level === 'key');
+    fail(keys.length >= 2, `Series key stops: ${item.id}`);
+    item.entries.forEach((entry, i) => {
+      const event = events.get(entry.event_id);
+      fail(['key', 'supporting'].includes(entry.level) && typeof entry.reason === 'string' && entry.reason.trim(), `Series entry meaning: ${entry.event_id}`);
+      if (entry.level === 'key') fail(typeof event.change === 'string' && event.change.trim(), `Series key change: ${entry.event_id}`);
+      fail(event.date <= item.as_of, `Series event exceeds cutoff: ${entry.event_id}`);
+      if (i) {
+        const previous = events.get(item.entries[i - 1].event_id);
+        fail(previous.date < event.date || (previous.date === event.date && previous.id.localeCompare(event.id) < 0), `Series chronological order: ${item.id}`);
+      }
+      const needsTransition = entry.level === 'key' && entry !== keys.at(-1);
+      fail(needsTransition ? typeof entry.transition_to_next === 'string' && !!entry.transition_to_next.trim() : !entry.transition_to_next, `Series transition: ${entry.event_id}`);
+    });
+  }
   const edgeIds = new Set();
   for (const r of data.relations) {
     fail(events.has(r.from) && events.has(r.to) && r.from !== r.to, `Dangling/self relation: ${r.from}/${r.to}`);
@@ -135,7 +156,7 @@ export function checkMap(data) {
   }
   const serialized = JSON.stringify(data);
   fail(!/EX-(?:\d{8}|TBD)-\d{3}|research\/library|internal-redacted/.test(serialized), 'Internal evidence leaked into public map');
-  return { years: years.size, events: events.size, sources: sources.size, materials: materials.size, relations: data.relations.length };
+  return { years: years.size, events: events.size, sources: sources.size, materials: materials.size, relations: data.relations.length, series: series.size };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const data = JSON.parse(fs.readFileSync(path.join(root, 'data/map.json'), 'utf8'));

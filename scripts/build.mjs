@@ -55,4 +55,22 @@ for (const y of data.years) {
 fs.writeFileSync(path.join(root, 'chronology/roots.md'), '# 技术前史根节点\n\n少量与后续事件相关的方法起点，不代表这些年份的完整历史，不据此断言当时冷门。\n\n' + table(data.events.filter(e => e.tier === 'root')), 'utf8');
 const index = '# 年度关键词与阅读入口\n\n这些关键词和关键句是编辑概括；种子资料与未完年不能视为完整历史。\n\n| 年份 | 关键词 | 关键句 | 覆盖状态 |\n|---|---|---|---|\n' + data.years.map(y => `| [${y.year}](${y.year}.md) | ${y.keyword} | ${y.tagline} | ${statusLabels[y.status]} |`).join('\n') + '\n\n[技术前史根节点](roots.md)\n';
 fs.writeFileSync(path.join(root, 'chronology/README.md'), index, 'utf8');
+const seriesDir = path.join(root, 'chronology/series');
+fs.mkdirSync(seriesDir, { recursive: true });
+const seriesIndex = '# 模型系列：跨年阅读\n\n[返回年度总览](../README.md)\n\n' + data.series.map(s => `- [${s.name}](${s.id}.md) · ${s.provider}：${s.question}`).join('\n') + '\n';
+fs.writeFileSync(path.join(seriesDir, 'README.md'), seriesIndex, 'utf8');
+fs.appendFileSync(path.join(root, 'chronology/README.md'), '\n[模型系列：跨年阅读](series/README.md)\n', 'utf8');
+for (const series of data.series) {
+  let md = `# ${series.name} · ${series.provider}\n\n**${series.question}**\n\n${series.intro}\n\n${series.coverage_note}\n\n> 由 data/map.json 生成，与年度视图共用事件，不直接编辑。\n\n`;
+  for (const entry of series.entries) {
+    const event = data.events.find(e => e.id === entry.event_id);
+    md += `## ${event.date_label} · ${event.title}${entry.level === 'supporting' ? '（补充）' : ''}\n\n${entry.reason}\n\n${event.then.text}\n\n`;
+    if (event.change) md += `变化与意义：${event.change}\n\n`;
+    if (event.later) md += `后来再看（截至${event.later.as_of}）：${event.later.text}\n\n`;
+    md += event.source_ids.map(id => `[${safe(sources.get(id).title)}](${sources.get(id).url})`).join(' · ') + '\n\n';
+    if (entry.transition_to_next) md += `接下来：${entry.transition_to_next}\n\n`;
+    md += `[查看${event.year}年背景](../${event.tier === 'root' ? 'roots' : event.year}.md)\n\n`;
+  }
+  fs.writeFileSync(path.join(seriesDir, `${series.id}.md`), md + '[返回系列目录](README.md)\n', 'utf8');
+}
 console.log('Built dist/index.html and chronology views:', JSON.stringify(counts));
