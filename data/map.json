@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-10-28",
+  "updated_at": "2026-11-17",
   "years": [
     {
       "year": 2022,
@@ -1734,7 +1734,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "DeepSeek-V2：把效率写进模型结构",
-      "summary": "DeepSeek-V2 发布，开放模型权重并提供聊天和 API 使用路径。其 MLA 注意力与 DeepSeekMoE 结构把训练、显存和推理开销作为设计重点。",
+      "summary": "DeepSeek-V2 发布，开放模型权重并提供聊天和 API 入口。它尝试减少生成时需要保存的数据，并让每一步只调用模型中的部分计算模块。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -1742,14 +1742,14 @@
       ],
       "why_selected": "后来的 V3 明确沿用其中的结构，适合保留为 2025 热潮之前的技术分支；它当时已是公开发布，不能写成无人关注的小项目。",
       "then": {
-        "text": "官方仓库强调经济性与推理效率，并提供 128K 上下文模型下载。效率数字来自团队对自家前代模型的比较，不能据此推断任意设备或任务都同幅省钱。",
+        "text": "V2 同时处理两种开销：用 MLA 压缩生成时保留的注意力缓存，减少显存占用；用混合专家结构，让每个词元只调用模型中的部分计算模块。词元是模型处理文字的基本片段。开发者也能下载模型自行部署，具体能省多少仍取决于运行条件。",
         "source_ids": [
           "S-b08134003aea",
           "S-53fddc8e452f"
         ]
       },
       "later": {
-        "text": "2024 年 12 月的 V3 技术报告明确说明沿用 V2 的 MLA 与 DeepSeekMoE。这是可核的技术延续，展示下一次发布背后已有的积累。",
+        "text": "2024 年 12 月的 V3 技术报告说明，V3 沿用 V2 的 MLA 和 DeepSeekMoE，也就是压缩注意力缓存、按需分配部分计算的两条思路。下一代模型继续在这些方法上构建。",
         "as_of": "2024-12-27",
         "source_ids": [
           "S-b96207a197ed"
@@ -1762,7 +1762,7 @@
       ],
       "material_ids": [],
       "fact_ids": [],
-      "change": "效率成为结构设计的一部分，影响模型怎样使用计算与显存。它的重要性还在于这些方法被后来的V3延续；这为理解热潮之前的技术积累提供了落点。"
+      "change": "模型变大以后，每一步怎样计算、需要保存多少中间数据，也会影响使用成本。V2 把这两个问题放进结构设计；理解这一点，才能看清后面“总规模”和“每步动用规模”的区别。"
     },
     {
       "id": "alphafold-3",
@@ -2314,14 +2314,14 @@
       ],
       "why_selected": "它补上 2024 年末到 2025 年初之间的重要一环：次年的 R1 从 V3-Base 继续训练而来，不是突然独立出现。",
       "then": {
-        "text": "2024 年 12 月 26 日，DeepSeek-V3 上线并开放权重，网页和 API 同步更新；首发版本处理文本，不支持多模态输入输出。次日提交的技术报告说明，它沿用 V2 的 MLA 与混合专家结构，在计算与存储效率上继续改进。",
+        "text": "2024 年 12 月 26 日，DeepSeek-V3 上线并开放权重，网页和 API 同步更新；首发版本处理文本。次日的技术报告说明，它沿用 V2 压缩注意力缓存、按需分配计算的思路，再扩大模型规模。",
         "source_ids": [
           "S-0d156abd0924",
           "S-b96207a197ed"
         ]
       },
       "later": {
-        "text": "2025 年 1 月发布的 DeepSeek-R1 与 R1-Zero 均基于 V3-Base 训练。后续影响有明确模型继承证据，不需要把 V3 的所有宣传跑分都写成确定结论。",
+        "text": "2025 年 1 月发布的 R1 与 R1-Zero 都以 V3-Base（V3 的基础模型）继续训练。V3 因而也是随后推理模型的训练起点。",
         "as_of": "2025-01-20",
         "source_ids": [
           "S-767b4ac07aa3",
@@ -2380,10 +2380,12 @@
       "source_ids": [
         "S-7fec6fad143e",
         "S-7c57c255a26a",
-        "S-767b4ac07aa3"
+        "S-767b4ac07aa3",
+        "S-simon-r1-distill-first-use"
       ],
       "material_ids": [
-        "M-r1-deepthink-entry"
+        "M-r1-deepthink-entry",
+        "M-r1-distill-local-joke"
       ],
       "fact_ids": [],
       "reading_picks": [
@@ -2403,7 +2405,7 @@
           "reason": "模型讨论怎样走向手机上的公众试用？"
         }
       ],
-      "scene_material_id": "M-r1-deepthink-entry",
+      "scene_material_id": "M-r1-distill-local-joke",
       "change": "推理能力不只出现在一个在线入口里，也通过权重和不同规模的蒸馏模型成为开发材料。普通用户可以试用，开发者则可以比较部署与调整的可能性；R1 代码和权重采用 MIT 许可，蒸馏模型还需看各自基础许可，发布方的基准成绩不等于独立效果验证。"
     },
     {
@@ -2472,7 +2474,7 @@
         "M-deepseek-app-public-surge-1"
       ],
       "fact_ids": [],
-      "change": "模型竞争来到普通人能直接下载的应用里。一家中国团队获得的关注，变成了跨国公众试用的具体切片；榜单能说明那一刻的热度，却不能替用户回答它是否适合自己的任务。",
+      "change": "手机上的 AI 选择又多了一个受关注的名字。美国免费应用榜的变化，记录了这次试用热潮；它能说明当时的关注，却不能替用户回答工具是否适合自己的任务。",
       "reading_picks": [
         {
           "event_id": "deepseek-r1-release",
@@ -2762,8 +2764,8 @@
       "date_label": "05-19（预览开放）",
       "date_precision": "day",
       "date_basis": "announcement",
-      "title": "把 issue 分给 Copilot，等它交回一个 PR",
-      "summary": "GitHub 向 Copilot Enterprise 和 Pro+ 用户开放 coding agent 预览。用户可以把问题单交给它，代理在后台的开发环境中修改代码，提交草稿 PR 等待审阅。",
+      "title": "把代码任务交给 Copilot，等它交回待审修改",
+      "summary": "GitHub 向 Copilot Enterprise 和 Pro+ 用户开放 coding agent 预览。用户可以把问题单交给它，代理在后台修改代码，再提交待审的代码修改提案。",
       "lane": "products",
       "tier": "branch",
       "roles": [
@@ -2772,7 +2774,7 @@
       "why_selected": "以问题单到草稿 PR 的具体交接解释任务委托；官方流程说明支持产品如何工作，不单独证明实际节省时间。",
       "later": null,
       "then": {
-        "text": "5 月 19 日，GitHub 公布面向 Copilot Enterprise 和 Pro+ 的 coding agent 预览。开发者把 issue（问题单）分给它，后台环境接着读项目、改代码，再把工作送进草稿 PR（代码变更提案）。人可以看日志、审阅差异，留下意见让它继续修改。",
+        "text": "5 月 19 日，GitHub 向 Copilot Enterprise 和 Pro+ 用户开放 coding agent 预览。开发者用 issue（问题单）写清任务，把修改交给后台代理；收到结果后，还要审阅代码差异，提出意见并决定是否接纳。",
         "source_ids": [
           "S-ece2d1386004"
         ]
@@ -2831,7 +2833,7 @@
       "why_selected": "用独立真实任务实验检验效率期待；这不是 GitHub coding agent 的专门测评，也不能推广为所有人或后来工具都会变慢。",
       "later": null,
       "then": {
-        "text": "7 月 10 日，METR 公布一项随机实验：16 名资深开源开发者在熟悉的项目里完成 246 项任务，任务被分为允许或不允许使用 AI。允许 AI 的任务耗时反而增加约 19%。使用的主要是当年早期的 Cursor 与 Claude 工具，结果限定于这批人员、代码库和任务。",
+        "text": "7 月 10 日，METR 公布一项随机实验：16 名资深开源开发者完成熟悉项目里的 246 项任务，每项任务随机分为允许或不允许使用 AI。与不允许 AI 的任务相比，允许 AI 的任务耗时增加约 19%。研究主要使用当时的 Cursor 与 Claude，结果限于这批人员、代码库和任务，并非 GitHub coding agent 的专门测评。",
         "source_ids": [
           "S-3e46675e99fa",
           "S-445b5dc889db"
@@ -3617,7 +3619,7 @@
       ],
       "why_selected": "它承接开放权重路线，把长上下文、运行效率与代理适配放在同一次发布里。读者可以看到，竞争已延伸到模型怎样进入现有工作工具，而不只是聊天答案。",
       "then": {
-        "text": "用户当日可在网站和 App 试用，开发者可通过 API 调用 Pro 或 Flash。团队说明采用 token 压缩与稀疏注意力，并针对 Claude Code、OpenClaw 等代理工具做适配；发布身份仍是预览版。",
+        "text": "这次预览把一次任务可纳入的材料范围扩大到 100 万词元，也就是百万上下文。用户当日可在网站和 App 试用，开发者可通过 API 调用 Pro 或 Flash。团队还介绍了压缩与计算效率设计，以及针对 Claude Code、OpenClaw 等代理工具的适配；发布身份仍是预览版，能放入更多资料并不等于每次都能处理好。",
         "source_ids": [
           "S-0c924f77d568",
           "S-e37cc03ed433"
@@ -5417,11 +5419,11 @@
     {
       "id": "S-53fddc8e452f",
       "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
-      "url": "https://arxiv.org/abs/2405.04434",
+      "url": "https://arxiv.org/html/2405.04434v1",
       "published_at": "2024-05-07",
       "kind": "paper",
-      "scope": "网页检索可读摘要及提交记录；论文日与 05-06 发布日分开，仅支持作者的效率设计与模型结构，不采用无条件性能结论。",
-      "accessed_at": "2026-09-14"
+      "scope": "网页检索可读摘要及提交记录；论文日与 05-06 发布日分开，仅支持作者的效率设计与模型结构，不采用无条件性能结论。；11-17读取V2论文v1摘要及结构引言，解释缓存压缩、稀疏计算与词元；链接固定v1，不采用训练成本和吞吐比例。",
+      "accessed_at": "2026-11-17"
     },
     {
       "id": "S-b96207a197ed",
@@ -5429,8 +5431,8 @@
       "url": "https://arxiv.org/html/2412.19437v1",
       "published_at": "2024-12-27",
       "kind": "paper",
-      "scope": "网页检索可读原始版本；第 2.1 节明确 V3 延续 V2 的 MLA 与 DeepSeekMoE。固定 v1，避免混入 2025 修订。；10-13重读v1摘要与架构说明，采用总参数/激活参数的区别，不外推成本比例。",
-      "accessed_at": "2026-10-13"
+      "scope": "网页检索可读原始版本；第 2.1 节明确 V3 延续 V2 的 MLA 与 DeepSeekMoE。固定 v1，避免混入 2025 修订。；10-13重读v1摘要与架构说明，采用总参数/激活参数的区别，不外推成本比例。；11-17重读V3首版摘要，核对总规模/激活规模与V2结构延续；用于简化术语解释，不增加性能结论。",
+      "accessed_at": "2026-11-17"
     },
     {
       "id": "S-e6faefe9f65c",
@@ -5708,8 +5710,8 @@
       "url": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
       "published_at": "2025-05-19",
       "kind": "official",
-      "scope": "本轮读取官方产品文章；页标 05-23 更新。采用与 05-19 新闻稿相符的 issue 到草稿 PR、看日志、评论后迭代流程；不把后续计费变化视为首发事实，不声称看过视频。；09-30重读05-19发布、05-23更新的同期官方文章，核对issue、后台Actions、草稿PR、眼睛表情、审阅及MCP配置；未观看视频。",
-      "accessed_at": "2026-09-30"
+      "scope": "本轮读取官方产品文章；页标 05-23 更新。采用与 05-19 新闻稿相符的 issue 到草稿 PR、看日志、评论后迭代流程；不把后续计费变化视为首发事实，不声称看过视频。；09-30重读05-19发布、05-23更新的同期官方文章，核对issue、后台Actions、草稿PR、眼睛表情、审阅及MCP配置；未观看视频。；11-17重读05-19发布、05-23更新的官方正文，核对问题单、草稿PR、人工审阅和评论迭代；采用中文释义，未观看视频。",
+      "accessed_at": "2026-11-17"
     },
     {
       "id": "S-2a4acadcb81f",
@@ -5879,8 +5881,8 @@
       "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
       "published_at": "2025-07-10",
       "kind": "official",
-      "scope": "已读实验方法、核心结果和不支持的推广结论；7 月 10 日是研究公开日。页面含 2026 年新研究提示，未把新资料混入早期结果。；09-30重读2025原研究方法和结果，页面2026更新提示不进入同期正文；不能用作GitHub coding agent的专门测评。",
-      "accessed_at": "2026-09-30"
+      "scope": "已读实验方法、核心结果和不支持的推广结论；7 月 10 日是研究公开日。页面含 2026 年新研究提示，未把新资料混入早期结果。；09-30重读2025原研究方法和结果，页面2026更新提示不进入同期正文；不能用作GitHub coding agent的专门测评。；11-17重读2025实验方法与结果，明确19%比较对象及Cursor/Claude范围；未混入页面2026后续提示。",
+      "accessed_at": "2026-11-17"
     },
     {
       "id": "S-445b5dc889db",
@@ -6745,6 +6747,15 @@
       "kind": "media",
       "accessed_at": "2026-10-28",
       "scope": "一手作品分享与评论原文；检索日期及页尾当日归档交叉定位08-27。采用发帖者提供的改版提示词、评论对图片/可运行网站的区分及昵称反应；未核验图片效果、身份或群体代表性，不采用当前赞数证明当时热度，评论具体发表日未逐条核定。"
+    },
+    {
+      "id": "S-simon-r1-distill-first-use",
+      "title": "Simon Willison：R1 发布当天的蒸馏模型本地试玩",
+      "url": "https://simonwillison.net/2025/Jan/20/deepseek-r1/",
+      "published_at": "2025-01-20",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "作者个人博客的一手自述。只采用1月20日首次试用段落：64GB内存M2、Ollama及unsloth/DeepSeek-R1-Distill-Llama-8B-GGUF:Q8_0、约8.5GB下载、茶室笑话的长篇推演与作者评价；不采用1月21日追加的70B记录、许可猜测、排名或训练史判断。我们未复现，个案不代表普遍设备要求或效果。"
     }
   ],
   "materials": [
@@ -6864,7 +6875,7 @@
       "id": "M-github-copilot-coding-agent-1",
       "title": "一次交接怎样发生",
       "kind": "demo",
-      "text": "官方文章描述：把问题单分配给 Copilot，它先回应一个“眼睛”表情，再在后台开始工作。稍后，开发者到草稿 PR 里检查修改，留下评审意见，让它接着做。",
+      "text": "官方文章描述：把问题单分配给 Copilot，它先回应一个“眼睛”表情，再在后台开始工作。稍后，开发者收到草稿 PR（待审的代码修改提案），可以留下意见，让它继续修改。",
       "source_id": "S-ece2d1386004",
       "temporal_context": "contemporary"
     },
@@ -7379,6 +7390,14 @@
       "text": "Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发布前测试的匿名代号。参与者用同一提示比较结果，社区讨论集中在复杂指令和人物一致性。这个昵称比正式型号更容易进入谈话，但平台中的偏好与讨论不能直接换算成全民热度。",
       "source_id": "S-arena-nano-banana-community",
       "temporal_context": "retrospective"
+    },
+    {
+      "id": "M-r1-distill-local-joke",
+      "title": "在自己的电脑上，试一个并不好笑的笑话",
+      "kind": "report",
+      "text": "1 月 20 日，Simon Willison 在 64GB 内存的 M2 电脑上，用本地运行工具 Ollama，试玩了一个下载约 8.5GB 的 R1 衍生小模型。他让模型编一个鹈鹕和海象开茶室的笑话：回答前输出长篇推演，最后却仍被他评为不好笑。这是一次个人试玩；运行的是基于 Llama 的较小蒸馏模型，并非 R1 主模型。",
+      "source_id": "S-simon-r1-distill-first-use",
+      "temporal_context": "contemporary"
     }
   ],
   "relations": [
@@ -8548,29 +8567,29 @@
     {
       "id": "from-trying-to-delegating",
       "title": "说出想法以后，AI 能替人做到哪一步？",
-      "intro": "热潮让人开始尝试，原型让想法变得可见，任务交接让结果可以审阅。这五站追问：把工作交出去以后，究竟得到什么？",
+      "intro": "从手机上试一次，到做出能运行的初版，再到交回待审的代码和文件。这五站看 AI 怎样接手任务，也看人还要花时间判断什么。",
       "steps": [
         {
           "event_id": "deepseek-app-public-surge",
-          "transition_to_next": "热潮把新工具带到更多人面前。接下来换一个具体玩法：把想法说出来，让网页先跑起来。两站呈现同年不同的尝试。"
+          "transition_to_next": "下载之后，能拿它做些什么？下一站换一组工具和一个具体玩法：把想法说出来，让网页先跑起来。"
         },
         {
           "event_id": "vibe-coding-karpathy",
-          "transition_to_next": "随手跑出原型之后，如果要交出一项正式修改，怎样收回结果？下一站看任务如何进入问题单和代码审阅流程。"
+          "transition_to_next": "能运行的初版带来新鲜感；如果改的是要长期维护的项目，怎样检查并接纳修改？下一站看任务如何进入问题单和代码审阅流程。"
         },
         {
           "event_id": "github-copilot-coding-agent",
-          "transition_to_next": "任务交出去了，审阅和返工还要花时间。把完成任务的时间一起算上，人真的更快了吗？下一站用独立实验追问效果，研究对象是另一组工具与开发者。"
+          "transition_to_next": "交回了修改，还要审阅和返工。把这些时间一起算上，人真的更快了吗？下一站看另一组工具与开发者的独立实验。"
         },
         {
           "event_id": "metr-experienced-developers-rct",
-          "transition_to_next": "带着“交回什么、怎样验收”的问题，再从代码走向资料和文件：下一站看查找、分析和制作怎样被接成一项任务。"
+          "transition_to_next": "实验留下了“是否省时”的问题。接下来从代码转向资料与文件，看另一项产品发布尝试接手哪些步骤；任务范围扩大，效果仍要另行检验。"
         },
         {
           "event_id": "chatgpt-agent-release"
         }
       ],
-      "outro": "从随手做原型，到收回可审阅的代码和文件，交接的单位开始成为一项任务。效率实验提醒我们核对实际结果；接下来把时间拉长，看任务怎样成为持续工作。",
+      "outro": "这五站里，AI 交回的东西从即时回答，扩展到能运行的初版、待审的代码修改和可编辑的文件。人要先说清任务，再检查结果；能交付更多，并不自动意味着更省时间。这条路线聚焦软件与资料工作，下一年再看任务怎样持续推进。",
       "exit_event_ids": [
         "chatgpt-image-ghibli-wave",
         "mcp-agentic-ai-foundation"
@@ -8955,51 +8974,51 @@
       "id": "deepseek",
       "name": "DeepSeek",
       "provider": "DeepSeek",
-      "question": "效率和开放，怎样连接推理突破与公众试用？",
-      "intro": "V2与V3交代热潮之前的效率积累，R1和应用热潮分别回答能力与传播。随后以V3.1连接混合推理与工具适配，再看V4的长任务和V4.1的视觉输入；服务更新留作补充。",
+      "question": "从计算效率到个人试用，DeepSeek 的变化怎样积累？",
+      "intro": "先看模型怎样少占显存、让每一步只动用部分计算模块，再看开放下载怎样让人动手试用。R1 的推理与手机上的热潮分别成站；后半段追踪工具、长资料和图片怎样进入使用过程。",
       "as_of": "2026-10-28",
       "coverage_note": "截至2026-10-28核验本系列选材。七个关键站，增加V3.1而将10月服务更新放入分支。V3.2等中间版本、更多独立部署与成本比较仍未完整整理。",
       "entries": [
         {
           "event_id": "deepseek-v2-efficiency",
           "level": "key",
-          "reason": "先交代效率方法，避免从公众热潮突然开场。",
-          "transition_to_next": "这些结构没有停在一代发布里。V3报告明确沿用MLA与DeepSeekMoE，下一站看更大基础模型怎样承接这份积累。"
+          "reason": "生成一个回答，计算和显存花在哪里？",
+          "transition_to_next": "下一站把模型总规模与每步动用的规模摆在一起，看 V3 怎样沿用这些效率思路。"
         },
         {
           "event_id": "deepseek-v3-release",
           "level": "key",
-          "reason": "基础模型与计算方式为后续推理路线提供前因。",
-          "transition_to_next": "V3成为后续训练的基础；R1把推理与不同规模的蒸馏模型推到前台。下一站分别看主模型、下载权重和小模型的参与方式。"
+          "reason": "模型更大，每一步要动用多少计算？",
+          "transition_to_next": "V3-Base 成了 R1 的训练起点。接下来，除了在线试用，个人还可以下载较小的蒸馏模型；一段实际试玩说明这些入口有什么区别。"
         },
         {
           "event_id": "deepseek-r1-release",
           "level": "key",
-          "reason": "推理能力通过在线入口与开放模型向外扩散。",
-          "transition_to_next": "发布提供了能试的东西，传播却要看另一类证据。下一站转向应用榜单和同期报道，观察技术讨论怎样越出开发者圈子。"
+          "reason": "从在线回答到本地试玩，使用者拿到了哪些选择？",
+          "transition_to_next": "一个人的试玩，和许多人的下载，是两种观察。下一站从模型转向手机应用，看公众热潮和注册阻力。"
         },
         {
           "event_id": "deepseek-app-public-surge",
           "level": "key",
-          "reason": "公众热潮有自己的入口、使用阻力和观察尺度。",
-          "transition_to_next": "热度并不能解释模型之后怎样改变。V3.1把思考与非思考放进同一模型，并连接工具流程，接回技术演进这条线。"
+          "reason": "技术圈之外，人们怎样遇到这款应用？",
+          "transition_to_next": "热潮之后，使用方式还在变。下一站看 V3.1 怎样把思考与直接回答放到同一个模型中，并连接工具。"
         },
         {
           "event_id": "deepseek-v31-hybrid-release",
           "level": "key",
-          "reason": "推理回到通用模型，接上实际工具调用。",
-          "transition_to_next": "接上工具之后，较长的资料和任务又带来新的要求。V4把百万上下文、效率设计和代理适配放到同一次预览。"
+          "reason": "同一模型能否既直接回答，也展开思考、连接工具？",
+          "transition_to_next": "能调用工具以后，还需要把较长的资料放进任务。下一站看 V4 怎样扩大上下文，也就是一次处理任务时可纳入的材料范围。"
         },
         {
           "event_id": "deepseek-v4-preview",
           "level": "key",
-          "reason": "开放模型进一步面对长资料和代理工作环境。",
-          "transition_to_next": "长任务仍可能包含图片等非文字信息。V4.1 Flash把原生视觉带到API，下一站看输入范围怎样继续扩展。"
+          "reason": "资料变长、步骤变多，模型怎样接入工作工具？",
+          "transition_to_next": "资料也可能是图片。下一站看 V4.1 Flash 把视觉输入带入 API 后，任务的输入范围怎样变化。"
         },
         {
           "event_id": "deepseek-v41-flash-release",
           "level": "key",
-          "reason": "视觉输入成为近期服务演进的一部分。"
+          "reason": "图片进入模型接口，开发者能多交哪些材料？"
         },
         {
           "event_id": "deepseek-v41-flash-oct17",
@@ -9011,7 +9030,7 @@
           }
         }
       ],
-      "outro": "DeepSeek先在计算与存储效率上积累，再把开放模型、推理和公众试用连在一起。后续的工具、长上下文和视觉扩展了能做的事；使用者还会遇到同名服务的更新与不同运行条件。",
+      "outro": "这条线留下三个变化：计算与显存开销进入模型设计；开放模型让个人有机会自行试验；后续版本再把工具、长资料和图片接进任务。实际是否好用，仍取决于所用型号、运行条件和任务。沿下面的服务更新，还能看到发布之后的调用与费用口径怎样变化。",
       "exit": {
         "event_id": "deepseek-v41-flash-oct17",
         "label": "追踪发布之后的服务变化",
