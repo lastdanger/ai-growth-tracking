@@ -188,7 +188,7 @@
       "tagline": "让 AI 持续做事，也要弄清它该做到哪里。",
       "summary": "代理继续进入持续工作，模型能力、运行效率和开放部署也在变化。实际效果、授权与评估仍决定哪些任务值得交出去；本年度尚未结束。",
       "status": "partial",
-      "coverage_note": "截至 2026-10-28，进行中。本轮定向补查模型发布、开放与部署，新增近期代表事件及必要前因；科研、机器人、治理等方向没有同步完成全面补查。现有32个阶段代表事件，仍非全年或截至该日的穷尽覆盖。",
+      "coverage_note": "截至2026-11-17，进行中。本轮定向核验10-29至11-17的近期产品、模型与创作分支，新增7个代表事件；其他领域与此前各月没有同步全面重核。现有39个阶段代表事件，仍非全年或截至该日的穷尽覆盖。",
       "anchor_ids": [
         "alphagenome-nature-paper",
         "openclaw-personal-agent-rename",
@@ -199,7 +199,7 @@
         "eu-ai-omnibus-in-force",
         "openai-hugging-face-investigation"
       ],
-      "as_of": "2026-10-28",
+      "as_of": "2026-11-17",
       "featured_event_id": "openclaw-personal-agent-rename",
       "featured_reason": "从个人代理的期待进入持续委托，再看授权、效果与控制问题。",
       "display_groups": [
@@ -4801,6 +4801,249 @@
         }
       ],
       "scene_material_id": "M-glm45-laptop-game"
+    },
+    {
+      "id": "cursor-live-apps",
+      "year": 2026,
+      "date": "2026-11-05",
+      "date_label": "11-05（在线应用功能开放）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Cursor：写出的应用，可以继续上线给别人用",
+      "summary": "Cursor把应用搭建、数据库、登录和托管接到云端代理中；通过安全检查并由用户明确发布后，才获得可分享的在线入口。",
+      "lane": "products",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "把观察范围从生成代码推进到应用交付，并保留上线检查、发布决定和仓库支持条件。",
+      "then": {
+        "text": "11月5日，Cursor宣布启用云端代理的所有付费计划可搭建在线应用。代理按需准备Postgres数据库、Cursor登录和托管，支持Cursor Origin与GitHub仓库；GitLab仍待支持。用户选择域名后，还要通过安全检查并明确发布，应用才会上线。",
+        "source_ids": [
+          "S-cursor-live-apps-20261105"
+        ]
+      },
+      "source_ids": [
+        "S-cursor-live-apps-20261105"
+      ],
+      "material_ids": [
+        "M-cursor-live-apps-use"
+      ],
+      "fact_ids": [],
+      "change": "交回的成果可以成为同事实际访问的应用。数据库、登录和托管进入同一流程，发布前的检查与人的决定也成为交付的一部分；公告不证明每个应用都可靠。",
+      "scene_material_id": "M-cursor-live-apps-use"
+    },
+    {
+      "id": "claude-fable52-mythos52",
+      "year": 2026,
+      "date": "2026-11-09",
+      "date_label": "11-09（公告）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Claude Fable与Mythos 5.2：同一底层模型，不同开放条件",
+      "summary": "Anthropic发布Fable与Mythos 5.2，面向复杂技术工作；两者底层相同，安全限制和获取途径不同。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "模型选择不仅涉及能力，还涉及适合何种工作、哪些组织能访问，以及实际使用能留下什么证据。",
+      "then": {
+        "text": "11月9日，Anthropic发布Claude Fable 5.2与Mythos 5.2。官方称两者使用同一底层模型；Fable配置了网络安全与生物用途限制，通过公开服务提供，Mythos则须经相应验证计划申请。面向大多数编程和知识工作，官方仍建议先从Opus 5.5开始，再按任务复杂度调整。",
+        "source_ids": [
+          "S-claude-fable52-mythos52-release"
+        ]
+      },
+      "source_ids": [
+        "S-claude-fable52-mythos52-release",
+        "S-simon-fable52-maplibre",
+        "S-datasette-maplibre-01a0"
+      ],
+      "material_ids": [
+        "M-fable52-maplibre-use"
+      ],
+      "fact_ids": [],
+      "change": "较强模型也有不同的使用条件。对使用者而言，先判断任务和可访问范围，再看具体成果，比只追一个新名称更有帮助。",
+      "later": {
+        "as_of": "2026-11-15",
+        "text": "11月15日的GitHub发布页确认，datasette-maplibre 0.1a0是初始alpha版本。作者的制作记录因此有可查的发布产物；版本存在本身，仍不能证明模型完成了多少工作、软件质量如何或是否普遍省时。",
+        "source_ids": [
+          "S-simon-fable52-maplibre",
+          "S-datasette-maplibre-01a0"
+        ]
+      },
+      "scene_material_id": "M-fable52-maplibre-use"
+    },
+    {
+      "id": "seedream55-image-editing",
+      "year": 2026,
+      "date": "2026-11-09",
+      "date_label": "11-09（公告）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Seedream 5.5：生成一张图之后，还能怎样继续改",
+      "summary": "Seed团队公布Seedream 5.5，介绍多轮编辑保持、原生透明背景素材和文字渲染改进。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "以修改和复用观察图像生成怎样进入创作流程；只记录公布，不把官方演示或后续Pro预告当成已普遍可用的效果。",
+      "then": {
+        "text": "11月9日，Seed团队公布Seedream 5.5，重点介绍反复编辑时保留未改区域，以及直接生成带透明通道的RGBA素材。发布文字以同一人物连续修改衣饰与桌面物件为演示说明；这些是团队介绍，尚不能据此确认各产品入口的实际开放日期与稳定效果。",
+        "source_ids": [
+          "S-seedream55-release"
+        ]
+      },
+      "source_ids": [
+        "S-seedream55-release"
+      ],
+      "material_ids": [],
+      "fact_ids": [],
+      "change": "图像生成的工作可以继续到指定局部修改和素材复用。创作者关心的不只是第一张图，还包括多次修改后能否保留其余内容，以及结果能否进入已有设计流程。"
+    },
+    {
+      "id": "claude-meetings-beta",
+      "year": 2026,
+      "date": "2026-11-12",
+      "date_label": "11-12（Team与Enterprise逐步推出beta）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Claude Meetings：会议进行时，笔记和文档一起形成",
+      "summary": "Claude Meetings开始向Team与Enterprise逐步推出beta，可作为Google Meet中的可见参会者记录、问答和制作成果。",
+      "lane": "products",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "把任务交接从会后整理延伸到会议现场，同时保留团队开关与参会知情等使用条件。",
+      "then": {
+        "text": "11月12日的发布记录宣布，Claude Meetings在Claude与Claude Desktop的Team和Enterprise计划中逐步推出beta。用户可把Claude加入Google Meet，作为可见参会者做笔记、回答问题，并在会议中制作文档、白板和演示稿。",
+        "source_ids": [
+          "S-claude-meetings-release"
+        ]
+      },
+      "source_ids": [
+        "S-claude-meetings-release",
+        "S-claude-meetings-guide"
+      ],
+      "material_ids": [],
+      "fact_ids": [],
+      "change": "整理和制作可以发生在讨论进行时，参与者能围绕同一份材料继续工作。代理进入会议，也让谁能加入、何时转录和怎样管理权限成为实际使用条件。",
+      "later": {
+        "as_of": "2026-11-17",
+        "text": "截至11月17日，使用说明要求加入前确认参会者接受转录，并区分Team与Enterprise的组织开关。部分采用特殊数据保留、医疗数据保护或客户管理加密密钥配置的组织暂不适用；这些是查阅时的条件，不能只凭计划名称判断已经可用。",
+        "source_ids": [
+          "S-claude-meetings-guide"
+        ]
+      }
+    },
+    {
+      "id": "gemini4-hydrogen-release",
+      "year": 2026,
+      "date": "2026-11-12",
+      "date_label": "11-12（公告）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤",
+      "summary": "Google公布面向快速执行的Gemini 4 Hydrogen，将它放在与Carbon、Argon不同的工作分工中。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "以任务分工与实际入口观察同一家族的模型选择，不将官方效率宣称写成独立测评结果。",
+      "then": {
+        "text": "11月12日，Google公布Gemini 4 Hydrogen，定位日常编程和代理工作的快速执行。官方把Carbon与Argon侧重的复杂判断，同编写代码、运行测试、核验改动等执行步骤区分开；这是一种产品分工说明，并非对每项工作效果的保证。",
+        "source_ids": [
+          "S-gemini4-hydrogen-release"
+        ]
+      },
+      "source_ids": [
+        "S-gemini4-hydrogen-release",
+        "S-gemini-model-access-20261117"
+      ],
+      "material_ids": [],
+      "fact_ids": [],
+      "change": "一次工作不必只围绕最大型号设计。判断、执行和检查可能需要不同的能力与速度，读者还要核对所用产品是否提供相应入口。",
+      "later": {
+        "as_of": "2026-11-17",
+        "text": "截至11月17日，修订于11月16日的公告列出API、AI Studio、Gemini应用和Search等入口；Antigravity要求付费Pro或Ultra。帮助页进一步说明：免费个人账号通过自动选择按问题可能用到Hydrogen，不能手动指定；组织账号另受许可条件影响。",
+        "source_ids": [
+          "S-gemini4-hydrogen-release",
+          "S-gemini-model-access-20261117"
+        ]
+      }
+    },
+    {
+      "id": "deepseek-application-apis",
+      "year": 2026,
+      "date": "2026-11-13",
+      "date_label": "11-13（应用API开放公告）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "DeepSeek：把搜索、文件与语音接成自己的聊天应用",
+      "summary": "DeepSeek开放应用API，将搜索、文件输入、链接阅读及语音能力交给开发者，部分工具调用和上下文拼接由服务端处理。",
+      "lane": "products",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "继搜索接口开放之后，把应用层能力组成可接入的对话流程；区分模型本身与围绕模型的服务。",
+      "then": {
+        "text": "11月13日，DeepSeek公告开放应用API。开发者可以给deepseek-flash开启搜索、文件输入和链接阅读，服务端负责相应调用及上下文拼接；图像中的文字识别（OCR）、语音识别和语音合成等另有独立接口。这次新增的是应用服务能力，并非新模型发布。",
+        "source_ids": [
+          "S-deepseek-application-apis"
+        ]
+      },
+      "source_ids": [
+        "S-deepseek-application-apis",
+        "S-deepseek-chatbot-guide"
+      ],
+      "material_ids": [
+        "M-deepseek-chatbot-demo"
+      ],
+      "fact_ids": [],
+      "change": "开发者获得的交接内容从一次回答扩展到带资料处理的对话流程，自行串接的环节随之改变。是否省下维护成本、能否稳定处理任务，仍需应用中的实际验证。",
+      "scene_material_id": "M-deepseek-chatbot-demo"
+    },
+    {
+      "id": "qwen4-max-release",
+      "year": 2026,
+      "date": "2026-11-16",
+      "date_label": "11-16（正式型号与服务入口公布）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Qwen4-Max：视觉、推理与长任务进入同一服务",
+      "summary": "Qwen4-Max进入正式服务入口，支持文字、图像和视频理解、工具调用及结构化输出，与此前的Preview使用不同型号名称。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "补上Qwen近期旗舰托管服务的入口变化，同时区分预览、按量服务与权重开放，不改变原有开放生态主线。",
+      "then": {
+        "text": "11月16日，官方模型日志列入Qwen4-Max，Token Plan个人版与团队版同日宣布支持。此前11月11日的Qwen4-Max-Preview限于Token Plan；正式型号则将视觉理解、推理和工具调用放到同一服务中。两个名称对应不同入口安排。",
+        "source_ids": [
+          "S-qwen4-model-releases",
+          "S-qwen4-token-plan-updates"
+        ]
+      },
+      "source_ids": [
+        "S-qwen4-model-releases",
+        "S-qwen4-token-plan-updates",
+        "S-qwen4-latest-model"
+      ],
+      "material_ids": [],
+      "fact_ids": [],
+      "change": "同一任务可围绕视觉材料、分析和工具操作展开。选择模型还要看入口和运行条件；服务可调用与权重可下载仍是两种不同的参与方式。",
+      "later": {
+        "as_of": "2026-11-17",
+        "text": "截至11月17日，官方接入说明列出正式型号的按量API及Token Plan入口、百万token上下文和分地区服务条件。本节点未确认Qwen4其他型号或权重已经公开，也未复现官方案例。",
+        "source_ids": [
+          "S-qwen4-latest-model"
+        ]
+      }
     }
   ],
   "sources": [
@@ -6756,6 +6999,132 @@
       "accessed_at": "2026-11-17",
       "kind": "official",
       "scope": "作者个人博客的一手自述。只采用1月20日首次试用段落：64GB内存M2、Ollama及unsloth/DeepSeek-R1-Distill-Llama-8B-GGUF:Q8_0、约8.5GB下载、茶室笑话的长篇推演与作者评价；不采用1月21日追加的70B记录、许可猜测、排名或训练史判断。我们未复现，个案不代表普遍设备要求或效果。"
+    },
+    {
+      "id": "S-cursor-live-apps-20261105",
+      "title": "Cursor：Build Live Apps in Cursor",
+      "url": "https://cursor.com/changelog/build-live-apps",
+      "published_at": "2026-11-05",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读11-05公告全文：启用cloud agents的所有付费计划、数据库与登录托管、检查后明确发布、Origin/GitHub支持；GitLab仍为后续安排。内部用途为厂商自述，未运行应用或检验安全检查效果。"
+    },
+    {
+      "id": "S-claude-fable52-mythos52-release",
+      "title": "Anthropic：Claude Fable 5.2 and Mythos 5.2",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "published_at": "2026-11-09",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读11-09公告的定位、同一底层模型与安全限制、公开及验证计划入口、日常型号建议。页面11-11修订过数学证明说明；不采用数学成果、演示功效、排名、定价或效率百分比，不把Mythos申请制写成普遍开放。"
+    },
+    {
+      "id": "S-simon-fable52-maplibre",
+      "title": "Simon Willison：datasette-maplibre 0.1a0 制作记录",
+      "url": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
+      "published_at": "2026-11-15",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读作者11-15正文：明确Claude Fable 5.2，参考两个已有插件和本地示例，一条提示完成大部分实现，随后另做浏览器演示。只采个人自述；未运行插件或查看演示截图，未外推独立完成、无人工修改、节省工时或普遍成功率。"
+    },
+    {
+      "id": "S-datasette-maplibre-01a0",
+      "title": "datasette-maplibre：0.1a0 初始 alpha 发布",
+      "url": "https://github.com/datasette/datasette-maplibre/releases/tag/0.1a0",
+      "published_at": "2026-11-15",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17读取GitHub标签页可见的0.1a0、Pre-release、15 Nov 23:58与Initial alpha release；仅交叉确认作者文章所述初版确有发布，不据此证明代码质量或模型完成比例。"
+    },
+    {
+      "id": "S-gemini4-hydrogen-release",
+      "title": "Google：Introducing Gemini 4 Hydrogen",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "published_at": "2026-11-12",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17读取标11-12发表、11-16更新的公告，采用模型定位和截至查阅日所列产品/API入口；不将修订稿中的Orchestrator动态切换写成11-12首发事实，不采用跑分、速度、价格或安全百分比。"
+    },
+    {
+      "id": "S-gemini-model-access-20261117",
+      "title": "Google Gemini帮助：模型入口与自动选择",
+      "url": "https://support.google.com/gemini/answer/18648722?ref_topic=13194540",
+      "published_at": null,
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读个人Google账号的模型表和自动选择说明：免费用户在Auto下按问题可能路由Hydrogen，不能写成免费用户都可手动选；工作/学校账号另依Workspace许可。持续维护页无独立发表日，只作11-17入口观察，不倒填首发。"
+    },
+    {
+      "id": "S-claude-meetings-release",
+      "title": "Claude发布记录：Meetings beta",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "published_at": "2026-11-12",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读11-12条目：Team/Enterprise、Claude与Desktop中逐步推出beta，Google Meet可见参会者、笔记问答和文档/白板/演示稿。只采用该日期条目，不将其他发布日期功能混入。"
+    },
+    {
+      "id": "S-claude-meetings-guide",
+      "title": "Claude帮助：Use Claude Meetings",
+      "url": "https://support.claude.com/en/articles/18325154-use-claude-meetings",
+      "published_at": null,
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读现行使用说明：Team与Enterprise管理员开关、参会者同意转录、Google Calendar连接及ZDR/HIPAA-ready/CMEK等暂不适用组织。页面无独立首发日期；只作截至11-17的条件说明，不当作11-12公告全文。"
+    },
+    {
+      "id": "S-deepseek-application-apis",
+      "title": "DeepSeek更新日志：发布全家桶应用 API",
+      "url": "https://api-docs.deepseek.com/zh-cn/updates/#时间-2026-11-13",
+      "published_at": "2026-11-13",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读11-13条目：deepseek-flash在Messages/Responses/Chat Completions提供服务端联网、文件与链接能力，OCR/ASR/TTS等也有独立接口及开源演示客户端。支持开放范围，不证明新模型发布、独立效果或全部使用成本。"
+    },
+    {
+      "id": "S-deepseek-chatbot-guide",
+      "title": "DeepSeek：构建 Chatbot 与演示客户端",
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/build_a_chatbot/",
+      "published_at": null,
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读功能表、演示客户端、协议与响应说明：服务端负责搜索和读链接，客户端可导入网页端导出的历史对话。持续维护页无独立发表日；未输入API Key、导入对话或运行客户端。"
+    },
+    {
+      "id": "S-qwen4-model-releases",
+      "title": "QwenCloud模型日志：Qwen4-Max与Preview",
+      "url": "https://docs.qwencloud.com/changelog/models",
+      "published_at": "2026-11-16",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读11-16正式型号与11-11 Preview两条记录；核对多模态、工具调用与Preview限Token Plan。qwen.ai发布博客直开无可读正文，未声称读到博客；不采用模型排名或权重开放预告。"
+    },
+    {
+      "id": "S-qwen4-token-plan-updates",
+      "title": "QwenCloud Token Plan：Qwen4-Max入口更新",
+      "url": "https://docs.qwencloud.com/token-plan/token-plan-product-updates",
+      "published_at": "2026-11-16",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读11-16与11-11分节：正式型号及Preview分别上线，个人/团队计划均支持。只用日期与入口，不采用临时折扣、赠送额度或将预览结束安排当作已发生。"
+    },
+    {
+      "id": "S-qwen4-latest-model",
+      "title": "QwenCloud：Qwen4-Max模型与接入说明",
+      "url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model",
+      "published_at": null,
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读能力表、上下文、地区、按量API和Token Plan入口；持续维护页无独立发表日，只记截至查阅日的可用条件。未调用模型、未验证演示，不把服务可用等同权重可下载。"
+    },
+    {
+      "id": "S-seedream55-release",
+      "title": "ByteDance Seed：Introducing Seedream 5.5",
+      "url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5",
+      "published_at": "2026-11-09",
+      "accessed_at": "2026-11-17",
+      "kind": "official",
+      "scope": "11-17直读11-09官方正文的多轮编辑、RGBA透明素材、文字渲染与结尾。只记录公布和官方介绍，未看演示视频或复现，未独立确认各产品/API的上线日期；不采用领先排名，Pro版仍为后续预告。"
     }
   ],
   "materials": [
@@ -7398,6 +7767,30 @@
       "text": "1 月 20 日，Simon Willison 在 64GB 内存的 M2 电脑上，用本地运行工具 Ollama，试玩了一个下载约 8.5GB 的 R1 衍生小模型。他让模型编一个鹈鹕和海象开茶室的笑话：回答前输出长篇推演，最后却仍被他评为不好笑。这是一次个人试玩；运行的是基于 Llama 的较小蒸馏模型，并非 R1 主模型。",
       "source_id": "S-simon-r1-distill-first-use",
       "temporal_context": "contemporary"
+    },
+    {
+      "id": "M-cursor-live-apps-use",
+      "title": "一个给同事使用的内部工具",
+      "kind": "report",
+      "temporal_context": "contemporary",
+      "source_id": "S-cursor-live-apps-20261105",
+      "text": "Cursor在公告中列举活动报名、座位安排、销售看板等内部用途。它们把“代码跑起来”之后的问题摆出来：其他人怎样登录、查看和使用。用途来自厂商自述，本轮未运行这些应用。"
+    },
+    {
+      "id": "M-fable52-maplibre-use",
+      "title": "带着两个旧插件，做出一个新插件",
+      "kind": "report",
+      "temporal_context": "retrospective",
+      "source_id": "S-simon-fable52-maplibre",
+      "text": "11月15日，Simon Willison介绍自己的新地图插件：他让Claude Fable 5.2参考两个旧插件和一个本地示例，称一条提示完成了大部分实现，随后又请它制作浏览器演示。这是已发布alpha初版的个人制作记录，未提供工时对照；我们没有复现。"
+    },
+    {
+      "id": "M-deepseek-chatbot-demo",
+      "title": "把旧对话带进自己搭的界面",
+      "kind": "report",
+      "temporal_context": "undated",
+      "source_id": "S-deepseek-chatbot-guide",
+      "text": "截至11月17日，官方指南提供的开源演示客户端支持导入DeepSeek网页端导出的对话，继续聊天，并列出上传文件、搜索、语音输入与朗读等功能。这是一份应用组织方式的示例说明，本轮没有运行客户端。"
     }
   ],
   "relations": [
@@ -8465,6 +8858,16 @@
         "S-c59c597501ce",
         "S-openai-oct26-changelog"
       ]
+    },
+    {
+      "from": "deepseek-v41-flash-oct17",
+      "to": "deepseek-application-apis",
+      "type": "follow-up",
+      "note": "10月先开放独立搜索接口，11月再将搜索、文件、读链接等整合为对话应用API；这是服务能力的后续开放，不是新模型继承。",
+      "evidence_source_ids": [
+        "S-deepseek-v41-oct17",
+        "S-deepseek-application-apis"
+      ]
     }
   ],
   "reading_routes": [
@@ -8797,8 +9200,8 @@
       "provider": "Anthropic",
       "question": "从回答问题到共同做事，Claude怎样改变工作方式？",
       "intro": "先认识助手与型号分工，再沿Artifacts、电脑操作和Claude Code观察工作怎样交出去。Claude 4连接模型与开发流程，Cowork把视角扩展到文件工作；MCP说明工具背后的连接方式。",
-      "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。保留八个关键站；3.7作为Code同日发布背景交代，MCP为生态分支。5.5先收录Opus，其他型号和独立长期效率证据仍待补充。",
+      "as_of": "2026-11-17",
+      "coverage_note": "截至2026-11-17定向核验近期进展。八个关键站保持；新增Fable/Mythos 5.2与Meetings两项补充，包含一则个人alpha插件制作记录。此前历史版本、其他5.5型号和独立长期效率证据仍未完整整理。",
       "entries": [
         {
           "event_id": "claude-introduction",
@@ -8864,6 +9267,24 @@
           "event_id": "claude-opus55-release",
           "level": "key",
           "reason": "回到模型能力与发布评估，检验工作委托的期待。"
+        },
+        {
+          "event_id": "claude-fable52-mythos52",
+          "level": "supporting",
+          "reason": "新的技术工作型号，重点看同一底层模型的开放条件与一则后续使用记录。",
+          "return_to": {
+            "event_id": "claude-opus55-release",
+            "reason": "Fable与Mythos补充更复杂任务的选择；回到Opus 5.5，把新型号放回日常工作、任务要求和评估范围中。"
+          }
+        },
+        {
+          "event_id": "claude-meetings-beta",
+          "level": "supporting",
+          "reason": "会议中的可见参与和即时成果，是文件工作之外的产品分支。",
+          "return_to": {
+            "event_id": "cowork-research-preview",
+            "reason": "会议把材料生成推进到讨论现场；回到Cowork，看文件交接与使用授权这条共同问题。"
+          }
         }
       ],
       "outro": "Claude的变化不只在型号：对话旁出现工作区，终端与文件夹成为交接任务的地方，工具连接也成了工作的一部分。任务越长，怎样检查成果、保留人的判断越重要。",
@@ -8879,8 +9300,8 @@
       "provider": "Google",
       "question": "从看懂多种材料，到改图和用工具，Gemini怎样落地？",
       "intro": "Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。",
-      "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。六个关键站；图像编辑补入Gemini应用入口、Arena回顾与个人玩法讨论。平台自述和个案不代表全民热度；AI Overviews、Spark及Antigravity仍为产品分支，未完整覆盖全部版本及独立效果。",
+      "as_of": "2026-11-17",
+      "coverage_note": "截至2026-11-17定向核验近期进展。六个关键站保持，新增Hydrogen补充并区分11-12公告与11-16修订稿；平台自述、个人玩法和模型入口不代表普遍效果。历史版本、产品分支和独立效果仍未完整覆盖。",
       "entries": [
         {
           "event_id": "bard-announcement",
@@ -8961,6 +9382,15 @@
           "event_id": "gemini4-argon-ga",
           "level": "key",
           "reason": "以实际入口和开放条件收束近期演进。"
+        },
+        {
+          "event_id": "gemini4-hydrogen-release",
+          "level": "supporting",
+          "reason": "在Argon之后观察执行型号、任务分工与免费入口条件，保留公告和修订日的区别。",
+          "return_to": {
+            "event_id": "gemini4-argon-ga",
+            "reason": "Hydrogen增加执行与速度的选择；回到Argon，继续区分模型能力、任务分工和实际开放入口。"
+          }
         }
       ],
       "outro": "Gemini从理解多种材料、容纳长上下文，走到推理、连续改图与工具工作。能力进入日常产品后，读者既会看到具体玩法，也会碰到错误；演示中的可能性还需要使用反馈来补全。",
@@ -8976,8 +9406,8 @@
       "provider": "DeepSeek",
       "question": "从计算效率到个人试用，DeepSeek 的变化怎样积累？",
       "intro": "先看模型怎样少占显存、让每一步只动用部分计算模块，再看开放下载怎样让人动手试用。R1 的推理与手机上的热潮分别成站；后半段追踪工具、长资料和图片怎样进入使用过程。",
-      "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。七个关键站，增加V3.1而将10月服务更新放入分支。V3.2等中间版本、更多独立部署与成本比较仍未完整整理。",
+      "as_of": "2026-11-17",
+      "coverage_note": "截至2026-11-17定向核验近期进展。七个关键站保持，10月模型/搜索更新与11月应用API作为补充。V3.2等中间版本、更多独立部署与成本比较仍未完整整理；这次服务补项不代表全部旧节点已重新核验。",
       "entries": [
         {
           "event_id": "deepseek-v2-efficiency",
@@ -9028,13 +9458,22 @@
             "event_id": "deepseek-v41-flash-release",
             "reason": "10月更新说明发布后的服务仍在变；回到V4.1首发，分清新增视觉能力与后来的搜索、费用调整。"
           }
+        },
+        {
+          "event_id": "deepseek-application-apis",
+          "level": "supporting",
+          "reason": "模型之外，搜索、文件与语音怎样组成可接入的应用服务？",
+          "return_to": {
+            "event_id": "deepseek-v41-flash-release",
+            "reason": "应用API补充模型周围的服务；回到V4.1 Flash，分清模型的视觉输入与后来增加的搜索、文件和语音接口。"
+          }
         }
       ],
-      "outro": "这条线留下三个变化：计算与显存开销进入模型设计；开放模型让个人有机会自行试验；后续版本再把工具、长资料和图片接进任务。实际是否好用，仍取决于所用型号、运行条件和任务。沿下面的服务更新，还能看到发布之后的调用与费用口径怎样变化。",
+      "outro": "这条线留下三个变化：计算与显存开销进入模型设计；开放模型让个人有机会自行试验；后续版本再把工具、长资料和图片接进任务。实际是否好用，仍取决于型号、运行条件和任务。沿服务分支，还能看到搜索、文件和语音怎样接成应用。",
       "exit": {
-        "event_id": "deepseek-v41-flash-oct17",
-        "label": "追踪发布之后的服务变化",
-        "reason": "同一调用名下面，模型、搜索入口和费用口径还会变化；看看10月服务更新具体改了什么。"
+        "event_id": "deepseek-application-apis",
+        "label": "看看模型周围的应用服务",
+        "reason": "从图片输入继续看搜索、文件和语音怎样接入聊天应用；这些是后续服务能力，不能混同为新模型。"
       }
     },
     {
@@ -9043,8 +9482,8 @@
       "provider": "阿里巴巴",
       "question": "从通义服务到可加工的模型家族，Qwen怎样形成生态？",
       "intro": "先分清通义千问的产品公布与首次权重开放，再看尺寸、多语言和专门模型的分工。Qwen2.5的跨团队采用、Omni的声音图像与Qwen3的思考选择，让这条线不只是型号递增。",
-      "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。七个关键站；补入Aider部署测试和小模型工具调用自述，不代表长期工程效果。代码与数学分工在2.5站说明；近期全模态候选仍待核，最近收录止于8月。",
+      "as_of": "2026-11-17",
+      "coverage_note": "截至2026-11-17定向核验近期进展。七个关键站保持，新增Qwen4-Max服务入口补充；首次预览、正式型号与权重开放分别判断。历史版本、更多独立使用与近期全模态候选仍未完整整理，个人部署记录不代表长期工程效果。",
       "entries": [
         {
           "event_id": "tongyi-qianwen-announcement",
@@ -9086,6 +9525,15 @@
           "event_id": "qwen38-flash-next",
           "level": "key",
           "reason": "以运行条件与开放许可观察近期架构实验。"
+        },
+        {
+          "event_id": "qwen4-max-release",
+          "level": "supporting",
+          "reason": "近期旗舰服务与原有开放模型并列观察，区分Preview、正式入口和权重下载。",
+          "return_to": {
+            "event_id": "qwen38-flash-next",
+            "reason": "Qwen4-Max提供另一种托管服务选择；回到Flash-Next，比较开放权重实验与调用服务这两种参与条件，不推断型号间的技术继承。"
+          }
         }
       ],
       "outro": "Qwen从通义服务走到可下载、可选择、可继续训练的模型家族。尺寸和专门能力给开发者更多组合方式，而实际表现仍取决于部署、工具与任务；开放生态最终要由谁拿去做了什么来说明。",

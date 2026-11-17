@@ -4,7 +4,7 @@
 
 Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。
 
-截至2026-10-28核验本系列选材。六个关键站；图像编辑补入Gemini应用入口、Arena回顾与个人玩法讨论。平台自述和个案不代表全民热度；AI Overviews、Spark及Antigravity仍为产品分支，未完整覆盖全部版本及独立效果。
+截至2026-11-17定向核验近期进展。六个关键站保持，新增Hydrogen补充并区分11-12公告与11-16修订稿；平台自述、个人玩法和模型入口不代表普遍效果。历史版本、产品分支和独立效果仍未完整覆盖。
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
@@ -187,6 +187,22 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 变化与意义：模型进步要经过实际可访问的产品入口才会改变用法；正式可用、滚动开放与此前预告必须分开记录。
 
 [Gemini API release notes：Gemini 4 Argon GA](https://ai.google.dev/gemini-api/docs/changelog) · [Gemini Apps：2026年10月13日更新](https://gemini.google/sc/release-notes/?hl=en-GB)
+
+[查看2026年背景](../2026.md)
+
+## 11-12（公告） · Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤（补充）
+
+在Argon之后观察执行型号、任务分工与免费入口条件，保留公告和修订日的区别。
+
+11月12日，Google公布Gemini 4 Hydrogen，定位日常编程和代理工作的快速执行。官方把Carbon与Argon侧重的复杂判断，同编写代码、运行测试、核验改动等执行步骤区分开；这是一种产品分工说明，并非对每项工作效果的保证。
+
+变化与意义：一次工作不必只围绕最大型号设计。判断、执行和检查可能需要不同的能力与速度，读者还要核对所用产品是否提供相应入口。
+
+后来再看（截至2026-11-17）：截至11月17日，修订于11月16日的公告列出API、AI Studio、Gemini应用和Search等入口；Antigravity要求付费Pro或Ultra。帮助页进一步说明：免费个人账号通过自动选择按问题可能用到Hydrogen，不能手动指定；组织账号另受许可条件影响。
+
+[Google：Introducing Gemini 4 Hydrogen](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/) · [Google Gemini帮助：模型入口与自动选择](https://support.google.com/gemini/answer/18648722?ref_topic=13194540)
+
+回到关键站：**Gemini 4 Argon：从发布期待走到实际入口**。Hydrogen增加执行与速度的选择；回到Argon，继续区分模型能力、任务分工和实际开放入口。
 
 [查看2026年背景](../2026.md)
 

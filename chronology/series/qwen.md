@@ -4,7 +4,7 @@
 
 先分清通义千问的产品公布与首次权重开放，再看尺寸、多语言和专门模型的分工。Qwen2.5的跨团队采用、Omni的声音图像与Qwen3的思考选择，让这条线不只是型号递增。
 
-截至2026-10-28核验本系列选材。七个关键站；补入Aider部署测试和小模型工具调用自述，不代表长期工程效果。代码与数学分工在2.5站说明；近期全模态候选仍待核，最近收录止于8月。
+截至2026-11-17定向核验近期进展。七个关键站保持，新增Qwen4-Max服务入口补充；首次预览、正式型号与权重开放分别判断。历史版本、更多独立使用与近期全模态候选仍未完整整理，个人部署记录不代表长期工程效果。
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
@@ -117,6 +117,22 @@ Qwen3.8-Flash-Next模型卡把它定位为下一代架构的实验预览，提�
 变化与意义：开放模型的演进开始同时回答能力与运行效率问题；模型权重、托管服务和使用许可要分别辨认。
 
 [Qwen3.8-Flash-Next官方模型卡](https://huggingface.co/Qwen/Qwen3.8-Flash-Next)
+
+[查看2026年背景](../2026.md)
+
+## 11-16（正式型号与服务入口公布） · Qwen4-Max：视觉、推理与长任务进入同一服务（补充）
+
+近期旗舰服务与原有开放模型并列观察，区分Preview、正式入口和权重下载。
+
+11月16日，官方模型日志列入Qwen4-Max，Token Plan个人版与团队版同日宣布支持。此前11月11日的Qwen4-Max-Preview限于Token Plan；正式型号则将视觉理解、推理和工具调用放到同一服务中。两个名称对应不同入口安排。
+
+变化与意义：同一任务可围绕视觉材料、分析和工具操作展开。选择模型还要看入口和运行条件；服务可调用与权重可下载仍是两种不同的参与方式。
+
+后来再看（截至2026-11-17）：截至11月17日，官方接入说明列出正式型号的按量API及Token Plan入口、百万token上下文和分地区服务条件。本节点未确认Qwen4其他型号或权重已经公开，也未复现官方案例。
+
+[QwenCloud模型日志：Qwen4-Max与Preview](https://docs.qwencloud.com/changelog/models) · [QwenCloud Token Plan：Qwen4-Max入口更新](https://docs.qwencloud.com/token-plan/token-plan-product-updates) · [QwenCloud：Qwen4-Max模型与接入说明](https://docs.qwencloud.com/developer-guides/getting-started/latest-model)
+
+回到关键站：**Qwen3.8-Flash-Next：长任务背后的效率实验**。Qwen4-Max提供另一种托管服务选择；回到Flash-Next，比较开放权重实验与调用服务这两种参与条件，不推断型号间的技术继承。
 
 [查看2026年背景](../2026.md)
 

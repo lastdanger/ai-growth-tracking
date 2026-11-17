@@ -4,7 +4,7 @@
 
 先认识助手与型号分工，再沿Artifacts、电脑操作和Claude Code观察工作怎样交出去。Claude 4连接模型与开发流程，Cowork把视角扩展到文件工作；MCP说明工具背后的连接方式。
 
-截至2026-10-28核验本系列选材。保留八个关键站；3.7作为Code同日发布背景交代，MCP为生态分支。5.5先收录Opus，其他型号和独立长期效率证据仍待补充。
+截至2026-11-17定向核验近期进展。八个关键站保持；新增Fable/Mythos 5.2与Meetings两项补充，包含一则个人alpha插件制作记录。此前历史版本、其他5.5型号和独立长期效率证据仍未完整整理。
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
@@ -179,6 +179,44 @@ Anthropic介绍Opus 5.5时，把复杂代码工作和发布前外部评估放在
 变化与意义：这次发布可同时接上Claude的工作工具路线与前沿发布讨论：能力、实际效果和授权边界需要一起看。
 
 [Introducing Claude Opus 5.5](https://www.anthropic.com/claude-opus-5-5)
+
+[查看2026年背景](../2026.md)
+
+## 11-09（公告） · Claude Fable与Mythos 5.2：同一底层模型，不同开放条件（补充）
+
+新的技术工作型号，重点看同一底层模型的开放条件与一则后续使用记录。
+
+**带着两个旧插件，做出一个新插件**（后来材料 · 2026-11-15）
+
+11月15日，Simon Willison介绍自己的新地图插件：他让Claude Fable 5.2参考两个旧插件和一个本地示例，称一条提示完成了大部分实现，随后又请它制作浏览器演示。这是已发布alpha初版的个人制作记录，未提供工时对照；我们没有复现。
+
+[Simon Willison：datasette-maplibre 0.1a0 制作记录](https://simonwillison.net/2026/Nov/15/datasette-maplibre/)
+
+11月9日，Anthropic发布Claude Fable 5.2与Mythos 5.2。官方称两者使用同一底层模型；Fable配置了网络安全与生物用途限制，通过公开服务提供，Mythos则须经相应验证计划申请。面向大多数编程和知识工作，官方仍建议先从Opus 5.5开始，再按任务复杂度调整。
+
+变化与意义：较强模型也有不同的使用条件。对使用者而言，先判断任务和可访问范围，再看具体成果，比只追一个新名称更有帮助。
+
+后来再看（截至2026-11-15）：11月15日的GitHub发布页确认，datasette-maplibre 0.1a0是初始alpha版本。作者的制作记录因此有可查的发布产物；版本存在本身，仍不能证明模型完成了多少工作、软件质量如何或是否普遍省时。
+
+[Anthropic：Claude Fable 5.2 and Mythos 5.2](https://www.anthropic.com/claude-fable-and-mythos-5-2) · [Simon Willison：datasette-maplibre 0.1a0 制作记录](https://simonwillison.net/2026/Nov/15/datasette-maplibre/) · [datasette-maplibre：0.1a0 初始 alpha 发布](https://github.com/datasette/datasette-maplibre/releases/tag/0.1a0)
+
+回到关键站：**Claude Opus 5.5：复杂工作的能力与评估一起发布**。Fable与Mythos补充更复杂任务的选择；回到Opus 5.5，把新型号放回日常工作、任务要求和评估范围中。
+
+[查看2026年背景](../2026.md)
+
+## 11-12（Team与Enterprise逐步推出beta） · Claude Meetings：会议进行时，笔记和文档一起形成（补充）
+
+会议中的可见参与和即时成果，是文件工作之外的产品分支。
+
+11月12日的发布记录宣布，Claude Meetings在Claude与Claude Desktop的Team和Enterprise计划中逐步推出beta。用户可把Claude加入Google Meet，作为可见参会者做笔记、回答问题，并在会议中制作文档、白板和演示稿。
+
+变化与意义：整理和制作可以发生在讨论进行时，参与者能围绕同一份材料继续工作。代理进入会议，也让谁能加入、何时转录和怎样管理权限成为实际使用条件。
+
+后来再看（截至2026-11-17）：截至11月17日，使用说明要求加入前确认参会者接受转录，并区分Team与Enterprise的组织开关。部分采用特殊数据保留、医疗数据保护或客户管理加密密钥配置的组织暂不适用；这些是查阅时的条件，不能只凭计划名称判断已经可用。
+
+[Claude发布记录：Meetings beta](https://support.claude.com/en/articles/12138966-release-notes) · [Claude帮助：Use Claude Meetings](https://support.claude.com/en/articles/18325154-use-claude-meetings)
+
+回到关键站：**Cowork 推出研究预览**。会议把材料生成推进到讨论现场；回到Cowork，看文件交接与使用授权这条共同问题。
 
 [查看2026年背景](../2026.md)
 
