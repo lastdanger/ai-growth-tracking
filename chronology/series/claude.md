@@ -8,7 +8,11 @@
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
-## 03-14 · Anthropic 公布 Claude
+## 2023 年
+
+<a name="event-claude-introduction" id="event-claude-introduction"></a>
+
+### 03-14 · Anthropic 公布 Claude
 
 聊天和API是最初的两种使用入口。
 
@@ -20,9 +24,13 @@
 
 接下来：同一个助手开始承担不同任务，速度、成本与能力就不能只看一个名字。Claude 3先把这组取舍做成不同型号。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-claude-introduction)
 
-## 2024-03-04 · Claude 3：同一个家族，开始分工
+## 2024 年
+
+<a name="event-claude3-model-family" id="event-claude3-model-family"></a>
+
+### 2024-03-04 · Claude 3：同一个家族，开始分工
 
 解释Opus、Sonnet、Haiku这些名称背后的任务分工。
 
@@ -34,9 +42,11 @@
 
 接下来：选好型号后，回答还得变成可用成果。3.5与Artifacts把工作区放到对话旁边，让网页和文稿可以接着修改。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-claude3-model-family)
 
-## 06-20（首发） · Claude 3.5 与 Artifacts：答案旁边出现工作区
+<a name="event-claude-35-artifacts" id="event-claude-35-artifacts"></a>
+
+### 06-20（首发） · Claude 3.5 与 Artifacts：答案旁边出现工作区
 
 可继续加工的成果开始成为对话中心。
 
@@ -54,9 +64,11 @@ Claude 提供免费使用入口，付费档有更高限额；Artifacts 此时仍
 
 接下来：工作区能留下成果，现有软件里却还有许多步骤。电脑操作公测尝试让模型看屏幕、点击和输入，下一站看这种行动能力的边界。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-claude-35-artifacts)
 
-## 10-22 · Computer use：模型开始操作屏幕上的软件
+<a name="event-claude-computer-use" id="event-claude-computer-use"></a>
+
+### 10-22 · Computer use：模型开始操作屏幕上的软件
 
 从建议动作，转向尝试执行动作。
 
@@ -74,9 +86,11 @@ Claude 提供免费使用入口，付费档有更高限额；Artifacts 此时仍
 
 接下来：操作界面是一种执行方式；对开发者，终端和代码库是另一种。Claude Code把整项代码任务交接放到这个环境中。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-claude-computer-use)
 
-## 11-25 · MCP 开源（补充）
+<a name="event-model-context-protocol-introduction" id="event-model-context-protocol-introduction"></a>
+
+### 11-25 · MCP 开源（补充）
 
 Claude Desktop怎样取得外部资料？MCP提供连接方法，不是又一个Claude型号。
 
@@ -88,11 +102,15 @@ Claude Desktop怎样取得外部资料？MCP提供连接方法，不是又一个
 
 [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) · [MCP joins the Agentic AI Foundation](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/)
 
-回到关键站：**Claude Code 开始有限研究预览**。MCP交代外部资料和工具怎样连接；回到Claude Code，看终端中的整项任务如何交接。
+回到关键站 · [Claude Code 开始有限研究预览](#event-claude-code-research-preview)。MCP交代外部资料和工具怎样连接；回到Claude Code，看终端中的整项任务如何交接。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-model-context-protocol-introduction)
 
-## 02-24 · Claude Code 开始有限研究预览
+## 2025 年
+
+<a name="event-claude-code-research-preview" id="event-claude-code-research-preview"></a>
+
+### 02-24 · Claude Code 开始有限研究预览
 
 终端任务与3.7的思考模式同时进入视野。
 
@@ -104,9 +122,11 @@ Claude Desktop怎样取得外部资料？MCP提供连接方法，不是又一个
 
 接下来：有限预览让开发者尝试委托，接着要看怎样进入日常开发流程。Claude 4发布时，推理中的工具使用与Code正式可用一起推进。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-claude-code-research-preview)
 
-## 2025-05-22 · Claude 4：推理接上工具，Claude Code走出预览
+<a name="event-claude4-code-ga" id="event-claude4-code-ga"></a>
+
+### 2025-05-22 · Claude 4：推理接上工具，Claude Code走出预览
 
 模型推理、工具调用与开发工作流在此接合。
 
@@ -124,9 +144,13 @@ Claude 4发布时，公告同时宣布Claude Code正式可用，提供VS Code与
 
 接下来：代码里形成的任务交接方式，随后出现在普通文件工作中。Cowork让用户选择文件夹并说明成果要求，使用人群和授权范围也随之变化。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-claude4-code-ga)
 
-## 01-12（研究预览） · Cowork 推出研究预览
+## 2026 年
+
+<a name="event-cowork-research-preview" id="event-cowork-research-preview"></a>
+
+### 01-12（研究预览） · Cowork 推出研究预览
 
 文件夹成为交接材料的入口。
 
@@ -144,9 +168,11 @@ Claude 4发布时，公告同时宣布Claude Code正式可用，提供VS Code与
 
 接下来：任务变复杂后，模型升级是否真能支撑这些工作？Opus 5.5给出更高期待与发布评估，下一站同时看案例来源和仍需验证的部分。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-cowork-research-preview)
 
-## 3月18日公布；访谈采集于2025年12月 · 八万多份访谈：人们想把省下的时间用在哪里（补充）
+<a name="event-anthropic-81k-user-interviews" id="event-anthropic-81k-user-interviews"></a>
+
+### 3月18日公布；访谈采集于2025年12月 · 八万多份访谈：人们想把省下的时间用在哪里（补充）
 
 用户希望省下时间，也担心失去哪些东西；补足厂商演示以外的声音。
 
@@ -160,11 +186,13 @@ Claude 4发布时，公告同时宣布Claude Code正式可用，提供VS Code与
 
 [What 81,000 people want from AI](https://www.anthropic.com/features/81k-interviews) · [What 81,000 people want from AI — Methodological Appendix](https://cdn.sanity.io/files/4zrzovbb/website/99156863ed4a812569fe00a2adfb1c93f7e5a911.pdf)
 
-回到关键站：**Claude Opus 5.5：复杂工作的能力与评估一起发布**。访谈补上使用者的期待和顾虑；再读Opus 5.5，把能力宣称放回实际工作的要求中。
+回到关键站 · [Claude Opus 5.5：复杂工作的能力与评估一起发布](#event-claude-opus55-release)。访谈补上使用者的期待和顾虑；再读Opus 5.5，把能力宣称放回实际工作的要求中。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-anthropic-81k-user-interviews)
 
-## 2026-09-22 · Claude Opus 5.5：复杂工作的能力与评估一起发布
+<a name="event-claude-opus55-release" id="event-claude-opus55-release"></a>
+
+### 2026-09-22 · Claude Opus 5.5：复杂工作的能力与评估一起发布
 
 回到模型能力与发布评估，检验工作委托的期待。
 
@@ -180,9 +208,11 @@ Anthropic介绍Opus 5.5时，把复杂代码工作和发布前外部评估放在
 
 [Introducing Claude Opus 5.5](https://www.anthropic.com/claude-opus-5-5)
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-claude-opus55-release)
 
-## 11-09（公告） · Claude Fable与Mythos 5.2：同一底层模型，不同开放条件（补充）
+<a name="event-claude-fable52-mythos52" id="event-claude-fable52-mythos52"></a>
+
+### 11-09（公告） · Claude Fable与Mythos 5.2：同一底层模型，不同开放条件（补充）
 
 新的技术工作型号，重点看同一底层模型的开放条件与一则后续使用记录。
 
@@ -200,11 +230,13 @@ Anthropic介绍Opus 5.5时，把复杂代码工作和发布前外部评估放在
 
 [Anthropic：Claude Fable 5.2 and Mythos 5.2](https://www.anthropic.com/claude-fable-and-mythos-5-2) · [Simon Willison：datasette-maplibre 0.1a0 制作记录](https://simonwillison.net/2026/Nov/15/datasette-maplibre/) · [datasette-maplibre：0.1a0 初始 alpha 发布](https://github.com/datasette/datasette-maplibre/releases/tag/0.1a0)
 
-回到关键站：**Claude Opus 5.5：复杂工作的能力与评估一起发布**。Fable与Mythos补充更复杂任务的选择；回到Opus 5.5，把新型号放回日常工作、任务要求和评估范围中。
+回到关键站 · [Claude Opus 5.5：复杂工作的能力与评估一起发布](#event-claude-opus55-release)。Fable与Mythos补充更复杂任务的选择；回到Opus 5.5，把新型号放回日常工作、任务要求和评估范围中。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-claude-fable52-mythos52)
 
-## 11-12（Team与Enterprise逐步推出beta） · Claude Meetings：会议进行时，笔记和文档一起形成（补充）
+<a name="event-claude-meetings-beta" id="event-claude-meetings-beta"></a>
+
+### 11-12（Team与Enterprise逐步推出beta） · Claude Meetings：会议进行时，笔记和文档一起形成（补充）
 
 会议中的可见参与和即时成果，是文件工作之外的产品分支。
 
@@ -216,16 +248,14 @@ Anthropic介绍Opus 5.5时，把复杂代码工作和发布前外部评估放在
 
 [Claude发布记录：Meetings beta](https://support.claude.com/en/articles/12138966-release-notes) · [Claude帮助：Use Claude Meetings](https://support.claude.com/en/articles/18325154-use-claude-meetings)
 
-回到关键站：**Cowork 推出研究预览**。会议把材料生成推进到讨论现场；回到Cowork，看文件交接与使用授权这条共同问题。
+回到关键站 · [Cowork 推出研究预览](#event-cowork-research-preview)。会议把材料生成推进到讨论现场；回到Cowork，看文件交接与使用授权这条共同问题。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-claude-meetings-beta)
 
 ## 这条线读到这里
 
 Claude的变化不只在型号：对话旁出现工作区，终端与文件夹成为交接任务的地方，工具连接也成了工作的一部分。任务越长，怎样检查成果、保留人的判断越重要。
 
-听听使用者的期待：**八万多份访谈：人们想把省下的时间用在哪里**。从用户访谈看省下时间与保留判断之间的张力；厂商组织的访谈仍有样本边界。
-
-[查看这件事所在的2026年](../2026.md)
+听听使用者的期待 · [八万多份访谈：人们想把省下的时间用在哪里](#event-anthropic-81k-user-interviews)。从用户访谈看省下时间与保留判断之间的张力；厂商组织的访谈仍有样本边界。
 
 [返回系列目录](README.md)

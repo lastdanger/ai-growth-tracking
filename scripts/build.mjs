@@ -20,11 +20,20 @@ fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
 fs.writeFileSync(path.join(root, 'dist/index.html'), html, 'utf8');
 fs.mkdirSync(path.join(root, 'chronology'), { recursive: true });
 const safe = value => String(value ?? '').replaceAll('|', '｜').replaceAll('\n', ' ');
-const labels = { milestone: '重大转折', 'public-impact': '公众影响', 'early-signal': '早期伏笔' };
+const events = new Map(data.events.map(event => [event.id, event]));
+const eventAnchor = id => `event-${id}`;
+const anchorTag = id => `<a name="${eventAnchor(id)}" id="${eventAnchor(id)}"></a>`;
+const annualLink = (id, prefix = '') => {
+  const event = events.get(id);
+  return `[${safe(event.title)}](${prefix}${event.tier === 'root' ? 'roots' : event.year}.md#${eventAnchor(id)})`;
+};
 const statusLabels = { reviewed: '本轮选材已复核', seed: '种子资料，待扩展', partial: '阶段观察，未完整覆盖' };
-const table = events => '| 日期 | 事件 | 简述 | 入选理由 | 来源 |\n|---|---|---|---|---|\n' + events.map(e => {
+const roleLabels = { milestone: '重大转折', 'public-impact': '公众影响', 'early-signal': '早期伏笔' };
+const table = events => '| 日期 | 事件 | 简述 | 来源 |\n|---|---|---|---|\n' + events.map(e => {
   const links = e.source_ids.map(id => `[${safe(sources.get(id).title)}](${sources.get(id).url})`).join('；');
-  return `| ${safe(e.date_label)} | ${safe(e.title)} | ${safe(e.summary)} | ${e.roles.map(r => labels[r]).join('、')} | ${links} |`;
+  const roles = e.roles.filter(role => e.tier !== 'branch' || role !== 'milestone').map(role => roleLabels[role]);
+  const tag = roles.length ? `（${roles.join('、')}）` : '';
+  return `| ${safe(e.date_label)} | ${anchorTag(e.id)}${safe(e.title)}${tag} | ${safe(e.summary)} | ${links} |`;
 }).join('\n') + '\n';
 for (const y of data.years) {
   const items = data.events.filter(e => e.year === y.year && e.tier !== 'root').sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
@@ -34,15 +43,15 @@ for (const y of data.years) {
     md += `## 推荐路线：${route.title}\n\n${route.intro}\n\n这条路线看的是：${route.focus}。\n\n`;
     route.steps.forEach((step, i) => {
       const event = data.events.find(event => event.id === step.event_id);
-      md += `${i + 1}. **${event.title}（${event.year}）**：${event.change}${step.transition_to_next ? ` 接下来：${step.transition_to_next}` : ''}\n`;
-      if (step.explore) md += `   分支：${data.events.find(e => e.id === step.explore.event_id).title}。${step.explore.reason}\n`;
+      md += `${i + 1}. ${annualLink(event.id)}（${event.year}）。${event.change}${step.transition_to_next ? ` ${step.transition_to_next}` : ''}\n`;
+      if (step.explore) md += `   分支可读${annualLink(step.explore.event_id)}。${step.explore.reason}\n`;
     });
     md += `\n${route.outro}\n\n`;
     if (route.continuation) {
       const nextYear = data.years.find(y => y.reading_route_id === route.continuation.route_id);
       md += `沿这个问题继续：[${nextYear.year} 年路线](${nextYear.year}.md)。${route.continuation.reason}\n\n`;
     }
-    for (const id of route.exit_event_ids) md += `- ${route.exit_notes[id].label}：**${data.events.find(e => e.id === id).title}**。${route.exit_notes[id].reason}\n`;
+    for (const id of route.exit_event_ids) md += `- ${route.exit_notes[id].label} · ${annualLink(id)}。${route.exit_notes[id].reason}\n`;
     md += '\n';
   }
   md += '## 年度主线\n\n';
@@ -53,18 +62,49 @@ for (const y of data.years) {
   fs.writeFileSync(path.join(root, `chronology/${y.year}.md`), md, 'utf8');
 }
 fs.writeFileSync(path.join(root, 'chronology/roots.md'), '# 技术前史根节点\n\n少量与后续事件相关的方法起点，不代表这些年份的完整历史，不据此断言当时冷门。\n\n' + table(data.events.filter(e => e.tier === 'root')), 'utf8');
-const index = '# 年度关键词与阅读入口\n\n这些关键词和关键句是编辑概括；种子资料与未完年不能视为完整历史。\n\n| 年份 | 关键词 | 关键句 | 覆盖状态 |\n|---|---|---|---|\n' + data.years.map(y => `| [${y.year}](${y.year}.md) | ${y.keyword} | ${y.tagline} | ${statusLabels[y.status]} |`).join('\n') + '\n\n[技术前史根节点](roots.md)\n';
+let index = '# 年度关键词与阅读入口\n\n';
+if (data.recent_update) {
+  const issue = data.recent_update;
+  index += `## 最近一期（选材截至 ${issue.as_of}）\n\n${issue.summary}\n\n`;
+  for (const id of issue.featured_event_ids) index += `- ${annualLink(id)}\n`;
+  const rest = issue.event_ids.filter(id => !issue.featured_event_ids.includes(id));
+  if (rest.length) index += '\n本期其余事件 · ' + rest.map(id => annualLink(id)).join(' · ') + '\n';
+  index += '\n';
+}
+if (data.topics?.length) {
+  fs.mkdirSync(path.join(root, 'chronology/topics'), { recursive: true });
+  index += '## 按问题读\n\n';
+  for (const topic of data.topics) {
+    index += `- [${topic.title}](topics/${topic.id}.md)\n`;
+    let md = `# ${topic.title}\n\n${topic.intro}\n\n`;
+    for (const item of topic.items) {
+      const event = events.get(item.event_id);
+      const source = sources.get(item.source_id);
+      md += `## ${event.title}\n\n**实际拿到什么**　${item.deliverable}\n\n**人接下来做什么**　${item.human_step}\n\n${item.evidence} [${safe(source.title)}](${source.url})\n\n回到当年的记录 · ${annualLink(event.id, '../')}\n\n`;
+    }
+    md += `${topic.outro}\n\n${topic.follow_up.reason} ${annualLink(topic.follow_up.event_id, '../')}\n\n[返回阅读入口](../README.md)\n`;
+    fs.writeFileSync(path.join(root, `chronology/topics/${topic.id}.md`), md, 'utf8');
+  }
+  index += '\n';
+}
+index += '## 按年份读\n\n这些关键词和关键句是编辑概括。种子资料与进行中年份的覆盖范围见各年说明。\n\n| 年份 | 关键词 | 关键句 | 覆盖状态 |\n|---|---|---|---|\n' + data.years.map(y => `| [${y.year}](${y.year}.md) | ${y.keyword} | ${y.tagline} | ${statusLabels[y.status]} |`).join('\n') + '\n\n[技术前史根节点](roots.md)\n';
 fs.writeFileSync(path.join(root, 'chronology/README.md'), index, 'utf8');
 const seriesDir = path.join(root, 'chronology/series');
 fs.mkdirSync(seriesDir, { recursive: true });
-const seriesIndex = '# 模型系列：跨年阅读\n\n[返回年度总览](../README.md)\n\n' + data.series.map(s => `- [${s.name}](${s.id}.md) · ${s.provider}：${s.question}`).join('\n') + '\n';
+const seriesIndex = '# 模型系列 · 跨年阅读\n\n[返回年度总览](../README.md)\n\n' + data.series.map(s => {
+  const last = events.get(s.entries.at(-1).event_id);
+  return `- [${s.name}](${s.id}.md) · ${s.question} 最近收录 [${last.title}](${s.id}.md#${eventAnchor(last.id)})。`;
+}).join('\n') + '\n';
 fs.writeFileSync(path.join(seriesDir, 'README.md'), seriesIndex, 'utf8');
 fs.appendFileSync(path.join(root, 'chronology/README.md'), '\n[模型系列：跨年阅读](series/README.md)\n', 'utf8');
 for (const series of data.series) {
   let md = `# ${series.name} · ${series.provider}\n\n**${series.question}**\n\n${series.intro}\n\n${series.coverage_note}\n\n> 由 data/map.json 生成，与年度视图共用事件，不直接编辑。\n\n`;
+  let previousYear;
   for (const entry of series.entries) {
     const event = data.events.find(e => e.id === entry.event_id);
-    md += `## ${event.date_label} · ${event.title}${entry.level === 'supporting' ? '（补充）' : ''}\n\n${entry.reason}\n\n`;
+    if (event.year !== previousYear) md += `## ${event.year} 年\n\n`;
+    previousYear = event.year;
+    md += `${anchorTag(event.id)}\n\n### ${event.date_label} · ${event.title}${entry.level === 'supporting' ? '（补充）' : ''}\n\n${entry.reason}\n\n`;
     for (const id of event.material_ids) {
       const material = data.materials.find(m => m.id === id);
       const source = sources.get(material.source_id);
@@ -76,11 +116,14 @@ for (const series of data.series) {
     if (event.later) md += `后来再看（截至${event.later.as_of}）：${event.later.text}\n\n`;
     md += event.source_ids.map(id => `[${safe(sources.get(id).title)}](${sources.get(id).url})`).join(' · ') + '\n\n';
     if (entry.transition_to_next) md += `接下来：${entry.transition_to_next}\n\n`;
-    if (entry.return_to) md += `回到关键站：**${data.events.find(e => e.id === entry.return_to.event_id).title}**。${entry.return_to.reason}\n\n`;
-    md += `[查看${event.year}年背景](../${event.tier === 'root' ? 'roots' : event.year}.md)\n\n`;
+    if (entry.return_to) md += `回到关键站 · [${safe(events.get(entry.return_to.event_id).title)}](#${eventAnchor(entry.return_to.event_id)})。${entry.return_to.reason}\n\n`;
+    md += `[查看 ${event.year} 年的这条记录](../${event.tier === 'root' ? 'roots' : event.year}.md#${eventAnchor(event.id)})\n\n`;
   }
   const exit = data.events.find(e => e.id === series.exit.event_id);
-  md += `## 这条线读到这里\n\n${series.outro}\n\n${series.exit.label}：**${exit.title}**。${series.exit.reason}\n\n[查看这件事所在的${exit.year}年](../${exit.tier === 'root' ? 'roots' : exit.year}.md)\n\n`;
+  const exitLink = series.entries.some(entry => entry.event_id === exit.id)
+    ? `[${safe(exit.title)}](#${eventAnchor(exit.id)})`
+    : annualLink(exit.id, '../');
+  md += `## 这条线读到这里\n\n${series.outro}\n\n${series.exit.label} · ${exitLink}。${series.exit.reason}\n\n`;
   fs.writeFileSync(path.join(seriesDir, `${series.id}.md`), md + '[返回系列目录](README.md)\n', 'utf8');
 }
 console.log('Built dist/index.html and chronology views:', JSON.stringify(counts));

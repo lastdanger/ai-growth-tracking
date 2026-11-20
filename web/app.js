@@ -15,16 +15,17 @@
   const relations = content.relations || [];
   const routesById = new Map((content.reading_routes || []).map(route => [route.id, route]));
   const seriesById = new Map((content.series || []).map(series => [series.id, series]));
+  const topicsById = new Map((content.topics || []).map(topic => [topic.id, topic]));
   const laneNames = { models: '模型与能力', products: '产品与入口', people: '人群与文化', ecosystem: '开发与产业', governance: '制度与规则' };
   const roleNames = { milestone: '重要转折', 'public-impact': '社会回响', 'early-signal': '后续影响线索' };
   const statusNames = { reviewed: '代表事件已整理', seed: '起步事件选读', partial: '阶段整理中' };
   const dateBasisNames = { announcement: '发布/公告', event: '事件', paper: '论文提交', 'paper-release': '论文公开', commit: '代码提交', report: '报道', period: '时期观察', 'announcement-and-effective': '公布与施行', agreement: '协议文本' };
   const sourceKindNames = { official: '官方记录', paper: '研究论文', media: '公开报道与自述' };
   const relationNames = { uses: '采用关系', extends: '扩展关系', context: '背景关联', 'follow-up': '后续关联' };
-  const materialNames = { quote: '原话', report: '报道片段', demo: '演示记录' };
+  const materialNames = { quote: '原话', report: '材料摘记', demo: '演示记录' };
   const temporalNames = { contemporary: '同期材料', retrospective: '后来回看', undated: '材料日期或版本未完全确认' };
   const fallbackYear = years.find(year => Number(year.year) === 2023) || years[0];
-  let state = { year: Number(fallbackYear?.year), eventId: null, routeId: null, overview: false, prehistory: false, seriesOverview: false, seriesId: null, seriesOrigin: null, density: 'main', expanded: new Set() };
+  let state = { year: Number(fallbackYear?.year), eventId: null, routeId: null, topicId: null, overview: false, prehistory: false, seriesOverview: false, seriesId: null, seriesOrigin: null, density: 'main', toggledGroups: new Set() };
 
   function compareEvents(a, b) {
     return String(a.date || '').localeCompare(String(b.date || '')) || String(a.id).localeCompare(String(b.id));
@@ -52,8 +53,8 @@
     return links.length ? `<div class="source-cues">依据：${links.join(' · ')}</div>` : '';
   }
 
-  function eventRoles(event) {
-    return (event.roles || []).map(role => `<span class="role-tag${role === 'early-signal' ? ' signal' : ''}">${escapeHTML(roleNames[role] || role)}</span>`).join('');
+  function eventRoles(roles) {
+    return roles.map(role => `<span class="role-tag${role === 'early-signal' ? ' signal' : ''}">${escapeHTML(roleNames[role] || role)}</span>`).join('');
   }
 
   function eventMeta(event) {
@@ -61,8 +62,15 @@
     return `<div class="event-meta"><time${!event.date_precision || event.date_precision === 'day' ? ` datetime="${escapeHTML(event.date)}"` : ''}>${escapeHTML(event.date_label || event.date)}</time><span class="lane lane-${lane}">${escapeHTML(laneNames[event.lane] || event.lane)}</span></div>`;
   }
 
+  // 主脉络默认收起，其余密度默认展开；只记录读者对个别组的覆盖。
   function isExpanded(id) {
-    return state.density !== 'main' || state.expanded.has(id);
+    const defaultOpen = state.density !== 'main';
+    return state.toggledGroups.has(id) ? !defaultOpen : defaultOpen;
+  }
+
+  function setGroupExpanded(id, open) {
+    if (open === (state.density !== 'main')) state.toggledGroups.delete(id);
+    else state.toggledGroups.add(id);
   }
 
   function yearEvents(year) {
@@ -90,8 +98,52 @@
     return [...groups, ...periods.values()].sort(compareEvents);
   }
 
+  function topicHref(topic, eventId) {
+    const params = new URLSearchParams({ topic: topic.id });
+    if (eventId) params.set('event', eventId);
+    return '#' + escapeHTML(params.toString());
+  }
+
+  function recentEventList(ids) {
+    return `<ul class="recent-events">${ids.map(id => {
+      const event = eventsById.get(id);
+      return `<li><time datetime="${escapeHTML(event.date)}">${escapeHTML(event.date.slice(5))}</time><button type="button" data-action="event" data-event="${escapeHTML(id)}">${escapeHTML(event.title)}</button></li>`;
+    }).join('')}</ul>`;
+  }
+
+  function renderRecentUpdate() {
+    const update = content.recent_update;
+    if (!update) return '';
+    const rest = update.event_ids.filter(id => !update.featured_event_ids.includes(id));
+    return `<section class="recent-update" aria-labelledby="recent-heading"><header><h2 id="recent-heading">最近一期</h2><small>选材截至 <time datetime="${escapeHTML(update.as_of)}">${escapeHTML(update.as_of)}</time></small></header>
+      <p>${escapeHTML(update.summary)}</p>${recentEventList(update.featured_event_ids)}
+      ${rest.length ? `<details data-fold="recent-more"><summary>本期其余 ${rest.length} 项</summary>${recentEventList(rest)}</details>` : ''}</section>`;
+  }
+
+  function topicIndex() {
+    if (!topicsById.size) return '';
+    return `<nav class="topic-entry" aria-label="按问题读"><h2>按问题读</h2>${[...topicsById.values()].map(topic =>
+      `<a href="${topicHref(topic)}">${escapeHTML(topic.title)} <span aria-hidden="true">↗</span></a>`
+    ).join('')}</nav>`;
+  }
+
+  function renderTopic(topic, selected) {
+    if (selected) {
+      return `<section class="topic-file" aria-label="专题事件"><h1>按问题读 · ${escapeHTML(topic.title)}</h1>${renderDetail(selected)}</section>`;
+    }
+    const followUp = eventsById.get(topic.follow_up.event_id);
+    return `<section class="topic-page" aria-labelledby="topic-title"><header class="overview-heading"><div class="eyebrow">按问题读</div><h1 id="topic-title" tabindex="-1">${escapeHTML(topic.title)}</h1><p>${escapeHTML(topic.intro)}</p></header>
+      <div class="topic-comparison">${topic.items.map(item => {
+        const event = eventsById.get(item.event_id);
+        const source = sourcesById.get(item.source_id);
+        return `<article class="topic-case"><header><small>事件日期 · <time datetime="${escapeHTML(event.date)}">${escapeHTML(event.date)}</time></small><h2><a href="${topicHref(topic, event.id)}" data-topic-event="${escapeHTML(event.id)}">${escapeHTML(event.title)}</a></h2></header>
+          <dl><dt>实际拿到什么</dt><dd>${escapeHTML(item.deliverable)}</dd><dt>人接下来做什么</dt><dd>${escapeHTML(item.human_step)}</dd><dt>依据</dt><dd>${escapeHTML(item.evidence)} <span class="topic-source">${sourceLink(source, '原始材料')}</span></dd></dl></article>`;
+      }).join('')}</div>
+      <footer class="topic-ending"><p>${escapeHTML(topic.outro)}</p><p>${escapeHTML(topic.follow_up.reason)}</p><a href="${topicHref(topic, followUp.id)}" data-topic-event="${escapeHTML(followUp.id)}">${escapeHTML(followUp.title)} ↗</a></footer></section>`;
+  }
+
   function renderOverview() {
-    return `<section class="overview-heading atlas-intro"><div class="eyebrow">A living atlas / AI 时代探索地图</div><h1>从第一次惊讶，<br>到生活开始改变。</h1><p>沿时间看 AI 怎样进入创作、工作与公共生活。选一个年份，再从重要事件走向当时的声音与后来的影响。</p><button type="button" class="start-reading" data-action="year" data-year="${escapeHTML(fallbackYear.year)}">第一次来？从 ${escapeHTML(fallbackYear.year)} · ${escapeHTML(fallbackYear.keyword)} 开始 <span aria-hidden="true">↗</span></button></section>
+    return `<div class="atlas-front"><section class="overview-heading atlas-intro"><div class="eyebrow">A living atlas / AI 时代探索地图</div><h1>从第一次惊讶，<br>到生活开始改变。</h1><p>沿时间看 AI 怎样进入创作、工作与公共生活。选一个年份，再从重要事件走向当时的声音与后来的影响。</p><button type="button" class="start-reading" data-action="year" data-year="${escapeHTML(fallbackYear.year)}">第一次来？从 ${escapeHTML(fallbackYear.year)} · ${escapeHTML(fallbackYear.keyword)} 开始 <span aria-hidden="true">↗</span></button>${topicIndex()}</section>${renderRecentUpdate()}</div>
       <div class="atlas-caption"><span>沿时间展开</span><small>年份 → 主线 → 事件与来源 · 各年持续补充</small></div>
       <ol class="year-journey" aria-label="年度时间主线">${years.map(year => {
         const all = yearEvents(year.year);
@@ -108,7 +160,8 @@
   function renderEventCard(event, isBranch, branches = []) {
     const selected = state.eventId === event.id;
     const open = isExpanded(event.id);
-    return `<article class="event-card${isBranch ? ' branch-card' : ''}${selected ? ' selected' : ''}"><button type="button" class="event-open" data-action="event" data-event="${escapeHTML(event.id)}" aria-label="查看${escapeHTML(event.title)}的详情"${selected ? ' aria-current="true"' : ''}>${eventMeta(event)}<h3>${escapeHTML(event.title)}</h3>${!isBranch || state.density === 'details' ? `<p class="event-summary">${escapeHTML(event.summary)}</p>` : ''}${state.density === 'details' && event.why_selected ? `<p class="event-why">入选原因 · ${escapeHTML(event.why_selected)}</p>` : ''}${event.roles?.length ? `<span class="role-labels">${eventRoles(event)}</span>` : ''}</button>${branches.length ? `<button type="button" class="branch-toggle" data-action="branch" data-event="${escapeHTML(event.id)}" aria-expanded="${open}" aria-controls="branches-${escapeHTML(event.id)}"><span>${open ? '收起' : '展开'} ${branches.length} 个细节与后续</span><span class="toggle-glyph" aria-hidden="true">${open ? '−' : '+'}</span></button>` : ''}</article>`;
+    const cardRoles = event.roles.filter(role => event.tier !== 'branch' || role !== 'milestone');
+    return `<article class="event-card${isBranch ? ' branch-card' : ''}${selected ? ' selected' : ''}"><button type="button" class="event-open" data-action="event" data-event="${escapeHTML(event.id)}" aria-label="查看${escapeHTML(event.title)}的详情"${selected ? ' aria-current="true"' : ''}>${eventMeta(event)}<h3>${escapeHTML(event.title)}</h3>${!isBranch || state.density === 'details' ? `<p class="event-summary">${escapeHTML(event.summary)}</p>` : ''}${state.density === 'details' && event.why_selected ? `<p class="event-why">入选原因 · ${escapeHTML(event.why_selected)}</p>` : ''}${cardRoles.length ? `<span class="role-labels">${eventRoles(cardRoles)}</span>` : ''}</button>${branches.length ? `<button type="button" class="branch-toggle" data-action="branch" data-event="${escapeHTML(event.id)}" aria-expanded="${open}" aria-controls="branches-${escapeHTML(event.id)}"><span>${open ? '收起' : '展开'} ${branches.length} 个细节与后续</span><span class="toggle-glyph" aria-hidden="true">${open ? '−' : '+'}</span></button>` : ''}</article>`;
   }
 
   function renderGroup(group) {
@@ -149,6 +202,10 @@
   }
 
   function renderRouteExit(event) {
+    if (state.topicId) {
+      const topic = topicsById.get(state.topicId);
+      return `<section class="route-next"><a href="${topicHref(topic)}">回到专题对照</a><button type="button" class="route-button secondary" data-action="event-year" data-event="${escapeHTML(event.id)}">查看 ${event.year} 年背景 ↗</button></section>`;
+    }
     if (state.seriesId || state.seriesOrigin) return renderSeriesExit(event);
     const route = activeRoute();
     if (!route) {
@@ -185,9 +242,10 @@
     const routeHeader = route ? `<div class="route-progress"><span>${escapeHTML(route.title)}<strong>第 ${route.steps.findIndex(step => step.event_id === event.id) + 1} / ${route.steps.length} 站 · ${event.year}</strong></span><button type="button" data-action="leave-route">自由浏览</button></div>` : '';
     const relatedCard = ({relation, target}) => {
       const pick = picks.find(pick => pick.event_id === target.id);
-      return `<div><button type="button" class="related-event" data-action="event" data-event="${escapeHTML(target.id)}"><span class="related-type">${escapeHTML(pick?.label || (relation.type === 'follow-up' && relation.to === event.id ? '前序事件' : relationNames[relation.type]))} · ${escapeHTML(target.date_label || target.date)}</span><span class="related-title">${escapeHTML(target.title)} ↗</span>${pick ? `<span class="related-prompt">${escapeHTML(pick.reason)}</span>` : ''}<span class="related-note">${escapeHTML(relation.note)}</span></button>${sourceCues(relation.evidence_source_ids)}</div>`;
+      const showNote = relation.note !== pick?.reason;
+      return `<div><button type="button" class="related-event" data-action="event" data-event="${escapeHTML(target.id)}"><span class="related-type">${escapeHTML(pick?.label || (relation.type === 'follow-up' && relation.to === event.id ? '前序事件' : relationNames[relation.type]))} · ${escapeHTML(target.date_label || target.date)}</span><span class="related-title">${escapeHTML(target.title)} ↗</span>${pick ? `<span class="related-prompt">${escapeHTML(pick.reason)}</span>` : ''}${showNote ? `<span class="related-note">${escapeHTML(relation.note)}</span>` : ''}</button>${sourceCues(relation.evidence_source_ids)}</div>`;
     };
-    return `<aside class="detail-panel" aria-labelledby="detail-title">${returnHeader}${routeHeader}<div class="detail-head"><div class="detail-top"><div class="eyebrow">Event file / 事件</div><button type="button" class="close-detail" data-action="close">返回脉络 ×</button></div><h2 id="detail-title" tabindex="-1">${escapeHTML(event.title)}</h2>${eventMeta(event)}</div>
+    return `<aside class="detail-panel" aria-labelledby="detail-title">${returnHeader}${routeHeader}<div class="detail-head"><div class="detail-top"><div class="eyebrow">Event file / 事件</div><button type="button" class="close-detail" data-action="close">${state.topicId ? '返回专题' : '返回脉络'} ×</button></div><h2 id="detail-title" tabindex="-1">${escapeHTML(event.title)}</h2>${eventMeta(event)}</div>
       <div class="detail-body">${scene ? `<section class="detail-section scene">${renderMaterial(scene)}</section>` : ''}
       ${!event.change ? `<section class="detail-section"><h3>发生了什么</h3><p>${escapeHTML(event.summary)}</p>${sourceCues(event.source_ids)}</section>` : ''}
       <section class="detail-section"><h3>${event.change ? '发生的变化' : '放回当时'}</h3><p>${escapeHTML(event.then.text)}</p>${sourceCues(event.then.source_ids)}</section>
@@ -197,7 +255,7 @@
       ${additional.length ? `<details class="reading-fold" data-fold="materials"><summary>更多声音与材料 · ${additional.length}</summary>${additional.map(renderMaterial).join('')}</details>` : ''}
       ${related.length ? `<section class="detail-section related-reading"><h3>相关探索</h3><div class="related-list">${related.slice(0, 3).map(relatedCard).join('')}${related.length > 3 ? `<details class="reading-fold" data-fold="relations"><summary>其他关联 · ${related.length - 3}</summary>${related.slice(3).map(relatedCard).join('')}</details>` : ''}</div></section>` : ''}
       <details class="reading-fold" data-fold="sources"><summary>完整来源与范围 · ${new Set(ids).size}</summary>${renderSources(ids)}</details>
-      <details class="reading-fold" data-fold="editorial"><summary>选材说明与日期</summary><p>${escapeHTML(event.why_selected)}</p><p>${escapeHTML(dateBasisNames[event.date_basis] || event.date_basis)} · ${escapeHTML(event.date_label)}</p><div class="role-labels">${eventRoles(event)}</div></details></div></aside>`;
+      <details class="reading-fold" data-fold="editorial"><summary>选材说明与日期</summary><p>${escapeHTML(event.why_selected)}</p><p>${escapeHTML(dateBasisNames[event.date_basis] || event.date_basis)} · ${escapeHTML(event.date_label)}</p><div class="role-labels">${eventRoles(event.roles)}</div></details></div></aside>`;
   }
 
   function seriesButton(series, label, eventId = null) {
@@ -236,7 +294,7 @@
   function renderSeriesDirectory() {
     return `<section class="overview-heading"><div class="eyebrow">Model histories / 模型系列</div><h1>沿一个系列，<br>看变化怎样积累。</h1><p>从起点到最近收录的进展，跨年追踪能力、用法与内外反应。这里精选关键转折，不是完整版本目录或实时排行榜。</p></section><div class="series-grid">${[...seriesById.values()].map(s => {
       const latest = eventsById.get(s.entries.at(-1).event_id);
-      return `<article class="series-card"><div class="eyebrow">${escapeHTML(s.provider)}</div><h2>${escapeHTML(s.name)}</h2><p class="series-question">${escapeHTML(s.question)}</p><div class="series-latest"><small>最近收录 · ${escapeHTML(latest.date_label)}</small><p>${escapeHTML(latest.title)}</p></div><small>${s.entries.filter(e => e.level === 'key').length} 个关键站 · 核验截至 ${escapeHTML(s.as_of)}</small>${seriesButton(s, '沿系列阅读')}</article>`;
+      return `<article class="series-card"><div class="eyebrow">${escapeHTML(s.provider)}</div><h2>${escapeHTML(s.name)}</h2><p class="series-question">${escapeHTML(s.question)}</p><div class="series-latest"><small>最近收录 · ${escapeHTML(latest.date_label)}</small><p><a href="#series=${encodeURIComponent(s.id)}&amp;event=${encodeURIComponent(latest.id)}">${escapeHTML(latest.title)}</a></p></div><small>${s.entries.filter(e => e.level === 'key').length} 个关键站 · 核验截至 ${escapeHTML(s.as_of)}</small>${seriesButton(s, '沿系列阅读')}</article>`;
     }).join('')}</div>`;
   }
 
@@ -285,11 +343,16 @@
     const locationName = series?.name || (state.prehistory ? '前史线索' : `${year.year} · ${year.keyword}`);
     breadcrumbs.innerHTML = `<button type="button" data-action="overview"${state.overview ? ' aria-current="page" class="current"' : ''}>年度总览</button>${!state.overview ? `<span aria-hidden="true">/</span><button type="button" data-action="${state.prehistory ? 'prehistory' : 'year'}"${state.prehistory ? '' : ` data-year="${escapeHTML(year.year)}"`}${!selected ? ' aria-current="page" class="current"' : ''}>${escapeHTML(locationName)}</button>` : ''}${!state.overview && selected ? `<span aria-hidden="true">/</span><span class="current" aria-current="page">${escapeHTML(selected.title)}</span>` : ''}`;
     if (state.seriesOverview || series) breadcrumbs.innerHTML = `<button type="button" data-action="series-directory"${state.seriesOverview ? ' aria-current="page"' : ''}>模型系列</button>${series ? `<span>/</span><button type="button" data-action="series" data-series="${series.id}"${!selected ? ' aria-current="page"' : ''}>${escapeHTML(series.name)}</button>` : ''}${selected ? `<span>/</span><span class="current" aria-current="page">${escapeHTML(selected.title)}</span>` : ''}`;
-    app.innerHTML = viewNavigation() + (state.seriesOverview ? renderSeriesDirectory() : series ? renderSeries(series) : state.overview ? renderOverview() : state.prehistory ? renderPrehistory() : renderYear(year));
-    document.title = `${state.seriesOverview ? '模型系列' : state.overview ? '年度总览' : selected?.title || locationName} — 仍在生成`;
+    const topic = topicsById.get(state.topicId);
+    if (topic) {
+      breadcrumbs.innerHTML = `<button type="button" data-action="overview">年度总览</button><span>/</span>${selected ? `<a href="${topicHref(topic)}">按问题读</a><span>/</span><span class="current" aria-current="page">${escapeHTML(selected.title)}</span>` : '<span class="current" aria-current="page">按问题读</span>'}`;
+    }
+    app.innerHTML = viewNavigation() + (topic ? renderTopic(topic, selected) : state.seriesOverview ? renderSeriesDirectory() : series ? renderSeries(series) : state.overview ? renderOverview() : state.prehistory ? renderPrehistory() : renderYear(year));
+    document.title = `${topic ? (selected?.title || topic.title) : state.seriesOverview ? '模型系列' : state.overview ? '年度总览' : selected?.title || locationName} — 仍在生成`;
     document.getElementById('updated-at').textContent = content.updated_at ? `页面与文字更新 ${content.updated_at}` : '本地内容快照';
     document.getElementById('coverage-as-of').textContent = state.overview || state.prehistory ? '资料覆盖截止见各年，不代表已收齐最新事件' : `${year.year} 年资料覆盖核验截至 ${year.as_of} · 非全年穷尽`;
     if (series || state.seriesOverview) document.getElementById('coverage-as-of').textContent = series ? `${series.name} 选材核验截至 ${series.as_of} · 非完整版本目录` : '各系列分别标注核验截止与历史缺口';
+    if (topic) document.getElementById('coverage-as-of').textContent = '事件日期与来源见各案例';
   }
 
   let restoring = false;
@@ -300,7 +363,7 @@
 
   function rememberView() {
     if (restoring || renderedHash !== location.hash) return;
-    const view = { hash: location.hash, density: state.density, expanded: [...state.expanded], scrollY,
+    const view = { hash: location.hash, density: state.density, toggledGroups: [...state.toggledGroups], scrollY,
       detailScroll: document.querySelector('.detail-panel')?.scrollTop || 0,
       folds: [...document.querySelectorAll('[data-fold][open]')].map(item => item.dataset.fold) };
     try { history.replaceState({ mapView: view }, '', location.href); } catch { /* 部分离线环境禁用 History API。 */ }
@@ -308,7 +371,10 @@
 
   function writeLocation() {
     const params = new URLSearchParams();
-    if (state.seriesOverview) params.set('view', 'series');
+    if (state.topicId) {
+      params.set('topic', state.topicId);
+      if (state.eventId) params.set('event', state.eventId);
+    } else if (state.seriesOverview) params.set('view', 'series');
     else if (state.seriesId) {
       params.set('series', state.seriesId);
       if (state.eventId) params.set('event', state.eventId);
@@ -330,11 +396,13 @@
       params.set('from_series', state.seriesOrigin.seriesId);
       params.set('from_event', state.seriesOrigin.eventId);
     }
-    const hash = `#${params.toString()}`;
-    if (location.hash !== hash) {
-      try { history.pushState(null, '', hash); } catch { location.hash = hash; }
-    }
+    pushHash(`#${params.toString()}`);
     renderedHash = location.hash;
+  }
+
+  function pushHash(hash) {
+    if (location.hash === hash) return;
+    try { history.pushState(null, '', hash); } catch { location.hash = hash; }
   }
 
   function readLocation() {
@@ -347,6 +415,9 @@
     const year = Number(params.get('year'));
     let event = eventsById.get(params.get('event'));
     const series = seriesById.get(params.get('series'));
+    const topic = topicsById.get(params.get('topic'));
+    state.topicId = !params.has('series') && !params.has('view') && topic ? topic.id : null;
+    if (state.topicId && event && !topic.items.some(item => item.event_id === event.id) && topic.follow_up.event_id !== event.id) event = null;
     state.seriesOverview = params.get('view') === 'series' || (params.has('series') && !series);
     state.seriesId = !state.seriesOverview && series ? series.id : null;
     state.seriesOrigin = null;
@@ -360,7 +431,7 @@
     if (!state.seriesId && !state.seriesOverview && event && originSeries?.entries.some(e => e.event_id === params.get('from_event'))) {
       state.seriesOrigin = {seriesId: originSeries.id, eventId: params.get('from_event')};
     }
-    state.overview = !state.seriesOverview && !state.seriesId && !state.seriesOrigin && (params.get('view') === 'years' || (!params.has('year') && !params.has('event') && !params.has('view')));
+    state.overview = !state.topicId && !state.seriesOverview && !state.seriesId && !state.seriesOrigin && (params.get('view') === 'years' || (!params.has('year') && !params.has('event') && !params.has('view')));
     state.prehistory = !state.overview && (params.get('view') === 'roots' || event?.tier === 'root');
     state.eventId = event?.id || null;
     const route = routesById.get(params.get('route'));
@@ -369,9 +440,10 @@
     const originId = params.get('from_event');
     state.routeOrigin = !state.seriesOverview && !state.seriesId && !state.seriesOrigin && !state.overview && event && !state.routeId && origin?.steps.some(step => step.event_id === originId) ? { routeId: origin.id, eventId: originId } : null;
     state.density = view?.density || 'main';
-    state.expanded = new Set(view?.expanded || []);
+    const legacyExpanded = state.density === 'main' ? view?.expanded : [];
+    state.toggledGroups = new Set(view?.toggledGroups || legacyExpanded || []);
     state.year = event ? Number(event.year) : years.some(item => Number(item.year) === year) ? year : Number(fallbackYear?.year);
-    if (event) expandEventGroup(event);
+    if (event && !view) expandEventGroup(event);
     render();
     for (const fold of document.querySelectorAll('[data-fold]')) fold.open = view?.folds?.includes(fold.dataset.fold) || fold.dataset.fold === `series-${state.eventId}`;
     restoreFrame = requestAnimationFrame(() => {
@@ -381,8 +453,12 @@
         window.scrollTo({ top: view.scrollY, behavior: 'instant' });
         if (panel) panel.scrollTop = view.detailScroll;
       } else if (event && !state.overview) {
+        if (state.topicId || state.seriesId) document.getElementById('detail-title')?.focus({ preventScroll: true });
         panel?.scrollIntoView({ block: 'start', behavior: 'instant' });
-      } else window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        if (state.topicId) document.getElementById('topic-title')?.focus({ preventScroll: true });
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
       restoring = false;
       rememberView();
     });
@@ -392,7 +468,7 @@
     const year = years.find(item => Number(item.year) === Number(event.year));
     if (!year) return;
     const parent = eventGroups(year).find(group => group.branches.some(branch => branch.id === event.id));
-    if (parent) state.expanded.add(parent.id);
+    if (parent) setGroupExpanded(parent.id, true);
   }
 
   function focusMatching(action, attribute, value) {
@@ -401,8 +477,18 @@
   }
 
   function handleAction(event) {
-    const button = event.target.closest('[data-action]');
+    const button = event.target.closest('[data-action], a[href^="#topic="], a[href^="#series="]');
     if (!button) return;
+    if (button.tagName === 'A') {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      cancelAnimationFrame(restoreFrame);
+      restoring = false;
+      rememberView();
+      pushHash(button.getAttribute('href'));
+      readLocation();
+      return;
+    }
     const action = button.dataset.action;
     let previousId = state.eventId;
     // 快速导航取消上一页面尚未执行的滚动恢复，避免旧回调覆盖新视图。
@@ -413,6 +499,8 @@
     const previousView = history.state?.mapView;
     const previousSeriesId = state.seriesId;
     const oldSeriesOrigin = state.seriesOrigin;
+    const previousTopic = topicsById.get(state.topicId);
+    if (action !== 'close') state.topicId = null;
     if (action === 'event' && state.seriesId) {
       const series = seriesById.get(state.seriesId);
       if (!series.entries.some(e => e.event_id === button.dataset.event)) {
@@ -457,7 +545,7 @@
       state.prehistory = false;
       state.eventId = null;
       state.overview = false;
-      state.expanded.clear();
+      state.toggledGroups.clear();
       announcement = `已切换到 ${state.year} 年`;
     } else if (action === 'event' || action === 'route' || action === 'event-year') {
       const selected = eventsById.get(button.dataset.event);
@@ -483,21 +571,15 @@
         previousId = oldSeriesOrigin.eventId;
       }
       state.eventId = null;
-      announcement = state.seriesId ? '已返回系列脉络' : '已返回年度脉络';
+      announcement = state.topicId ? '已返回专题对照' : state.seriesId ? '已返回系列脉络' : '已返回年度脉络';
     } else if (action === 'density') {
       state.density = button.dataset.density;
-      if (state.density === 'main') state.expanded.clear();
+      state.toggledGroups.clear();
       announcement = `已切换显示密度：${button.textContent}`;
     } else if (action === 'branch') {
       const id = button.dataset.event;
       const currentlyOpen = isExpanded(id);
-      if (state.density !== 'main') {
-        const year = years.find(item => Number(item.year) === state.year);
-        state.expanded = new Set(eventGroups(year).filter(group => group.branches.length).map(group => group.id));
-        state.density = 'main';
-      }
-      if (currentlyOpen) state.expanded.delete(id);
-      else state.expanded.add(id);
+      setGroupExpanded(id, !currentlyOpen);
       announcement = currentlyOpen ? '已收起分支' : '已展开分支';
     } else return;
 
@@ -523,7 +605,10 @@
     } else if (action === 'density') focusMatching('density', 'density', state.density);
     else if (action === 'branch') focusMatching('branch', 'event', button.dataset.event);
     else if (action === 'close' && previousId) {
-      focusMatching('event', 'event', previousId);
+      if (previousTopic) {
+        const trigger = [...app.querySelectorAll('[data-topic-event]')].find(link => link.dataset.topicEvent === previousId);
+        trigger?.focus({ preventScroll: true });
+      } else focusMatching('event', 'event', previousId);
       document.activeElement?.scrollIntoView({ block: 'center', behavior: 'instant' });
     }
     else document.getElementById('main-content').focus({ preventScroll: false });

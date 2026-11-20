@@ -24,6 +24,29 @@ export function checkMap(data) {
     fail(new Set(ids).size === ids.length, `Repeated ${label}`);
     for (const id of ids) fail(map.has(id), `Unknown ${label}: ${id}`);
   };
+  const hasText = (record, key) => typeof record?.[key] === 'string' && !!record[key].trim();
+  if (data.recent_update !== undefined) {
+    const issue = data.recent_update;
+    fail(day(issue?.as_of) && issue.as_of <= data.updated_at && hasText(issue, 'summary'), 'Recent update date/summary');
+    refs(issue.event_ids, events, 'recent events');
+    refs(issue.featured_event_ids, events, 'recent featured events');
+    fail(issue.featured_event_ids.length <= 3 && issue.featured_event_ids.every(id => issue.event_ids.includes(id)), 'Recent featured events outside selection');
+    fail(issue.event_ids.every(id => events.get(id).date <= issue.as_of), 'Recent event exceeds cutoff');
+  }
+  if (data.topics !== undefined) {
+    fail(Array.isArray(data.topics), 'Invalid topics');
+    for (const topic of index(data.topics, 'id', 'topic').values()) {
+      fail(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(topic.id) && ['title', 'intro', 'outro'].every(key => hasText(topic, key)), `Topic description: ${topic.id}`);
+      fail(Array.isArray(topic.items) && topic.items.length >= 2, `Topic comparison: ${topic.id}`);
+      const cases = topic.items.map(item => item.event_id);
+      refs(cases, events, `topic events ${topic.id}`);
+      for (const item of topic.items) {
+        fail(events.get(item.event_id).source_ids.includes(item.source_id), `Topic source outside event: ${item.event_id}`);
+        fail(['deliverable', 'human_step', 'evidence'].every(key => hasText(item, key)), `Topic case lacks explanation: ${item.event_id}`);
+      }
+      fail(events.has(topic.follow_up?.event_id) && !cases.includes(topic.follow_up.event_id) && hasText(topic.follow_up, 'reason'), `Topic follow-up: ${topic.id}`);
+    }
+  }
   for (const s of sources.values()) {
     fail(s.title && s.scope, `Source lacks title/scope: ${s.id}`);
     fail(['official', 'paper', 'media'].includes(s.kind), `Source kind: ${s.id}`);

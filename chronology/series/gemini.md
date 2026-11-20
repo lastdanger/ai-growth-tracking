@@ -8,7 +8,11 @@ Gemini的特点先是多模态，再是长上下文；2025补上推理、对话�
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
-## 02-06 · Google 公布 Bard（补充）
+## 2023 年
+
+<a name="event-bard-announcement" id="event-bard-announcement"></a>
+
+### 02-06 · Google 公布 Bard（补充）
 
 前身产品背景，Bard不是Gemini版本。
 
@@ -16,11 +20,13 @@ Gemini的特点先是多模态，再是长上下文；2025补上推理、对话�
 
 [Google 公布 Bard · 原始来源](https://blog.google/innovation-and-ai/technology/ai/bard-google-ai-search-updates/)
 
-回到关键站：**Google 发布 Gemini**。Bard是面向用户的前身背景；从Gemini正式公布开始，看新的多模态模型家族。
+回到关键站 · [Google 发布 Gemini](#event-gemini-announcement)。Bard是面向用户的前身背景；从Gemini正式公布开始，看新的多模态模型家族。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-bard-announcement)
 
-## 05-10 · Google 发布 PaLM 2（补充）
+<a name="event-palm2-announcement" id="event-palm2-announcement"></a>
+
+### 05-10 · Google 发布 PaLM 2（补充）
 
 前序模型背景，不用旧型号填充Gemini主线。
 
@@ -28,11 +34,13 @@ Gemini的特点先是多模态，再是长上下文；2025补上推理、对话�
 
 [Google 发布 PaLM 2 · 原始来源](https://blog.google/innovation-and-ai/products/google-palm-2-ai-large-language-model/)
 
-回到关键站：**Google 发布 Gemini**。PaLM 2交代前一阶段的语言模型路线；接着读Gemini，避免把前身混成同一个版本序列。
+回到关键站 · [Google 发布 Gemini](#event-gemini-announcement)。PaLM 2交代前一阶段的语言模型路线；接着读Gemini，避免把前身混成同一个版本序列。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-palm2-announcement)
 
-## 12-06 · Google 发布 Gemini
+<a name="event-gemini-announcement" id="event-gemini-announcement"></a>
+
+### 12-06 · Google 发布 Gemini
 
 先确立多模态家族，而不是从某个应用按钮开始。
 
@@ -44,9 +52,13 @@ Gemini从文字、图像、声音和视频等多种信息的共同处理出发�
 
 接下来：输入种类变多之后，一次能交多少材料成为下一道限制。1.5让长文档、音视频和代码更完整地进入上下文。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-gemini-announcement)
 
-## 02-15 · Gemini 1.5：把整份长资料放进上下文
+## 2024 年
+
+<a name="event-gemini-15-long-context" id="event-gemini-15-long-context"></a>
+
+### 02-15 · Gemini 1.5：把整份长资料放进上下文
 
 材料规模发生变化，读者可以带入整份资料。
 
@@ -64,9 +76,11 @@ Google 用一份 402 页的 Apollo 11 任务记录展示长上下文：把整份
 
 接下来：能读进长材料，还得会从中解决问题。2.5把推理作为重点，接上复杂分析与代码工作。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-gemini-15-long-context)
 
-## 5月30日（Google 回应） · AI 搜索摘要铺开，错误也来到用户面前（补充）
+<a name="event-ai-overviews-public-errors" id="event-ai-overviews-public-errors"></a>
+
+### 5月30日（Google 回应） · AI 搜索摘要铺开，错误也来到用户面前（补充）
 
 多模态能力进入搜索并不自动保证答案可靠；这是应用反馈分支。
 
@@ -82,11 +96,15 @@ AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话�
 
 [Google：AI Overviews: About last week](https://blog.google/products-and-platforms/products/search/ai-overviews-update-may-2024/) · [Google I/O：AI Overviews 向美国用户推出](https://blog.google/products-and-platforms/products/search/generative-ai-google-search-may-2024/)
 
-回到关键站：**Gemini 2.5：读进材料之后，还要推理**。搜索中的错误提醒我们，读到资料不等于正确使用资料；回到2.5推理，但不把发布写成这些错误已被解决。
+回到关键站 · [Gemini 2.5：读进材料之后，还要推理](#event-gemini25-thinking-preview)。搜索中的错误提醒我们，读到资料不等于正确使用资料；回到2.5推理，但不把发布写成这些错误已被解决。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-ai-overviews-public-errors)
 
-## 2025-03-25 · Gemini 2.5：读进材料之后，还要推理
+## 2025 年
+
+<a name="event-gemini25-thinking-preview" id="event-gemini25-thinking-preview"></a>
+
+### 2025-03-25 · Gemini 2.5：读进材料之后，还要推理
 
 从输入容量转向处理问题的过程。
 
@@ -98,9 +116,11 @@ AI Overviews 在美国扩大开放后，搜索摘要中的错误成为公共话�
 
 接下来：推理是一条变化，直接修改视觉内容是另一条。接下来用Nano Banana看多模态怎样成为围绕一张图反复沟通的工具。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-gemini25-thinking-preview)
 
-## 2025-08-26 · Nano Banana：一张图可以接着改
+<a name="event-gemini25-flash-image-preview" id="event-gemini25-flash-image-preview"></a>
+
+### 2025-08-26 · Nano Banana：一张图可以接着改
 
 把多模态落到可反复修改的视觉成果。
 
@@ -132,9 +152,11 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 接下来：改图提供了一种可见的用法，但Gemini的范围不止图像。Gemini 3把多种材料的理解与规划、工具调用放到同一工作过程中。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-gemini25-flash-image-preview)
 
-## 2025-11-18 · Gemini 3：多模态与工具进入同一工作过程
+<a name="event-gemini3-pro-preview" id="event-gemini3-pro-preview"></a>
+
+### 2025-11-18 · Gemini 3：多模态与工具进入同一工作过程
 
 模型与开发工具开始围绕同一项工作组织。
 
@@ -146,9 +168,11 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 接下来：Antigravity分支能看到具体工作界面；沿主线则继续追踪Argon的API正式可用与产品开放，区分新能力和真正能使用它的入口。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-gemini3-pro-preview)
 
-## 11-18（公开预览） · Antigravity：编辑器里有了代理管理界面（补充）
+<a name="event-google-antigravity-preview" id="event-google-antigravity-preview"></a>
+
+### 11-18（公开预览） · Antigravity：编辑器里有了代理管理界面（补充）
 
 与Gemini 3同日的工作界面：开发者怎样管理代理、查看产物和反馈。
 
@@ -162,11 +186,15 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 [Introducing Google Antigravity, a New Era in AI-Assisted Software Development](https://www.antigravity.google/blog/introducing-google-antigravity)
 
-回到关键站：**Gemini 3：多模态与工具进入同一工作过程**。工作界面把计划、产物和反馈摆到一起；回到同日的Gemini 3，区分界面工作流与模型能力。
+回到关键站 · [Gemini 3：多模态与工具进入同一工作过程](#event-gemini3-pro-preview)。工作界面把计划、产物和反馈摆到一起；回到同日的Gemini 3，区分界面工作流与模型能力。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-google-antigravity-preview)
 
-## 05-19 · Google 介绍 Gemini Spark（补充）
+## 2026 年
+
+<a name="event-gemini-spark-announcement" id="event-gemini-spark-announcement"></a>
+
+### 05-19 · Google 介绍 Gemini Spark（补充）
 
 持续任务的产品方向，保留预告与受限测试身份。
 
@@ -174,11 +202,13 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 [The Gemini app becomes more agentic, delivering proactive, 24/7 help](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
 
-回到关键站：**Gemini 4 Argon：从发布期待走到实际入口**。Spark是持续任务方向的受限预览；回到Argon，核对真正可用的模型和产品入口。
+回到关键站 · [Gemini 4 Argon：从发布期待走到实际入口](#event-gemini4-argon-ga)。Spark是持续任务方向的受限预览；回到Argon，核对真正可用的模型和产品入口。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-gemini-spark-announcement)
 
-## 2026-10-13 · Gemini 4 Argon：从发布期待走到实际入口
+<a name="event-gemini4-argon-ga" id="event-gemini4-argon-ga"></a>
+
+### 2026-10-13 · Gemini 4 Argon：从发布期待走到实际入口
 
 以实际入口和开放条件收束近期演进。
 
@@ -188,9 +218,11 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 [Gemini API release notes：Gemini 4 Argon GA](https://ai.google.dev/gemini-api/docs/changelog) · [Gemini Apps：2026年10月13日更新](https://gemini.google/sc/release-notes/?hl=en-GB)
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-gemini4-argon-ga)
 
-## 11-12（公告） · Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤（补充）
+<a name="event-gemini4-hydrogen-release" id="event-gemini4-hydrogen-release"></a>
+
+### 11-12（公告） · Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤（补充）
 
 在Argon之后观察执行型号、任务分工与免费入口条件，保留公告和修订日的区别。
 
@@ -202,16 +234,14 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 [Google：Introducing Gemini 4 Hydrogen](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/) · [Google Gemini帮助：模型入口与自动选择](https://support.google.com/gemini/answer/18648722?ref_topic=13194540)
 
-回到关键站：**Gemini 4 Argon：从发布期待走到实际入口**。Hydrogen增加执行与速度的选择；回到Argon，继续区分模型能力、任务分工和实际开放入口。
+回到关键站 · [Gemini 4 Argon：从发布期待走到实际入口](#event-gemini4-argon-ga)。Hydrogen增加执行与速度的选择；回到Argon，继续区分模型能力、任务分工和实际开放入口。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-gemini4-hydrogen-release)
 
 ## 这条线读到这里
 
 Gemini从理解多种材料、容纳长上下文，走到推理、连续改图与工具工作。能力进入日常产品后，读者既会看到具体玩法，也会碰到错误；演示中的可能性还需要使用反馈来补全。
 
-换到真实产品的反馈：**AI 搜索摘要铺开，错误也来到用户面前**。看搜索摘要怎样暴露应用中的可靠性问题，不把改图体验或模型成绩当作所有产品的保证。
-
-[查看这件事所在的2024年](../2024.md)
+换到真实产品的反馈 · [AI 搜索摘要铺开，错误也来到用户面前](#event-ai-overviews-public-errors)。看搜索摘要怎样暴露应用中的可靠性问题，不把改图体验或模型成绩当作所有产品的保证。
 
 [返回系列目录](README.md)

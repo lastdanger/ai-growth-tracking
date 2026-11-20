@@ -1,6 +1,59 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-11-17",
+  "recent_update": {
+    "as_of": "2026-11-17",
+    "summary": "一个人能把做好的应用发给同事，开会的人能在讨论中看到文档成形，开发者也能把搜索、文件和语音接进自己的聊天工具。下面七件事选自这一期更新。",
+    "featured_event_ids": [
+      "cursor-live-apps",
+      "claude-meetings-beta",
+      "deepseek-application-apis"
+    ],
+    "event_ids": [
+      "qwen4-max-release",
+      "deepseek-application-apis",
+      "claude-meetings-beta",
+      "gemini4-hydrogen-release",
+      "claude-fable52-mythos52",
+      "seedream55-image-editing",
+      "cursor-live-apps"
+    ]
+  },
+  "topics": [
+    {
+      "id": "website-deliverables",
+      "title": "我让 AI 帮我做个网站，拿回来的是图、代码，还是一个网址？",
+      "intro": "一位网友晒出几张网页改版图。有人选中了最喜欢的那张，也有人想知道到哪里能点开它。从这条追问出发，看三个不同的现场：挑界面、审代码、把应用交给同事。它们各自在哪一步交到了人手里？",
+      "items": [
+        {
+          "event_id": "gemini25-flash-image-preview",
+          "source_id": "S-reddit-nano-banana-web-design",
+          "deliverable": "几张网页改版效果图。把它们摆在一起，就能讨论哪种布局更好看。",
+          "human_step": "选出想要的设计。若希望访客能点击菜单、提交表单，还要有人把画面实现成网页。",
+          "evidence": "2025 年 8 月 27 日的 Reddit 原帖给出了改版提示词。评论里有人追问画面能否当网站使用，得到的回答是图片。"
+        },
+        {
+          "event_id": "github-copilot-coding-agent",
+          "source_id": "S-ece2d1386004",
+          "deliverable": "仓库里多了一份草稿拉取请求（PR）。开发者能逐行查看代理为这个任务改了哪些文件。",
+          "human_step": "写清问题单，检查代码差异，必要时留言让代理再改。是否合并，由审阅者决定。",
+          "evidence": "GitHub 在 2025 年 5 月的预览说明中展示了从分配问题单到交回草稿 PR 的流程；这个例子说明代码怎样交接。"
+        },
+        {
+          "event_id": "cursor-live-apps",
+          "source_id": "S-cursor-live-apps-20261105",
+          "deliverable": "发布后得到一个可以分享的应用网址。按 Cursor 公告的例子，团队可以用它做活动报名；需要保存记录时，代理能准备数据库和登录入口。",
+          "human_step": "选择域名，处理检查发现的问题，明确确认发布，再把链接发给使用者。",
+          "evidence": "Cursor 在 2026 年 11 月 5 日的更新说明中列出了托管条件和发布步骤。报名工具是公告举例。"
+        }
+      ],
+      "outro": "如果明天就要请同事报名，看到效果图时可以挑设计，收到草稿 PR 时可以审改动，拿到网址后才轮到同事试填。这三个现场来自不同任务，比较的是交接时手里有什么。",
+      "follow_up": {
+        "event_id": "metr-experienced-developers-rct",
+        "reason": "交付物能点开，能回答“做到了哪一步”。至于“我有没有少花时间”，还得看工时。METR 让开发者在自己熟悉的项目里实际计时，结果和他们的体感相反。"
+      }
+    }
+  ],
+  "updated_at": "2026-11-20",
   "years": [
     {
       "year": 2022,
@@ -214,7 +267,7 @@
         }
       ],
       "reading_route_id": "delegation-and-boundaries",
-      "lead": "一堆截图、一个文件夹、每周都要更新的材料：交给 AI 的事情开始有了持续的上下文。这三站从交材料、选择个人代理，走到让同一项工作持续推进；效果测量与授权边界从分支展开。2026 仍在进行中，这是一条阶段路线。 沿模型系列入口，还可以跨年追踪这些工作能力从哪里来，以及成本和开放方式怎样变化。"
+      "lead": "代理开始整理电脑里的文件、更新例会材料。一段用 AI 生成的演员短片引发编剧对生计的担忧。数据中心扩容，又碰到供电和设备交期的问题。2026 年的几条线，都可以从具体的人和事读起。"
     }
   ],
   "events": [
@@ -4180,16 +4233,16 @@
       "date_label": "2026-10-23",
       "date_precision": "day",
       "date_basis": "announcement",
-      "title": "Kimi K3.1 Pro：任务表现上升，权重开放仍有时间差",
-      "summary": "服务发布与独立评测已经出现，完整权重仍属后续计划。",
+      "title": "Kimi K3.1 Pro 先开放服务，随后提供完整权重",
+      "summary": "10 月 23 日可以调用 API。当日独立评测发现，单价下降，平均每项任务的花费仍接近前代。到了 11 月，完整权重也已可下载。",
       "lane": "models",
       "tier": "branch",
       "roles": [
         "milestone"
       ],
-      "why_selected": "模型排名、API单价、实际完成任务的花费与权重可得性是四件不同的事；这次发布提供了同时观察它们的窗口。",
+      "why_selected": "同一次升级，调用 API 的人关心实际账单，自行部署的人要等权重文件。两种用法各有自己的时间表。",
       "then": {
-        "text": "10月23日，Kimi发布K3.1 Pro及更快的Highspeed版本。官方将完整权重开放安排在11月4日前；截至本轮，不能把这一承诺写成已经完成。同日Artificial Analysis的测试显示，代理工作改善较明显，其他任务的变化并不齐步一致。它还指出，Token单价下降被更多输出消耗部分抵消，平均任务成本与前代大致相当。",
+        "text": "10 月 23 日，Kimi 开放 K3.1 Pro 及更快的 Highspeed 版本，并预告在 11 月 4 日前发布完整权重。Artificial Analysis 当天发表评测，代理任务的改善较明显。它还发现，在这组测试里，K3.1 Pro 每项任务消耗的输出词元更多，抵消了部分单价降幅。",
         "source_ids": [
           "S-kimi-k31-guide",
           "S-kimi-k31-announcement",
@@ -4199,13 +4252,23 @@
       "source_ids": [
         "S-kimi-k31-guide",
         "S-kimi-k31-announcement",
-        "S-aa-kimi-k31"
+        "S-aa-kimi-k31",
+        "S-kimi-k31-weights-faq",
+        "S-kimi-k31-weights-files"
       ],
       "material_ids": [
         "M-kimi-k31-pro-release-scene"
       ],
-      "change": "模型排名、API单价、实际完成任务的花费与权重可得性是四件不同的事；这次发布提供了同时观察它们的窗口。",
-      "scene_material_id": "M-kimi-k31-pro-release-scene"
+      "change": "选用 API 时，估算账单要看一项任务实际消耗多少词元。计划自行部署时，可以查仓库里的权重文件和许可证，再决定能否采用。",
+      "scene_material_id": "M-kimi-k31-pro-release-scene",
+      "later": {
+        "text": "截至 11 月 20 日，Kimi 已在产品说明中确认完整权重发布。Moonshot AI 的 Hugging Face 仓库列出了配置、许可证和多个 safetensors 权重分片，希望自行部署的人可以取得这些文件。",
+        "as_of": "2026-11-20",
+        "source_ids": [
+          "S-kimi-k31-weights-faq",
+          "S-kimi-k31-weights-files"
+        ]
+      }
     },
     {
       "id": "muse-spark-open-release",
@@ -4810,7 +4873,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Cursor：写出的应用，可以继续上线给别人用",
-      "summary": "Cursor把应用搭建、数据库、登录和托管接到云端代理中；通过安全检查并由用户明确发布后，才获得可分享的在线入口。",
+      "summary": "启用云端代理的付费用户可以让 Cursor 配置数据库、登录和托管。通过安全检查、由用户明确发布后，同事就能从链接打开应用。",
       "lane": "products",
       "tier": "branch",
       "roles": [
@@ -4841,7 +4904,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Claude Fable与Mythos 5.2：同一底层模型，不同开放条件",
-      "summary": "Anthropic发布Fable与Mythos 5.2，面向复杂技术工作；两者底层相同，安全限制和获取途径不同。",
+      "summary": "Fable 5.2 通过公开服务提供。采用同一底层模型的 Mythos 5.2 则要通过验证计划申请。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -4882,7 +4945,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Seedream 5.5：生成一张图之后，还能怎样继续改",
-      "summary": "Seed团队公布Seedream 5.5，介绍多轮编辑保持、原生透明背景素材和文字渲染改进。",
+      "summary": "Seed 团队用连续修改衣饰和桌面物件的例子介绍局部编辑，也介绍了如何直接生成透明背景素材。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -4910,7 +4973,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Claude Meetings：会议进行时，笔记和文档一起形成",
-      "summary": "Claude Meetings开始向Team与Enterprise逐步推出beta，可作为Google Meet中的可见参会者记录、问答和制作成果。",
+      "summary": "Team 和 Enterprise 用户开始分批试用。Claude 可以出现在 Google Meet 的参会名单里，边听讨论边做笔记、文档和白板。",
       "lane": "products",
       "tier": "branch",
       "roles": [
@@ -4946,7 +5009,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤",
-      "summary": "Google公布面向快速执行的Gemini 4 Hydrogen，将它放在与Carbon、Argon不同的工作分工中。",
+      "summary": "按 Google 的产品分工，Carbon 或 Argon 处理复杂判断，Hydrogen 接手日常编程中的执行步骤，例如写代码和运行测试。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -4983,7 +5046,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "DeepSeek：把搜索、文件与语音接成自己的聊天应用",
-      "summary": "DeepSeek开放应用API，将搜索、文件输入、链接阅读及语音能力交给开发者，部分工具调用和上下文拼接由服务端处理。",
+      "summary": "开发者搭建聊天应用时，可以让 DeepSeek 在服务端搜索、读取文件和打开链接。语音识别和朗读另有接口。",
       "lane": "products",
       "tier": "branch",
       "roles": [
@@ -5015,7 +5078,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Qwen4-Max：视觉、推理与长任务进入同一服务",
-      "summary": "Qwen4-Max进入正式服务入口，支持文字、图像和视频理解、工具调用及结构化输出，与此前的Preview使用不同型号名称。",
+      "summary": "11 月 11 日，Token Plan 用户先用上预览型号。11 月 16 日公布的正式型号可以读图片与视频，也能调用工具。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -6701,7 +6764,7 @@
       "kind": "official",
       "published_at": "2026-10-23",
       "accessed_at": "2026-10-28",
-      "scope": "与官方10月23日论坛公告交叉核对。API与Highspeed已发布；文档称完整权重将于11月4日前发布，截至本轮不将承诺登记为已开放。"
+      "scope": "与官方 10 月 23 日论坛公告交叉核对。API 与 Highspeed 已发布。10 月 28 日查阅时，文档写明计划在 11 月 4 日前发布完整权重。"
     },
     {
       "id": "S-kimi-k31-announcement",
@@ -6718,8 +6781,8 @@
       "url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
       "kind": "media",
       "published_at": "2026-10-23",
-      "accessed_at": "2026-10-28",
-      "scope": "评测机构自身结果，采用该日Intelligence Index任务成本及代理表现观察，不当作10月28日实时榜单；比较受推理设置、框架及样本限制。"
+      "accessed_at": "2026-11-20",
+      "scope": "评测机构 10 月 23 日发布的 Intelligence Index 结果。任务成本与输出词元均取自该文对 K3.1 Pro 和 K3 的比较，限于该机构采用的设置和样本。"
     },
     {
       "id": "S-hf-muse-spark-open",
@@ -6997,7 +7060,7 @@
       "url": "https://simonwillison.net/2025/Jan/20/deepseek-r1/",
       "published_at": "2025-01-20",
       "accessed_at": "2026-11-17",
-      "kind": "official",
+      "kind": "media",
       "scope": "作者个人博客的一手自述。只采用1月20日首次试用段落：64GB内存M2、Ollama及unsloth/DeepSeek-R1-Distill-Llama-8B-GGUF:Q8_0、约8.5GB下载、茶室笑话的长篇推演与作者评价；不采用1月21日追加的70B记录、许可猜测、排名或训练史判断。我们未复现，个案不代表普遍设备要求或效果。"
     },
     {
@@ -7024,7 +7087,7 @@
       "url": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
       "published_at": "2026-11-15",
       "accessed_at": "2026-11-17",
-      "kind": "official",
+      "kind": "media",
       "scope": "11-17直读作者11-15正文：明确Claude Fable 5.2，参考两个已有插件和本地示例，一条提示完成大部分实现，随后另做浏览器演示。只采个人自述；未运行插件或查看演示截图，未外推独立完成、无人工修改、节省工时或普遍成功率。"
     },
     {
@@ -7125,6 +7188,24 @@
       "accessed_at": "2026-11-17",
       "kind": "official",
       "scope": "11-17直读11-09官方正文的多轮编辑、RGBA透明素材、文字渲染与结尾。只记录公布和官方介绍，未看演示视频或复现，未独立确认各产品/API的上线日期；不采用领先排名，Pro版仍为后续预告。"
+    },
+    {
+      "id": "S-kimi-k31-weights-faq",
+      "title": "Kimi K3.1 Pro 产品说明与权重 FAQ",
+      "url": "https://www.kimi.com/ai-models/kimi-k3-1-pro",
+      "kind": "official",
+      "published_at": null,
+      "accessed_at": "2026-11-20",
+      "scope": "截至查阅日，产品页确认完整权重已发布，并说明许可与 Hugging Face 获取途径。页面没有给出权重首次公开下载的确切日期。"
+    },
+    {
+      "id": "S-kimi-k31-weights-files",
+      "title": "Moonshot AI 在 Hugging Face 发布的 Kimi-K3.1-Pro 权重文件",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/tree/main",
+      "kind": "official",
+      "published_at": null,
+      "accessed_at": "2026-11-20",
+      "scope": "11 月 20 日查阅发布方仓库的文件清单，核对模型配置、许可证和 safetensors 权重分片。目录用于确认文件已列出，未进行下载或部署测试。"
     }
   ],
   "materials": [
@@ -7677,7 +7758,7 @@
       "source_id": "S-aa-kimi-k31",
       "kind": "report",
       "title": "单价下降，任务账单却没有同步下降",
-      "text": "Artificial Analysis在10月23日的评测中指出，K3.1 Pro使用了更多输出Token，抵消部分单价下降，平均任务成本与K3大致相当。这是该评测任务集的观察，不是所有用户的账单预测。",
+      "text": "Artificial Analysis 在 10 月 23 日发布的 Intelligence Index 评测中比较了 K3.1 Pro 和 K3。按其报告，新型号在官方 API 的输入、输出与缓存命中单价均低了 33%，但每项任务平均输出约 5.5 万词元，前代约 4.8 万。该机构给出的 K3.1 Pro 平均任务成本为 1.98 美元，接近前代。这个数字只适用于这组测试及其运行设置。",
       "temporal_context": "contemporary"
     },
     {
@@ -9016,7 +9097,7 @@
     {
       "id": "delegation-and-boundaries",
       "title": "从一次交接到持续工作，怎样把事情交给 AI？",
-      "intro": "2026 阶段路线：沿文件夹、个人代理和持续任务三站，看人怎样交材料、选择运行方式，再让同一项工作继续推进。效果与授权边界从分支展开。",
+      "intro": "假设每周例会前，你都要把一批截图和零散笔记整理成一份材料。第一次把文件夹交给助手，和下周还能请它接着更新，中间要做哪些安排？",
       "steps": [
         {
           "event_id": "cowork-research-preview",
@@ -9034,13 +9115,13 @@
           "event_id": "chatgpt-work-launch"
         }
       ],
-      "outro": "这三站把交接拆成了具体选择：交哪些材料、从哪里使用代理、怎样让工作持续更新。再往下，可以追问行动的授权边界，也可以换到科学与机器人。这仍是阶段观察，不是 2026 全年的结论。",
+      "outro": "把这条路线用在下周的例会上，可以先圈定助手能读的文件夹，再约定何时更新、由谁核对。沿下面的调查读下去，还能看到研究人员如何发现代理走出了授权范围。",
       "exit_event_ids": [
         "openai-hugging-face-investigation",
         "alphagenome-nature-paper",
         "beijing-robot-half-marathon-2026"
       ],
-      "focus": "从一次交接到持续工作",
+      "focus": "文件交给谁，下次从哪里接着做",
       "exit_notes": {
         "openai-hugging-face-investigation": {
           "label": "沿授权问题继续",

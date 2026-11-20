@@ -8,7 +8,11 @@
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
-## 04-11 · 阿里云公布通义千问
+## 2023 年
+
+<a name="event-tongyi-qianwen-announcement" id="event-tongyi-qianwen-announcement"></a>
+
+### 04-11 · 阿里云公布通义千问
 
 服务和产品计划是起点，权重开放另有时点。
 
@@ -20,9 +24,11 @@
 
 接下来：四月回答将在哪些产品里使用，八月则改变谁能拿到模型。下一站看Qwen-7B怎样从服务名称变成可下载的开发材料。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-tongyi-qianwen-announcement)
 
-## 2023-08-03 · Qwen-7B开放：通义千问成为可下载的模型
+<a name="event-qwen7b-open-release" id="event-qwen7b-open-release"></a>
+
+### 2023-08-03 · Qwen-7B开放：通义千问成为可下载的模型
 
 开放入口使自行部署与继续训练成为可能。
 
@@ -34,9 +40,13 @@
 
 接下来：拿到一个模型只是起点，不同设备和语言需求还需要更多选择。Qwen2把这些需求扩展成多尺寸、多语言的家族。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-qwen7b-open-release)
 
-## 2024-06-07 · Qwen2：把模型做成不同规模的开发选择
+## 2024 年
+
+<a name="event-qwen2-open-family" id="event-qwen2-open-family"></a>
+
+### 2024-06-07 · Qwen2：把模型做成不同规模的开发选择
 
 用尺寸与语言覆盖理解开发者的选择条件。
 
@@ -48,9 +58,11 @@ Qwen2发布时没有只交付一个最大的型号，而是给出五种规模的
 
 接下来：除了选大小，开发者还会按任务选模型。2.5把通用、代码和数学分工摆出来，后来的R1蒸馏又给出跨团队采用的具体例子。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-qwen2-open-family)
 
-## 09-19 · Qwen2.5：开发者按任务选择模型
+<a name="event-qwen25-model-family" id="event-qwen25-model-family"></a>
+
+### 09-19 · Qwen2.5：开发者按任务选择模型
 
 从尺寸选择走向专业分工与他人继续加工。
 
@@ -70,9 +82,13 @@ Qwen2发布时没有只交付一个最大的型号，而是给出五种规模的
 
 接下来：这些主要是文字和代码用途；声音与画面需要另一类输入输出能力。Omni把听、看和说接进开放模型家族。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-qwen25-model-family)
 
-## 2025-03-27 · Qwen2.5-Omni：开放模型也能听、看和说
+## 2025 年
+
+<a name="event-qwen25-omni-release" id="event-qwen25-omni-release"></a>
+
+### 2025-03-27 · Qwen2.5-Omni：开放模型也能听、看和说
 
 补足声音与画面这条能力分支，避免只剩文本型号。
 
@@ -84,9 +100,11 @@ Qwen2发布时没有只交付一个最大的型号，而是给出五种规模的
 
 接下来：输入输出方式之外，每次回答投入多少思考也是一种选择。Qwen3将思考与非思考模式带到新的开放模型家族。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-qwen25-omni-release)
 
-## 04-29 · Qwen3 开放多种规模的模型
+<a name="event-qwen3-open-models" id="event-qwen3-open-models"></a>
+
+### 04-29 · Qwen3 开放多种规模的模型
 
 模型规模与回答前计算一起进入应用设计。
 
@@ -106,9 +124,13 @@ Qwen2发布时没有只交付一个最大的型号，而是给出五种规模的
 
 接下来：可以控制思考后，长资料和长任务的运行开销仍需处理。Flash-Next作为架构预览，补看这条效率探索。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-qwen3-open-models)
 
-## 2026年8月（发布月） · Qwen3.8-Flash-Next：长任务背后的效率实验
+## 2026 年
+
+<a name="event-qwen38-flash-next" id="event-qwen38-flash-next"></a>
+
+### 2026年8月（发布月） · Qwen3.8-Flash-Next：长任务背后的效率实验
 
 以运行条件与开放许可观察近期架构实验。
 
@@ -118,9 +140,11 @@ Qwen3.8-Flash-Next模型卡把它定位为下一代架构的实验预览，提�
 
 [Qwen3.8-Flash-Next官方模型卡](https://huggingface.co/Qwen/Qwen3.8-Flash-Next)
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-qwen38-flash-next)
 
-## 11-16（正式型号与服务入口公布） · Qwen4-Max：视觉、推理与长任务进入同一服务（补充）
+<a name="event-qwen4-max-release" id="event-qwen4-max-release"></a>
+
+### 11-16（正式型号与服务入口公布） · Qwen4-Max：视觉、推理与长任务进入同一服务（补充）
 
 近期旗舰服务与原有开放模型并列观察，区分Preview、正式入口和权重下载。
 
@@ -132,16 +156,14 @@ Qwen3.8-Flash-Next模型卡把它定位为下一代架构的实验预览，提�
 
 [QwenCloud模型日志：Qwen4-Max与Preview](https://docs.qwencloud.com/changelog/models) · [QwenCloud Token Plan：Qwen4-Max入口更新](https://docs.qwencloud.com/token-plan/token-plan-product-updates) · [QwenCloud：Qwen4-Max模型与接入说明](https://docs.qwencloud.com/developer-guides/getting-started/latest-model)
 
-回到关键站：**Qwen3.8-Flash-Next：长任务背后的效率实验**。Qwen4-Max提供另一种托管服务选择；回到Flash-Next，比较开放权重实验与调用服务这两种参与条件，不推断型号间的技术继承。
+回到关键站 · [Qwen3.8-Flash-Next：长任务背后的效率实验](#event-qwen38-flash-next)。Qwen4-Max提供另一种托管服务选择；回到Flash-Next，比较开放权重实验与调用服务这两种参与条件，不推断型号间的技术继承。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-qwen4-max-release)
 
 ## 这条线读到这里
 
 Qwen从通义服务走到可下载、可选择、可继续训练的模型家族。尺寸和专门能力给开发者更多组合方式，而实际表现仍取决于部署、工具与任务；开放生态最终要由谁拿去做了什么来说明。
 
-看别人怎样继续加工：**DeepSeek-R1 发布**。回到R1及蒸馏模型，观察Qwen基础模型被另一个团队采用的具体方式。
-
-[查看这件事所在的2025年](../2025.md)
+看别人怎样继续加工 · [DeepSeek-R1 发布](../2025.md#event-deepseek-r1-release)。回到R1及蒸馏模型，观察Qwen基础模型被另一个团队采用的具体方式。
 
 [返回系列目录](README.md)

@@ -8,7 +8,11 @@
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
-## 2022-11-30 · ChatGPT 公开推出
+## 2022 年
+
+<a name="event-chatgpt-public-preview" id="event-chatgpt-public-preview"></a>
+
+### 2022-11-30 · ChatGPT 公开推出
 
 起点是普通人能直接尝试自己的问题。
 
@@ -38,9 +42,13 @@ ChatGPT 上线第五天，Simon Willison 已用它学习 Rust：追问代码、�
 
 接下来：对话让人愿意试，复杂问题能否处理则是另一层期待。下一站看GPT-4怎样抬高这份期待，以及首发实际开放到哪里。
 
-[查看2022年背景](../2022.md)
+[查看 2022 年的这条记录](../2022.md#event-chatgpt-public-preview)
 
-## 01 月（02-02 报道） · ChatGPT 用户增长受到关注（补充）
+## 2023 年
+
+<a name="event-chatgpt-public-growth" id="event-chatgpt-public-growth"></a>
+
+### 01 月（02-02 报道） · ChatGPT 用户增长受到关注（补充）
 
 公众怎样试用、分享和争论，补足产品发布之外的传播。
 
@@ -62,11 +70,13 @@ ChatGPT 上线第五天，Simon Willison 已用它学习 Rust：追问代码、�
 
 [ChatGPT 用户增长受到关注 · 路透社](https://www.investing.com/news/economy/chatgpt-sets-record-for-fastestgrowing-user-base--analyst-note-2993773)
 
-回到关键站：**GPT-4 发布**。传播让更多人愿意试，接着回到GPT-4，看复杂问题的能力怎样抬高期待。
+回到关键站 · [GPT-4 发布](#event-gpt4-release)。传播让更多人愿意试，接着回到GPT-4，看复杂问题的能力怎样抬高期待。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-chatgpt-public-growth)
 
-## 03-14 · GPT-4 发布
+<a name="event-gpt4-release" id="event-gpt4-release"></a>
+
+### 03-14 · GPT-4 发布
 
 复杂任务成为公众衡量能力的新参照。
 
@@ -84,9 +94,11 @@ OpenAI 的发布介绍把两代模型放到模拟律师资格考试中比较：G
 
 接下来：更复杂的答案仍要通过文字输入。GPT-4o把声音和图像带入交互，让人开始围绕眼前情境与模型沟通。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-gpt4-release)
 
-## 09-25 · ChatGPT 公布语音与图像功能（补充）
+<a name="event-chatgpt-voice-vision" id="event-chatgpt-voice-vision"></a>
+
+### 09-25 · ChatGPT 公布语音与图像功能（补充）
 
 产品中的语音与图像入口，是GPT-4o之前可对照的一步。
 
@@ -94,11 +106,15 @@ OpenAI 的发布介绍把两代模型放到模拟律师资格考试中比较：G
 
 [ChatGPT 公布语音与图像功能 · 原始来源](https://openai.com/index/chatgpt-can-now-see-hear-and-speak/)
 
-回到关键站：**GPT-4o 公布**。这个分支交代语音和图像的早期产品入口；再看GPT-4o怎样把它们组织为更自然的交互。
+回到关键站 · [GPT-4o 公布](#event-gpt-4o-announcement)。这个分支交代语音和图像的早期产品入口；再看GPT-4o怎样把它们组织为更自然的交互。
 
-[查看2023年背景](../2023.md)
+[查看 2023 年的这条记录](../2023.md#event-chatgpt-voice-vision)
 
-## 05-13 · GPT-4o 公布
+## 2024 年
+
+<a name="event-gpt-4o-announcement" id="event-gpt-4o-announcement"></a>
+
+### 05-13 · GPT-4o 公布
 
 从打字提问，走向声音和图像参与对话。
 
@@ -116,9 +132,11 @@ GPT-4o 发布页列出的示例包括猜拳、实时翻译和摇篮曲。仅看�
 
 接下来：交互更自然，不代表难题就能解开。o1转向回答前投入更多计算，下一站看等待时间怎样成为新的能力条件。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-gpt-4o-announcement)
 
-## 09-12 · o1-preview 发布
+<a name="event-openai-o1-preview" id="event-openai-o1-preview"></a>
+
+### 09-12 · o1-preview 发布
 
 把回答前计算与结果质量放在一起看。
 
@@ -136,9 +154,13 @@ GPT-4o 发布页列出的示例包括猜拳、实时翻译和摇篮曲。仅看�
 
 接下来：会分析问题之后，还要把步骤做完。ChatGPT agent展示浏览、分析和文件制作如何放进一个任务；这是产品组合，不是o1单独带来的结果。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-openai-o1-preview)
 
-## 3月25日起（随后数日传播） · 照片换上吉卜力画风，ChatGPT 改图走红（补充）
+## 2025 年
+
+<a name="event-chatgpt-image-ghibli-wave" id="event-chatgpt-image-ghibli-wave"></a>
+
+### 3月25日起（随后数日传播） · 照片换上吉卜力画风，ChatGPT 改图走红（补充）
 
 看一次能力更新怎样变成可传播的创作玩法。
 
@@ -158,11 +180,13 @@ Janu Lingeswaran上传了猫Mali的照片，请ChatGPT改成吉卜力风格。�
 
 [OpenAI：Introducing 4o Image Generation](https://openai.com/index/introducing-4o-image-generation/) · [美联社：ChatGPT的吉卜力风格图片引发版权担忧（Tech Xplore全文转载）](https://techxplore.com/news/2025-03-copyright-loom-chatgpt-ghibli-style.html)
 
-回到关键站：**ChatGPT agent：查资料之后，继续做出文件**。图像玩法说明对话能产出可分享的作品；回到agent，换看资料、浏览和文件怎样组成一项任务。
+回到关键站 · [ChatGPT agent：查资料之后，继续做出文件](#event-chatgpt-agent-release)。图像玩法说明对话能产出可分享的作品；回到agent，换看资料、浏览和文件怎样组成一项任务。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-chatgpt-image-ghibli-wave)
 
-## 07-17（开始分批开放） · ChatGPT agent：查资料之后，继续做出文件
+<a name="event-chatgpt-agent-release" id="event-chatgpt-agent-release"></a>
+
+### 07-17（开始分批开放） · ChatGPT agent：查资料之后，继续做出文件
 
 用户开始交代交付物，而不仅是一个问题。
 
@@ -180,9 +204,11 @@ Janu Lingeswaran上传了猫Mali的照片，请ChatGPT改成吉卜力风格。�
 
 接下来：前一站由平台提供任务环境。接下来换个视角：gpt-oss把权重交给开发者，让他们自己决定运行位置和工具配置。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-chatgpt-agent-release)
 
-## 08-05 · gpt-oss：OpenAI 的推理模型也能下载运行
+<a name="event-gpt-oss-open-weights" id="event-gpt-oss-open-weights"></a>
+
+### 08-05 · gpt-oss：OpenAI 的推理模型也能下载运行
 
 开放权重让运行与改造成为另一种选择。
 
@@ -196,9 +222,11 @@ Janu Lingeswaran上传了猫Mali的照片，请ChatGPT改成吉卜力风格。�
 
 接下来：自行部署是一条路，使用现成服务是另一条。两天后的GPT-5把快速回答与推理收进默认入口，也把模型选择权带到用户面前。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-gpt-oss-open-weights)
 
-## 08-07（开始分批上线） · GPT-5：把快速回答与深入推理放到一个入口
+<a name="event-gpt5-unified-system" id="event-gpt5-unified-system"></a>
+
+### 08-07（开始分批上线） · GPT-5：把快速回答与深入推理放到一个入口
 
 默认模型改变，用户的既有习惯也受到影响。
 
@@ -210,9 +238,11 @@ Free、Plus、Pro 与 Team 用户开始获得更新，免费用户完整推理�
 
 接下来：用户会在意能否保留熟悉的模型，旁支记录了这场反馈。沿主线继续看Astra：期待又从选择回答方式，延伸到在软件里推进较长任务。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-gpt5-unified-system)
 
-## 8月8日（公开问答） · 升级之后，有人要求把熟悉的模型还回来（补充）
+<a name="event-gpt4o-users-ask-choice" id="event-gpt4o-users-ask-choice"></a>
+
+### 8月8日（公开问答） · 升级之后，有人要求把熟悉的模型还回来（补充）
 
 GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用法？
 
@@ -228,11 +258,13 @@ GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用
 
 [GPT-5 AMA：用户留言与Sam Altman回应](https://www.reddit.com/r/ChatGPT/comments/1mkae1l/gpt5_ama_with_openais_sam_altman_and_some_of_the/) · [OpenAI 发布说明：2025年8月12日 GPT-5 Updates](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
 
-回到关键站：**GPT-5：把快速回答与深入推理放到一个入口**。这段反馈解释默认入口为何也关乎使用习惯。回到GPT-5，重新看统一入口带来的选择问题。
+回到关键站 · [GPT-5：把快速回答与深入推理放到一个入口](#event-gpt5-unified-system)。这段反馈解释默认入口为何也关乎使用习惯。回到GPT-5，重新看统一入口带来的选择问题。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-gpt4o-users-ask-choice)
 
-## 09-15 · 人们实际怎样用ChatGPT，有了大规模样本研究（补充）
+<a name="event-chatgpt-consumer-use-study" id="event-chatgpt-consumer-use-study"></a>
+
+### 09-15 · 人们实际怎样用ChatGPT，有了大规模样本研究（补充）
 
 发布之后，人们到底拿它做什么？用带样本边界的研究来回答。
 
@@ -246,11 +278,15 @@ GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用
 
 [OpenAI：How people are using ChatGPT](https://openai.com/index/how-people-are-using-chatgpt/) · [How People Use ChatGPT，原始论文](https://cdn.openai.com/pdf/a253471f-8260-40c6-a2cc-aa93fe9f142e/economic-research-chatgpt-usage-paper.pdf)
 
-回到关键站：**GPT-6 Astra：更长的任务，更直接的电脑操作**。使用研究提供了日常任务的参照；再看Astra对更长任务的承诺，分清已观察到的用法与待验证的提升。
+回到关键站 · [GPT-6 Astra：更长的任务，更直接的电脑操作](#event-gpt6-astra-release)。使用研究提供了日常任务的参照；再看Astra对更长任务的承诺，分清已观察到的用法与待验证的提升。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-chatgpt-consumer-use-study)
 
-## 02-02 · Codex app 推出 macOS 版本（补充）
+## 2026 年
+
+<a name="event-codex-app-macos" id="event-codex-app-macos"></a>
+
+### 02-02 · Codex app 推出 macOS 版本（补充）
 
 代码工作的支线：从已有云端任务到桌面任务管理。
 
@@ -258,11 +294,13 @@ GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用
 
 [Introducing the Codex app](https://openai.com/index/introducing-the-codex-app/) · [Introducing Codex（2025年发布）](https://openai.com/index/introducing-codex/)
 
-回到关键站：**GPT-6 Astra：更长的任务，更直接的电脑操作**。桌面应用说明代码任务怎样管理；回到Astra，观察模型层面怎样支持更长的软件操作。
+回到关键站 · [GPT-6 Astra：更长的任务，更直接的电脑操作](#event-gpt6-astra-release)。桌面应用说明代码任务怎样管理；回到Astra，观察模型层面怎样支持更长的软件操作。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-codex-app-macos)
 
-## 07-09（发布并分端分批开放） · ChatGPT Work：把零散资料接成持续推进的工作（补充）
+<a name="event-chatgpt-work-launch" id="event-chatgpt-work-launch"></a>
+
+### 07-09（发布并分端分批开放） · ChatGPT Work：把零散资料接成持续推进的工作（补充）
 
 资料工作如何从一次交付转为持续跟进。
 
@@ -278,11 +316,13 @@ GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用
 
 [OpenAI：ChatGPT is now a partner for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)
 
-回到关键站：**GPT-6 Astra：更长的任务，更直接的电脑操作**。Work解释持续跟进的产品安排；回到Astra，区分任务环境与模型能力各自的作用。
+回到关键站 · [GPT-6 Astra：更长的任务，更直接的电脑操作](#event-gpt6-astra-release)。Work解释持续跟进的产品安排；回到Astra，区分任务环境与模型能力各自的作用。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-chatgpt-work-launch)
 
-## 09-03（首发；先向少量机构推出） · GPT-6 Astra：更长的任务，更直接的电脑操作
+<a name="event-gpt6-astra-release" id="event-gpt6-astra-release"></a>
+
+### 09-03（首发；先向少量机构推出） · GPT-6 Astra：更长的任务，更直接的电脑操作
 
 能力与参与方式最终回到具体工作的交接和检查。
 
@@ -294,9 +334,11 @@ GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用
 
 [OpenAI：GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra/) · [OpenAI：Safety overview: GPT-6 Astra](https://openai.com/index/safety-overview-gpt-6-astra/) · [GitHub：GPT-6 Astra is generally available in GitHub Copilot](https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot/)
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-gpt6-astra-release)
 
-## 2026-10-26 · GPT-6.1 Terra：把视觉与电脑操作带到高效型号（补充）
+<a name="event-gpt61-terra-release" id="event-gpt61-terra-release"></a>
+
+### 2026-10-26 · GPT-6.1 Terra：把视觉与电脑操作带到高效型号（补充）
 
 近期型号分工与效率定位，等待更多实际任务证据。
 
@@ -306,16 +348,14 @@ GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用
 
 [OpenAI API 更新日志：GPT-6.1 Terra](https://developers.openai.com/api/docs/changelog)
 
-回到关键站：**GPT-6 Astra：更长的任务，更直接的电脑操作**。Terra补充视觉与电脑操作的效率取舍；回到Astra这处关键转折，比较的是任务要求，不只是哪款更新。
+回到关键站 · [GPT-6 Astra：更长的任务，更直接的电脑操作](#event-gpt6-astra-release)。Terra补充视觉与电脑操作的效率取舍；回到Astra这处关键转折，比较的是任务要求，不只是哪款更新。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-gpt61-terra-release)
 
 ## 这条线读到这里
 
 GPT这条线从一个人人能试的聊天入口，走到多模态、推理和任务交付；开放权重与默认模型又把选择权带到前台。能力在扩大，用户是否愿意改变熟悉的用法，还要回到实际使用中看。
 
-回到人们怎样使用：**人们实际怎样用ChatGPT，有了大规模样本研究**。看带有样本边界的使用研究，区分发布时的期待与日常真正发生的事。
-
-[查看这件事所在的2025年](../2025.md)
+回到人们怎样使用 · [人们实际怎样用ChatGPT，有了大规模样本研究](#event-chatgpt-consumer-use-study)。看带有样本边界的使用研究，区分发布时的期待与日常真正发生的事。
 
 [返回系列目录](README.md)

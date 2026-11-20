@@ -9,6 +9,16 @@ const rejects = (name, change, error) => test(name, () => {
   assert.throws(() => checkMap(data), error);
 });
 test('当前数据契约可校验', () => assert.equal(checkMap(original).events, original.events.length));
+test('早期内容包可省略近期入口和专题', () => {
+  const data = structuredClone(original);
+  delete data.recent_update;
+  delete data.topics;
+  assert.equal(checkMap(data).events, original.events.length);
+});
+rejects('近期入口只推荐本期收录的事件', d => d.recent_update.featured_event_ids[0] = 'gpt4-release', /Recent featured events outside selection/);
+rejects('近期入口不得提前收录后来的事件', d => d.recent_update.as_of = '2026-11-01', /Recent event exceeds cutoff/);
+rejects('专题材料必须属于对应事件', d => d.topics[0].items[0].source_id = d.topics[0].items[1].source_id, /Topic source outside event/);
+rejects('专题延伸阅读必须有可到达的事件', d => d.topics[0].follow_up.event_id = 'missing', /Topic follow-up/);
 rejects('系列引用必须存在', d => d.series[0].entries[0].event_id = 'missing', /Unknown series/);
 rejects('系列内不能重复事件', d => d.series[0].entries.push(d.series[0].entries[0]), /Repeated series/);
 rejects('系列须按日期排序', d => { const a = d.series[0].entries; [a[2], a[3]] = [a[3], a[2]]; }, /Series chronological order/);

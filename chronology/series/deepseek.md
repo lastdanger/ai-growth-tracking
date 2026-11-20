@@ -8,7 +8,11 @@
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
-## 05-06 · DeepSeek-V2：把效率写进模型结构
+## 2024 年
+
+<a name="event-deepseek-v2-efficiency" id="event-deepseek-v2-efficiency"></a>
+
+### 05-06 · DeepSeek-V2：把效率写进模型结构
 
 生成一个回答，计算和显存花在哪里？
 
@@ -22,9 +26,11 @@ V2 同时处理两种开销：用 MLA 压缩生成时保留的注意力缓存，
 
 接下来：下一站把模型总规模与每步动用的规模摆在一起，看 V3 怎样沿用这些效率思路。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-deepseek-v2-efficiency)
 
-## 12-26 · DeepSeek-V3 发布，接上次年的推理路线
+<a name="event-deepseek-v3-release" id="event-deepseek-v3-release"></a>
+
+### 12-26 · DeepSeek-V3 发布，接上次年的推理路线
 
 模型更大，每一步要动用多少计算？
 
@@ -44,9 +50,13 @@ V3 首版技术报告并列给出两个数：模型共有 6710 亿参数，每�
 
 接下来：V3-Base 成了 R1 的训练起点。接下来，除了在线试用，个人还可以下载较小的蒸馏模型；一段实际试玩说明这些入口有什么区别。
 
-[查看2024年背景](../2024.md)
+[查看 2024 年的这条记录](../2024.md#event-deepseek-v3-release)
 
-## 01-20 · DeepSeek-R1 发布
+## 2025 年
+
+<a name="event-deepseek-r1-release" id="event-deepseek-r1-release"></a>
+
+### 01-20 · DeepSeek-R1 发布
 
 从在线回答到本地试玩，使用者拿到了哪些选择？
 
@@ -70,9 +80,11 @@ V3 首版技术报告并列给出两个数：模型共有 6710 亿参数，每�
 
 接下来：一个人的试玩，和许多人的下载，是两种观察。下一站从模型转向手机应用，看公众热潮和注册阻力。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-deepseek-r1-release)
 
-## 1月27日（同期报道） · DeepSeek 登上免费应用榜首，热潮越出技术圈
+<a name="event-deepseek-app-public-surge" id="event-deepseek-app-public-surge"></a>
+
+### 1月27日（同期报道） · DeepSeek 登上免费应用榜首，热潮越出技术圈
 
 技术圈之外，人们怎样遇到这款应用？
 
@@ -90,9 +102,11 @@ V3 首版技术报告并列给出两个数：模型共有 6710 亿参数，每�
 
 接下来：热潮之后，使用方式还在变。下一站看 V3.1 怎样把思考与直接回答放到同一个模型中，并连接工具。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-deepseek-app-public-surge)
 
-## 2025-08-21 · DeepSeek-V3.1：推理重新接回通用模型
+<a name="event-deepseek-v31-hybrid-release" id="event-deepseek-v31-hybrid-release"></a>
+
+### 2025-08-21 · DeepSeek-V3.1：推理重新接回通用模型
 
 同一模型能否既直接回答，也展开思考、连接工具？
 
@@ -104,9 +118,13 @@ V3 首版技术报告并列给出两个数：模型共有 6710 亿参数，每�
 
 接下来：能调用工具以后，还需要把较长的资料放进任务。下一站看 V4 怎样扩大上下文，也就是一次处理任务时可纳入的材料范围。
 
-[查看2025年背景](../2025.md)
+[查看 2025 年的这条记录](../2025.md#event-deepseek-v31-hybrid-release)
 
-## 04-24（预览上线、开放权重与 API 同日公告） · DeepSeek-V4：开放模型瞄准长上下文与代理工作
+## 2026 年
+
+<a name="event-deepseek-v4-preview" id="event-deepseek-v4-preview"></a>
+
+### 04-24（预览上线、开放权重与 API 同日公告） · DeepSeek-V4：开放模型瞄准长上下文与代理工作
 
 资料变长、步骤变多，模型怎样接入工作工具？
 
@@ -118,9 +136,11 @@ V3 首版技术报告并列给出两个数：模型共有 6710 亿参数，每�
 
 接下来：资料也可能是图片。下一站看 V4.1 Flash 把视觉输入带入 API 后，任务的输入范围怎样变化。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-deepseek-v4-preview)
 
-## 2026-09-10 · DeepSeek V4.1 Flash：视觉理解进入新的API版本
+<a name="event-deepseek-v41-flash-release" id="event-deepseek-v41-flash-release"></a>
+
+### 2026-09-10 · DeepSeek V4.1 Flash：视觉理解进入新的API版本
 
 图片进入模型接口，开发者能多交哪些材料？
 
@@ -130,9 +150,11 @@ DeepSeek把V4.1 Flash介绍为新结构系列中的较小型号，并将原生�
 
 [DeepSeek：2026年9月10日V4.1 Flash发布](https://api-docs.deepseek.com/zh-cn/updates/#时间-2026-09-10)
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-deepseek-v41-flash-release)
 
-## 2026-10-17 · DeepSeek更新Flash，也把搜索能力开放给开发者（补充）
+<a name="event-deepseek-v41-flash-oct17" id="event-deepseek-v41-flash-oct17"></a>
+
+### 2026-10-17 · DeepSeek更新Flash，也把搜索能力开放给开发者（补充）
 
 同一调用名下的模型与搜索服务更新，作为后续运维和成本观察。
 
@@ -142,11 +164,13 @@ DeepSeek把V4.1 Flash介绍为新结构系列中的较小型号，并将原生�
 
 [DeepSeek：2026年10月17日模型与搜索API更新](https://api-docs.deepseek.com/zh-cn/updates/#时间-2026-10-17)
 
-回到关键站：**DeepSeek V4.1 Flash：视觉理解进入新的API版本**。10月更新说明发布后的服务仍在变；回到V4.1首发，分清新增视觉能力与后来的搜索、费用调整。
+回到关键站 · [DeepSeek V4.1 Flash：视觉理解进入新的API版本](#event-deepseek-v41-flash-release)。10月更新说明发布后的服务仍在变；回到V4.1首发，分清新增视觉能力与后来的搜索、费用调整。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-deepseek-v41-flash-oct17)
 
-## 11-13（应用API开放公告） · DeepSeek：把搜索、文件与语音接成自己的聊天应用（补充）
+<a name="event-deepseek-application-apis" id="event-deepseek-application-apis"></a>
+
+### 11-13（应用API开放公告） · DeepSeek：把搜索、文件与语音接成自己的聊天应用（补充）
 
 模型之外，搜索、文件与语音怎样组成可接入的应用服务？
 
@@ -162,16 +186,14 @@ DeepSeek把V4.1 Flash介绍为新结构系列中的较小型号，并将原生�
 
 [DeepSeek更新日志：发布全家桶应用 API](https://api-docs.deepseek.com/zh-cn/updates/#时间-2026-11-13) · [DeepSeek：构建 Chatbot 与演示客户端](https://api-docs.deepseek.com/zh-cn/guides/build_a_chatbot/)
 
-回到关键站：**DeepSeek V4.1 Flash：视觉理解进入新的API版本**。应用API补充模型周围的服务；回到V4.1 Flash，分清模型的视觉输入与后来增加的搜索、文件和语音接口。
+回到关键站 · [DeepSeek V4.1 Flash：视觉理解进入新的API版本](#event-deepseek-v41-flash-release)。应用API补充模型周围的服务；回到V4.1 Flash，分清模型的视觉输入与后来增加的搜索、文件和语音接口。
 
-[查看2026年背景](../2026.md)
+[查看 2026 年的这条记录](../2026.md#event-deepseek-application-apis)
 
 ## 这条线读到这里
 
 这条线留下三个变化：计算与显存开销进入模型设计；开放模型让个人有机会自行试验；后续版本再把工具、长资料和图片接进任务。实际是否好用，仍取决于型号、运行条件和任务。沿服务分支，还能看到搜索、文件和语音怎样接成应用。
 
-看看模型周围的应用服务：**DeepSeek：把搜索、文件与语音接成自己的聊天应用**。从图片输入继续看搜索、文件和语音怎样接入聊天应用；这些是后续服务能力，不能混同为新模型。
-
-[查看这件事所在的2026年](../2026.md)
+看看模型周围的应用服务 · [DeepSeek：把搜索、文件与语音接成自己的聊天应用](#event-deepseek-application-apis)。从图片输入继续看搜索、文件和语音怎样接入聊天应用；这些是后续服务能力，不能混同为新模型。
 
 [返回系列目录](README.md)
