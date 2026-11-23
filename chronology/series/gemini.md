@@ -2,9 +2,9 @@
 
 **从看懂多种材料，到改图和用工具，Gemini怎样落地？**
 
-Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。
+Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。 到了 Gemini 4，后缀换成元素名：Argon（氩）、Carbon（碳）、Hydrogen（氢）、Neon（氖），按这个顺序首次公布。元素序号和模型强弱没有顺序关系。看到 Neon（high）时，high 表示这次用的思考强度；Google AI Pro 则是订阅套餐。 拿读人物传记举例：随口问一个典故，先试 Hydrogen；嫌回答绕，可以试试以直接见长的 Argon。几本书对同一件事说法不同，让 Carbon 逐条理清依据；把几篇文章交给 Neon，再告诉它“刚才写得太空，换一个具体例子”，看它能否用上材料，也听进你的修改意见。
 
-截至2026-11-17定向核验近期进展。六个关键站保持，新增Hydrogen补充并区分11-12公告与11-16修订稿；平台自述、个人玩法和模型入口不代表普遍效果。历史版本、产品分支和独立效果仍未完整覆盖。
+截至2026-11-23，本轮复核 Gemini 4 四款型号的公布、开放和定位。日常问法是选用示例，中文口语风格仍缺四款同题盲测。
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
@@ -208,17 +208,33 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 <a name="event-gemini4-argon-ga" id="event-gemini4-argon-ga"></a>
 
-### 2026-10-13 · Gemini 4 Argon：从发布期待走到实际入口
+### 10-13（扩大开放，09-30 首次公布） · Gemini 4 Argon：从发布期待走到实际入口
 
 以实际入口和开放条件收束近期演进。
 
-10月13日，Google的API日志把Gemini 4 Argon标为正式可用；产品更新则说明它开始向Pro和Ultra订阅用户推出。同日，Gemini的macOS应用加入Antigravity入口，让用户在聊天之后交出编程计划，等待代理构建和测试。模型的开放与工具的整合在这里相遇，但两者不是同一种能力，账户、地区和语言限制也仍然存在。
+9 月 30 日，Google 首次公布 Argon（氩），先开放给少数受邀团队。10 月 13 日，API 正式可用，Gemini 应用开始向 Pro 和 Ultra 订阅者推出。Argon 擅长需要持续推理的工作。放进聊天框，Google 强调了另一个细节：少重复、少套话，直接答到问题上。这是厂商对风格的描述，中文聊起来如何还得看具体对话。
 
 变化与意义：模型进步要经过实际可访问的产品入口才会改变用法；正式可用、滚动开放与此前预告必须分开记录。
 
-[Gemini API release notes：Gemini 4 Argon GA](https://ai.google.dev/gemini-api/docs/changelog) · [Gemini Apps：2026年10月13日更新](https://gemini.google/sc/release-notes/?hl=en-GB)
+[Gemini API release notes：Gemini 4 Argon GA](https://ai.google.dev/gemini-api/docs/changelog) · [Gemini Apps：2026年10月13日更新](https://gemini.google/sc/release-notes/?hl=en-GB) · [Google · Argon 首次公布](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/) · [Google · Argon 进入 Gemini 应用](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/)
 
 [查看 2026 年的这条记录](../2026.md#event-gemini4-argon-ga)
+
+<a name="event-gemini4-carbon-release" id="event-gemini4-carbon-release"></a>
+
+### 10-28（公布，11-10 扩大开放） · Gemini 4 Carbon：几份材料说法打架时，逐条找依据（补充）
+
+想弄清两条互相矛盾的说法时，看 Carbon 怎样定位，以及知识测试实际测了什么。
+
+10 月 28 日，Google 公布 Carbon，先给部分受邀团队试用。同日，Artificial Analysis 的知识可靠性测验 AA-Omniscience v1.1 给 Carbon 54 分、Argon 46 分。这项指数会扣除答错的影响。它可以比较这一组题的表现，无法据此给四款模型的中文史料功底排座次。
+
+后来再看（截至2026-11-10）：11 月 10 日，Google 把 Carbon 扩大开放给付费开发者和企业。此时才有了更广泛可用的 API 入口。
+
+[Google · Carbon 首次公布](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/) · [Artificial Analysis · Carbon 与 Argon 的知识可靠性](https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1) · [Google · Carbon 扩大开放](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/)
+
+回到关键站 · [Gemini 4 Argon：从发布期待走到实际入口](#event-gemini4-argon-ga)。回看 Argon 怎样从少数团队试用走进聊天框，再看第四代后来分出了哪些用法。
+
+[查看 2026 年的这条记录](../2026.md#event-gemini4-carbon-release)
 
 <a name="event-gemini4-hydrogen-release" id="event-gemini4-hydrogen-release"></a>
 
@@ -226,7 +242,7 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 
 在Argon之后观察执行型号、任务分工与免费入口条件，保留公告和修订日的区别。
 
-11月12日，Google公布Gemini 4 Hydrogen，定位日常编程和代理工作的快速执行。官方把Carbon与Argon侧重的复杂判断，同编写代码、运行测试、核验改动等执行步骤区分开；这是一种产品分工说明，并非对每项工作效果的保证。
+11月12日，Google公布Gemini 4 Hydrogen，定位日常编程和代理工作的快速执行。官方把Carbon与Argon侧重的复杂判断，同编写代码、运行测试、核验改动等执行步骤区分开；这是一种产品分工说明，并非对每项工作效果的保证。 比如问“知行合一是什么意思，举个生活里的例子”，可以先用它聊。若再问某句话出自哪本书，就需要核对原文。这里的问法用于说明怎样选模型。
 
 变化与意义：一次工作不必只围绕最大型号设计。判断、执行和检查可能需要不同的能力与速度，读者还要核对所用产品是否提供相应入口。
 
@@ -237,6 +253,20 @@ Arena在8月27日发表、9月2日更新的文章里回顾，Nano Banana是发�
 回到关键站 · [Gemini 4 Argon：从发布期待走到实际入口](#event-gemini4-argon-ga)。Hydrogen增加执行与速度的选择；回到Argon，继续区分模型能力、任务分工和实际开放入口。
 
 [查看 2026 年的这条记录](../2026.md#event-gemini4-hydrogen-release)
+
+<a name="event-gemini4-neon-release" id="event-gemini4-neon-release"></a>
+
+### 11-18（开始推出） · Gemini 4 Neon：读完资料，还能听懂你为什么要它重写（补充）
+
+从给出答案走到读懂材料、接住中途修改的要求。
+
+11 月 18 日，Neon 开始进入 Gemini API，以及 Pro 和 Ultra 订阅者的 Gemini 应用。Google 强调它能对照上传的文档、表格和图片，还引述了任务中途接受用户纠正的评测。举个写作例子：你说“太空了，讲一件具体的事”，下一稿应当从资料里挑出一件事讲清楚；把原来三段大道理压成一句，仍然没听懂。这个例子说明怎样判断回答，并非中文实测成绩。
+
+[Google · Neon 发布与四个型号的分工](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/)
+
+回到关键站 · [Gemini 4 Argon：从发布期待走到实际入口](#event-gemini4-argon-ga)。回看 Argon 怎样从少数团队试用走进聊天框，再看第四代后来分出了哪些用法。
+
+[查看 2026 年的这条记录](../2026.md#event-gemini4-neon-release)
 
 ## 这条线读到这里
 

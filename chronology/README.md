@@ -1,14 +1,14 @@
 # 年度关键词与阅读入口
 
-## 最近一期（选材截至 2026-11-17）
+## 最近一期（选材截至 2026-11-23）
 
-一个人能把做好的应用发给同事，开会的人能在讨论中看到文档成形，开发者也能把搜索、文件和语音接进自己的聊天工具。下面七件事选自这一期更新。
+本期回看 Gemini 4。从 Argon 到 Neon，四个元素名指四款模型。随手问、读一叠资料、让它听懂一句“换个讲法”，分别能看出什么？
 
-- [Cursor：写出的应用，可以继续上线给别人用](2026.md#event-cursor-live-apps)
-- [Claude Meetings：会议进行时，笔记和文档一起形成](2026.md#event-claude-meetings-beta)
-- [DeepSeek：把搜索、文件与语音接成自己的聊天应用](2026.md#event-deepseek-application-apis)
+- [Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤](2026.md#event-gemini4-hydrogen-release)
+- [Gemini 4 Neon：读完资料，还能听懂你为什么要它重写](2026.md#event-gemini4-neon-release)
+- [Gemini 4 Carbon：几份材料说法打架时，逐条找依据](2026.md#event-gemini4-carbon-release)
 
-本期其余事件 · [Qwen4-Max：视觉、推理与长任务进入同一服务](2026.md#event-qwen4-max-release) · [Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤](2026.md#event-gemini4-hydrogen-release) · [Claude Fable与Mythos 5.2：同一底层模型，不同开放条件](2026.md#event-claude-fable52-mythos52) · [Seedream 5.5：生成一张图之后，还能怎样继续改](2026.md#event-seedream55-image-editing)
+本期其余事件 · [Gemini 4 Argon：从发布期待走到实际入口](2026.md#event-gemini4-argon-ga)
 
 ## 按问题读
 

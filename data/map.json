@@ -1,21 +1,18 @@
 {
   "schema_version": 3,
   "recent_update": {
-    "as_of": "2026-11-17",
-    "summary": "一个人能把做好的应用发给同事，开会的人能在讨论中看到文档成形，开发者也能把搜索、文件和语音接进自己的聊天工具。下面七件事选自这一期更新。",
+    "as_of": "2026-11-23",
+    "summary": "本期回看 Gemini 4。从 Argon 到 Neon，四个元素名指四款模型。随手问、读一叠资料、让它听懂一句“换个讲法”，分别能看出什么？",
     "featured_event_ids": [
-      "cursor-live-apps",
-      "claude-meetings-beta",
-      "deepseek-application-apis"
+      "gemini4-hydrogen-release",
+      "gemini4-neon-release",
+      "gemini4-carbon-release"
     ],
     "event_ids": [
-      "qwen4-max-release",
-      "deepseek-application-apis",
-      "claude-meetings-beta",
+      "gemini4-argon-ga",
+      "gemini4-carbon-release",
       "gemini4-hydrogen-release",
-      "claude-fable52-mythos52",
-      "seedream55-image-editing",
-      "cursor-live-apps"
+      "gemini4-neon-release"
     ]
   },
   "topics": [
@@ -53,7 +50,7 @@
       }
     }
   ],
-  "updated_at": "2026-11-20",
+  "updated_at": "2026-11-23",
   "years": [
     {
       "year": 2022,
@@ -241,7 +238,7 @@
       "tagline": "让 AI 持续做事，也要弄清它该做到哪里。",
       "summary": "代理继续进入持续工作，模型能力、运行效率和开放部署也在变化。实际效果、授权与评估仍决定哪些任务值得交出去；本年度尚未结束。",
       "status": "partial",
-      "coverage_note": "截至2026-11-17，进行中。本轮定向核验10-29至11-17的近期产品、模型与创作分支，新增7个代表事件；其他领域与此前各月没有同步全面重核。现有39个阶段代表事件，仍非全年或截至该日的穷尽覆盖。",
+      "coverage_note": "截至2026-11-23，收录41个阶段代表事件。11月17日之后仅定向复核 Gemini 4 四个型号及其沿革，其他领域仍沿用此前的选材范围。",
       "anchor_ids": [
         "alphagenome-nature-paper",
         "openclaw-personal-agent-rename",
@@ -252,7 +249,7 @@
         "eu-ai-omnibus-in-force",
         "openai-hugging-face-investigation"
       ],
-      "as_of": "2026-11-17",
+      "as_of": "2026-11-23",
       "featured_event_id": "openclaw-personal-agent-rename",
       "featured_reason": "从个人代理的期待进入持续委托，再看授权、效果与控制问题。",
       "display_groups": [
@@ -4140,7 +4137,7 @@
       "id": "gemini4-argon-ga",
       "year": 2026,
       "date": "2026-10-13",
-      "date_label": "2026-10-13",
+      "date_label": "10-13（扩大开放，09-30 首次公布）",
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Gemini 4 Argon：从发布期待走到实际入口",
@@ -4152,15 +4149,19 @@
       ],
       "why_selected": "模型进步要经过实际可访问的产品入口才会改变用法；正式可用、滚动开放与此前预告必须分开记录。",
       "then": {
-        "text": "10月13日，Google的API日志把Gemini 4 Argon标为正式可用；产品更新则说明它开始向Pro和Ultra订阅用户推出。同日，Gemini的macOS应用加入Antigravity入口，让用户在聊天之后交出编程计划，等待代理构建和测试。模型的开放与工具的整合在这里相遇，但两者不是同一种能力，账户、地区和语言限制也仍然存在。",
+        "text": "9 月 30 日，Google 首次公布 Argon（氩），先开放给少数受邀团队。10 月 13 日，API 正式可用，Gemini 应用开始向 Pro 和 Ultra 订阅者推出。Argon 擅长需要持续推理的工作。放进聊天框，Google 强调了另一个细节：少重复、少套话，直接答到问题上。这是厂商对风格的描述，中文聊起来如何还得看具体对话。",
         "source_ids": [
           "S-gemini-argon-ga",
-          "S-gemini-oct13-app"
+          "S-gemini-oct13-app",
+          "S-argon-first",
+          "S-argon-app-style"
         ]
       },
       "source_ids": [
         "S-gemini-argon-ga",
-        "S-gemini-oct13-app"
+        "S-gemini-oct13-app",
+        "S-argon-first",
+        "S-argon-app-style"
       ],
       "material_ids": [],
       "change": "模型进步要经过实际可访问的产品入口才会改变用法；正式可用、滚动开放与此前预告必须分开记录。"
@@ -5009,7 +5010,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤",
-      "summary": "按 Google 的产品分工，Carbon 或 Argon 处理复杂判断，Hydrogen 接手日常编程中的执行步骤，例如写代码和运行测试。",
+      "summary": "Hydrogen（氢）讲究快。问一个典故、解释一句报错，先听明白大意，再顺着答案追问，是它的日常用法。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -5017,7 +5018,7 @@
       ],
       "why_selected": "以任务分工与实际入口观察同一家族的模型选择，不将官方效率宣称写成独立测评结果。",
       "then": {
-        "text": "11月12日，Google公布Gemini 4 Hydrogen，定位日常编程和代理工作的快速执行。官方把Carbon与Argon侧重的复杂判断，同编写代码、运行测试、核验改动等执行步骤区分开；这是一种产品分工说明，并非对每项工作效果的保证。",
+        "text": "11月12日，Google公布Gemini 4 Hydrogen，定位日常编程和代理工作的快速执行。官方把Carbon与Argon侧重的复杂判断，同编写代码、运行测试、核验改动等执行步骤区分开；这是一种产品分工说明，并非对每项工作效果的保证。 比如问“知行合一是什么意思，举个生活里的例子”，可以先用它聊。若再问某句话出自哪本书，就需要核对原文。这里的问法用于说明怎样选模型。",
         "source_ids": [
           "S-gemini4-hydrogen-release"
         ]
@@ -5107,6 +5108,68 @@
           "S-qwen4-latest-model"
         ]
       }
+    },
+    {
+      "id": "gemini4-carbon-release",
+      "year": 2026,
+      "date": "2026-10-28",
+      "date_label": "10-28（公布，11-10 扩大开放）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Gemini 4 Carbon：几份材料说法打架时，逐条找依据",
+      "summary": "Carbon（碳）侧重步骤多、需要一直追着线索查下去的难题。例如三篇传记写了三个年份，先分清它们说的是同一件事吗，再找各自的依据。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "把知识问答里的两个问题拆开看：模型记得多少，以及它能否辨认自己拿不准的地方。",
+      "then": {
+        "text": "10 月 28 日，Google 公布 Carbon，先给部分受邀团队试用。同日，Artificial Analysis 的知识可靠性测验 AA-Omniscience v1.1 给 Carbon 54 分、Argon 46 分。这项指数会扣除答错的影响。它可以比较这一组题的表现，无法据此给四款模型的中文史料功底排座次。",
+        "source_ids": [
+          "S-carbon-first",
+          "S-aa-carbon-knowledge"
+        ]
+      },
+      "later": {
+        "as_of": "2026-11-10",
+        "text": "11 月 10 日，Google 把 Carbon 扩大开放给付费开发者和企业。此时才有了更广泛可用的 API 入口。",
+        "source_ids": [
+          "S-carbon-access"
+        ]
+      },
+      "source_ids": [
+        "S-carbon-first",
+        "S-aa-carbon-knowledge",
+        "S-carbon-access"
+      ],
+      "material_ids": []
+    },
+    {
+      "id": "gemini4-neon-release",
+      "year": 2026,
+      "date": "2026-11-18",
+      "date_label": "11-18（开始推出）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "Gemini 4 Neon：读完资料，还能听懂你为什么要它重写",
+      "summary": "Neon（氖）兼顾分析深度和完成速度。给它几篇文章，让它指出哪些段落在讲同一个故事，比只问一句“这个人物是谁”更能用上它的长处。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "“理解”有两种常见考法：能否从材料中找对细节，以及人改口后它能否跟着调整做法。",
+      "then": {
+        "text": "11 月 18 日，Neon 开始进入 Gemini API，以及 Pro 和 Ultra 订阅者的 Gemini 应用。Google 强调它能对照上传的文档、表格和图片，还引述了任务中途接受用户纠正的评测。举个写作例子：你说“太空了，讲一件具体的事”，下一稿应当从资料里挑出一件事讲清楚；把原来三段大道理压成一句，仍然没听懂。这个例子说明怎样判断回答，并非中文实测成绩。",
+        "source_ids": [
+          "S-neon-first"
+        ]
+      },
+      "source_ids": [
+        "S-neon-first"
+      ],
+      "material_ids": []
     }
   ],
   "sources": [
@@ -7206,6 +7269,60 @@
       "published_at": null,
       "accessed_at": "2026-11-20",
       "scope": "11 月 20 日查阅发布方仓库的文件清单，核对模型配置、许可证和 safetensors 权重分片。目录用于确认文件已列出，未进行下载或部署测试。"
+    },
+    {
+      "id": "S-argon-first",
+      "title": "Google · Argon 首次公布",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "kind": "official",
+      "published_at": "2026-09-30",
+      "accessed_at": "2026-11-23",
+      "scope": "公布日期、首轮限定试用和长任务定位。"
+    },
+    {
+      "id": "S-argon-app-style",
+      "title": "Google · Argon 进入 Gemini 应用",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
+      "kind": "official",
+      "published_at": "2026-10-13",
+      "accessed_at": "2026-11-23",
+      "scope": "订阅入口和厂商对回答风格的描述。"
+    },
+    {
+      "id": "S-carbon-first",
+      "title": "Google · Carbon 首次公布",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "kind": "official",
+      "published_at": "2026-10-28",
+      "accessed_at": "2026-11-23",
+      "scope": "限定开放及长任务定位。"
+    },
+    {
+      "id": "S-carbon-access",
+      "title": "Google · Carbon 扩大开放",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "kind": "official",
+      "published_at": "2026-11-10",
+      "accessed_at": "2026-11-23",
+      "scope": "付费开发者与企业入口，复杂知识工作。"
+    },
+    {
+      "id": "S-neon-first",
+      "title": "Google · Neon 发布与四个型号的分工",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "kind": "official",
+      "published_at": "2026-11-18",
+      "accessed_at": "2026-11-23",
+      "scope": "上线入口、阅读上传材料、思考强度，以及公告转述的任务中途纠正评测。"
+    },
+    {
+      "id": "S-aa-carbon-knowledge",
+      "title": "Artificial Analysis · Carbon 与 Argon 的知识可靠性",
+      "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+      "kind": "media",
+      "published_at": "2026-10-28",
+      "accessed_at": "2026-11-23",
+      "scope": "采用 AA-Omniscience v1.1 同轮指数，只用于知识可靠性比较。"
     }
   ],
   "materials": [
@@ -9380,9 +9497,9 @@
       "name": "Gemini",
       "provider": "Google",
       "question": "从看懂多种材料，到改图和用工具，Gemini怎样落地？",
-      "intro": "Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。",
-      "as_of": "2026-11-17",
-      "coverage_note": "截至2026-11-17定向核验近期进展。六个关键站保持，新增Hydrogen补充并区分11-12公告与11-16修订稿；平台自述、个人玩法和模型入口不代表普遍效果。历史版本、产品分支和独立效果仍未完整覆盖。",
+      "intro": "Gemini的特点先是多模态，再是长上下文；2025补上推理、对话改图和工具整合这几步。模型走进搜索或工作软件后，也会遇到错误反馈与实际开放条件。Bard和PaLM仅作为前身背景。 到了 Gemini 4，后缀换成元素名：Argon（氩）、Carbon（碳）、Hydrogen（氢）、Neon（氖），按这个顺序首次公布。元素序号和模型强弱没有顺序关系。看到 Neon（high）时，high 表示这次用的思考强度；Google AI Pro 则是订阅套餐。 拿读人物传记举例：随口问一个典故，先试 Hydrogen；嫌回答绕，可以试试以直接见长的 Argon。几本书对同一件事说法不同，让 Carbon 逐条理清依据；把几篇文章交给 Neon，再告诉它“刚才写得太空，换一个具体例子”，看它能否用上材料，也听进你的修改意见。",
+      "as_of": "2026-11-23",
+      "coverage_note": "截至2026-11-23，本轮复核 Gemini 4 四款型号的公布、开放和定位。日常问法是选用示例，中文口语风格仍缺四款同题盲测。",
       "entries": [
         {
           "event_id": "bard-announcement",
@@ -9465,12 +9582,30 @@
           "reason": "以实际入口和开放条件收束近期演进。"
         },
         {
+          "event_id": "gemini4-carbon-release",
+          "level": "supporting",
+          "reason": "想弄清两条互相矛盾的说法时，看 Carbon 怎样定位，以及知识测试实际测了什么。",
+          "return_to": {
+            "event_id": "gemini4-argon-ga",
+            "reason": "回看 Argon 怎样从少数团队试用走进聊天框，再看第四代后来分出了哪些用法。"
+          }
+        },
+        {
           "event_id": "gemini4-hydrogen-release",
           "level": "supporting",
           "reason": "在Argon之后观察执行型号、任务分工与免费入口条件，保留公告和修订日的区别。",
           "return_to": {
             "event_id": "gemini4-argon-ga",
             "reason": "Hydrogen增加执行与速度的选择；回到Argon，继续区分模型能力、任务分工和实际开放入口。"
+          }
+        },
+        {
+          "event_id": "gemini4-neon-release",
+          "level": "supporting",
+          "reason": "从给出答案走到读懂材料、接住中途修改的要求。",
+          "return_to": {
+            "event_id": "gemini4-argon-ga",
+            "reason": "回看 Argon 怎样从少数团队试用走进聊天框，再看第四代后来分出了哪些用法。"
           }
         }
       ],
