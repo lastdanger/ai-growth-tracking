@@ -15,6 +15,31 @@
   const relations = content.relations || [];
   const routesById = new Map((content.reading_routes || []).map(route => [route.id, route]));
   const seriesById = new Map((content.series || []).map(series => [series.id, series]));
+  const seriesTimeline = content.series_timeline;
+  const timelineStops = new Map();
+  const observationDays = new Set();
+  if (seriesTimeline) {
+    observationDays.add(seriesTimeline.as_of);
+    for (const row of seriesTimeline.rows) {
+      for (const entry of row.entries) {
+        const event = eventsById.get(entry.event_id);
+        const title = entry.label.startsWith(row.name) ? entry.label : `${row.name} · ${entry.label}`;
+        const reviews = [];
+        for (const id of event.material_ids) {
+          const material = materialsById.get(id);
+          const date = sourcesById.get(material.source_id).published_at;
+          if (material.temporal_context === 'retrospective' && date > event.date && date <= seriesTimeline.as_of) {
+            reviews.push({as_of: date, text: material.text, source_ids: [material.source_id]});
+          }
+        }
+        if (event.later?.as_of <= seriesTimeline.as_of) reviews.push(event.later);
+        reviews.sort((a, b) => a.as_of.localeCompare(b.as_of));
+        timelineStops.set(event.id, {label: entry.label, kind: entry.kind, title, reviews});
+        observationDays.add(event.date);
+        for (const note of reviews) observationDays.add(note.as_of);
+      }
+    }
+  }
   const topicsById = new Map((content.topics || []).map(topic => [topic.id, topic]));
   const laneNames = { models: '模型与能力', products: '产品与入口', people: '人群与文化', ecosystem: '开发与产业', governance: '制度与规则' };
   const roleNames = { milestone: '重要转折', 'public-impact': '社会回响', 'early-signal': '后续影响线索' };
@@ -248,9 +273,9 @@
     return `<aside class="detail-panel" aria-labelledby="detail-title">${returnHeader}${routeHeader}<div class="detail-head"><div class="detail-top"><div class="eyebrow">Event file / 事件</div><button type="button" class="close-detail" data-action="close">${state.topicId ? '返回专题' : '返回脉络'} ×</button></div><h2 id="detail-title" tabindex="-1">${escapeHTML(event.title)}</h2>${eventMeta(event)}</div>
       <div class="detail-body">${scene ? `<section class="detail-section scene">${renderMaterial(scene)}</section>` : ''}
       ${!event.change ? `<section class="detail-section"><h3>发生了什么</h3><p>${escapeHTML(event.summary)}</p>${sourceCues(event.source_ids)}</section>` : ''}
-      <section class="detail-section"><h3>${event.change ? '发生的变化' : '放回当时'}</h3><p>${escapeHTML(event.then.text)}</p>${sourceCues(event.then.source_ids)}</section>
+      ${renderPerspective(!event.change || seriesTimeline?.focus_event_ids.includes(event.id) ? '放回当时' : '发生的变化', event.then)}
       ${event.change ? `<section class="detail-section"><h3>为什么重要</h3><p>${escapeHTML(event.change)}</p>${sourceCues(event.then.source_ids)}</section>` : ''}
-      ${event.later ? `<section class="detail-section later-reading"><h3>后来再看 · 截至 ${escapeHTML(event.later.as_of)}</h3><p>${escapeHTML(event.later.text)}</p>${sourceCues(event.later.source_ids)}</section>` : ''}
+      ${event.later ? renderPerspective(`后来再看 · 截至 ${event.later.as_of}`, event.later, true) : ''}
       ${renderRouteExit(event)}${renderSeriesMembership(event)}
       ${additional.length ? `<details class="reading-fold" data-fold="materials"><summary>更多声音与材料 · ${additional.length}</summary>${additional.map(renderMaterial).join('')}</details>` : ''}
       ${related.length ? `<section class="detail-section related-reading"><h3>相关探索</h3><div class="related-list">${related.slice(0, 3).map(relatedCard).join('')}${related.length > 3 ? `<details class="reading-fold" data-fold="relations"><summary>其他关联 · ${related.length - 3}</summary>${related.slice(3).map(relatedCard).join('')}</details>` : ''}</div></section>` : ''}
@@ -291,8 +316,85 @@
     return `<section class="route-next"><div class="eyebrow">${escapeHTML(series.name)} · 第 ${keys.indexOf(current) + 1} / ${keys.length} 个关键站</div>${onward}${previous ? `<div class="route-previous">${seriesButton(series, '上一关键站', previous.event_id)}</div>` : ''}${yearLink}</section>`;
   }
 
+  function renderPerspective(title, note, later = false) {
+    const paragraphs = note.text.split('\n\n').map(p => `<p>${escapeHTML(p)}</p>`).join('');
+    return `<section class="detail-section${later ? ' later-reading' : ''}"><h3>${escapeHTML(title)}</h3>${paragraphs}${sourceCues(note.source_ids)}</section>`;
+  }
+
+  function timelineHref(day, eventId) {
+    const params = new URLSearchParams({view: 'series'});
+    if (day !== seriesTimeline.as_of) params.set('until', day);
+    if (eventId) params.set('event', eventId);
+    return '#' + params.toString();
+  }
+
+  function renderTimelineReading(event, day) {
+    if (!event) return '';
+    const stop = timelineStops.get(event.id);
+    const review = stop.reviews.filter(note => note.as_of <= day).map(note =>
+      renderPerspective(`后来再看 · 截至 ${note.as_of}`, note, true)).join('');
+    const next = stop.reviews.find(note => note.as_of > day);
+    return `<article class="calendar-reading" aria-labelledby="timeline-reading-title">
+      <div class="calendar-head"><h2 id="timeline-reading-title" tabindex="-1">${escapeHTML(stop.title)}</h2>
+      <a data-action="close" href="${escapeHTML(timelineHref(day))}">返回时间线 ×</a></div>
+      ${renderPerspective(`放回当时 · ${event.date}`, event.then)}${review}
+      ${next ? `<p><a href="${escapeHTML(timelineHref(next.as_of, event.id))}">读到 ${escapeHTML(next.as_of)}，看看后来有什么变化 →</a></p>` : ''}
+      <button type="button" class="route-button secondary" data-action="event-year" data-event="${escapeHTML(event.id)}">在年度地图中读完整档案 ↗</button></article>`;
+  }
+
+  function timelineBadge(key, mark) {
+    return `<span class="calendar-badge" data-mark="${escapeHTML(key)}" style="--mark-color:${escapeHTML(mark.color || 'var(--accent)')}"><span aria-hidden="true" class="calendar-symbol">${escapeHTML(mark.symbol)}</span> ${escapeHTML(mark.label)}</span>`;
+  }
+
+  function renderTimelineLegend(legend) {
+    if (!legend) return '';
+    return `<div class="calendar-legend" role="group" aria-label="时间线图例">
+      <div><strong>事件类型</strong>${Object.entries(legend.kinds).map(([key, mark]) => timelineBadge(key, mark)).join('')}</div>
+      <div><strong>阅读状态</strong>${timelineBadge('review', legend.review)}</div></div>`;
+  }
+
+  function renderSeriesTimeline() {
+    if (!seriesTimeline) return '';
+    const day = state.timelineDay || seriesTimeline.as_of;
+    const months = seriesTimeline.months;
+    const legend = seriesTimeline.legend;
+    const selected = eventsById.get(state.eventId);
+    const options = [...observationDays].sort().map(date =>
+      `<option value="${date}"${date === day ? ' selected' : ''}>${date}</option>`).join('');
+    const rows = seriesTimeline.rows.map(row => {
+      const entries = row.entries.map(entry => eventsById.get(entry.event_id))
+        .filter(event => event.date <= day).sort(compareEvents);
+      const cells = months.map(month => {
+        const stops = entries.filter(event => event.date.startsWith(month)).map(event => {
+          const date = new Date(event.date + 'T00:00:00Z');
+          const daysInMonth = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
+          const position = (date.getUTCDate() - 0.5) / daysInMonth * 100;
+          const stop = timelineStops.get(event.id);
+          const kind = legend?.kinds[stop.kind];
+          const reviewed = legend && stop.reviews.some(note => note.as_of <= day);
+          const name = [stop.title, event.date, kind?.label, reviewed && legend.review.label].filter(Boolean).join('，');
+          return `<a class="calendar-stop" data-timeline-stop="${escapeHTML(event.id)}" aria-label="${escapeHTML(name)}" href="${escapeHTML(timelineHref(day, event.id))}"${selected?.id === event.id ? ' aria-current="true"' : ''} style="--day:${position.toFixed(2)}%;--mark-color:${escapeHTML(kind?.color || 'var(--accent)')}">
+            ${kind ? timelineBadge(stop.kind, kind) : ''}<span class="calendar-label">${escapeHTML(stop.label)}</span>
+            <span class="calendar-date"><time datetime="${event.date}">${event.date.slice(5).replace('-', '.')}</time>${reviewed ? timelineBadge('review', legend.review) : ''}</span>
+            <span class="calendar-axis" aria-hidden="true"></span></a>`;
+        }).join('');
+        return `<td>${stops}</td>`;
+      }).join('');
+      return `<tr><th scope="row">${escapeHTML(row.name)}</th>${cells}</tr>`;
+    }).join('');
+    const trials = seriesTimeline.focus_event_ids.filter(id => eventsById.get(id).date <= day)
+      .map(id => `<a href="${escapeHTML(timelineHref(day, id))}">${escapeHTML(timelineStops.get(id).title)}</a>`);
+    return `<section class="series-calendar" aria-labelledby="calendar-title"><div class="calendar-head">
+      <h2 id="calendar-title">跨系列大事时间线</h2><label>观察至 <select id="timeline-day">${options}</select></label></div>
+      <p class="calendar-guide">横着看一家，按列比同月。每张卡片底部的点标出月内日期。${legend ? '日期旁标有“' + escapeHTML(legend.review.label) + '”时，点开可读后续。' : ''}空格表示截至观察日尚无入选事件。</p>
+      ${renderTimelineLegend(legend)}
+      <div class="calendar-scroll"><table class="calendar-grid" role="table" aria-labelledby="calendar-title" style="--months:${months.length}"><thead><tr><th scope="col">系列</th>${months.map(m => `<th scope="col">${escapeHTML(m.replace('-', '.'))}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>
+      ${trials.length ? `<p class="calendar-trials">首发与回看试读　${trials.join('　·　')}</p>` : ''}
+      ${renderTimelineReading(selected, day)}</section>`;
+  }
+
   function renderSeriesDirectory() {
-    return `<section class="overview-heading"><div class="eyebrow">Model histories / 模型系列</div><h1>沿一个系列，<br>看变化怎样积累。</h1><p>从起点到最近收录的进展，跨年追踪能力、用法与内外反应。这里精选关键转折，不是完整版本目录或实时排行榜。</p></section><div class="series-grid">${[...seriesById.values()].map(s => {
+    return `<section class="overview-heading"><div class="eyebrow">Model histories / 模型系列</div><h1>模型怎样走到这一步？</h1><p>把几家的关键进展放在同一段日历上读，也可以沿一个系列跨年追踪。</p></section>${renderSeriesTimeline()}<h2 class="series-directory-title">沿一个系列跨年读</h2><div class="series-grid">${[...seriesById.values()].map(s => {
       const latest = eventsById.get(s.entries.at(-1).event_id);
       return `<article class="series-card"><div class="eyebrow">${escapeHTML(s.provider)}</div><h2>${escapeHTML(s.name)}</h2><p class="series-question">${escapeHTML(s.question)}</p><div class="series-latest"><small>最近收录 · ${escapeHTML(latest.date_label)}</small><p><a href="#series=${encodeURIComponent(s.id)}&amp;event=${encodeURIComponent(latest.id)}">${escapeHTML(latest.title)}</a></p></div><small>${s.entries.filter(e => e.level === 'key').length} 个关键站 · 核验截至 ${escapeHTML(s.as_of)}</small>${seriesButton(s, '沿系列阅读')}</article>`;
     }).join('')}</div>`;
@@ -342,13 +444,14 @@
     const series = seriesById.get(state.seriesId);
     const locationName = series?.name || (state.prehistory ? '前史线索' : `${year.year} · ${year.keyword}`);
     breadcrumbs.innerHTML = `<button type="button" data-action="overview"${state.overview ? ' aria-current="page" class="current"' : ''}>年度总览</button>${!state.overview ? `<span aria-hidden="true">/</span><button type="button" data-action="${state.prehistory ? 'prehistory' : 'year'}"${state.prehistory ? '' : ` data-year="${escapeHTML(year.year)}"`}${!selected ? ' aria-current="page" class="current"' : ''}>${escapeHTML(locationName)}</button>` : ''}${!state.overview && selected ? `<span aria-hidden="true">/</span><span class="current" aria-current="page">${escapeHTML(selected.title)}</span>` : ''}`;
-    if (state.seriesOverview || series) breadcrumbs.innerHTML = `<button type="button" data-action="series-directory"${state.seriesOverview ? ' aria-current="page"' : ''}>模型系列</button>${series ? `<span>/</span><button type="button" data-action="series" data-series="${series.id}"${!selected ? ' aria-current="page"' : ''}>${escapeHTML(series.name)}</button>` : ''}${selected ? `<span>/</span><span class="current" aria-current="page">${escapeHTML(selected.title)}</span>` : ''}`;
+    const title = state.seriesOverview && selected ? timelineStops.get(selected.id).title : selected?.title;
+    if (state.seriesOverview || series) breadcrumbs.innerHTML = `<button type="button" data-action="series-directory"${state.seriesOverview && !selected ? ' aria-current="page"' : ''}>模型系列</button>${series ? `<span>/</span><button type="button" data-action="series" data-series="${series.id}"${!selected ? ' aria-current="page"' : ''}>${escapeHTML(series.name)}</button>` : ''}${selected ? `<span>/</span><span class="current" aria-current="page">${escapeHTML(title)}</span>` : ''}`;
     const topic = topicsById.get(state.topicId);
     if (topic) {
       breadcrumbs.innerHTML = `<button type="button" data-action="overview">年度总览</button><span>/</span>${selected ? `<a href="${topicHref(topic)}">按问题读</a><span>/</span><span class="current" aria-current="page">${escapeHTML(selected.title)}</span>` : '<span class="current" aria-current="page">按问题读</span>'}`;
     }
     app.innerHTML = viewNavigation() + (topic ? renderTopic(topic, selected) : state.seriesOverview ? renderSeriesDirectory() : series ? renderSeries(series) : state.overview ? renderOverview() : state.prehistory ? renderPrehistory() : renderYear(year));
-    document.title = `${topic ? (selected?.title || topic.title) : state.seriesOverview ? '模型系列' : state.overview ? '年度总览' : selected?.title || locationName} — 仍在生成`;
+    document.title = `${topic ? (title || topic.title) : state.seriesOverview ? (title || '模型系列') : state.overview ? '年度总览' : title || locationName} — 仍在生成`;
     document.getElementById('updated-at').textContent = content.updated_at ? `页面与文字更新 ${content.updated_at}` : '本地内容快照';
     document.getElementById('coverage-as-of').textContent = state.overview || state.prehistory ? '资料覆盖截止见各年，不代表已收齐最新事件' : `${year.year} 年资料覆盖核验截至 ${year.as_of} · 非全年穷尽`;
     if (series || state.seriesOverview) document.getElementById('coverage-as-of').textContent = series ? `${series.name} 选材核验截至 ${series.as_of} · 非完整版本目录` : '各系列分别标注核验截止与历史缺口';
@@ -405,13 +508,14 @@
     try { history.pushState(null, '', hash); } catch { location.hash = hash; }
   }
 
-  function readLocation() {
+  function readLocation(focusTarget) {
     cancelAnimationFrame(restoreFrame);
     restoring = true;
     renderedHash = location.hash;
     const saved = history.state?.mapView;
     const view = saved?.hash === location.hash ? saved : null;
     const params = new URLSearchParams(location.hash.slice(1));
+    const previousStop = state.seriesOverview ? state.eventId : null;
     const year = Number(params.get('year'));
     let event = eventsById.get(params.get('event'));
     const series = seriesById.get(params.get('series'));
@@ -421,7 +525,8 @@
     state.seriesOverview = params.get('view') === 'series' || (params.has('series') && !series);
     state.seriesId = !state.seriesOverview && series ? series.id : null;
     state.seriesOrigin = null;
-    if (state.seriesOverview) event = null;
+    state.timelineDay = observationDays.has(params.get('until')) ? params.get('until') : seriesTimeline?.as_of;
+    if (state.seriesOverview && (params.get('view') !== 'series' || !timelineStops.has(event?.id) || event.date > state.timelineDay)) event = null;
     // 非成员事件不能伪装为系列内节点；直接深链保留明确的返回来处。
     if (state.seriesId && event && !series.entries.some(e => e.event_id === event.id)) {
       state.seriesOrigin = {seriesId: series.id, eventId: series.entries.find(e => e.level === 'key').event_id};
@@ -449,9 +554,18 @@
     restoreFrame = requestAnimationFrame(() => {
       restoreFrame = 0;
       const panel = document.querySelector('.detail-panel');
-      if (view) {
+      if (focusTarget === 'timeline-day') {
+        document.getElementById('timeline-day')?.focus();
+      } else if (view) {
         window.scrollTo({ top: view.scrollY, behavior: 'instant' });
         if (panel) panel.scrollTop = view.detailScroll;
+        if (state.seriesOverview && event) document.getElementById('timeline-reading-title')?.focus({ preventScroll: true });
+        else if (state.seriesOverview && previousStop) app.querySelector(`[data-timeline-stop="${previousStop}"]`)?.focus({ preventScroll: true });
+      } else if (state.seriesOverview && event) {
+        document.getElementById('timeline-reading-title')?.focus();
+      } else if (state.seriesOverview && previousStop) {
+        const trigger = app.querySelector(`[data-timeline-stop="${previousStop}"]`) || document.getElementById('timeline-day');
+        trigger?.focus();
       } else if (event && !state.overview) {
         if (state.topicId || state.seriesId) document.getElementById('detail-title')?.focus({ preventScroll: true });
         panel?.scrollIntoView({ block: 'start', behavior: 'instant' });
@@ -477,7 +591,7 @@
   }
 
   function handleAction(event) {
-    const button = event.target.closest('[data-action], a[href^="#topic="], a[href^="#series="]');
+    const button = event.target.closest('[data-action], a[href^="#topic="], a[href^="#series="], a[href^="#view=series"]');
     if (!button) return;
     if (button.tagName === 'A') {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -518,6 +632,7 @@
     let announcement = '';
     if (action === 'series-directory') {
       state.seriesOverview = true;
+      state.timelineDay = seriesTimeline?.as_of;
       state.overview = false;
       state.prehistory = false;
       state.eventId = null;
@@ -616,6 +731,15 @@
   }
 
   app.addEventListener('click', handleAction);
+  app.addEventListener('change', event => {
+    if (event.target.id !== 'timeline-day') return;
+    const day = event.target.value;
+    const selected = eventsById.get(state.eventId);
+    rememberView();
+    pushHash(timelineHref(day, selected?.date <= day ? selected.id : null));
+    readLocation('timeline-day');
+    announcer.textContent = `时间线已显示至 ${day}`;
+  });
   breadcrumbs.addEventListener('click', handleAction);
   document.querySelector('.skip-link')?.addEventListener('click', event => {
     // 地图用 hash 保存路线；跳过导航只移动焦点，不能覆盖阅读地址。

@@ -9,16 +9,39 @@ const rejects = (name, change, error) => test(name, () => {
   assert.throws(() => checkMap(data), error);
 });
 test('当前数据契约可校验', () => assert.equal(checkMap(original).events, original.events.length));
-test('早期内容包可省略近期入口和专题', () => {
+test('早期内容包可省略近期入口、专题和跨系列时间线', () => {
   const data = structuredClone(original);
   delete data.recent_update;
   delete data.topics;
+  delete data.series_timeline;
   assert.equal(checkMap(data).events, original.events.length);
 });
 rejects('近期入口只推荐本期收录的事件', d => d.recent_update.featured_event_ids[0] = 'gpt4-release', /Recent featured events outside selection/);
 rejects('近期入口不得提前收录后来的事件', d => d.recent_update.as_of = '2026-11-01', /Recent event exceeds cutoff/);
 rejects('专题材料必须属于对应事件', d => d.topics[0].items[0].source_id = d.topics[0].items[1].source_id, /Topic source outside event/);
 rejects('专题延伸阅读必须有可到达的事件', d => d.topics[0].follow_up.event_id = 'missing', /Topic follow-up/);
+rejects('跨系列节点必须落在真实日历窗口', d => d.series_timeline.rows[0].entries[0].event_id = 'gpt4-release', /Timeline event outside dated window/);
+rejects('首发视角不能提前引用后来的评测', d => {
+  d.events.find(e => e.id === 'kimi-k31-pro-release').then.source_ids.push('S-aa-neon-launch-index');
+}, /Timeline contemporary evidence exceeds event date/);
+rejects('试读档案须来自本段时间线', d => d.series_timeline.focus_event_ids[0] = 'gpt4-release', /Unknown timeline readings/);
+rejects('时间线节点的变化类型必须能在图例找到', d => d.series_timeline.rows[0].entries[0].kind = 'unknown', /Unknown timeline legend kind/);
+rejects('不同含义不能共用同一个图例符号', d => d.series_timeline.legend.review.symbol = d.series_timeline.legend.kinds.release.symbol, /Repeated timeline legend symbol/);
+rejects('节点色必须能安全用于样式和文字版图例', d => d.series_timeline.legend.review.color = 'red; display:none', /Invalid timeline legend color/);
+rejects('回看和事件类型的底色须能区分', d => d.series_timeline.legend.review.color = d.series_timeline.legend.kinds.release.color.toLowerCase(), /Repeated timeline legend color/);
+test('兼容仅含日期节点的旧时间线', () => {
+  const data = structuredClone(original);
+  delete data.series_timeline.legend;
+  for (const row of data.series_timeline.rows) for (const entry of row.entries) delete entry.kind;
+  assert.equal(checkMap(data).events, original.events.length);
+});
+test('事件档案可继续更新，秋季时间线保留原截止日', () => {
+  const data = structuredClone(original);
+  data.updated_at = '2026-11-24';
+  data.events.find(e => e.id === 'kimi-k31-pro-release').later.as_of = data.updated_at;
+  assert.equal(checkMap(data).events, original.events.length);
+  assert.equal(data.series_timeline.as_of, '2026-11-23');
+});
 rejects('系列引用必须存在', d => d.series[0].entries[0].event_id = 'missing', /Unknown series/);
 rejects('系列内不能重复事件', d => d.series[0].entries.push(d.series[0].entries[0]), /Repeated series/);
 rejects('系列须按日期排序', d => { const a = d.series[0].entries; [a[2], a[3]] = [a[3], a[2]]; }, /Series chronological order/);

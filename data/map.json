@@ -1,5 +1,97 @@
 {
   "schema_version": 3,
+  "series_timeline": {
+    "legend": {
+      "kinds": {
+        "release": { "symbol": "●", "label": "新型号发布", "color": "#64E1A6" },
+        "revision": { "symbol": "◆", "label": "同型号更新", "color": "#FFBF60" },
+        "tools": { "symbol": "▲", "label": "工具接入", "color": "#79C3FF" }
+      },
+      "review": { "symbol": "↺", "label": "已有回看", "color": "#D9B2FF" }
+    },
+    "months": [
+      "2026-09",
+      "2026-10",
+      "2026-11"
+    ],
+    "as_of": "2026-11-23",
+    "focus_event_ids": [
+      "deepseek-v41-flash-release",
+      "kimi-k31-pro-release"
+    ],
+    "rows": [
+      {
+        "name": "DeepSeek",
+        "entries": [
+          {
+            "event_id": "deepseek-v41-flash-release",
+            "kind": "release",
+            "label": "V4.1 Flash 识图"
+          },
+          {
+            "event_id": "deepseek-v41-flash-oct17",
+            "kind": "revision",
+            "label": "Flash 换版"
+          },
+          {
+            "event_id": "deepseek-application-apis",
+            "kind": "tools",
+            "label": "文件与搜索 API"
+          }
+        ]
+      },
+      {
+        "name": "Kimi",
+        "entries": [
+          {
+            "event_id": "kimi-k31-pro-release",
+            "kind": "release",
+            "label": "K3.1 Pro"
+          }
+        ]
+      },
+      {
+        "name": "GPT",
+        "entries": [
+          {
+            "event_id": "gpt6-astra-release",
+            "kind": "release",
+            "label": "GPT-6 Astra 限量开放"
+          },
+          {
+            "event_id": "gpt62-astra-sol-release",
+            "kind": "release",
+            "label": "GPT-6.2 Astra / Sol"
+          }
+        ]
+      },
+      {
+        "name": "Gemini",
+        "entries": [
+          {
+            "event_id": "gemini4-carbon-release",
+            "kind": "release",
+            "label": "Carbon 邀请试用"
+          },
+          {
+            "event_id": "gemini4-neon-release",
+            "kind": "release",
+            "label": "Neon"
+          }
+        ]
+      },
+      {
+        "name": "腾讯混元",
+        "entries": [
+          {
+            "event_id": "tencent-hy4-flash",
+            "kind": "release",
+            "label": "Hy4 flash"
+          }
+        ]
+      }
+    ]
+  },
   "recent_update": {
     "as_of": "2026-11-23",
     "summary": "本期看三件事：同一代 GPT 怎么选，腾讯模型何时能自己部署，ChatGPT 做好的页面谁能打开。另补了 Qwen4-Max 的实际使用入口。",
@@ -4174,7 +4266,7 @@
       "date_precision": "day",
       "date_basis": "announcement",
       "title": "DeepSeek V4.1 Flash：视觉理解进入新的API版本",
-      "summary": "V4.1 Flash将原生视觉理解带入新的结构系列。",
+      "summary": "9 月 10 日，开发者可以把图片和问题一起发给 DeepSeek V4.1 Flash。",
       "lane": "models",
       "tier": "branch",
       "roles": [
@@ -4182,23 +4274,35 @@
       ],
       "why_selected": "从V4预览到V4.1，关注点进一步转向多模态输入、吞吐与实际调用，而不只是模型规模。",
       "then": {
-        "text": "DeepSeek把V4.1 Flash介绍为新结构系列中的较小型号，并将原生视觉理解接入API。对开发者而言，变化是图片与文字可以进入同一模型流程；与此同时，原有调用名存在迁移和路由兼容安排。发布页列出的测试成绩属于官方结果，本节点不据此推断它已经在所有工作中领先，也不将API上线视作权重同步开放。",
+        "text": "9 月 10 日，DeepSeek 把原生视觉接进 V4.1 Flash。开发者可以把一张图和一个问题交给同一个模型，API 单价也在当天调低。旧的 Flash 调用名会暂时转到新版，因此比较两次输出时，得先看各自的调用日期。首发页给出的识图成绩来自 DeepSeek 自测。",
         "source_ids": [
           "S-deepseek-v41-sep10"
         ]
       },
       "source_ids": [
-        "S-deepseek-v41-sep10"
+        "S-deepseek-v41-sep10",
+        "S-deepseek-v41-oct17",
+        "S-deepseek-application-apis",
+        "S-hy4-flash-repo"
       ],
       "material_ids": [],
-      "change": "从V4预览到V4.1，关注点进一步转向多模态输入、吞吐与实际调用，而不只是模型规模。",
+      "change": "要给已有程序加上看图问答，可以沿用 API 接入方式，换成支持图文的模型。",
       "reading_picks": [
         {
           "event_id": "deepseek-v41-flash-oct17",
           "label": "服务后续",
           "reason": "再看同一调用名下的更新及搜索API，区分模型与工具的变化。"
         }
-      ]
+      ],
+      "later": {
+        "as_of": "2026-11-23",
+        "text": "10 月 17 日，原来的 deepseek-flash 调用名已指向 1017 版，调用价格保持不变。11 月 13 日，同一接口又能接收文件、读取链接和联网搜索。前一次换了模型，后一次增加的是服务端工具。\n\n11 月多了一种做办公任务的选择。腾讯在自家的 WorkIndex 上测得，Hy4 flash 平均完成一项任务的费用约为 DeepSeek V4.1 Flash-1017 的八分之一。比的是做文稿、修表格等一组任务，DeepSeek 用 Max 档、按峰时价格计费。要批量处理类似文档，这个结果值得拿自己的样稿复测。两款在日常问答或低峰时段谁更划算，仍要另测。",
+        "source_ids": [
+          "S-deepseek-v41-oct17",
+          "S-deepseek-application-apis",
+          "S-hy4-flash-repo"
+        ]
+      }
     },
     {
       "id": "deepseek-v41-flash-oct17",
@@ -4243,7 +4347,7 @@
       ],
       "why_selected": "同一次升级，调用 API 的人关心实际账单，自行部署的人要等权重文件。两种用法各有自己的时间表。",
       "then": {
-        "text": "10 月 23 日，Kimi 开放 K3.1 Pro 及更快的 Highspeed 版本，并预告在 11 月 4 日前发布完整权重。Artificial Analysis 当天发表评测，代理任务的改善较明显。它还发现，在这组测试里，K3.1 Pro 每项任务消耗的输出词元更多，抵消了部分单价降幅。",
+        "text": "10 月 23 日，Kimi 开放 K3.1 Pro 的 API 和更快的 Highspeed 版，完整权重当时还在预告中。Artificial Analysis 的首发评测里，K3.1 Pro 的综合指数是 55 分，高于上一代 K3 的 44 分，在当天排第四。让模型连续操作工具的任务进步尤其明显。按词元算的单价降了，跑完这组任务的平均账单仍接近前代，因为新版写出了更多词元。",
         "source_ids": [
           "S-kimi-k31-guide",
           "S-kimi-k31-announcement",
@@ -4255,17 +4359,22 @@
         "S-kimi-k31-announcement",
         "S-aa-kimi-k31",
         "S-kimi-k31-weights-faq",
-        "S-kimi-k31-weights-files"
+        "S-kimi-k31-weights-files",
+        "S-aa-gpt62-launch-index",
+        "S-aa-neon-launch-index"
       ],
       "material_ids": [
-        "M-kimi-k31-pro-release-scene"
+        "M-kimi-k31-pro-release-scene",
+        "M-kimi-nov18-choices"
       ],
-      "change": "选用 API 时，估算账单要看一项任务实际消耗多少词元。计划自行部署时，可以查仓库里的权重文件和许可证，再决定能否采用。",
+      "change": "10 月要接入 Kimi，可以先比较 API 跑完一项任务的账单。必须自行部署的团队，当时还要等发布方提供完整权重。",
       "scene_material_id": "M-kimi-k31-pro-release-scene",
       "later": {
-        "text": "截至 11 月 20 日，Kimi 已在产品说明中确认完整权重发布。Moonshot AI 的 Hugging Face 仓库列出了配置、许可证和多个 safetensors 权重分片，希望自行部署的人可以取得这些文件。",
         "as_of": "2026-11-20",
+        "text": "选 API 时，11 月 17 日多了一个同价位的参照。GPT-6.2 Sol 发布时，每百万输入、输出词元分别报 2 和 10 美元，和 K3.1 Pro 的 10 月首发报价相同。要算哪款读完一份文档更划算，还得看它为这项任务实际生成了多少词元。\n\n对准备自己部署的人，变化更直接。截至 11 月 20 日，月之暗面的仓库已能取得 K3.1 Pro 的完整权重和许可证。首发时要等的文件现在拿得到，这给 Kimi 留下了一个与云端榜单名次不同的选择理由。",
         "source_ids": [
+          "S-aa-gpt62-launch-index",
+          "S-aa-kimi-k31",
           "S-kimi-k31-weights-faq",
           "S-kimi-k31-weights-files"
         ]
@@ -5263,6 +5372,24 @@
     }
   ],
   "sources": [
+    {
+      "id": "S-aa-gpt62-launch-index",
+      "title": "Artificial Analysis · 11 月 17 日 GPT-6.2 发布评测",
+      "url": "https://artificialanalysis.ai/articles/openai-has-the-2-model-in-the-intelligence-index-with-the-release-of-gpt-6-2-astra-and-gpt-6-2-sol",
+      "kind": "media",
+      "published_at": "2026-11-17",
+      "accessed_at": "2026-11-23",
+      "scope": "评测方发布日的综合指数与推理设置，用于说明当时新增的云端选择。与 Kimi 的 10 月首发文章分别保留观察日。"
+    },
+    {
+      "id": "S-aa-neon-launch-index",
+      "title": "Artificial Analysis · 11 月 18 日 Gemini 4 Neon 发布评测",
+      "url": "https://artificialanalysis.ai/articles/gemini-4-neon-intelligence-gain",
+      "kind": "media",
+      "published_at": "2026-11-18",
+      "accessed_at": "2026-11-23",
+      "scope": "Neon 的 xhigh 档与 Astra 的 max 档在该日综合指数上的位置。比较范围限于该评测的任务与设置。"
+    },
     {
       "id": "S-20e2d681bdc9",
       "title": "ChatGPT 公开推出 · 原始来源",
@@ -7443,12 +7570,12 @@
     },
     {
       "id": "S-hy4-flash-repo",
-      "title": "腾讯混元 · 模型仓库与下载入口",
+      "title": "腾讯混元 · 权重文件与 WorkIndex 任务成本对照",
       "url": "https://github.com/Tencent-Hunyuan/Hy4-flash",
       "kind": "official",
       "published_at": null,
       "accessed_at": "2026-11-23",
-      "scope": "核实标准、FP8、Base 三种权重和许可链接，不据仓库当前状态倒推出服务首发日。"
+      "scope": "标准、FP8、Base 权重与许可入口。仓库 Practicality and Cost Efficiency 一节给出腾讯内部 WorkIndex 的平均单任务费用，DeepSeek 对照为 V4.1 Flash-1017、Max 档、峰时计价。"
     },
     {
       "id": "S-space-plus-rollout",
@@ -7470,6 +7597,14 @@
     }
   ],
   "materials": [
+    {
+      "id": "M-kimi-nov18-choices",
+      "source_id": "S-aa-neon-launch-index",
+      "kind": "report",
+      "title": "11 月的云端候选里多了谁？",
+      "text": "11 月 18 日，Artificial Analysis 把 Gemini 4 Neon（xhigh）列为综合指数第三名，排在 Claude Fable 5.2 和 GPT-6.2 Astra（max）之后。Kimi 首发以后，这张榜的前三里出现了两个新对手。要量出 Kimi 与领先者的差距变了多少，还需要两期同题、同设置的对照。",
+      "temporal_context": "retrospective"
+    },
     {
       "id": "M-spring-headline",
       "title": "当时的报道标题",
@@ -9794,8 +9929,8 @@
       "provider": "DeepSeek",
       "question": "从计算效率到个人试用，DeepSeek 的变化怎样积累？",
       "intro": "先看模型怎样少占显存、让每一步只动用部分计算模块，再看开放下载怎样让人动手试用。R1 的推理与手机上的热潮分别成站；后半段追踪工具、长资料和图片怎样进入使用过程。",
-      "as_of": "2026-11-17",
-      "coverage_note": "截至2026-11-17定向核验近期进展。七个关键站保持，10月模型/搜索更新与11月应用API作为补充。V3.2等中间版本、更多独立部署与成本比较仍未完整整理；这次服务补项不代表全部旧节点已重新核验。",
+      "as_of": "2026-11-23",
+      "coverage_note": "截至2026-11-23，定向补读 V4.1 Flash 首发和后续定位，10 月模型换版、11 月应用 API 可从分支展开。系列其余内容沿用此前选材，独立部署与更多任务的成本比较仍有空缺。",
       "entries": [
         {
           "event_id": "deepseek-v2-efficiency",

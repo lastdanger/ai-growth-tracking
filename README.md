@@ -1,48 +1,70 @@
 # 仍在生成 · AI 时代探索地图
 
-想了解眼下有什么变化，可以从首页的“最近一期”开始。想顺着时间读，可以从 2023 年的“破圈”进入。想先看一件事怎样做成，可以打开第一篇[专题对照](chronology/topics/website-deliverables.md)。
+站回某一天，那时能用哪些模型？后来谁又多了一种选择？这张地图从 2022 年起，沿年度、模型系列和具体问题追踪 AI 怎样进入工作、创作与日常生活。
 
-年度地图梳理同一时期的事件。模型系列则跨年追踪 GPT、Claude、Gemini、DeepSeek、Qwen 和 GLM。专题借用同一批事件与来源，把相似问题放到一起读。
+[在线地图](https://ai-growth-tracking.lastdanger-lab.workers.dev/) · [交互时间线](https://ai-growth-tracking.lastdanger-lab.workers.dev/#view=series) · [时间线文字版与两份试读档案](chronology/series/README.md#跨系列大事时间线) · [最近一期与年度年表](chronology/README.md)
 
-## 查看
+## 先读一段 · 2026 年 9—11 月
 
-- **本地打开离线地图**：先执行下方构建命令，再打开生成的 dist/index.html；支持年度选择、主线与分支、事件档案、相关跳转及前史入口。
-- **推荐试读**：进入 2023，点击“从第一站开始”，沿六站阅读 ChatGPT 首发、公众增长、GPT-4、办公场景、客服研究与编剧条款。
-- **最近一期**收录 GPT-6.2、Hy4 flash 与 ChatGPT Space，并补上 Qwen4-Max 的使用入口。[本期选读](chronology/README.md) · [Gemini 四款对照](chronology/series/gemini.md)
-- **按问题读**从一张网页改版图开始，看一张图、一份待审代码和一个可访问的网址分别交付了什么。网页可直达 `#topic=website-deliverables`。
-- **2024 五站路线**：沿五站阅读 Sora 展示、Air Head 创作、GPT-4o、搜索摘要错误与电脑操作公测，沿生成画面、制作作品、对话、搜索和操作理解交互扩展。
-- **2025 五站路线**：从 DeepSeek 公众试用、vibe coding、代码任务交接、效率实验，读到 ChatGPT agent 的综合任务，追问“说出想法以后，AI 能替人做到哪一步？”
-- **2026 阶段路线**：Cowork 文件委托 → OpenClaw 个人代理 → ChatGPT Work 持续任务；效率研究和授权调查作为分支。
-- [在线查看](https://ai-growth-tracking.lastdanger-lab.workers.dev/)：由 Cloudflare 从公开仓库构建，版本以实际部署为准。
-- [年度关键词与年表](chronology/README.md)：同一数据生成的文字阅读视图。
-- [六个模型系列](chronology/series/README.md)：每个系列精选 5—8 个关键站，补充节点按需展开；网页入口为 `#view=series`，单系列如 `#series=gpt`。
+**事件类型**　![● 新型号发布](chronology/series/legend-release.svg) ![◆ 同型号更新](chronology/series/legend-revision.svg) ![▲ 工具接入](chronology/series/legend-tools.svg)　 **阅读状态**　![↺ 已有回看](chronology/series/legend-review.svg)
 
-当前内容含 5 个主体年份、147 个事件（含 3 个技术前史）、245 个来源、83 则时代材料、6 个模型系列、4 条年度路线和 1 篇专题。六系列共 41 个关键站。11 月 20 日复核了 Kimi K3.1 Pro 的权重及其成本材料，11 月 23 日补入 Gemini 4 对照及本期三条事件、一条入口补注。
+横读一行看同一系列怎么变，竖读一列比同月各家的动向。日期旁带紫色“已有回看”标签时，点开事件名称可读截至观察日的后续。
 
-2026-11-17 已发布阅读优化：修正文档状态，优化2025五站路线与DeepSeek七站系列，补入一则R1蒸馏模型的个人试玩材料，并澄清术语、转场及结尾收获。公开提交为[a100d07](https://github.com/lastdanger/ai-growth-tracking/commit/a100d07fda38cd4120f69227072f3e8164c41930)，Cloudflare构建及线上页面比对通过；代理审读和技术检查不构成真实读者理解验收。
+| 系列 | 9 月 | 10 月 | 11 月，截至 23 日 |
+|---|---|---|---|
+| DeepSeek | ![● 新型号发布](chronology/series/legend-release.svg)<br>10 日 ![↺ 已有回看](chronology/series/legend-review.svg)<br>[V4.1 Flash 可以接收图片](chronology/series/README.md#event-deepseek-v41-flash-release) | ![◆ 同型号更新](chronology/series/legend-revision.svg)<br>17 日<br>[同一调用名换成新版](chronology/2026.md#event-deepseek-v41-flash-oct17) | ![▲ 工具接入](chronology/series/legend-tools.svg)<br>13 日<br>[文件与搜索接入 API](chronology/2026.md#event-deepseek-application-apis) |
+| Kimi | | ![● 新型号发布](chronology/series/legend-release.svg)<br>23 日 ![↺ 已有回看](chronology/series/legend-review.svg)<br>[K3.1 Pro 开放 API，首发评测可与前代对照](chronology/series/README.md#event-kimi-k31-pro-release) | |
 
-2026-11-17 近期内容补充：检索窗口为2026-10-29至11-17，择要记录在线应用交付、图像编辑、会议协作、模型分工与应用接口，新增7个事件、14个来源和3则材料。新增内容进入2026分支，相关模型同时进入系列补充条目；四条年度路线和41个系列关键站保持。
+打开地图的 **模型系列**，把观察日调到 **10 月 23 日**，点开 Kimi 看首发当天的判断。调到 **11 月 18 日**再点同一节点，看 GPT-6.2 和 Gemini 4 Neon 带来了哪些新选择。到 **11 月 20 日**，还可对照同价位的 API 和已能取得的 Kimi 权重。选 **11 月 23 日**再打开 DeepSeek 的 9 月节点，可读到腾讯拿 Hy4 flash 做办公任务成本对照的条件。
 
+## 接下来怎么读
 
-六条线分别聚焦：GPT 的公众入口与选择权，Claude 的工作方式，Gemini 的多模态与产品落地，DeepSeek 的效率、开放与推理，Qwen 的开发生态，GLM 的本地部署与工程演进。用户反馈、工具生态和方法论文按需展开。
+- **按年读时代。** 年度主线看能力、使用方式或产业结构的转折，分支补具体现场。可以从 2023 年的六站“破圈”开始，接着读 2024 年的交互扩展、2025 年的任务交接、2026 年的委托与边界。[年度入口](chronology/README.md)
+- **按系列读发展。** 跨系列时间线把同月的选择放在一起。GPT、Claude、Gemini、DeepSeek、Qwen 和 GLM 各有一条跨年线，讲清同一系列的几次关键转折。[系列目录](chronology/series/README.md)
+- **带着问题读。** 第一篇专题把“请 AI 做一个网站”拆成三种实际交付物，点回事件可以查当时的材料。[图、代码，还是一个网址？](chronology/topics/website-deliverables.md)
 
-六系列均有阶段总结和一个探索出口，26个补充条目说明回到哪一关键站、为什么回去。历史使用记录按来源日期呈现，个案和平台自述不代表普遍效果。
+## 一条线索怎样进入地图
 
-| 年份 | 已收录 | 主节点 / 分支 | 选材与覆盖说明 |
-|---|---:|---:|---|
-| 2022 | 6 | 4 / 2 | 补入创作争议、真实用法与社区治理；仍是年度骨架 |
-| 2023 | 36 | 9 / 27 | 补入 ChatGLM-6B 与 Qwen 首次开放起点 |
-| 2024 | 26 | 10 / 16 | 补入 Claude 3 型号分工及开放模型历史 |
-| 2025 | 32 | 10 / 22 | 补齐 Gemini 中段、Claude 4、DeepSeek V3.1、Qwen Omni 与 GLM-4.5 |
-| 2026 | 44 | 8 / 36 | **委托与边界**；近期型号、权重与协作入口定向核验至2026-11-23，上一期近期选材截至11-17，其余领域未全面重核 |
+说「看看最近有什么值得更新」，先得到一份短报。判断时看谁受影响、以前和现在差在哪里，以及材料能证明哪一步。能独立讲清的变化建议新增，给旧事件补上入口、实例或后续结果的建议补注。进入年度主线，还要解释它改变了这一年的哪段进程。[完整选材规则](PROJECT_RULES.md#近期选材)
 
-2026 仍在进行中；最新录入日期不代表已完整覆盖至该日，各年也不代表全球事件穷尽。
+```mermaid
+---
+config:
+  flowchart:
+    nodeSpacing: 22
+    rankSpacing: 26
+    padding: 10
+---
+flowchart TD
+    subgraph Key["流程图例"]
+        direction LR
+        K1["资料与处理"]:::work ~~~ K2{"选材判断"}:::decision ~~~ K3(["暂存回看"]):::watch ~~~ K4[["阅读产物"]]:::output
+    end
+    Key ~~~ A
+    A["核对来源与旧条目"]:::work --> J{"材料支持哪种处理？"}:::decision
+    J --> B["建议新增<br/>变化可独立记录"]:::work
+    J --> U["建议补注<br/>材料补足旧事件"]:::work
+    J --> C(["先放着<br/>记下回看条件"]):::watch
+    C -. 出现新证据 .-> A
+    B --> D["用户确认后写入<br/>data/map.json"]:::work
+    U --> D
+    D --> E["校验与构建<br/>scripts/"]:::work
+    W["网页界面 · web/"]:::work --> E
+    E --> H[["离线交互地图<br/>dist/index.html"]]:::output
+    E --> M[["年表、系列与专题<br/>chronology/"]]:::output
 
-2023—2025 路线终点可直接继续下一年，各探索出口附有阅读理由。当前版本支持显式分支、独立同期事件、推荐路线与三种信息密度；系列采用独立的跨年纵向时间线。GPT、Gemini、Qwen 定向更新至 11-23，Claude、DeepSeek 至 11-17，GLM 至 10-28。系列另列历史缺口，不充当完整型号清单。已有一轮2023路线反馈支持继续扩展，其他路线与系列的理解效果仍需真实试读；代理阅读检查不替代读者反馈。
+    classDef work fill:#79C3FF,stroke:#28638E,color:#102029,stroke-width:2px;
+    classDef decision fill:#FFBF60,stroke:#885010,color:#102029,stroke-width:2px;
+    classDef watch fill:#D9B2FF,stroke:#7942A2,color:#102029,stroke-width:2px,stroke-dasharray:6 4;
+    classDef output fill:#64E1A6,stroke:#24734F,color:#102029,stroke-width:2px;
+    style Key fill:transparent,stroke:#80929B,stroke-width:1px
+```
 
-## 维护
+多个入口共用同一事件档案。首发判断保留当天的依据，回看写明观察日、比较对象和适用条件。每隔几批连读标题，检查是否遗漏了真实用法、参与条件或公众反应。
 
-`data/map.json` 是可浏览内容唯一来源。修改后执行：
+## 本地试读与维护
+
+在项目根目录执行，再用浏览器打开 `dist/index.html`。公开版由 Cloudflare 从公开仓库构建，本地试读和发布分别记录。
 
 ```powershell
 node scripts/check.mjs
@@ -50,15 +72,6 @@ node --test scripts/check.test.mjs
 node scripts/build.mjs
 ```
 
-构建生成离线网页和年表，不新增依赖，也不联网拉取新闻。浏览器直接打开 dist/index.html 即可。
+浏览内容统一维护在 [data/map.json](data/map.json)。年度覆盖、系列取舍和正文证据可沿档案追溯。研究收据与作者素材留在本地研究目录。
 
-## 文件职责
-
-| 位置 | 用途 |
-|---|---|
-| [项目简述](PROJECT_BRIEF.md) / [内容规则](PROJECT_RULES.md) | 最终形式、范围、选材与证据边界 |
-| [地图设计](docs/map-design.md) / [维护说明](docs/maintenance.md) | 层级、数据契约与更新流程 |
-| [地图数据](data/map.json) | 年份、事件、来源、材料和关系 |
-| web/ / scripts/ | 界面源文件、校验与构建 |
-
-旧正文、旧提纲、模板及迁移输入已获明确授权永久删除。内部来源登记与独有作者素材只在本地保留，不进入公开仓库；冻结研究保留。未经要求，不部署、发布网页或设置自动采集。
+[项目简述](PROJECT_BRIEF.md) · [地图设计](docs/map-design.md) · [维护说明](docs/maintenance.md)

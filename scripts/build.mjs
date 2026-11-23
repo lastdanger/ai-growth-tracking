@@ -23,9 +23,9 @@ const safe = value => String(value ?? '').replaceAll('|', '｜').replaceAll('\n'
 const events = new Map(data.events.map(event => [event.id, event]));
 const eventAnchor = id => `event-${id}`;
 const anchorTag = id => `<a name="${eventAnchor(id)}" id="${eventAnchor(id)}"></a>`;
-const annualLink = (id, prefix = '') => {
+const annualLink = (id, prefix = '', label) => {
   const event = events.get(id);
-  return `[${safe(event.title)}](${prefix}${event.tier === 'root' ? 'roots' : event.year}.md#${eventAnchor(id)})`;
+  return `[${safe(label ?? event.title)}](${prefix}${event.tier === 'root' ? 'roots' : event.year}.md#${eventAnchor(id)})`;
 };
 const statusLabels = { reviewed: '本轮选材已复核', seed: '种子资料，待扩展', partial: '阶段观察，未完整覆盖' };
 const roleLabels = { milestone: '重大转折', 'public-impact': '公众影响', 'early-signal': '早期伏笔' };
@@ -91,7 +91,78 @@ index += '## 按年份读\n\n这些关键词和关键句是编辑概括。种子
 fs.writeFileSync(path.join(root, 'chronology/README.md'), index, 'utf8');
 const seriesDir = path.join(root, 'chronology/series');
 fs.mkdirSync(seriesDir, { recursive: true });
-const seriesIndex = '# 模型系列 · 跨年阅读\n\n[返回年度总览](../README.md)\n\n' + data.series.map(s => {
+let seriesIndex = '# 模型系列 · 跨年阅读\n\n[返回年度总览](../README.md) · [沿一个系列跨年读](#沿一个系列跨年读)\n\n';
+if (data.series_timeline) {
+  const timeline = data.series_timeline;
+  const legend = timeline.legend;
+  const badges = new Map();
+  if (legend) {
+    for (const [kind, mark] of [...Object.entries(legend.kinds), ['review', legend.review]]) {
+      const label = `${mark.symbol} ${mark.label}`;
+      if (!mark.color) {
+        badges.set(kind, `**${safe(label)}**`);
+        continue;
+      }
+      // Markdown 阅读器可以直接显示本地图例，颜色与网页都取自同一条记录。
+      const file = `legend-${encodeURIComponent(kind)}.svg`;
+      const width = 30 + [...mark.label].reduce((w, ch) => w + (ch.codePointAt(0) > 255 ? 14 : 9), 0);
+      const xml = label.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="24" role="img" aria-labelledby="title">
+  <title id="title">${xml}</title>
+  <rect width="100%" height="100%" rx="${kind === 'review' ? 12 : 4}" fill="${mark.color}"/>
+  <text x="50%" y="16.5" text-anchor="middle" fill="#102029" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="13" font-weight="700">${xml}</text>
+</svg>\n`;
+      fs.writeFileSync(path.join(seriesDir, file), svg, 'utf8');
+      badges.set(kind, `![${safe(label)}](${encodeURIComponent(file)})`);
+    }
+  }
+  const reviewsAtCutoff = event => {
+    const reviews = [];
+    if (event.later?.as_of <= timeline.as_of) reviews.push(event.later);
+    for (const materialId of event.material_ids) {
+      const material = data.materials.find(m => m.id === materialId);
+      const date = sources.get(material.source_id).published_at;
+      if (material.temporal_context === 'retrospective' && date > event.date && date <= timeline.as_of) {
+        reviews.push({as_of: date, text: material.text, source_ids: [material.source_id]});
+      }
+    }
+    return reviews.sort((a, b) => a.as_of.localeCompare(b.as_of));
+  };
+  seriesIndex += `## 跨系列大事时间线\n\n选材截至 ${timeline.as_of}。横向读一个系列，按列对照同月的选择。空格表示本段未选节点。\n\n`;
+  if (legend) {
+    seriesIndex += '**事件类型**　' + Object.keys(legend.kinds).map(kind => badges.get(kind)).join(' ') + '　 **阅读状态**　' + badges.get('review') + '\n\n';
+    seriesIndex += '日期旁的回看标签表示截至选材日已有后续材料。点开事件名称可读试读档案或年度记录里的来源。\n\n';
+  }
+  seriesIndex += '| 系列 | ' + timeline.months.join(' | ') + ' |\n|' + '---|'.repeat(timeline.months.length + 1) + '\n';
+  for (const row of timeline.rows) {
+    const cells = timeline.months.map(month => row.entries.filter(entry => events.get(entry.event_id).date.startsWith(month))
+      .sort((a, b) => events.get(a.event_id).date.localeCompare(events.get(b.event_id).date))
+      .map(entry => {
+        const event = events.get(entry.event_id);
+        const date = event.date.slice(5);
+        const label = legend ? entry.label : `${date} ${entry.label}`;
+        const link = timeline.focus_event_ids.includes(event.id) ? `[${safe(label)}](#${eventAnchor(event.id)})` : annualLink(event.id, '../', label);
+        if (!legend) return link;
+        const review = reviewsAtCutoff(event).length ? ' ' + badges.get('review') : '';
+        return `${badges.get(entry.kind)}<br>${date}${review}<br>${link}`;
+      }).join('<br>'));
+    seriesIndex += `| ${safe(row.name)} | ${cells.join(' | ')} |\n`;
+  }
+  const passage = (title, note) => {
+    const links = note.source_ids.map(id => sources.get(id)).map(s => `[${safe(s.title)}](${s.url})`);
+    return `**${title}**\n\n${note.text}\n\n${links.join(' · ')}\n\n`;
+  };
+  for (const id of timeline.focus_event_ids) {
+    const event = events.get(id);
+    seriesIndex += `\n${anchorTag(id)}\n\n### ${safe(event.title)}\n\n`;
+    seriesIndex += passage('放回当时 · ' + event.date, event.then);
+    for (const note of reviewsAtCutoff(event)) {
+      seriesIndex += passage('后来再看 · 截至 ' + note.as_of, note);
+    }
+    seriesIndex += annualLink(id, '../', '查看年度记录') + '\n\n';
+  }
+}
+seriesIndex += '## 沿一个系列跨年读\n\n' + data.series.map(s => {
   const last = events.get(s.entries.at(-1).event_id);
   return `- [${s.name}](${s.id}.md) · ${s.question} 最近收录 [${last.title}](${s.id}.md#${eventAnchor(last.id)})。`;
 }).join('\n') + '\n';

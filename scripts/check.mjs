@@ -183,6 +183,45 @@ export function checkMap(data) {
     refs(r.evidence_source_ids, sources, 'relation evidence');
     const key = `${r.from}/${r.to}/${r.type}`; fail(!edgeIds.has(key), `Duplicate relation: ${key}`); edgeIds.add(key);
   }
+  if (data.series_timeline !== undefined) {
+    const timeline = data.series_timeline;
+    fail(Array.isArray(timeline?.months) && timeline.months.length > 0, 'Timeline months missing');
+    const months = timeline.months;
+    for (const [i, month] of months.entries()) {
+      fail(day(month + '-01'), 'Invalid timeline month');
+      if (i) {
+        const next = new Date(months[i - 1] + '-01T00:00:00Z');
+        next.setUTCMonth(next.getUTCMonth() + 1);
+        fail(month === next.toISOString().slice(0, 7), 'Timeline months must be consecutive');
+      }
+    }
+    fail(day(timeline.as_of) && timeline.as_of <= data.updated_at && timeline.as_of.startsWith(months.at(-1)), 'Timeline cutoff');
+    fail(Array.isArray(timeline.rows) && timeline.rows.length >= 2, 'Timeline needs multiple rows');
+    const ids = [];
+    const legend = timeline.legend;
+    if (legend !== undefined) {
+      fail(legend?.kinds && typeof legend.kinds === 'object' && !Array.isArray(legend.kinds) && Object.keys(legend.kinds).length > 0, 'Missing timeline legend kinds');
+      const marks = [...Object.values(legend.kinds), legend.review];
+      fail(!Object.hasOwn(legend.kinds, 'review') && marks.every(mark => hasText(mark, 'symbol') && hasText(mark, 'label')), 'Invalid timeline legend');
+      fail(new Set(marks.map(mark => mark.symbol)).size === marks.length, 'Repeated timeline legend symbol');
+      const colors = marks.filter(mark => mark.color !== undefined).map(mark => mark.color);
+      fail(colors.every(color => typeof color === 'string' && /^#[\da-f]{6}$/i.test(color)), 'Invalid timeline legend color');
+      fail(new Set(colors.map(color => color.toLowerCase())).size === colors.length, 'Repeated timeline legend color');
+    }
+    for (const row of index(timeline.rows, 'name', 'timeline row').values()) {
+      fail(hasText(row, 'name') && Array.isArray(row.entries) && row.entries.length, 'Empty timeline row');
+      for (const entry of row.entries) {
+        const event = events.get(entry.event_id);
+        fail(event && hasText(entry, 'label'), 'Unknown or unlabelled timeline event');
+        fail(legend ? Object.hasOwn(legend.kinds, entry.kind) : entry.kind === undefined, 'Unknown timeline legend kind');
+        fail(event.date_precision === 'day' && months.includes(event.date.slice(0, 7)) && event.date <= timeline.as_of, 'Timeline event outside dated window');
+        fail(event.then.source_ids.every(id => sources.get(id).published_at && sources.get(id).published_at <= event.date), 'Timeline contemporary evidence exceeds event date');
+        ids.push(event.id);
+      }
+    }
+    refs(ids, events, 'timeline events');
+    refs(timeline.focus_event_ids, new Set(ids), 'timeline readings');
+  }
   const serialized = JSON.stringify(data);
   fail(!/EX-(?:\d{8}|TBD)-\d{3}|research\/library|internal-redacted/.test(serialized), 'Internal evidence leaked into public map');
   return { years: years.size, events: events.size, sources: sources.size, materials: materials.size, relations: data.relations.length, series: series.size };
