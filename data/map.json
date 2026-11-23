@@ -2,17 +2,17 @@
   "schema_version": 3,
   "recent_update": {
     "as_of": "2026-11-23",
-    "summary": "本期回看 Gemini 4。从 Argon 到 Neon，四个元素名指四款模型。随手问、读一叠资料、让它听懂一句“换个讲法”，分别能看出什么？",
+    "summary": "本期看三件事：同一代 GPT 怎么选，腾讯模型何时能自己部署，ChatGPT 做好的页面谁能打开。另补了 Qwen4-Max 的实际使用入口。",
     "featured_event_ids": [
-      "gemini4-hydrogen-release",
-      "gemini4-neon-release",
-      "gemini4-carbon-release"
+      "gpt62-astra-sol-release",
+      "tencent-hy4-flash",
+      "chatgpt-space-plus"
     ],
     "event_ids": [
-      "gemini4-argon-ga",
-      "gemini4-carbon-release",
-      "gemini4-hydrogen-release",
-      "gemini4-neon-release"
+      "gpt62-astra-sol-release",
+      "tencent-hy4-flash",
+      "chatgpt-space-plus",
+      "qwen4-max-release"
     ]
   },
   "topics": [
@@ -238,7 +238,7 @@
       "tagline": "让 AI 持续做事，也要弄清它该做到哪里。",
       "summary": "代理继续进入持续工作，模型能力、运行效率和开放部署也在变化。实际效果、授权与评估仍决定哪些任务值得交出去；本年度尚未结束。",
       "status": "partial",
-      "coverage_note": "截至2026-11-23，收录41个阶段代表事件。11月17日之后仅定向复核 Gemini 4 四个型号及其沿革，其他领域仍沿用此前的选材范围。",
+      "coverage_note": "截至2026-11-23，收录44个阶段代表事件。近期定向核验 Gemini 4、GPT-6.2、Hy4 flash、ChatGPT Space 及 Qwen4-Max 的入口；其他领域仍沿用此前的选材范围。",
       "anchor_ids": [
         "alphagenome-nature-paper",
         "openclaw-personal-agent-rename",
@@ -5096,16 +5096,18 @@
       "source_ids": [
         "S-qwen4-model-releases",
         "S-qwen4-token-plan-updates",
-        "S-qwen4-latest-model"
+        "S-qwen4-latest-model",
+        "S-qwen4-max-channels"
       ],
       "material_ids": [],
       "fact_ids": [],
       "change": "同一任务可围绕视觉材料、分析和工具操作展开。选择模型还要看入口和运行条件；服务可调用与权重可下载仍是两种不同的参与方式。",
       "later": {
         "as_of": "2026-11-17",
-        "text": "截至11月17日，官方接入说明列出正式型号的按量API及Token Plan入口、百万token上下文和分地区服务条件。本节点未确认Qwen4其他型号或权重已经公开，也未复现官方案例。",
+        "text": "截至 11 月 17 日，写程序可以在 QwenCloud 通过按量 API 或 Token Plan 接入；想直接体验模型，可以进入 QwenWork 或 QwenStudio。接入说明列出百万词元上下文及分地区服务条件。阿里公告还预告了较小的 Qwen4 开放权重型号，当时公布的这些入口用于体验或调用 Qwen4-Max。",
         "source_ids": [
-          "S-qwen4-latest-model"
+          "S-qwen4-latest-model",
+          "S-qwen4-max-channels"
         ]
       }
     },
@@ -5168,6 +5170,94 @@
       },
       "source_ids": [
         "S-neon-first"
+      ],
+      "material_ids": []
+    },
+    {
+      "id": "gpt62-astra-sol-release",
+      "year": 2026,
+      "date": "2026-11-17",
+      "date_label": "11-17（同日发布）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "GPT-6.2 Astra 和 Sol：同一项工作，该用哪一个？",
+      "summary": "看完几篇文章后挑选题，可以先用 Sol；若还得核对互相冲突的材料，再按范文写成稿，Astra 的定位更贴近这种工作。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "两种型号同时面世，读者得按手头任务的难度和成本做选择。",
+      "then": {
+        "text": "11 月 17 日，OpenAI 同时推出 GPT-6.2 Astra 和 Sol，进入 ChatGPT Work、Codex 和 API。Sol 侧重速度和较低成本，也能处理多步任务。Astra 面向复杂专业工作，强调把不同材料整理成符合既定模板的文档、表格或演示稿。前面的选题例子用来说明分工；两款的中文写作风格还得用同一份稿子比较。",
+        "source_ids": [
+          "S-gpt62-launch"
+        ]
+      },
+      "source_ids": [
+        "S-gpt62-launch"
+      ],
+      "material_ids": []
+    },
+    {
+      "id": "tencent-hy4-flash",
+      "year": 2026,
+      "date": "2026-11-16",
+      "date_label": "11-16（发布，11-18 公布权重）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "腾讯 Hy4 flash：先用服务，两天后也能下载权重",
+      "summary": "同一个模型，接入服务就可以用；拿到权重后，有设备和部署能力的团队还能自己运行。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "把服务上线和权重开放分开，才能看出谁多了一种使用方式。",
+      "then": {
+        "text": "11 月 16 日，腾讯发布面向日常工作的 Hy4 flash，支持图文输入和最多 100 万词元的上下文。它有 2240 亿总参数，每个词元激活约 120 亿参数。后一个数字说的是每一步用到多少，部署前仍要考虑整个模型的存储和运行条件。",
+        "source_ids": [
+          "S-hy4-flash-launch"
+        ]
+      },
+      "source_ids": [
+        "S-hy4-flash-launch",
+        "S-hy4-flash-weights",
+        "S-hy4-flash-repo"
+      ],
+      "material_ids": [],
+      "later": {
+        "as_of": "2026-11-18",
+        "text": "11 月 18 日，腾讯公布 Hy4 flash、FP8 量化版和 Base 基础版权重，开发者可按腾讯 Hy 许可下载、部署。能调用服务和能自己运行模型，在这次发布中相隔两天。",
+        "source_ids": [
+          "S-hy4-flash-weights",
+          "S-hy4-flash-repo"
+        ]
+      }
+    },
+    {
+      "id": "chatgpt-space-plus",
+      "year": 2026,
+      "date": "2026-11-20",
+      "date_label": "11-20（向成年 Plus 用户逐步开放）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "ChatGPT Space：做好的学习指南，谁能一起改？",
+      "summary": "把学习资料做成一页指南后，可以邀请别人修改，也能让页面随连接的资料更新。发给同事之前，要先看对方有没有访问资格。",
+      "lane": "products",
+      "tier": "branch",
+      "roles": [
+        "milestone"
+      ],
+      "why_selected": "同一份成果从生成走到共同维护，接收者的账号和权限决定它能否真正交到别人手中。",
+      "then": {
+        "text": "11 月 20 日，OpenAI 开始在全球向年满 18 岁的 Plus 用户逐步开放 Space。页面和演示稿可以邀请协作者，也可以根据连接的应用和工具自动更新。当时没有公开链接：收件人需要获准查看，并登录有 Space 权限的 Plus、Pro、Business 或 Enterprise 账号。免费账号无法打开分享的页面或演示稿。",
+        "source_ids": [
+          "S-space-plus-rollout"
+        ]
+      },
+      "source_ids": [
+        "S-space-plus-rollout"
       ],
       "material_ids": []
     }
@@ -7323,6 +7413,60 @@
       "published_at": "2026-10-28",
       "accessed_at": "2026-11-23",
       "scope": "采用 AA-Omniscience v1.1 同轮指数，只用于知识可靠性比较。"
+    },
+    {
+      "id": "S-gpt62-launch",
+      "title": "OpenAI · Introducing GPT-6.2 Astra and Sol",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "kind": "official",
+      "published_at": "2026-11-17",
+      "accessed_at": "2026-11-23",
+      "scope": "同日发布的两个型号、分工与产品/API入口；使用情境是编辑举例。"
+    },
+    {
+      "id": "S-hy4-flash-launch",
+      "title": "腾讯 · Hy4 flash 发布",
+      "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+      "kind": "official",
+      "published_at": "2026-11-16",
+      "accessed_at": "2026-11-23",
+      "scope": "模型规格、服务发布日与面向日常任务的定位。"
+    },
+    {
+      "id": "S-hy4-flash-weights",
+      "title": "腾讯混元 · Hy4 flash 权重公告",
+      "url": "https://x.com/TencentHunyuan/status/2122912575302119554",
+      "kind": "official",
+      "published_at": "2026-11-18",
+      "accessed_at": "2026-11-23",
+      "scope": "11月18日公布开放权重及许可；可下载版本另由官方仓库核对。"
+    },
+    {
+      "id": "S-hy4-flash-repo",
+      "title": "腾讯混元 · 模型仓库与下载入口",
+      "url": "https://github.com/Tencent-Hunyuan/Hy4-flash",
+      "kind": "official",
+      "published_at": null,
+      "accessed_at": "2026-11-23",
+      "scope": "核实标准、FP8、Base 三种权重和许可链接，不据仓库当前状态倒推出服务首发日。"
+    },
+    {
+      "id": "S-space-plus-rollout",
+      "title": "OpenAI · ChatGPT 更新记录（11 月 20 日）",
+      "url": "https://help-lb.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "kind": "official",
+      "published_at": "2026-11-20",
+      "accessed_at": "2026-11-23",
+      "scope": "只采用当日 Space 开放对象、协作、更新与分享限制。"
+    },
+    {
+      "id": "S-qwen4-max-channels",
+      "title": "阿里巴巴 · Qwen4-Max 发布与使用入口",
+      "url": "https://www.alibabagroup.com/en-US/document-2060139246777270272",
+      "kind": "official",
+      "published_at": "2026-11-16",
+      "accessed_at": "2026-11-23",
+      "scope": "杭州版公告列出 QwenCloud、QwenWork、QwenStudio，较小型号开放权重为预告。"
     }
   ],
   "materials": [
@@ -9066,6 +9210,16 @@
         "S-deepseek-v41-oct17",
         "S-deepseek-application-apis"
       ]
+    },
+    {
+      "from": "cursor-live-apps",
+      "to": "chatgpt-space-plus",
+      "type": "context",
+      "note": "做成应用后可以分享网址；用 Space 分享页面时还要查收件人的账号和权限。两种交付方式的最后一步不同。",
+      "evidence_source_ids": [
+        "S-cursor-live-apps-20261105",
+        "S-space-plus-rollout"
+      ]
     }
   ],
   "reading_routes": [
@@ -9262,8 +9416,8 @@
       "provider": "OpenAI",
       "question": "从人人能用，到怎样选择和托付，GPT改变了什么？",
       "intro": "这条线从ChatGPT的公众入口出发，经过多模态、推理与任务执行，再看开放权重和默认模型怎样改变选择权。用户的习惯与反应也在其中；Codex和Work作为工作用法分支，不把所有OpenAI产品都并入型号史。",
-      "as_of": "2026-10-28",
-      "coverage_note": "截至2026-10-28核验本系列选材。关键站聚焦公众入口、能力与选择权；Terra等近期型号保留在补充阅读。GPT早期预训练史、全部中间型号及开放模型后续采用仍未完整收录。",
+      "as_of": "2026-11-23",
+      "coverage_note": "截至2026-11-23，定向补入 GPT-6.2 两款和 Space 的 Plus 开放记录。其他历史型号与产品入口沿用已有选材。",
       "entries": [
         {
           "event_id": "chatgpt-public-preview",
@@ -9382,6 +9536,24 @@
           "return_to": {
             "event_id": "gpt6-astra-release",
             "reason": "Terra补充视觉与电脑操作的效率取舍；回到Astra这处关键转折，比较的是任务要求，不只是哪款更新。"
+          }
+        },
+        {
+          "event_id": "gpt62-astra-sol-release",
+          "level": "supporting",
+          "reason": "同代两款按工作难度分工。",
+          "return_to": {
+            "event_id": "gpt6-astra-release",
+            "reason": "回看上一代 Astra 怎样把工作交给模型，再比较同一项工作何时用 Sol 就够了。"
+          }
+        },
+        {
+          "event_id": "chatgpt-space-plus",
+          "level": "supporting",
+          "reason": "沿应用入口看，模型交出的文档怎样继续更新与协作。",
+          "return_to": {
+            "event_id": "gpt6-astra-release",
+            "reason": "回到 Astra 对专业交付物的定位，比较做出文档和让收件人接手的条件。"
           }
         }
       ],
@@ -9698,8 +9870,8 @@
       "provider": "阿里巴巴",
       "question": "从通义服务到可加工的模型家族，Qwen怎样形成生态？",
       "intro": "先分清通义千问的产品公布与首次权重开放，再看尺寸、多语言和专门模型的分工。Qwen2.5的跨团队采用、Omni的声音图像与Qwen3的思考选择，让这条线不只是型号递增。",
-      "as_of": "2026-11-17",
-      "coverage_note": "截至2026-11-17定向核验近期进展。七个关键站保持，新增Qwen4-Max服务入口补充；首次预览、正式型号与权重开放分别判断。历史版本、更多独立使用与近期全模态候选仍未完整整理，个人部署记录不代表长期工程效果。",
+      "as_of": "2026-11-23",
+      "coverage_note": "截至2026-11-23，本轮补核 Qwen4-Max 的服务与应用入口。其余型号及权重开放进度未全面重核。",
       "entries": [
         {
           "event_id": "tongyi-qianwen-announcement",

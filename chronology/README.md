@@ -2,13 +2,13 @@
 
 ## 最近一期（选材截至 2026-11-23）
 
-本期回看 Gemini 4。从 Argon 到 Neon，四个元素名指四款模型。随手问、读一叠资料、让它听懂一句“换个讲法”，分别能看出什么？
+本期看三件事：同一代 GPT 怎么选，腾讯模型何时能自己部署，ChatGPT 做好的页面谁能打开。另补了 Qwen4-Max 的实际使用入口。
 
-- [Gemini 4 Hydrogen：复杂判断之外，谁来执行日常步骤](2026.md#event-gemini4-hydrogen-release)
-- [Gemini 4 Neon：读完资料，还能听懂你为什么要它重写](2026.md#event-gemini4-neon-release)
-- [Gemini 4 Carbon：几份材料说法打架时，逐条找依据](2026.md#event-gemini4-carbon-release)
+- [GPT-6.2 Astra 和 Sol：同一项工作，该用哪一个？](2026.md#event-gpt62-astra-sol-release)
+- [腾讯 Hy4 flash：先用服务，两天后也能下载权重](2026.md#event-tencent-hy4-flash)
+- [ChatGPT Space：做好的学习指南，谁能一起改？](2026.md#event-chatgpt-space-plus)
 
-本期其余事件 · [Gemini 4 Argon：从发布期待走到实际入口](2026.md#event-gemini4-argon-ga)
+本期其余事件 · [Qwen4-Max：视觉、推理与长任务进入同一服务](2026.md#event-qwen4-max-release)
 
 ## 按问题读
 

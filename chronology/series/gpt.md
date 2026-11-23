@@ -4,7 +4,7 @@
 
 这条线从ChatGPT的公众入口出发，经过多模态、推理与任务执行，再看开放权重和默认模型怎样改变选择权。用户的习惯与反应也在其中；Codex和Work作为工作用法分支，不把所有OpenAI产品都并入型号史。
 
-截至2026-10-28核验本系列选材。关键站聚焦公众入口、能力与选择权；Terra等近期型号保留在补充阅读。GPT早期预训练史、全部中间型号及开放模型后续采用仍未完整收录。
+截至2026-11-23，定向补入 GPT-6.2 两款和 Space 的 Plus 开放记录。其他历史型号与产品入口沿用已有选材。
 
 > 由 data/map.json 生成，与年度视图共用事件，不直接编辑。
 
@@ -351,6 +351,34 @@ GPT-5后的用户反应：更强的新型号为何未必适合已经磨合的用
 回到关键站 · [GPT-6 Astra：更长的任务，更直接的电脑操作](#event-gpt6-astra-release)。Terra补充视觉与电脑操作的效率取舍；回到Astra这处关键转折，比较的是任务要求，不只是哪款更新。
 
 [查看 2026 年的这条记录](../2026.md#event-gpt61-terra-release)
+
+<a name="event-gpt62-astra-sol-release" id="event-gpt62-astra-sol-release"></a>
+
+### 11-17（同日发布） · GPT-6.2 Astra 和 Sol：同一项工作，该用哪一个？（补充）
+
+同代两款按工作难度分工。
+
+11 月 17 日，OpenAI 同时推出 GPT-6.2 Astra 和 Sol，进入 ChatGPT Work、Codex 和 API。Sol 侧重速度和较低成本，也能处理多步任务。Astra 面向复杂专业工作，强调把不同材料整理成符合既定模板的文档、表格或演示稿。前面的选题例子用来说明分工；两款的中文写作风格还得用同一份稿子比较。
+
+[OpenAI · Introducing GPT-6.2 Astra and Sol](https://openai.com/index/introducing-gpt-6-2-astra-sol/)
+
+回到关键站 · [GPT-6 Astra：更长的任务，更直接的电脑操作](#event-gpt6-astra-release)。回看上一代 Astra 怎样把工作交给模型，再比较同一项工作何时用 Sol 就够了。
+
+[查看 2026 年的这条记录](../2026.md#event-gpt62-astra-sol-release)
+
+<a name="event-chatgpt-space-plus" id="event-chatgpt-space-plus"></a>
+
+### 11-20（向成年 Plus 用户逐步开放） · ChatGPT Space：做好的学习指南，谁能一起改？（补充）
+
+沿应用入口看，模型交出的文档怎样继续更新与协作。
+
+11 月 20 日，OpenAI 开始在全球向年满 18 岁的 Plus 用户逐步开放 Space。页面和演示稿可以邀请协作者，也可以根据连接的应用和工具自动更新。当时没有公开链接：收件人需要获准查看，并登录有 Space 权限的 Plus、Pro、Business 或 Enterprise 账号。免费账号无法打开分享的页面或演示稿。
+
+[OpenAI · ChatGPT 更新记录（11 月 20 日）](https://help-lb.openai.com/en/articles/6825453-chatgpt-release-notes)
+
+回到关键站 · [GPT-6 Astra：更长的任务，更直接的电脑操作](#event-gpt6-astra-release)。回到 Astra 对专业交付物的定位，比较做出文档和让收件人接手的条件。
+
+[查看 2026 年的这条记录](../2026.md#event-chatgpt-space-plus)
 
 ## 这条线读到这里
 

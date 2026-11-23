@@ -2,7 +2,7 @@
 
 [返回年度总览](../README.md)
 
-- [GPT](gpt.md) · 从人人能用，到怎样选择和托付，GPT改变了什么？ 最近收录 [GPT-6.1 Terra：把视觉与电脑操作带到高效型号](gpt.md#event-gpt61-terra-release)。
+- [GPT](gpt.md) · 从人人能用，到怎样选择和托付，GPT改变了什么？ 最近收录 [ChatGPT Space：做好的学习指南，谁能一起改？](gpt.md#event-chatgpt-space-plus)。
 - [Claude](claude.md) · 从回答问题到共同做事，Claude怎样改变工作方式？ 最近收录 [Claude Meetings：会议进行时，笔记和文档一起形成](claude.md#event-claude-meetings-beta)。
 - [Gemini](gemini.md) · 从看懂多种材料，到改图和用工具，Gemini怎样落地？ 最近收录 [Gemini 4 Neon：读完资料，还能听懂你为什么要它重写](gemini.md#event-gemini4-neon-release)。
 - [DeepSeek](deepseek.md) · 从计算效率到个人试用，DeepSeek 的变化怎样积累？ 最近收录 [DeepSeek：把搜索、文件与语音接成自己的聊天应用](deepseek.md#event-deepseek-application-apis)。
