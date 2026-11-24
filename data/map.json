@@ -1,13 +1,14 @@
 {
   "schema_version": 3,
+  "site_intro": "从 2022 年起，沿着有日期和出处的事件，看 AI 怎样走进工作、创作和日常生活。",
   "series_timeline": {
     "legend": {
       "kinds": {
-        "release": { "symbol": "●", "label": "新型号发布", "color": "#64E1A6" },
-        "revision": { "symbol": "◆", "label": "同型号更新", "color": "#FFBF60" },
-        "tools": { "symbol": "▲", "label": "工具接入", "color": "#79C3FF" }
+        "release": { "symbol": "●", "label": "新型号发布", "color": "#BCE8CE" },
+        "revision": { "symbol": "◆", "label": "同型号更新", "color": "#F8DBA1" },
+        "tools": { "symbol": "▲", "label": "工具接入", "color": "#C4E2F8" }
       },
-      "review": { "symbol": "↺", "label": "已有回看", "color": "#D9B2FF" }
+      "review": { "symbol": "↺", "label": "已有回看", "color": "#E5D6F3" }
     },
     "months": [
       "2026-09",

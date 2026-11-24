@@ -1,6 +1,6 @@
 # 仍在生成 · AI 时代探索地图
 
-站回某一天，那时能用哪些模型？后来谁又多了一种选择？这张地图从 2022 年起，沿年度、模型系列和具体问题追踪 AI 怎样进入工作、创作与日常生活。
+《仍在生成》记录 2022 年以来人工智能怎样走进普通人的工作、创作和日常生活。你可以挑一个年份了解来龙去脉，跟着 GPT、DeepSeek 等模型系列看不同版本多了哪些用处，也可以直接从“做网站、对账能把哪一步交给 AI？”这样的实际问题读起。每条记录都附有日期和出处。
 
 [在线地图](https://ai-growth-tracking.lastdanger-lab.workers.dev/) · [交互时间线](https://ai-growth-tracking.lastdanger-lab.workers.dev/#view=series) · [时间线文字版与两份试读档案](chronology/series/README.md#跨系列大事时间线) · [最近一期与年度年表](chronology/README.md)
 
@@ -8,7 +8,7 @@
 
 **事件类型**　![● 新型号发布](chronology/series/legend-release.svg) ![◆ 同型号更新](chronology/series/legend-revision.svg) ![▲ 工具接入](chronology/series/legend-tools.svg)　 **阅读状态**　![↺ 已有回看](chronology/series/legend-review.svg)
 
-横读一行看同一系列怎么变，竖读一列比同月各家的动向。日期旁带紫色“已有回看”标签时，点开事件名称可读截至观察日的后续。
+横读一行看同一系列怎么变，竖读一列比同月各家的动向。日期旁有淡紫色的「↺ 已有回看」时，点开事件名称可读截至观察日的后续。
 
 | 系列 | 9 月 | 10 月 | 11 月，截至 23 日 |
 |---|---|---|---|
@@ -53,10 +53,10 @@ flowchart TD
     E --> H[["离线交互地图<br/>dist/index.html"]]:::output
     E --> M[["年表、系列与专题<br/>chronology/"]]:::output
 
-    classDef work fill:#79C3FF,stroke:#28638E,color:#102029,stroke-width:2px;
-    classDef decision fill:#FFBF60,stroke:#885010,color:#102029,stroke-width:2px;
-    classDef watch fill:#D9B2FF,stroke:#7942A2,color:#102029,stroke-width:2px,stroke-dasharray:6 4;
-    classDef output fill:#64E1A6,stroke:#24734F,color:#102029,stroke-width:2px;
+    classDef work fill:#C4E2F8,stroke:#28638E,color:#102029,stroke-width:2px;
+    classDef decision fill:#F8DBA1,stroke:#885010,color:#102029,stroke-width:2px;
+    classDef watch fill:#E5D6F3,stroke:#7942A2,color:#102029,stroke-width:2px,stroke-dasharray:6 4;
+    classDef output fill:#BCE8CE,stroke:#24734F,color:#102029,stroke-width:2px;
     style Key fill:transparent,stroke:#80929B,stroke-width:1px
 ```
 

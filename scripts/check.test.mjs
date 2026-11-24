@@ -9,8 +9,9 @@ const rejects = (name, change, error) => test(name, () => {
   assert.throws(() => checkMap(data), error);
 });
 test('当前数据契约可校验', () => assert.equal(checkMap(original).events, original.events.length));
-test('早期内容包可省略近期入口、专题和跨系列时间线', () => {
+test('早期内容包可省略网站介绍、近期入口、专题和跨系列时间线', () => {
   const data = structuredClone(original);
+  delete data.site_intro;
   delete data.recent_update;
   delete data.topics;
   delete data.series_timeline;

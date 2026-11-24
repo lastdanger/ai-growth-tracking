@@ -25,6 +25,7 @@ export function checkMap(data) {
     for (const id of ids) fail(map.has(id), `Unknown ${label}: ${id}`);
   };
   const hasText = (record, key) => typeof record?.[key] === 'string' && !!record[key].trim();
+  if (data.site_intro !== undefined) fail(hasText(data, 'site_intro'), 'Empty site introduction');
   if (data.recent_update !== undefined) {
     const issue = data.recent_update;
     fail(day(issue?.as_of) && issue.as_of <= data.updated_at && hasText(issue, 'summary'), 'Recent update date/summary');

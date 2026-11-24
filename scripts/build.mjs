@@ -7,6 +7,9 @@ const counts = checkMap(data);
 const sources = new Map(data.sources.map(source => [source.id, source]));
 let html = read('web/index.html');
 const substitutions = {
+  '<!-- SITE_DESCRIPTION -->': data.site_intro
+    ? `<meta name="description" content="${data.site_intro.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}">`
+    : '',
   '<!-- APP_STYLES -->': `<style>\n${read('web/styles.css')}\n</style>`,
   '<!-- MAP_DATA -->': `<script>window.AI_MAP_CONTENT=${JSON.stringify(data).replaceAll('<', '\\u003c')};</script>`,
   '<!-- APP_SCRIPT -->': `<script>\n${read('web/app.js')}\n</script>`
@@ -63,6 +66,7 @@ for (const y of data.years) {
 }
 fs.writeFileSync(path.join(root, 'chronology/roots.md'), '# 技术前史根节点\n\n少量与后续事件相关的方法起点，不代表这些年份的完整历史，不据此断言当时冷门。\n\n' + table(data.events.filter(e => e.tier === 'root')), 'utf8');
 let index = '# 年度关键词与阅读入口\n\n';
+if (data.site_intro) index += `${data.site_intro}\n\n`;
 if (data.recent_update) {
   const issue = data.recent_update;
   index += `## 最近一期（选材截至 ${issue.as_of}）\n\n${issue.summary}\n\n`;
