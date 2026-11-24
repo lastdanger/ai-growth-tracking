@@ -43,6 +43,17 @@ export function checkMap(data) {
       for (const item of topic.items) {
         fail(events.get(item.event_id).source_ids.includes(item.source_id), `Topic source outside event: ${item.event_id}`);
         fail(['deliverable', 'human_step', 'evidence'].every(key => hasText(item, key)), `Topic case lacks explanation: ${item.event_id}`);
+        if (item.history !== undefined) {
+          const history = item.history;
+          fail(hasText(history, 'title') && hasText(history, 'scope') && Array.isArray(history.steps), `Topic history description: ${item.event_id}`);
+          refs(history.steps.map(step => step?.source_id), sources, `topic history sources ${item.event_id}`);
+          let previous = '';
+          for (const step of history.steps) {
+            const date = sources.get(step.source_id).published_at;
+            fail(hasText(step, 'text') && day(date) && date >= previous && date < events.get(item.event_id).date, `Topic history date/text: ${item.event_id}`);
+            previous = date;
+          }
+        }
       }
       fail(events.has(topic.follow_up?.event_id) && !cases.includes(topic.follow_up.event_id) && hasText(topic.follow_up, 'reason'), `Topic follow-up: ${topic.id}`);
     }

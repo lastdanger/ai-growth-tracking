@@ -21,7 +21,7 @@
 
 - **按年读时代。** 年度主线看能力、使用方式或产业结构的转折，分支补具体现场。可以从 2023 年的六站“破圈”开始，接着读 2024 年的交互扩展、2025 年的任务交接、2026 年的委托与边界。[年度入口](chronology/README.md)
 - **按系列读发展。** 跨系列时间线把同月的选择放在一起。GPT、Claude、Gemini、DeepSeek、Qwen 和 GLM 各有一条跨年线，讲清同一系列的几次关键转折。[系列目录](chronology/series/README.md)
-- **带着问题读。** 第一篇专题把“请 AI 做一个网站”拆成三种实际交付物，点回事件可以查当时的材料。[图、代码，还是一个网址？](chronology/topics/website-deliverables.md)
+- **带着问题读。** 看做网站、对账和解数学难题各走到了哪一步，沿日期找出人还要做什么。想细看做网站，还可以单独比较设计图、待审代码和已发布的应用。[现在可以把哪些事交给 AI？](chronology/topics/what-can-i-delegate.md) · [图、代码，还是一个网址？](chronology/topics/website-deliverables.md)
 
 ## 一条线索怎样进入地图
 

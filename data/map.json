@@ -140,9 +140,88 @@
         "event_id": "metr-experienced-developers-rct",
         "reason": "交付物能点开，能回答“做到了哪一步”。至于“我有没有少花时间”，还得看工时。METR 让开发者在自己熟悉的项目里实际计时，结果和他们的体感相反。"
       }
+    },
+    {
+      "id": "what-can-i-delegate",
+      "title": "现在可以把哪些事交给 AI？",
+      "intro": "做报名页，可以请 AI 交回能试填的网址。对两张账，可以要一份逐单差额。两件事都有公开工具，换一份材料还能再做。数学家与 Claude 也交出过一份可独立核验的黎曼猜想证明，这是一次研究突破。沿着日期看，到 2026 年 11 月，这三件事各有哪一步还要人接手？",
+      "items": [
+        {
+          "event_id": "cursor-live-apps",
+          "source_id": "S-cursor-live-apps-20261105",
+          "history": {
+            "title": "做网站",
+            "scope": "日常使用 · 部分步骤需付费",
+            "steps": [
+              {
+                "source_id": "S-e6faefe9f65c",
+                "text": "用 Claude 的 Artifacts 做网页设计，对话旁就能看到成果。你可以指着页面要求改一处，再看新版。"
+              },
+              {
+                "source_id": "S-ece2d1386004",
+                "text": "在已有仓库里，开发者可以把问题单交给 GitHub Copilot。它交回一份待审的代码修改，由人试运行、提意见、决定是否合并。"
+              }
+            ]
+          },
+          "deliverable": "启用云端代理的 Cursor 付费用户可以发布一个报名页，把网址交给同事。页面需要登录或保存记录时，工具可以准备登录入口和数据库。",
+          "human_step": "选域名，处理检查发现的问题，确认发布。再请同事用自己的账号报一次名，到后台看这条记录有没有存下来。",
+          "evidence": "Cursor 公告以活动报名为例，说明了托管和发布条件。请同事试填，是检验这个网址能不能真用的办法。"
+        },
+        {
+          "event_id": "chatgpt-work-launch",
+          "source_id": "S-41173eb729ab",
+          "history": {
+            "title": "用数据对账",
+            "scope": "日常使用 · 可拿自己的样表复做",
+            "steps": [
+              {
+                "source_id": "S-openai-interpreter-20230706",
+                "text": "ChatGPT Plus 开始让用户上传文件、运行代码。你可以交一份表让它算合计，再挑几行手算，看看它取对了列没有。"
+              },
+              {
+                "source_id": "S-openai-excel-20260305",
+                "text": "ChatGPT for Excel 测试版可以直接在工作簿里改公式、跨表追数。你可以顺着单元格查看一笔数从哪来，决定两表应该按哪个字段匹配。"
+              }
+            ]
+          },
+          "deliverable": "ChatGPT Work 的月结案例把找原始数据、移入表格和核对串了起来。换成订单表和到账表，你可以要求交回逐单差额，并标出每笔对应的原始行。",
+          "human_step": "先定按哪天截账、退款归哪一单。拿两个虚构订单试一遍。A 应收 100、实收 90，B 应收 50、实收 60。两表合计都是 150 元，差额表仍应列出 A 少 10 元、B 多 10 元。",
+          "evidence": "7 月公告给出的是产品方的财务工作案例。上面的小账只用来检验逐笔核对，真实差额还要查原始凭证。"
+        },
+        {
+          "event_id": "alpoge-claude-riemann-proof",
+          "source_id": "S-lean-riemann-verification",
+          "history": {
+            "title": "解数学难题",
+            "scope": "前沿研究 · 专家与模型合作",
+            "steps": [
+              {
+                "source_id": "S-deepmind-imo-2024",
+                "text": "国际数学奥赛的 6 道题，专家先把题翻译成形式语言，DeepMind 的两套专用系统解出 4 道，部分题用了数天。"
+              },
+              {
+                "source_id": "S-deepmind-imo-2025",
+                "text": "下一届换了新题。研究版 Gemini Deep Think 直接读自然语言原题，在竞赛时限内解出 5 道，解答交给竞赛专家评分。"
+              },
+              {
+                "source_id": "S-anthropic-riemann-bound",
+                "text": "黎曼猜想问的是，所有非平凡零点是否都在同一条直线上。此前能证明至少 41.6% 在这条线上，研究版 Claude 把下限提高到 67.2%，数学家复核了这一步。"
+              }
+            ]
+          },
+          "deliverable": "11 月 20 日，数学家 Levent Alpöge 公布与 Claude 合作得到的证明，覆盖经典黎曼猜想所说的全部非平凡零点。读者可以下载证明文件，用程序逐步检查。",
+          "human_step": "数学家选定研究方向，Claude 曾为关键推导提出思路。证明公开后，核验者还要对准原命题，检查每一步推导。重查这份证明已有公开方法，能否用同一工具解出下一道开放题仍待检验。",
+          "evidence": "11 月 21 日，Lean 与 Mathlib 团队确认命题和证明都通过核验。截至 24 日，Andrew Sutherland 也公开了整份证明通过独立程序复核的记录。"
+        }
+      ],
+      "outro": "拿到网址，请另一个人报一次名。拿到总数，挑两笔差额反向的记录试试。拿到证明，先看验证程序检查的是哪条命题。开始委托前想好怎么验收，你就知道哪一步可以交出去，哪一步需要自己接回来。",
+      "follow_up": {
+        "event_id": "metr-experienced-developers-rct",
+        "reason": "交付物过关后，再算一笔时间账。METR 让熟悉项目的开发者实际计时，比较把任务交给 AI 和自己完成各花多久。"
+      }
     }
   ],
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-24",
   "years": [
     {
       "year": 2022,
@@ -330,7 +409,7 @@
       "tagline": "让 AI 持续做事，也要弄清它该做到哪里。",
       "summary": "代理继续进入持续工作，模型能力、运行效率和开放部署也在变化。实际效果、授权与评估仍决定哪些任务值得交出去；本年度尚未结束。",
       "status": "partial",
-      "coverage_note": "截至2026-11-23，收录44个阶段代表事件。近期定向核验 Gemini 4、GPT-6.2、Hy4 flash、ChatGPT Space 及 Qwen4-Max 的入口；其他领域仍沿用此前的选材范围。",
+      "coverage_note": "截至2026-11-24，收录45个阶段代表事件。11 月 24 日定向核对黎曼猜想证明与后续独立核验。模型和服务入口沿用 23 日的选材，其他方向按此前记录。",
       "anchor_ids": [
         "alphagenome-nature-paper",
         "openclaw-personal-agent-rename",
@@ -341,7 +420,7 @@
         "eu-ai-omnibus-in-force",
         "openai-hugging-face-investigation"
       ],
-      "as_of": "2026-11-23",
+      "as_of": "2026-11-24",
       "featured_event_id": "openclaw-personal-agent-rename",
       "featured_reason": "从个人代理的期待进入持续委托，再看授权、效果与控制问题。",
       "display_groups": [
@@ -5369,6 +5448,31 @@
         "S-space-plus-rollout"
       ],
       "material_ids": []
+    },
+    {
+      "id": "alpoge-claude-riemann-proof",
+      "year": 2026,
+      "date": "2026-11-20",
+      "date_label": "11-20（证明公开）",
+      "date_precision": "day",
+      "date_basis": "announcement",
+      "title": "数学家与 Claude 公布黎曼猜想的形式化证明",
+      "summary": "Levent Alpöge 公开了与 Claude 合作得到的证明文件。其他人可以下载它们，检查所证命题和每一步推导。",
+      "lane": "models",
+      "tier": "branch",
+      "roles": ["milestone"],
+      "why_selected": "一道长期开放的数学难题有了可供第三方核验的证明，也留下专家和模型各自怎样参与发现的记录。",
+      "then": {
+        "text": "黎曼猜想和素数的分布有关。它断言，黎曼 ζ 函数的每一个非平凡零点，实部都等于 1/2。11 月 20 日，数学家 Levent Alpöge 公布了与 Claude 一起得到的形式化证明，用 Lean 这种能让计算机检查推导的语言写成。\n\n按作者自述，他从一个较简单的情形中选定两种思路的组合，并指出往哪里推广。Claude 对关键步骤提出了具体建议，包括一串数学变换该做多长。当天读者已经能下载证明，接下来的问题是文件里证的是否就是原题、推导能否经得起独立检查。",
+        "source_ids": ["S-alpoge-riemann-note"]
+      },
+      "later": {
+        "as_of": "2026-11-24",
+        "text": "11 月 21 日，Lean 与 Mathlib 团队发布联合声明。他们核对了形式化命题与标准黎曼猜想的表述，确认文件确实证明了原命题。多个验证程序接受了这份证明。\n\n截至 11 月 24 日，MIT 数学家 Andrew Sutherland 的独立记录显示，175,187 个模块全部编译通过，主要结论只依赖 Lean 的三条标准公理，独立编写的程序也接受了完整证明。读者可以据此重查已经交出的结果。要估计模型在另一道开放难题上的成功率，还需要别的研究。",
+        "source_ids": ["S-lean-riemann-verification", "S-sutherland-riemann-checks"]
+      },
+      "source_ids": ["S-alpoge-riemann-note", "S-lean-riemann-verification", "S-sutherland-riemann-checks"],
+      "material_ids": []
     }
   ],
   "sources": [
@@ -6611,8 +6715,8 @@
       "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work/",
       "published_at": "2026-07-09",
       "kind": "official",
-      "scope": "本轮读取官方日期、具体任务、Codex 桌面合并与 Availability and pricing。区分网页/移动端分批与桌面各套餐可用；官方任务举例不等于本轮实测，更不等于任意业务自动完成。未将文中的客户收益宣传写作普遍结果。；09-30重读07-09发布正文、持续任务例子与分端开放；未将官网后来链接或客户宣传写成独立效果证据。",
-      "accessed_at": "2026-09-30"
+      "scope": "采用 7 月 9 日官方公告的具体任务、Codex 桌面合并及分端开放条件。11 月 24 日重读其中的财务月结案例，确认找原始数据、移入表格与核对的步骤。文中节省工时的说法来自产品方。",
+      "accessed_at": "2026-11-24"
     },
     {
       "id": "S-c59c597501ce",
@@ -7594,6 +7698,78 @@
       "published_at": "2026-11-16",
       "accessed_at": "2026-11-23",
       "scope": "杭州版公告列出 QwenCloud、QwenWork、QwenStudio，较小型号开放权重为预告。"
+    },
+    {
+      "id": "S-openai-interpreter-20230706",
+      "title": "OpenAI · ChatGPT 更新记录，7 月 6 日代码解释器开始开放",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes#:~:text=Code%20interpreter%20is%20now%20rolling%20out%20in%20beta%20on%20web",
+      "kind": "official",
+      "published_at": "2023-07-06",
+      "accessed_at": "2026-11-24",
+      "scope": "采用 2023 年 7 月 6 日那一节。网页 Plus 用户在随后一周逐步获得测试功能，可上传文件，运行代码分析数据、绘图。"
+    },
+    {
+      "id": "S-openai-excel-20260305",
+      "title": "OpenAI · ChatGPT for Excel 测试版发布",
+      "url": "https://openai.com/index/chatgpt-for-excel/",
+      "kind": "official",
+      "published_at": "2026-03-05",
+      "accessed_at": "2026-11-24",
+      "scope": "采用 3 月 5 日发布时的工作簿内编辑、公式追踪、跨表分析及测试范围。4 月和 5 月的开放更新另有日期。"
+    },
+    {
+      "id": "S-deepmind-imo-2024",
+      "title": "Google DeepMind · AlphaProof 与 AlphaGeometry 2 解 2024 年奥赛题",
+      "url": "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/",
+      "kind": "official",
+      "published_at": "2024-07-25",
+      "accessed_at": "2026-11-24",
+      "scope": "采用 2024 年原公告中人工翻译赛题、两套系统合计解出 4 道和最长耗时数天的说明。"
+    },
+    {
+      "id": "S-deepmind-imo-2025",
+      "title": "Google DeepMind · Gemini Deep Think 解 2025 年奥赛题",
+      "url": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
+      "kind": "official",
+      "published_at": "2025-07-21",
+      "accessed_at": "2026-11-24",
+      "scope": "高级研究版本直接读自然语言原题，在竞赛时限内完整解出 6 道中的 5 道，成绩由 IMO 协调员评分。两届使用不同题目。"
+    },
+    {
+      "id": "S-anthropic-riemann-bound",
+      "title": "Anthropic · Claude 推进黎曼 ζ 函数零点的比例下界",
+      "url": "https://www.anthropic.com/research/riemann-zeta",
+      "kind": "official",
+      "published_at": "2026-08-10",
+      "accessed_at": "2026-11-24",
+      "scope": "未公开的研究版本将临界线上零点的比例下界由 41.6% 提高到 67.2%。项目团队中的数学家验证了这项局部结果。"
+    },
+    {
+      "id": "S-alpoge-riemann-note",
+      "title": "Levent Alpöge · 黎曼猜想证明的发布说明与 Lean 文件入口",
+      "url": "https://alpo.ge/remark.pdf",
+      "kind": "paper",
+      "published_at": "2026-11-20",
+      "accessed_at": "2026-11-24",
+      "scope": "作者发布的说明给出与 Claude 合作的经过、一个模型提出思路的例子和形式化证明下载入口。对分工的描述来自作者自述。"
+    },
+    {
+      "id": "S-lean-riemann-verification",
+      "title": "Lean FRO 与 Mathlib Initiative · 命题与证明核验联合声明",
+      "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+      "kind": "official",
+      "published_at": "2026-11-21",
+      "accessed_at": "2026-11-24",
+      "scope": "联合声明逐项说明标准命题、所用公理、独立工具比对命题及多个内核检查证明的结果。"
+    },
+    {
+      "id": "S-sutherland-riemann-checks",
+      "title": "Andrew Sutherland（MIT）· 黎曼猜想证明的独立检查记录",
+      "url": "https://math.mit.edu/~drew/grh/",
+      "kind": "paper",
+      "published_at": null,
+      "accessed_at": "2026-11-24",
+      "scope": "采用更新至 11 月 24 日 03:30 UTC 的记录。175,187 个模块编译通过，五个主要定理只用标准三公理，多个内核接受完整证明。页面持续更新，初次发表日未注明。"
     }
   ],
   "materials": [

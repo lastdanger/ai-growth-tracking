@@ -80,7 +80,22 @@ if (data.topics?.length) {
     for (const item of topic.items) {
       const event = events.get(item.event_id);
       const source = sources.get(item.source_id);
-      md += `## ${event.title}\n\n**实际拿到什么**　${item.deliverable}\n\n**人接下来做什么**　${item.human_step}\n\n${item.evidence} [${safe(source.title)}](${source.url})\n\n回到当年的记录 · ${annualLink(event.id, '../')}\n\n`;
+      if (item.history) {
+        md += `## ${item.history.title}\n\n${item.history.scope}\n\n`;
+        for (const step of item.history.steps) {
+          const earlier = sources.get(step.source_id);
+          md += `- **${earlier.published_at.slice(0, 7)}**　${step.text} [${safe(earlier.title)}](${earlier.url})\n`;
+        }
+        md += `\n### ${event.date} · ${event.title}\n\n`;
+      } else {
+        md += `## ${event.title}\n\n`;
+      }
+      md += `**实际拿到什么**　${item.deliverable}\n\n**人接下来做什么**　${item.human_step}\n\n${item.evidence} [${safe(source.title)}](${source.url})\n\n`;
+      if (item.history && event.later) {
+        const links = event.later.source_ids.map(id => sources.get(id)).map(s => `[${safe(s.title)}](${s.url})`);
+        md += `<details><summary>后来再看 · ${event.later.as_of}</summary>\n\n${event.later.text}\n\n${links.join(' · ')}\n\n</details>\n\n`;
+      }
+      md += `回到当年的记录 · ${annualLink(event.id, '../')}\n\n`;
     }
     md += `${topic.outro}\n\n${topic.follow_up.reason} ${annualLink(topic.follow_up.event_id, '../')}\n\n[返回阅读入口](../README.md)\n`;
     fs.writeFileSync(path.join(root, `chronology/topics/${topic.id}.md`), md, 'utf8');

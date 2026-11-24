@@ -293,7 +293,7 @@ p:last-child { margin-bottom: 0; }
 .recent-events li { display: grid; grid-template-columns: 4ch minmax(0, 1fr); align-items: baseline; gap: 14px; border-top: 1px solid var(--line); }
 .recent-events time { color: var(--muted); font: 12px Consolas, monospace; white-space: nowrap; }
 .recent-events button { display: block; text-align: left; background: none; color: var(--accent); padding: 9px 0; line-height: 1.55; }
-.recent-events button:hover, .topic-case h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.recent-events button:hover, .topic-case :is(h2, h3) a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .recent-update details { margin-top: 6px; }
 .recent-update summary { padding: 5px 0; }
 .topic-page { max-width: 1180px; margin: auto; }
@@ -301,7 +301,13 @@ p:last-child { margin-bottom: 0; }
 .topic-comparison { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .topic-case { min-width: 0; border: 1px solid var(--line); border-top: 2px solid #477964; border-radius: 10px; background: var(--panel); padding: 18px; }
 .topic-case h2 { font-size: 18px; margin: 8px 0 15px; }
-.topic-case h2 a { display: block; color: var(--text); }
+.topic-case :is(h2, h3) a { display: block; color: var(--text); }
+.topic-case h3 { margin: 4px 0 12px; font-size: 16px; }
+.topic-case header:has(.topic-scope) h2 { margin: 0 0 4px; }
+.topic-scope { color: var(--gold); font-size: 14px; }
+.topic-steps { list-style: none; margin: 16px 0; padding: 0 0 0 12px; border-left: 2px solid var(--line); }
+.topic-steps li + li { margin-top: 12px; }
+.topic-steps p { margin: 2px 0 0; }
 .series-latest a, .topic-entry a { display: block; }
 .topic-case dl { margin-bottom: 0; }
 .topic-case dt { margin-top: 15px; color: var(--accent); font-size: 13px; }

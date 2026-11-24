@@ -152,18 +152,31 @@
     ).join('')}</nav>`;
   }
 
+  function renderTopicCase(topic, item) {
+    const event = eventsById.get(item.event_id);
+    const eventLink = `<a href="${topicHref(topic, event.id)}" data-topic-event="${escapeHTML(event.id)}">${escapeHTML(event.title)}</a>`;
+    const date = `<small>事件日期 · <time datetime="${escapeHTML(event.date)}">${escapeHTML(event.date)}</time></small>`;
+    let heading = `<header>${date}<h2>${eventLink}</h2></header>`;
+    if (item.history) {
+      const steps = item.history.steps.map(step => {
+        const source = sourcesById.get(step.source_id);
+        const month = source.published_at.slice(0, 7);
+        return `<li><time datetime="${month}">${month}</time><p>${escapeHTML(step.text)} <span class="topic-source">${sourceLink(source, '出处')}</span></p></li>`;
+      }).join('');
+      heading = `<header><h2>${escapeHTML(item.history.title)}</h2><small class="topic-scope">${escapeHTML(item.history.scope)}</small></header>
+        <ol class="topic-steps">${steps}</ol>${date}<h3>${eventLink}</h3>`;
+    }
+    return `<article class="topic-case">${heading}
+      <dl><dt>实际拿到什么</dt><dd>${escapeHTML(item.deliverable)}</dd><dt>人接下来做什么</dt><dd>${escapeHTML(item.human_step)}</dd><dt>依据</dt><dd>${escapeHTML(item.evidence)} <span class="topic-source">${sourceLink(sourcesById.get(item.source_id), '原始材料')}</span></dd></dl></article>`;
+  }
+
   function renderTopic(topic, selected) {
     if (selected) {
       return `<section class="topic-file" aria-label="专题事件"><h1>按问题读 · ${escapeHTML(topic.title)}</h1>${renderDetail(selected)}</section>`;
     }
     const followUp = eventsById.get(topic.follow_up.event_id);
     return `<section class="topic-page" aria-labelledby="topic-title"><header class="overview-heading"><div class="eyebrow">按问题读</div><h1 id="topic-title" tabindex="-1">${escapeHTML(topic.title)}</h1><p>${escapeHTML(topic.intro)}</p></header>
-      <div class="topic-comparison">${topic.items.map(item => {
-        const event = eventsById.get(item.event_id);
-        const source = sourcesById.get(item.source_id);
-        return `<article class="topic-case"><header><small>事件日期 · <time datetime="${escapeHTML(event.date)}">${escapeHTML(event.date)}</time></small><h2><a href="${topicHref(topic, event.id)}" data-topic-event="${escapeHTML(event.id)}">${escapeHTML(event.title)}</a></h2></header>
-          <dl><dt>实际拿到什么</dt><dd>${escapeHTML(item.deliverable)}</dd><dt>人接下来做什么</dt><dd>${escapeHTML(item.human_step)}</dd><dt>依据</dt><dd>${escapeHTML(item.evidence)} <span class="topic-source">${sourceLink(source, '原始材料')}</span></dd></dl></article>`;
-      }).join('')}</div>
+      <div class="topic-comparison">${topic.items.map(item => renderTopicCase(topic, item)).join('')}</div>
       <footer class="topic-ending"><p>${escapeHTML(topic.outro)}</p><p>${escapeHTML(topic.follow_up.reason)}</p><a href="${topicHref(topic, followUp.id)}" data-topic-event="${escapeHTML(followUp.id)}">${escapeHTML(followUp.title)} ↗</a></footer></section>`;
   }
 

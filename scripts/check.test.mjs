@@ -20,6 +20,13 @@ rejects('近期入口只推荐本期收录的事件', d => d.recent_update.featu
 rejects('近期入口不得提前收录后来的事件', d => d.recent_update.as_of = '2026-11-01', /Recent event exceeds cutoff/);
 rejects('专题材料必须属于对应事件', d => d.topics[0].items[0].source_id = d.topics[0].items[1].source_id, /Topic source outside event/);
 rejects('专题延伸阅读必须有可到达的事件', d => d.topics[0].follow_up.event_id = 'missing', /Topic follow-up/);
+rejects('专题前情按来源发表时间排列', d => {
+  d.topics.find(t => t.id === 'what-can-i-delegate').items[0].history.steps.reverse();
+}, /Topic history date/);
+rejects('后续核验不能被写成事发前的专题材料', d => {
+  const item = d.topics.find(t => t.id === 'what-can-i-delegate').items.find(i => i.event_id === 'alpoge-claude-riemann-proof');
+  item.history.steps.at(-1).source_id = 'S-lean-riemann-verification';
+}, /Topic history date/);
 rejects('跨系列节点必须落在真实日历窗口', d => d.series_timeline.rows[0].entries[0].event_id = 'gpt4-release', /Timeline event outside dated window/);
 rejects('首发视角不能提前引用后来的评测', d => {
   d.events.find(e => e.id === 'kimi-k31-pro-release').then.source_ids.push('S-aa-neon-launch-index');
