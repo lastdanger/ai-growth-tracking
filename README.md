@@ -64,7 +64,7 @@ flowchart TD
 
 ## 本地试读与维护
 
-在项目根目录执行，再用浏览器打开 `dist/index.html`。公开版由 Cloudflare 从公开仓库构建，本地试读和发布分别记录。
+想在自己的电脑上读地图，在项目根目录执行以下命令，再用浏览器打开 `dist/index.html`。
 
 ```powershell
 node scripts/check.mjs
@@ -72,6 +72,9 @@ node --test scripts/check.test.mjs
 node scripts/build.mjs
 ```
 
-浏览内容统一维护在 [data/map.json](data/map.json)。年度覆盖、系列取舍和正文证据可沿档案追溯。研究收据与作者素材留在本地研究目录。
-
-[项目简述](PROJECT_BRIEF.md) · [地图设计](docs/map-design.md) · [维护说明](docs/maintenance.md)
+| 我想知道 | 从这里开始 |
+|---|---|
+| 这张地图想记录什么？ | [项目简述](PROJECT_BRIEF.md)说明覆盖范围和选材方向。 |
+| 一条新闻该新增、补注，还是再等等？ | [近期选材规则](PROJECT_RULES.md#近期选材)说明怎样比较新材料与旧事件。 |
+| 为什么从不同入口能读到同一件事？ | [地图设计](docs/map-design.md#同一条事件怎样被读到)用一张图说明来源、事件与阅读入口的关系。 |
+| 想给旧事件补一条证据，该改哪里、怎么试读？ | [给旧事件补一条证据](docs/maintenance.md#给旧事件补一条证据)从原档案走到网页和文字版。 |
